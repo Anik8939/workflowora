@@ -1,0 +1,1568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>WorkFlowora — Free Online Calculators, Text Utilities &amp; Smart Work Tools</title>
+  <meta name="description" content="WorkFlowora offers 12+ free online financial calculators, text utilities, AI prompt builders, invoice &amp; QR tools, and practical guides. Zero signup required." />
+  <!-- Custom SVG Brand Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23EA580C'/%3E%3Cpath d='M14 20L23 44L32 25L41 44L50 20' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='14' r='3.5' fill='%23FDE047'/%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700;800&amp;display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            display: ['Plus Jakarta Sans', 'sans-serif'],
+          },
+          colors: {
+            cream: '#FAF9F5',
+            charcoal: '#141413',
+            terracotta: '#EA580C',
+            terracottaDark: '#C2410C',
+            sage: '#15803D',
+            warmBorder: '#E7E5E4'
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    body {
+      background-color: #FAF9F5;
+      color: #141413;
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    .clean-card {
+      background: #FFFFFF;
+      border: 1.5px solid #E7E5E4;
+      border-radius: 18px;
+      box-shadow: 0 4px 16px rgba(20, 20, 19, 0.04);
+      transition: all 0.2s ease;
+    }
+    .clean-card:hover {
+      border-color: #EA580C;
+      transform: translateY(-3px);
+      box-shadow: 0 14px 30px rgba(234, 88, 12, 0.11);
+    }
+    .btn-coral {
+      background-color: #EA580C;
+      color: #FFFFFF;
+      font-weight: 700;
+      border-radius: 12px;
+      transition: all 0.18s ease;
+    }
+    .btn-coral:hover {
+      background-color: #C2410C;
+      transform: translateY(-1px);
+    }
+    .cat-pill-active {
+      background-color: #141413;
+      color: #FFFFFF;
+    }
+    .cat-pill-inactive {
+      background-color: #FFFFFF;
+      color: #44403C;
+      border: 1.5px solid #E7E5E4;
+    }
+    .cat-pill-inactive:hover {
+      border-color: #141413;
+      color: #141413;
+    }
+    @media print {
+      header, footer, .no-print { display: none !important; }
+      body { background: #FFFFFF; }
+      .clean-card { border: none; box-shadow: none; }
+    }
+  </style>
+
+  <!-- Schema.org Structured Data for Google SEO & AdSense -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "WorkFlowora",
+    "url": "https://www.workflowora.com/",
+    "description": "12+ Free Online Financial Calculators, Text Utilities, AI Prompt Builders, and Practical Productivity Guides."
+  }
+  </script>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <!-- =========================================================
+       STICKY HEADER WITH CUSTOM VECTOR BRAND LOGO
+       ========================================================= -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
+    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-3.5 flex items-center justify-between gap-4">
+      <!-- Custom SVG Brand Logo -->
+      <button type="button" onclick="showMainView('home')" class="flex items-center gap-3 text-left focus:outline-none group">
+        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition">
+          <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20L22 46L32 25L42 46L52 20" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="13" r="4" fill="#FDE047"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-1">
+            <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-charcoal">WorkFlowora</span>
+            <span class="px-2 py-0.5 rounded-full bg-orange-100 text-terracottaDark font-bold text-[10px] uppercase tracking-wider">PRO</span>
+          </div>
+          <span class="block text-xs text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
+        </div>
+      </button>
+
+      <!-- Clean Navigation Menu -->
+      <nav aria-label="Main Menu" class="hidden md:flex items-center gap-1.5">
+        <button type="button" onclick="showMainView('home')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+          All Free Tools
+        </button>
+        <button type="button" onclick="scrollToSection('popular-guides-section')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+          How-To Guides
+        </button>
+        <button type="button" onclick="showLegalPage('about')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+          About Us
+        </button>
+        <button type="button" onclick="showLegalPage('contact')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+          Contact
+        </button>
+      </nav>
+
+      <!-- Highlight Action Button -->
+      <div class="flex items-center gap-2">
+        <button type="button" onclick="openToolWorkspace('loan')" class="btn-coral px-4 py-2.5 text-xs sm:text-sm shadow-sm">
+          Popular: Loan &amp; EMI Tool &#8594;
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================
+       MAIN CONTENT CONTAINER
+       ========================================================= -->
+  <main class="flex-grow max-w-[1600px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-8 sm:py-12">
+
+    <!-- VIEW A: HOME DIRECTORY -->
+    <div id="main-home-view" class="space-y-12">
+
+      <!-- Hero Section -->
+      <section class="text-center max-w-3xl mx-auto space-y-5">
+        <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold uppercase tracking-wide">
+          <span>&#10003; 12 Free Instant Tools &#8226; Zero Signup &#8226; 100% Browser Private</span>
+        </div>
+
+        <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-charcoal tracking-tight leading-tight">
+          What do you want to <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calculate or solve</span> today?
+        </h1>
+
+        <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
+          Choose any free utility below—from <strong>Loan EMI, Compound Interest &amp; Invoice Generators</strong> to <strong>Word Counters, AI Prompt Builders, and QR Makers</strong>.
+        </p>
+
+        <!-- Search Bar -->
+        <div class="relative max-w-xl mx-auto pt-1">
+          <input
+            id="tool-search-input"
+            type="search"
+            oninput="filterToolCards()"
+            placeholder="Search any tool (e.g., Loan, Compound Interest, Invoice, Word Counter, BMI, Password)..."
+            aria-label="Search tools"
+            class="w-full pl-12 pr-4 py-4 rounded-2xl bg-white border-2 border-stone-300 text-charcoal placeholder-stone-400 text-sm sm:text-base shadow-sm focus:outline-none focus:border-terracotta"
+          />
+          <span class="absolute left-4 top-1/2 -translate-y-1/2 text-stone-400 text-lg pointer-events-none">&#128269;</span>
+        </div>
+
+        <!-- Recently Used Bar (Appears Automatically After Using Tools) -->
+        <div id="recently-used-wrap" class="hidden pt-1">
+          <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-2 rounded-2xl bg-stone-100 border border-stone-200 text-xs">
+            <span class="font-bold text-stone-500">&#128338; Recently Used:</span>
+            <div id="recently-used-list" class="flex flex-wrap gap-1.5"></div>
+          </div>
+        </div>
+
+        <!-- Category Filter Pills -->
+        <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
+          <button type="button" data-cat="all" onclick="setCategoryFilter('all')" class="cat-filter-btn cat-pill-active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition">
+            All Tools (8)
+          </button>
+          <button type="button" data-cat="Money &amp; Business" onclick="setCategoryFilter('Money & Business')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
+            &#128176; Money &amp; Business (3)
+          </button>
+          <button type="button" data-cat="Writing &amp; AI" onclick="setCategoryFilter('Writing & AI')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
+            &#9997;&#65039; Writing &amp; AI (3)
+          </button>
+          <button type="button" data-cat="Daily Life" onclick="setCategoryFilter('Daily Life')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
+            &#128197; Daily Life &amp; Math (2)
+          </button>
+        </div>
+      </section>
+
+      <!-- 12 Visual Tool Cards Grid -->
+      <section aria-label="Tools Directory">
+        <div id="tools-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+      </section>
+
+      <!-- Value & Trust Strip -->
+      <section class="clean-card p-6 sm:p-8 bg-white">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-orange-100 text-terracotta font-bold text-lg flex items-center justify-center shrink-0">&#9889;</div>
+            <div>
+              <h2 class="font-display font-bold text-base text-charcoal">Visual Breakdown Charts</h2>
+              <p class="text-xs text-stone-600 mt-1 leading-relaxed">Every financial and health calculator includes color-coded visual bars so you understand your numbers at a glance.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-green-100 text-sage font-bold text-lg flex items-center justify-center shrink-0">&#128274;</div>
+            <div>
+              <h2 class="font-display font-bold text-base text-charcoal">100% Browser Privacy</h2>
+              <p class="text-xs text-stone-600 mt-1 leading-relaxed">Your financial data, invoices, and text never leave your computer or phone—everything runs locally.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-11 h-11 rounded-xl bg-amber-100 text-amber-800 font-bold text-lg flex items-center justify-center shrink-0">&#128196;</div>
+            <div>
+              <h2 class="font-display font-bold text-base text-charcoal">One-Click Copy &amp; Print</h2>
+              <p class="text-xs text-stone-600 mt-1 leading-relaxed">Copy calculation summaries or print clean PDF invoices and schedules with a single button click.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Step-by-Step Guides & Blog Section -->
+      <section id="popular-guides-section" class="space-y-6">
+        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-terracotta">PRACTICAL GUIDES &amp; ARTICLES</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-1">Learn How to Work Smarter &amp; Manage Money</h2>
+          </div>
+        </div>
+
+        <div id="guides-cards-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+      </section>
+
+    </div>
+
+    <!-- =========================================================
+         VIEW B: SINGLE TOOL WORKSPACE (WITH VISUAL BARS + SEO FAQ)
+         ========================================================= -->
+    <div id="single-tool-view" class="hidden space-y-8">
+      <!-- Top Tool Switcher Bar -->
+      <div class="no-print flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4">
+        <button type="button" onclick="showMainView('home')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white border border-stone-300 text-sm font-bold text-charcoal hover:border-terracotta transition">
+          &#8592; Back to All Tools
+        </button>
+        <div class="flex flex-wrap gap-1.5">
+          <button type="button" onclick="openToolWorkspace('loan')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Loan &amp; EMI</button>
+          <button type="button" onclick="openToolWorkspace('compound')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Compound Interest</button>
+          <button type="button" onclick="openToolWorkspace('margin')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Profit &amp; ROAS</button>
+          <button type="button" onclick="openToolWorkspace('freelance')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Freelance Rate</button>
+          <button type="button" onclick="openToolWorkspace('invoice')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Invoice Maker</button>
+          <button type="button" onclick="openToolWorkspace('wordcount')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Word Counter</button>
+          <button type="button" onclick="openToolWorkspace('prompt')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">AI Prompt Maker</button>
+          <button type="button" onclick="openToolWorkspace('case')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Text Formatter</button>
+          <button type="button" onclick="openToolWorkspace('bmi')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">BMI &amp; Calorie</button>
+          <button type="button" onclick="openToolWorkspace('age')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Age Calculator</button>
+          <button type="button" onclick="openToolWorkspace('percent')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Percentage</button>
+          <button type="button" onclick="openToolWorkspace('password')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Password &amp; QR</button>
+        </div>
+      </div>
+
+      <!-- 1. LOAN & MORTGAGE EMI CALCULATOR -->
+      <div id="workspace-loan" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div class="flex flex-wrap items-start justify-between gap-4">
+          <div>
+            <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">MONEY &amp; FINANCE</span>
+            <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Loan, Mortgage &amp; Monthly EMI Calculator</h1>
+            <p class="text-sm text-stone-600 mt-1">Calculate your exact monthly payment (EMI), total interest cost, and visual principal-to-interest breakdown.</p>
+          </div>
+          <button type="button" onclick="window.print()" class="no-print px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-xs font-bold text-charcoal">
+            &#128424; Print / Save PDF
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-6 space-y-4 text-sm">
+            <div>
+              <label class="block font-bold text-charcoal mb-1" for="ln-amount">Loan Amount ($)</label>
+              <input id="ln-amount" type="number" value="25000" oninput="calcLoanEMI()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 text-charcoal font-bold focus:outline-none focus:border-terracotta" />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="ln-rate">Annual Interest Rate (%)</label>
+                <input id="ln-rate" type="number" step="0.1" value="7.5" oninput="calcLoanEMI()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 text-charcoal font-bold focus:outline-none focus:border-terracotta" />
+              </div>
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="ln-years">Loan Term (Years)</label>
+                <input id="ln-years" type="number" value="5" oninput="calcLoanEMI()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 text-charcoal font-bold focus:outline-none focus:border-terracotta" />
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-6 p-6 rounded-2xl bg-orange-50/70 border-2 border-orange-200 space-y-4">
+            <div>
+              <div class="text-xs font-bold uppercase text-stone-500">Estimated Monthly Payment (EMI)</div>
+              <div id="ln-emi-out" class="font-display font-extrabold text-4xl text-terracotta mt-1">$500.95 / month</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 pt-3 border-t border-orange-200 text-sm">
+              <div>
+                <div class="text-xs text-stone-500">Total Interest Payable</div>
+                <div id="ln-interest-out" class="font-bold text-charcoal text-lg">$5,056.97</div>
+              </div>
+              <div>
+                <div class="text-xs text-stone-500">Total Payment (Principal + Interest)</div>
+                <div id="ln-total-out" class="font-bold text-sage text-lg">$30,056.97</div>
+              </div>
+            </div>
+
+            <!-- Visual Ratio Breakdown Bar -->
+            <div class="pt-2 space-y-1.5">
+              <div class="flex justify-between text-xs font-bold">
+                <span id="ln-prin-pct-label" class="text-sage">Principal: 83%</span>
+                <span id="ln-int-pct-label" class="text-terracotta">Interest: 17%</span>
+              </div>
+              <div class="w-full h-3.5 rounded-full bg-orange-200 overflow-hidden flex">
+                <div id="ln-bar-principal" class="h-full bg-sage transition-all duration-300" style="width: 83%;"></div>
+                <div id="ln-bar-interest" class="h-full bg-terracotta transition-all duration-300" style="width: 17%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. COMPOUND INTEREST & WEALTH GROWTH CALCULATOR (NEW HIGH-CPC TOOL) -->
+      <div id="workspace-compound" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-green-100 text-sage text-xs font-bold">INVESTING &amp; WEALTH</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Compound Interest &amp; Investment Growth Calculator</h1>
+          <p class="text-sm text-stone-600 mt-1">See how your savings and monthly contributions grow over time with annual compounding.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-6 space-y-4 text-sm">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="ci-init">Initial Deposit ($)</label>
+                <input id="ci-init" type="number" value="5000" oninput="calcCompound()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+              </div>
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="ci-monthly">Monthly Contribution ($)</label>
+                <input id="ci-monthly" type="number" value="300" oninput="calcCompound()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="ci-rate">Annual Return Rate (%)</label>
+                <input id="ci-rate" type="number" step="0.5" value="8.0" oninput="calcCompound()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+              </div>
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="ci-years">Time Period (Years)</label>
+                <input id="ci-years" type="number" value="10" oninput="calcCompound()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-6 p-6 rounded-2xl bg-green-50 border-2 border-green-200 space-y-4">
+            <div>
+              <div class="text-xs font-bold uppercase text-stone-500">Future Investment Value</div>
+              <div id="ci-future-out" class="font-display font-extrabold text-4xl text-sage mt-1">$65,678.42</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 pt-3 border-t border-green-200 text-sm">
+              <div>
+                <div class="text-xs text-stone-500">Total Contributions</div>
+                <div id="ci-contrib-out" class="font-bold text-charcoal text-lg">$41,000.00</div>
+              </div>
+              <div>
+                <div class="text-xs text-stone-500">Total Compound Profit</div>
+                <div id="ci-profit-out" class="font-bold text-terracotta text-lg">+$24,678.42</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. PROFIT MARGIN, MARKUP & AD ROAS CALCULATOR -->
+      <div id="workspace-margin" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">BUSINESS &amp; E-COMMERCE</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Profit Margin, Markup &amp; Ad ROAS Calculator</h1>
+          <p class="text-sm text-stone-600 mt-1">Find your net profit per sale, profit margin percentage, and Return on Ad Spend (ROAS).</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-6 space-y-4 text-sm">
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="mg-cost">Product Cost ($)</label>
+                <input id="mg-cost" type="number" value="35" oninput="calcMarginROAS()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+              </div>
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="mg-price">Selling Price ($)</label>
+                <input id="mg-price" type="number" value="95" oninput="calcMarginROAS()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+              </div>
+            </div>
+            <div>
+              <label class="block font-bold text-charcoal mb-1" for="mg-ad">Ad Spend / Marketing Cost per Order ($)</label>
+              <input id="mg-ad" type="number" value="20" oninput="calcMarginROAS()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+            </div>
+          </div>
+
+          <div class="md:col-span-6 p-6 rounded-2xl bg-green-50/80 border-2 border-green-200 space-y-4">
+            <div>
+              <div class="text-xs font-bold uppercase text-stone-500">Net Profit Per Order</div>
+              <div id="mg-profit-out" class="font-display font-extrabold text-4xl text-sage mt-1">$40.00</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 pt-3 border-t border-green-200 text-sm">
+              <div>
+                <div class="text-xs text-stone-500">Net Profit Margin (%)</div>
+                <div id="mg-margin-out" class="font-bold text-charcoal text-lg">42.11%</div>
+              </div>
+              <div>
+                <div class="text-xs text-stone-500">Campaign ROAS</div>
+                <div id="mg-roas-out" class="font-bold text-terracotta text-lg">4.75x ROAS</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. FREELANCE HOURLY & DAY RATE CALCULATOR -->
+      <div id="workspace-freelance" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">FREELANCING &amp; CAREER</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Freelance Hourly &amp; Day Rate Calculator</h1>
+          <p class="text-sm text-stone-600 mt-1">Find out how much you should charge per hour and per day to hit your annual income goal.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-6 space-y-4 text-sm">
+            <div>
+              <label class="block font-bold text-charcoal mb-1" for="fr-goal">Target Annual Income ($ USD)</label>
+              <input id="fr-goal" type="number" value="48000" oninput="calcFreelanceRate()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+            </div>
+            <div class="grid grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="fr-hrs">Billable Hours / Week</label>
+                <input id="fr-hrs" type="number" value="25" oninput="calcFreelanceRate()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+              </div>
+              <div>
+                <label class="block font-bold text-charcoal mb-1" for="fr-cost">Yearly Expenses ($)</label>
+                <input id="fr-cost" type="number" value="4000" oninput="calcFreelanceRate()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+              </div>
+            </div>
+          </div>
+
+          <div class="md:col-span-6 p-6 rounded-2xl bg-orange-50/70 border-2 border-orange-200 space-y-4">
+            <div>
+              <div class="text-xs font-bold uppercase text-stone-500">Recommended Hourly Rate</div>
+              <div id="fr-hourly-out" class="font-display font-extrabold text-4xl text-terracotta mt-1">$44 / hour</div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 pt-3 border-t border-orange-200 text-sm">
+              <div>
+                <div class="text-xs text-stone-500">Full Day Rate (6 Hours)</div>
+                <div id="fr-day-out" class="font-bold text-charcoal text-lg">$264 / day</div>
+              </div>
+              <div>
+                <div class="text-xs text-stone-500">Weekly Revenue Target</div>
+                <div id="fr-week-out" class="font-bold text-sage text-lg">$1,100 / week</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. INSTANT PRINTABLE INVOICE GENERATOR (NEW BUSINESS TOOL) -->
+      <div id="workspace-invoice" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">BUSINESS &amp; BILLING</span>
+            <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Instant Printable Invoice &amp; Quote Generator</h1>
+          </div>
+          <button type="button" onclick="window.print()" class="btn-coral px-5 py-2.5 text-xs sm:text-sm no-print">
+            &#128424; Print / Save Invoice as PDF
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+          <div>
+            <label class="block font-bold mb-1" for="inv-from">From (Your Business Name)</label>
+            <input id="inv-from" type="text" value="WorkFlowora Digital Studio" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-semibold" />
+          </div>
+          <div>
+            <label class="block font-bold mb-1" for="inv-to">Bill To (Client Name)</label>
+            <input id="inv-to" type="text" value="Acme Corp International" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-semibold" />
+          </div>
+          <div>
+            <label class="block font-bold mb-1" for="inv-tax">Tax / VAT Rate (%)</label>
+            <input id="inv-tax" type="number" value="5" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-semibold" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-3 text-sm items-end">
+          <div class="md:col-span-6">
+            <label class="block font-bold mb-1" for="inv-item">Service / Item Description</label>
+            <input id="inv-item" type="text" value="UI/UX Design &amp; Workflow Automation Setup" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300" />
+          </div>
+          <div class="md:col-span-3">
+            <label class="block font-bold mb-1" for="inv-qty">Quantity / Hours</label>
+            <input id="inv-qty" type="number" value="10" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold" />
+          </div>
+          <div class="md:col-span-3">
+            <label class="block font-bold mb-1" for="inv-rate">Unit Price ($)</label>
+            <input id="inv-rate" type="number" value="65" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold" />
+          </div>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-stone-100 border border-stone-200 flex flex-wrap items-center justify-between gap-4">
+          <div class="text-sm space-y-1">
+            <div>Billed From: <strong id="inv-from-out">WorkFlowora Digital Studio</strong> &#8594; To: <strong id="inv-to-out">Acme Corp International</strong></div>
+            <div class="text-stone-600">Subtotal: <strong id="inv-sub-out">$650.00</strong> | Tax: <strong id="inv-tax-out">$32.50</strong></div>
+          </div>
+          <div>
+            <div class="text-xs font-bold uppercase text-stone-500">Total Amount Due</div>
+            <div id="inv-total-out" class="font-display font-extrabold text-3xl text-terracotta">$682.50</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. WORD, CHARACTER & READING TIME COUNTER -->
+      <div id="workspace-wordcount" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">WRITING &amp; CONTENT</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Word Counter, Character Count &amp; Reading Time</h1>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+          <div class="p-4 rounded-2xl bg-orange-50 border border-orange-200">
+            <div class="text-xs font-bold text-stone-500 uppercase">Words</div>
+            <div id="wc-words" class="font-display font-extrabold text-3xl text-terracotta mt-1">28</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-stone-100 border border-stone-200">
+            <div class="text-xs font-bold text-stone-500 uppercase">Characters</div>
+            <div id="wc-chars" class="font-display font-extrabold text-3xl text-charcoal mt-1">174</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-stone-100 border border-stone-200">
+            <div class="text-xs font-bold text-stone-500 uppercase">Sentences</div>
+            <div id="wc-sents" class="font-display font-extrabold text-3xl text-charcoal mt-1">2</div>
+          </div>
+          <div class="p-4 rounded-2xl bg-green-50 border border-green-200">
+            <div class="text-xs font-bold text-stone-500 uppercase">Reading Time</div>
+            <div id="wc-time" class="font-display font-extrabold text-3xl text-sage mt-1">9 sec</div>
+          </div>
+        </div>
+
+        <textarea id="wc-input" rows="7" oninput="calcWordCount()" class="w-full p-4 rounded-2xl bg-stone-50 border-2 border-stone-300 text-charcoal text-base focus:outline-none focus:border-terracotta">Welcome to WorkFlowora! Type or paste any article, essay, email, or script into this box to see your real-time word count, character count, and estimated reading time.</textarea>
+      </div>
+
+      <!-- 7. AI PROMPT BUILDER -->
+      <div id="workspace-prompt" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">AI PRODUCTIVITY</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">One-Click AI Prompt Generator</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+          <div class="md:col-span-6 space-y-4 text-sm">
+            <div>
+              <label class="block font-bold text-charcoal mb-1" for="pr-role">1. Choose an Expert Role</label>
+              <select id="pr-role" onchange="generateCleanPrompt()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-semibold">
+                <option value="Expert Copywriter &amp; Content Strategist">Expert Copywriter &amp; Content Strategist</option>
+                <option value="Senior Software Engineer &amp; Code Reviewer">Senior Software Engineer &amp; Code Reviewer</option>
+                <option value="Digital Marketing &amp; SEO Specialist">Digital Marketing &amp; SEO Specialist</option>
+                <option value="Business &amp; Financial Advisor">Business &amp; Financial Advisor</option>
+                <option value="Academic Tutor &amp; Research Summarizer">Academic Tutor &amp; Research Summarizer</option>
+              </select>
+            </div>
+            <div>
+              <label class="block font-bold text-charcoal mb-1" for="pr-goal">2. What do you want the AI to do?</label>
+              <textarea id="pr-goal" rows="3" oninput="generateCleanPrompt()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300">Write a complete 7-day content plan and SEO article outline for a new online business.</textarea>
+            </div>
+            <div>
+              <label class="block font-bold text-charcoal mb-1" for="pr-tone">3. Output Format &amp; Style</label>
+              <input id="pr-tone" type="text" value="Clear step-by-step bullet points with practical examples and zero fluff" oninput="generateCleanPrompt()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300" />
+            </div>
+            <button type="button" onclick="copyElementText('pr-result', 'Prompt copied! Paste it into ChatGPT or Gemini.')" class="btn-coral px-6 py-3.5 text-sm">
+              &#128203; Copy Finished Prompt
+            </button>
+          </div>
+
+          <div class="md:col-span-6">
+            <label class="block font-bold text-xs uppercase text-stone-500 mb-2">Your Ready-to-Use AI Prompt:</label>
+            <pre id="pr-result" class="w-full h-72 p-4 rounded-2xl bg-stone-900 text-stone-100 text-xs sm:text-sm font-mono whitespace-pre-wrap overflow-y-auto"></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. TEXT CASE & URL SLUG CONVERTER -->
+      <div id="workspace-case" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">TEXT UTILITY</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Text Case Converter &amp; SEO URL Slug Maker</h1>
+        </div>
+
+        <textarea id="cs-input" rows="5" class="w-full p-4 rounded-2xl bg-stone-50 border-2 border-stone-300 text-charcoal text-base">How To Build A Successful Online Brand With Free Tools In 2026</textarea>
+
+        <div class="flex flex-wrap gap-2.5">
+          <button type="button" onclick="convertCaseMode('upper')" class="px-4 py-2.5 rounded-xl bg-stone-200 hover:bg-stone-300 font-bold text-xs">UPPERCASE</button>
+          <button type="button" onclick="convertCaseMode('lower')" class="px-4 py-2.5 rounded-xl bg-stone-200 hover:bg-stone-300 font-bold text-xs">lowercase</button>
+          <button type="button" onclick="convertCaseMode('title')" class="px-4 py-2.5 rounded-xl bg-stone-200 hover:bg-stone-300 font-bold text-xs">Title Case</button>
+          <button type="button" onclick="convertCaseMode('slug')" class="px-4 py-2.5 rounded-xl bg-orange-100 text-terracottaDark hover:bg-orange-200 font-bold text-xs">seo-url-slug</button>
+          <button type="button" onclick="convertCaseMode('clean')" class="px-4 py-2.5 rounded-xl bg-stone-200 hover:bg-stone-300 font-bold text-xs">Remove Extra Spaces</button>
+          <button type="button" onclick="copyElementText('cs-input', 'Converted text copied!')" class="btn-coral px-5 py-2.5 text-xs">Copy Text</button>
+        </div>
+      </div>
+
+      <!-- 9. BMI & DAILY CALORIE (TDEE) CALCULATOR (NEW HIGH-TRAFFIC HEALTH TOOL) -->
+      <div id="workspace-bmi" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-green-100 text-sage text-xs font-bold">HEALTH &amp; FITNESS</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">BMI &amp; Daily Calorie Burn (TDEE) Calculator</h1>
+          <p class="text-sm text-stone-600 mt-1">Check your Body Mass Index (BMI) category and estimated daily maintenance calories.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-6 grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <label class="block font-bold mb-1" for="bm-weight">Weight (kg)</label>
+              <input id="bm-weight" type="number" value="70" oninput="calcBMI()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+            </div>
+            <div>
+              <label class="block font-bold mb-1" for="bm-height">Height (cm)</label>
+              <input id="bm-height" type="number" value="172" oninput="calcBMI()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+            </div>
+          </div>
+
+          <div class="md:col-span-6 p-6 rounded-2xl bg-green-50 border-2 border-green-200 space-y-2">
+            <div class="text-xs font-bold uppercase text-stone-500">Your Body Mass Index (BMI)</div>
+            <div id="bm-score-out" class="font-display font-extrabold text-4xl text-sage">23.7 — Normal Weight</div>
+            <div id="bm-cal-out" class="text-sm font-semibold text-stone-700">Estimated Daily Maintenance Calories: ~2,150 kcal/day</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. EXACT AGE & DATE DIFFERENCE CALCULATOR -->
+      <div id="workspace-age" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">DAILY UTILITY</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Exact Age Calculator (Years, Months &amp; Days)</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-5 space-y-4">
+            <label class="block font-bold text-sm text-charcoal" for="ag-dob">Select Date of Birth:</label>
+            <input id="ag-dob" type="date" value="1998-05-15" onchange="calcExactAge()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold text-charcoal" />
+            <button type="button" onclick="calcExactAge()" class="btn-coral px-6 py-3 text-sm w-full">Calculate Exact Age</button>
+          </div>
+          <div class="md:col-span-7 p-6 rounded-2xl bg-orange-50/70 border-2 border-orange-200 space-y-3">
+            <div class="text-xs font-bold uppercase text-stone-500">Your Exact Age Today</div>
+            <div id="ag-main-out" class="font-display font-extrabold text-3xl sm:text-4xl text-terracotta">28 Years, 5 Months, 16 Days</div>
+            <div id="ag-days-out" class="text-sm font-semibold text-stone-700">Total Days Lived: 10,396 days</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. DISCOUNT & PERCENTAGE CALCULATOR -->
+      <div id="workspace-percent" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">DAILY MATH &amp; SHOPPING</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Percentage &amp; Discount Calculator</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-6 grid grid-cols-2 gap-4 text-sm">
+            <div>
+              <label class="block font-bold text-charcoal mb-1" for="pc-pct">Percentage (%)</label>
+              <input id="pc-pct" type="number" value="20" oninput="calcPercentage()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+            </div>
+            <div>
+              <label class="block font-bold text-charcoal mb-1" for="pc-val">Total Amount ($)</label>
+              <input id="pc-val" type="number" value="250" oninput="calcPercentage()" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-bold" />
+            </div>
+          </div>
+          <div class="md:col-span-6 p-6 rounded-2xl bg-green-50 border-2 border-green-200 grid grid-cols-2 gap-4">
+            <div>
+              <div class="text-xs font-bold uppercase text-stone-500">Percentage Value</div>
+              <div id="pc-part-out" class="font-display font-extrabold text-3xl text-terracotta mt-1">$50.00</div>
+            </div>
+            <div>
+              <div class="text-xs font-bold uppercase text-stone-500">Final Price After Discount</div>
+              <div id="pc-final-out" class="font-display font-extrabold text-3xl text-sage mt-1">$200.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. SECURE PASSWORD & QR CODE GENERATOR (NEW TECH UTILITY) -->
+      <div id="workspace-password" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">SECURITY &amp; UTILITY</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Strong Password &amp; Instant QR Code Generator</h1>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          <div class="md:col-span-7 space-y-4">
+            <label class="block font-bold text-sm" for="pw-len">Password Length: <span id="pw-len-val" class="text-terracotta">16</span> characters</label>
+            <input id="pw-len" type="range" min="8" max="32" value="16" oninput="generateStrongPassword()" class="w-full accent-orange-600 cursor-pointer" />
+            <div class="p-4 rounded-2xl bg-stone-900 text-white font-mono text-lg flex items-center justify-between gap-2">
+              <span id="pw-output" class="truncate">Wk9#mP2$vL8@nQ4!</span>
+              <button type="button" onclick="copyElementText('pw-output', 'Password copied!')" class="btn-coral px-3 py-1.5 text-xs shrink-0">Copy</button>
+            </div>
+            <button type="button" onclick="generateStrongPassword()" class="px-4 py-2.5 rounded-xl bg-stone-200 hover:bg-stone-300 text-xs font-bold">
+              &#128260; Generate New Password
+            </button>
+          </div>
+
+          <div class="md:col-span-5 p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-3 text-center">
+            <label class="block font-bold text-xs uppercase text-stone-500" for="qr-text">Instant URL / Text QR Code</label>
+            <input id="qr-text" type="text" value="https://www.workflowora.com" oninput="updateQRPreview()" class="w-full p-2.5 rounded-xl bg-white border border-stone-300 text-xs" />
+            <div class="flex justify-center py-2">
+              <img id="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=140x140&amp;data=https://www.workflowora.com" alt="Generated QR Code" class="w-32 h-32 rounded-xl border border-stone-200 p-1 bg-white" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEO & ADSENSE VALUE BOOSTER: HOW IT WORKS & FAQ ACCORDION BELOW EVERY TOOL -->
+      <div class="no-print clean-card p-6 sm:p-8 space-y-4 bg-white">
+        <span class="text-xs font-bold uppercase tracking-wider text-terracotta">HELPFUL GUIDE &amp; FAQ</span>
+        <h2 class="font-display font-extrabold text-xl text-charcoal">Frequently Asked Questions About This Tool</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200">
+            <h3 class="font-bold text-charcoal mb-1">1. Is this calculator 100% free and accurate?</h3>
+            <p class="text-stone-600 leading-relaxed">Yes! Every calculator on WorkFlowora uses industry-standard financial and mathematical formulas and is completely free without any usage limits.</p>
+          </div>
+          <div class="p-4 rounded-xl bg-stone-50 border border-stone-200">
+            <h3 class="font-bold text-charcoal mb-1">2. Do you store my numbers or text on a server?</h3>
+            <p class="text-stone-600 leading-relaxed">Never. All calculations happen locally inside your web browser for complete privacy and instant speed.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- =========================================================
+         VIEW C: NO-CODE DAILY BLOG POST PUBLISHER STUDIO (Easy Admin)
+         ========================================================= -->
+    <div id="cms-studio-view" class="hidden space-y-6">
+      <div class="clean-card p-6 sm:p-10 max-w-5xl w-full mx-auto space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4">
+          <div>
+            <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">NO-CODE BLOG STUDIO</span>
+            <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Daily Blog Post Publisher</h1>
+            <p class="text-xs sm:text-sm text-stone-600">Write a new blog post below and click <strong>Publish Instantly</strong> to test it live, or copy the code snippet to add permanently to your GitHub site.</p>
+          </div>
+          <button type="button" onclick="showMainView('home')" class="px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-xs font-bold">
+            &#8592; Back to Home
+          </button>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm">
+          <div>
+            <label class="block font-bold mb-1" for="cms-title">Article Title</label>
+            <input id="cms-title" type="text" placeholder="e.g., 7 Best Free AI Tools for Freelancers in 2026" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-semibold" />
+          </div>
+          <div>
+            <label class="block font-bold mb-1" for="cms-cat">Category</label>
+            <select id="cms-cat" class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300 font-semibold">
+              <option value="AI &amp; Productivity">AI &amp; Productivity</option>
+              <option value="Money &amp; Finance">Money &amp; Finance</option>
+              <option value="Business &amp; Freelancing">Business &amp; Freelancing</option>
+              <option value="Career &amp; Study">Career &amp; Study</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="text-sm">
+          <label class="block font-bold mb-1" for="cms-summary">Short Summary (1–2 sentences shown on the card)</label>
+          <input id="cms-summary" type="text" placeholder="A quick guide to automating your daily client work using free browser tools..." class="w-full p-3.5 rounded-xl bg-stone-50 border-2 border-stone-300" />
+        </div>
+
+        <div class="text-sm">
+          <label class="block font-bold mb-1" for="cms-body">Full Article Content (Plain paragraphs or HTML)</label>
+          <textarea id="cms-body" rows="7" placeholder="Write or paste your full English article here..." class="w-full p-4 rounded-xl bg-stone-50 border-2 border-stone-300"></textarea>
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <button type="button" onclick="publishNewPostLive()" class="btn-coral px-6 py-3.5 text-sm">
+            &#10003; Publish Post to Website Now
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         VIEW D: ARTICLE / GUIDE READER VIEW
+         ========================================================= -->
+    <div id="article-reader-view" class="hidden">
+      <div class="clean-card p-6 sm:p-12 max-w-5xl w-full mx-auto space-y-6">
+        <button type="button" onclick="showMainView('home')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-xs font-bold text-charcoal transition">
+          &#8592; Back to Home &amp; Tools
+        </button>
+        <div id="article-reader-body" class="space-y-4 text-stone-800 leading-relaxed"></div>
+      </div>
+    </div>
+
+    <!-- =========================================================
+         VIEW E: LEGAL & TRUST PAGES (About, Contact, Privacy, Terms)
+         ========================================================= -->
+    <div id="legal-page-view" class="hidden">
+      <div class="clean-card p-6 sm:p-12 max-w-5xl w-full mx-auto space-y-6">
+        <button type="button" onclick="showMainView('home')" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-xs font-bold text-charcoal transition">
+          &#8592; Back to Home
+        </button>
+        <div id="legal-content-box" class="space-y-4 text-stone-700 leading-relaxed text-sm sm:text-base"></div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="clean-toast" class="fixed bottom-6 right-6 z-50 hidden px-5 py-3 rounded-xl bg-charcoal text-white text-xs sm:text-sm font-bold shadow-lg"></div>
+
+  <!-- GDPR & ADSENSE COOKIE CONSENT BANNER -->
+  <div id="cookie-consent-banner" class="fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-md z-40 clean-card p-5 bg-white border-2 border-stone-300 shadow-2xl hidden">
+    <div class="space-y-3 text-xs">
+      <div class="flex items-center justify-between">
+        <span class="font-display font-extrabold text-sm text-charcoal">&#127850; Privacy &amp; Cookie Notice</span>
+        <span class="px-2 py-0.5 rounded bg-orange-100 text-terracottaDark font-bold text-[10px]">GDPR / CCPA</span>
+      </div>
+      <p class="text-stone-600 leading-relaxed">
+        We use cookies to improve your browsing experience and serve relevant ads via Google AdSense. All calculator inputs remain 100% private in your browser.
+      </p>
+      <div class="flex items-center gap-2 pt-1">
+        <button type="button" onclick="acceptCookies('all')" class="btn-coral px-4 py-2 text-xs flex-grow">Accept All</button>
+        <button type="button" onclick="acceptCookies('essential')" class="px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 font-bold text-charcoal">Essential Only</button>
+        <button type="button" onclick="showLegalPage('privacy')" class="underline text-stone-500 hover:text-charcoal px-1">Policy</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================
+       CLEAN PROFESSIONAL FOOTER
+       ========================================================= -->
+  <footer class="bg-white border-t border-stone-200 mt-16 text-stone-600 text-xs sm:text-sm">
+    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2.5 mb-3">
+          <div class="w-8 h-8 rounded-lg bg-terracotta text-white font-display font-extrabold text-base flex items-center justify-center">W</div>
+          <span class="font-display font-extrabold text-lg text-charcoal">WorkFlowora.com</span>
+        </div>
+        <p class="text-xs text-stone-500 leading-relaxed">
+          Fast, free, and easy-to-use online calculators, text utilities, and practical productivity guides. Built for everyday clarity.
+        </p>
+      </div>
+
+      <div>
+        <div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Money &amp; Business Tools</div>
+        <ul class="space-y-2 text-xs">
+          <li><button type="button" onclick="openToolWorkspace('loan')" class="hover:text-terracotta">Loan &amp; Mortgage EMI Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('compound')" class="hover:text-terracotta">Compound Interest Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('margin')" class="hover:text-terracotta">Profit Margin &amp; ROAS Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('freelance')" class="hover:text-terracotta">Freelance Hourly Rate Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('invoice')" class="hover:text-terracotta">Printable Invoice Generator</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Writing &amp; Daily Tools</div>
+        <ul class="space-y-2 text-xs">
+          <li><button type="button" onclick="openToolWorkspace('wordcount')" class="hover:text-terracotta">Word &amp; Character Counter</button></li>
+          <li><button type="button" onclick="openToolWorkspace('prompt')" class="hover:text-terracotta">AI Prompt Generator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('case')" class="hover:text-terracotta">Text Case &amp; URL Slug Converter</button></li>
+          <li><button type="button" onclick="openToolWorkspace('bmi')" class="hover:text-terracotta">BMI &amp; Calorie Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('age')" class="hover:text-terracotta">Exact Age Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('percent')" class="hover:text-terracotta">Discount &amp; Percentage Calculator</button></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Company &amp; Legal</div>
+        <ul class="space-y-2 text-xs">
+          <li><button type="button" onclick="showLegalPage('about')" class="hover:text-terracotta">About Us &amp; Editorial Policy</button></li>
+          <li><button type="button" onclick="showLegalPage('contact')" class="hover:text-terracotta">Contact Us</button></li>
+          <li><button type="button" onclick="showLegalPage('privacy')" class="hover:text-terracotta">Privacy Policy</button></li>
+          <li><button type="button" onclick="showLegalPage('terms')" class="hover:text-terracotta">Terms &amp; Conditions</button></li>
+          <li><button type="button" onclick="showLegalPage('disclaimer')" class="hover:text-terracotta">Financial &amp; Health Disclaimer</button></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-stone-200 py-5 text-center text-xs text-stone-500">
+      &#169; 2026 <strong>WorkFlowora</strong> (https://www.workflowora.com). All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- =========================================================
+       APPLICATION ENGINE
+       ========================================================= -->
+  <script>
+    var TOOLS_DIRECTORY = [
+      {
+        id: 'loan',
+        cat: 'Money & Business',
+        icon: '🏦',
+        badge: 'High Demand',
+        title: 'Loan & Mortgage EMI Calculator',
+        desc: 'Calculate monthly EMI payments, total interest, and principal-to-interest ratio bar.'
+      },
+      {
+        id: 'compound',
+        cat: 'Money & Business',
+        icon: '🌱',
+        badge: 'Wealth',
+        title: 'Compound Interest Calculator',
+        desc: 'Project how your savings and monthly investments grow over time with compounding.'
+      },
+      {
+        id: 'margin',
+        cat: 'Money & Business',
+        icon: '📈',
+        badge: 'Business',
+        title: 'Profit Margin & Ad ROAS Calculator',
+        desc: 'Find net profit per order, gross margin percentage, and ad campaign ROAS.'
+      },
+      {
+        id: 'freelance',
+        cat: 'Money & Business',
+        icon: '💼',
+        badge: 'Income',
+        title: 'Freelance Hourly & Day Rate Calculator',
+        desc: 'Calculate what to charge clients per hour or per day to hit your income goal.'
+      },
+      {
+        id: 'invoice',
+        cat: 'Money & Business',
+        icon: '🧾',
+        badge: 'Printable PDF',
+        title: 'Instant Printable Invoice Generator',
+        desc: 'Create clean client invoices with automatic tax calculation and 1-click PDF print.'
+      },
+      {
+        id: 'wordcount',
+        cat: 'Writing & AI',
+        icon: '📝',
+        badge: 'Essential',
+        title: 'Word & Character Counter',
+        desc: 'Count words, characters, sentences, and reading time as you type or paste.'
+      },
+      {
+        id: 'prompt',
+        cat: 'Writing & AI',
+        icon: '✨',
+        badge: 'AI Tool',
+        title: 'One-Click AI Prompt Generator',
+        desc: 'Turn any simple request into a structured expert prompt for ChatGPT & Gemini.'
+      },
+      {
+        id: 'case',
+        cat: 'Writing & AI',
+        icon: '🔤',
+        badge: 'Formatting',
+        title: 'Text Case & SEO Slug Converter',
+        desc: 'Convert text between UPPERCASE, Title Case, and clean SEO-friendly URLs.'
+      },
+      {
+        id: 'bmi',
+        cat: 'Daily Life',
+        icon: '⚖️',
+        badge: 'Health',
+        title: 'BMI & Daily Calorie Calculator',
+        desc: 'Check your Body Mass Index (BMI) category and daily maintenance calorie burn.'
+      },
+      {
+        id: 'age',
+        cat: 'Daily Life',
+        icon: '📅',
+        badge: 'Daily Use',
+        title: 'Exact Age & Days Calculator',
+        desc: 'Find your exact age in years, months, days, and total days lived.'
+      },
+      {
+        id: 'percent',
+        cat: 'Daily Life',
+        icon: '🏷️',
+        badge: 'Quick Math',
+        title: 'Discount & Percentage Calculator',
+        desc: 'Calculate shopping discounts, tax percentages, and final prices effortlessly.'
+      },
+      {
+        id: 'password',
+        cat: 'Daily Life',
+        icon: '🔐',
+        badge: 'Security & QR',
+        title: 'Password & QR Code Generator',
+        desc: 'Generate unbreakable passwords and downloadable QR codes for any link.'
+      }
+    ];
+
+    var GUIDES_LIST = [
+      {
+        id: 'guide-1',
+        category: 'Money & Finance',
+        readTime: '6 min read',
+        title: 'How to Calculate Your True Loan EMI and Save Thousands in Interest',
+        summary: 'Learn how monthly compounding works on personal, car, and home loans—and how paying 1 extra EMI per year cuts your loan tenure.',
+        content: '<h2>Understanding How Loan EMI Works</h2><p>When you take a personal loan, car loan, or home mortgage, your monthly payment (Equated Monthly Installment or EMI) is split into two parts: <strong>interest charges</strong> and <strong>principal repayment</strong>. During the first few years of a loan, a large portion of your EMI goes toward interest.</p><h3>How to Reduce Your Total Interest Cost</h3><ul><li><strong>Compare APR before signing:</strong> Even a 0.5% lower interest rate can save thousands over a 5-year term.</li><li><strong>Make one extra payment per year:</strong> Paying just 5% extra toward your principal each year significantly shortens your loan duration.</li></ul><p>Use our free <strong>Loan &amp; Mortgage EMI Calculator</strong> on WorkFlowora to test different loan terms before you borrow.</p>'
+      },
+      {
+        id: 'guide-2',
+        category: 'AI & Productivity',
+        readTime: '7 min read',
+        title: 'The 4-Part Formula for Writing Perfect AI Prompts Every Time',
+        summary: 'Stop getting generic answers from ChatGPT and Gemini. Use Role + Task + Constraints + Output Format to get expert results in seconds.',
+        content: '<h2>Why One-Line Prompts Give Weak Results</h2><p>When you type a short request like <em>"Write a blog post about marketing,"</em> the AI has to guess your audience, tone, depth, and structure. By giving four clear instructions upfront, you get publish-ready work on the first try.</p><h3>The 4-Part Prompt Formula</h3><ol><li><strong>Role:</strong> Tell the AI who to act as (e.g., Senior Direct-Response Copywriter).</li><li><strong>Task:</strong> State the exact problem or deliverable you need.</li><li><strong>Constraints:</strong> Specify what to avoid (no fluff, include real numbers).</li><li><strong>Format:</strong> Ask for bullet points, a comparison table, or step-by-step instructions.</li></ol>'
+      },
+      {
+        id: 'guide-3',
+        category: 'Business & Freelancing',
+        readTime: '5 min read',
+        title: 'How to Price Your Freelance Services Without Underselling Yourself',
+        summary: 'Why most freelancers forget to account for non-billable hours, software costs, and taxes—and how to calculate your true floor rate.',
+        content: '<h2>The 25-Hour Billable Week Reality</h2><p>New freelancers often divide their target salary by 40 hours a week. In reality, at least 10 to 15 hours every week go toward client emails, proposals, invoicing, and marketing. Basing your rate on 25 billable hours per week ensures you hit your real income goals comfortably.</p>'
+      },
+      {
+        id: 'guide-4',
+        category: 'Money & Finance',
+        readTime: '6 min read',
+        title: 'The Power of Compound Interest: How $300/Month Grows Over 10 Years',
+        summary: 'Discover how consistent monthly investing and compound returns build long-term wealth faster than timing the market.',
+        content: '<h2>Why Time in the Market Beats Timing the Market</h2><p>Compound interest means your investment earnings begin generating their own earnings. Even a modest $300 monthly contribution at an 8% annual return compounds into over $65,000 in 10 years when paired with a $5,000 starting balance.</p>'
+      }
+    ];
+
+    var activeCategory = 'all';
+    var recentTools = [];
+
+    function renderToolCards() {
+      var grid = document.getElementById('tools-grid-container');
+      var query = (document.getElementById('tool-search-input').value || '').toLowerCase().trim();
+      grid.innerHTML = '';
+
+      for (var i = 0; i < TOOLS_DIRECTORY.length; i++) {
+        var t = TOOLS_DIRECTORY[i];
+        var matchCat = (activeCategory === 'all') || (t.cat === activeCategory);
+        var matchQuery = !query || t.title.toLowerCase().indexOf(query) !== -1 || t.desc.toLowerCase().indexOf(query) !== -1 || t.cat.toLowerCase().indexOf(query) !== -1;
+
+        if (!matchCat || !matchQuery) continue;
+
+        var card = document.createElement('div');
+        card.className = 'clean-card p-6 flex flex-col justify-between cursor-pointer';
+        (function(toolId) {
+          card.onclick = function() { openToolWorkspace(toolId); };
+        })(t.id);
+
+        card.innerHTML =
+          '<div>' +
+            '<div class="flex items-center justify-between mb-4">' +
+              '<span class="w-12 h-12 rounded-2xl bg-orange-50 border border-orange-200 flex items-center justify-center text-2xl">' + t.icon + '</span>' +
+              '<span class="px-2.5 py-1 rounded-full bg-stone-100 text-stone-700 font-bold text-[11px]">' + t.badge + '</span>' +
+            '</div>' +
+            '<h3 class="font-display font-bold text-lg text-charcoal mb-2">' + t.title + '</h3>' +
+            '<p class="text-xs text-stone-600 leading-relaxed mb-5">' + t.desc + '</p>' +
+          '</div>' +
+          '<div class="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-terracotta">' +
+            '<span>Open Free Tool</span>' +
+            '<span>&#8594;</span>' +
+          '</div>';
+        grid.appendChild(card);
+      }
+    }
+
+    function recordRecentTool(toolId) {
+      for (var i = 0; i < TOOLS_DIRECTORY.length; i++) {
+        if (TOOLS_DIRECTORY[i].id === toolId) {
+          recentTools = recentTools.filter(function(item) { return item.id !== toolId; });
+          recentTools.unshift(TOOLS_DIRECTORY[i]);
+          if (recentTools.length > 4) recentTools.pop();
+        }
+      }
+      var wrap = document.getElementById('recently-used-wrap');
+      var list = document.getElementById('recently-used-list');
+      if (recentTools.length > 0 && wrap && list) {
+        wrap.classList.remove('hidden');
+        list.innerHTML = '';
+        for (var j = 0; j < recentTools.length; j++) {
+          (function(item) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'px-2.5 py-1 rounded-lg bg-white border border-stone-300 text-charcoal font-semibold hover:border-terracotta transition';
+            b.textContent = item.icon + ' ' + item.title;
+            b.onclick = function() { openToolWorkspace(item.id); };
+            list.appendChild(b);
+          })(recentTools[j]);
+        }
+      }
+    }
+
+    function setCategoryFilter(cat) {
+      activeCategory = cat;
+      var btns = document.querySelectorAll('.cat-filter-btn');
+      for (var i = 0; i < btns.length; i++) {
+        var bCat = btns[i].getAttribute('data-cat');
+        if (bCat === cat) {
+          btns[i].className = 'cat-filter-btn cat-pill-active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition';
+        } else {
+          btns[i].className = 'cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition';
+        }
+      }
+      renderToolCards();
+    }
+
+    function filterToolCards() {
+      renderToolCards();
+    }
+
+    function showMainView(view) {
+      document.getElementById('main-home-view').classList.add('hidden');
+      document.getElementById('single-tool-view').classList.add('hidden');
+      document.getElementById('cms-studio-view').classList.add('hidden');
+      document.getElementById('article-reader-view').classList.add('hidden');
+      document.getElementById('legal-page-view').classList.add('hidden');
+
+      if (view === 'home') {
+        document.getElementById('main-home-view').classList.remove('hidden');
+      } else if (view === 'tool') {
+        document.getElementById('single-tool-view').classList.remove('hidden');
+      } else if (view === 'cms') {
+        document.getElementById('cms-studio-view').classList.remove('hidden');
+      } else if (view === 'article') {
+        document.getElementById('article-reader-view').classList.remove('hidden');
+      } else if (view === 'legal') {
+        document.getElementById('legal-page-view').classList.remove('hidden');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function scrollToSection(id) {
+      showMainView('home');
+      setTimeout(function() {
+        var el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 60);
+    }
+
+    function openToolWorkspace(toolId) {
+      recordRecentTool(toolId);
+      showMainView('tool');
+      var workspaces = document.querySelectorAll('.tool-workspace');
+      for (var i = 0; i < workspaces.length; i++) {
+        workspaces[i].classList.add('hidden');
+      }
+      var target = document.getElementById('workspace-' + toolId);
+      if (target) target.classList.remove('hidden');
+    }
+
+    // 1. Loan EMI with Visual Ratio Bar
+    function calcLoanEMI() {
+      var P = Math.max(1, parseFloat(document.getElementById('ln-amount').value) || 25000);
+      var annualRate = Math.max(0.1, parseFloat(document.getElementById('ln-rate').value) || 7.5);
+      var years = Math.max(1, parseFloat(document.getElementById('ln-years').value) || 5);
+
+      var r = (annualRate / 12) / 100;
+      var n = years * 12;
+      var emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+      var totalPay = emi * n;
+      var totalInt = totalPay - P;
+
+      var prinPct = Math.round((P / totalPay) * 100);
+      var intPct = 100 - prinPct;
+
+      document.getElementById('ln-emi-out').textContent = '$' + emi.toFixed(2) + ' / month';
+      document.getElementById('ln-interest-out').textContent = '$' + totalInt.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('ln-total-out').textContent = '$' + totalPay.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+      document.getElementById('ln-prin-pct-label').textContent = 'Principal: ' + prinPct + '%';
+      document.getElementById('ln-int-pct-label').textContent = 'Interest: ' + intPct + '%';
+      document.getElementById('ln-bar-principal').style.width = prinPct + '%';
+      document.getElementById('ln-bar-interest').style.width = intPct + '%';
+    }
+
+    // 2. Compound Interest
+    function calcCompound() {
+      var init = parseFloat(document.getElementById('ci-init').value) || 0;
+      var monthly = parseFloat(document.getElementById('ci-monthly').value) || 0;
+      var rate = (parseFloat(document.getElementById('ci-rate').value) || 8) / 100;
+      var years = Math.max(1, parseFloat(document.getElementById('ci-years').value) || 10);
+
+      var months = years * 12;
+      var rMonth = rate / 12;
+      var future = init * Math.pow(1 + rMonth, months);
+      if (rMonth > 0) {
+        future += monthly * ((Math.pow(1 + rMonth, months) - 1) / rMonth);
+      } else {
+        future += monthly * months;
+      }
+      var totalContrib = init + (monthly * months);
+      var profit = future - totalContrib;
+
+      document.getElementById('ci-future-out').textContent = '$' + future.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('ci-contrib-out').textContent = '$' + totalContrib.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+      document.getElementById('ci-profit-out').textContent = '+$' + profit.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    }
+
+    // 3. Margin & ROAS
+    function calcMarginROAS() {
+      var cost = parseFloat(document.getElementById('mg-cost').value) || 0;
+      var price = Math.max(1, parseFloat(document.getElementById('mg-price').value) || 95);
+      var ad = Math.max(0.01, parseFloat(document.getElementById('mg-ad').value) || 20);
+
+      var netProfit = price - cost - ad;
+      var marginPct = (netProfit / price) * 100;
+      var roas = price / ad;
+
+      document.getElementById('mg-profit-out').textContent = '$' + netProfit.toFixed(2);
+      document.getElementById('mg-margin-out').textContent = marginPct.toFixed(2) + '%';
+      document.getElementById('mg-roas-out').textContent = roas.toFixed(2) + 'x ROAS';
+    }
+
+    // 4. Freelance Rate
+    function calcFreelanceRate() {
+      var goal = parseFloat(document.getElementById('fr-goal').value) || 48000;
+      var hrs = Math.max(1, parseFloat(document.getElementById('fr-hrs').value) || 25);
+      var exp = parseFloat(document.getElementById('fr-cost').value) || 4000;
+
+      var totalHours = hrs * 48;
+      var hourly = Math.ceil((goal + exp) / totalHours);
+      var dayRate = hourly * 6;
+      var weekly = hourly * hrs;
+
+      document.getElementById('fr-hourly-out').textContent = '$' + hourly + ' / hour';
+      document.getElementById('fr-day-out').textContent = '$' + dayRate.toLocaleString() + ' / day';
+      document.getElementById('fr-week-out').textContent = '$' + weekly.toLocaleString() + ' / week';
+    }
+
+    // 5. Printable Invoice
+    function calcInvoice() {
+      var from = document.getElementById('inv-from').value || 'Your Business';
+      var to = document.getElementById('inv-to').value || 'Client';
+      var taxRate = parseFloat(document.getElementById('inv-tax').value) || 0;
+      var qty = parseFloat(document.getElementById('inv-qty').value) || 1;
+      var rate = parseFloat(document.getElementById('inv-rate').value) || 0;
+
+      var sub = qty * rate;
+      var tax = sub * (taxRate / 100);
+      var total = sub + tax;
+
+      document.getElementById('inv-from-out').textContent = from;
+      document.getElementById('inv-to-out').textContent = to;
+      document.getElementById('inv-sub-out').textContent = '$' + sub.toFixed(2);
+      document.getElementById('inv-tax-out').textContent = '$' + tax.toFixed(2);
+      document.getElementById('inv-total-out').textContent = '$' + total.toFixed(2);
+    }
+
+    // 6. Word Counter
+    function calcWordCount() {
+      var txt = document.getElementById('wc-input').value || '';
+      var chars = txt.length;
+      var words = txt.trim() ? txt.trim().split(/\s+/).length : 0;
+      var sents = txt.trim() ? txt.split(/[.!?]+/).filter(Boolean).length : 0;
+      var sec = Math.max(1, Math.ceil((words / 200) * 60));
+
+      document.getElementById('wc-words').textContent = words.toLocaleString();
+      document.getElementById('wc-chars').textContent = chars.toLocaleString();
+      document.getElementById('wc-sents').textContent = sents.toLocaleString();
+      document.getElementById('wc-time').textContent = sec >= 60 ? Math.ceil(sec / 60) + ' min' : sec + ' sec';
+    }
+
+    // 7. AI Prompt Maker
+    function generateCleanPrompt() {
+      var role = document.getElementById('pr-role').value;
+      var goal = document.getElementById('pr-goal').value;
+      var tone = document.getElementById('pr-tone').value;
+
+      var out =
+        "Act as a world-class " + role + ".\n\n" +
+        "YOUR TASK:\n" + goal + "\n\n" +
+        "STYLE & OUTPUT REQUIREMENTS:\n- " + tone + "\n- Use clear headings, concrete examples, and step-by-step instructions.\n- Avoid generic filler and verify all recommendations before responding.";
+      document.getElementById('pr-result').textContent = out;
+    }
+
+    // 8. Case Converter
+    function convertCaseMode(mode) {
+      var el = document.getElementById('cs-input');
+      var v = el.value || '';
+      if (mode === 'upper') el.value = v.toUpperCase();
+      if (mode === 'lower') el.value = v.toLowerCase();
+      if (mode === 'title') {
+        el.value = v.toLowerCase().replace(/\b\w/g, function(c) { return c.toUpperCase(); });
+      }
+      if (mode === 'slug') {
+        el.value = v.toLowerCase().trim().replace(/[^a-z0-9\s-]/g, '').replace(/\s+/g, '-');
+      }
+      if (mode === 'clean') {
+        el.value = v.replace(/\s+/g, ' ').trim();
+      }
+      showCleanToast('Text updated!');
+    }
+
+    // 9. BMI Calculator
+    function calcBMI() {
+      var w = Math.max(10, parseFloat(document.getElementById('bm-weight').value) || 70);
+      var hCm = Math.max(50, parseFloat(document.getElementById('bm-height').value) || 172);
+      var hM = hCm / 100;
+      var bmi = w / (hM * hM);
+      var cat = 'Normal Weight';
+      if (bmi < 18.5) cat = 'Underweight';
+      else if (bmi >= 25 && bmi < 30) cat = 'Overweight';
+      else if (bmi >= 30) cat = 'Obese';
+
+      var cal = Math.round(w * 30.5);
+      document.getElementById('bm-score-out').textContent = bmi.toFixed(1) + ' — ' + cat;
+      document.getElementById('bm-cal-out').textContent = 'Estimated Daily Maintenance Calories: ~' + cal.toLocaleString() + ' kcal/day';
+    }
+
+    // 10. Exact Age
+    function calcExactAge() {
+      var dobStr = document.getElementById('ag-dob').value;
+      if (!dobStr) return;
+      var dob = new Date(dobStr);
+      var now = new Date();
+      var diffMs = now - dob;
+      if (diffMs < 0) return;
+
+      var totalDays = Math.floor(diffMs / (1000 * 60 * 60 * 24));
+      var years = now.getFullYear() - dob.getFullYear();
+      var months = now.getMonth() - dob.getMonth();
+      var days = now.getDate() - dob.getDate();
+
+      if (days < 0) {
+        months--;
+        days += 30;
+      }
+      if (months < 0) {
+        years--;
+        months += 12;
+      }
+
+      document.getElementById('ag-main-out').textContent = years + ' Years, ' + months + ' Months, ' + days + ' Days';
+      document.getElementById('ag-days-out').textContent = 'Total Days Lived: ' + totalDays.toLocaleString() + ' days';
+    }
+
+    // 11. Percentage Calculator
+    function calcPercentage() {
+      var pct = parseFloat(document.getElementById('pc-pct').value) || 0;
+      var val = parseFloat(document.getElementById('pc-val').value) || 0;
+      var part = (pct / 100) * val;
+      var finalPrice = val - part;
+
+      document.getElementById('pc-part-out').textContent = '$' + part.toFixed(2);
+      document.getElementById('pc-final-out').textContent = '$' + finalPrice.toFixed(2);
+    }
+
+    // 12. Strong Password & QR Code
+    function generateStrongPassword() {
+      var len = parseInt(document.getElementById('pw-len').value, 10) || 16;
+      document.getElementById('pw-len-val').textContent = len;
+      var chars = 'ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%^&*';
+      var out = '';
+      for (var i = 0; i < len; i++) {
+        out += chars.charAt(Math.floor(Math.random() * chars.length));
+      }
+      document.getElementById('pw-output').textContent = out;
+    }
+
+    function updateQRPreview() {
+      var v = (document.getElementById('qr-text').value || 'https://www.workflowora.com').trim();
+      document.getElementById('qr-img').src = 'https://api.qrserver.com/v1/create-qr-code/?size=140x140&data=' + encodeURIComponent(v);
+    }
+
+    // Daily Blog Post Publisher
+    function publishNewPostLive() {
+      var title = (document.getElementById('cms-title').value || '').trim();
+      var cat = document.getElementById('cms-cat').value;
+      var summary = (document.getElementById('cms-summary').value || '').trim();
+      var body = (document.getElementById('cms-body').value || '').trim();
+
+      if (!title || !body) {
+        showCleanToast('Please enter both an Article Title and Content!');
+        return;
+      }
+
+      var newId = 'guide-' + Date.now();
+      GUIDES_LIST.unshift({
+        id: newId,
+        category: cat,
+        readTime: '5 min read',
+        title: title,
+        summary: summary || body.substring(0, 110) + '...',
+        content: '<p>' + body.replace(/\n\n/g, '</p><p>') + '</p>'
+      });
+
+      renderGuidesCards();
+      showCleanToast('Blog Post Published Live!');
+      openGuideArticle(newId);
+    }
+
+    function copyElementText(id, msg) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      var text = el.value !== undefined && el.tagName === 'TEXTAREA' ? el.value : el.textContent;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).catch(function() {});
+      }
+      showCleanToast(msg || 'Copied to clipboard!');
+    }
+
+    function showCleanToast(msg) {
+      var t = document.getElementById('clean-toast');
+      t.textContent = msg;
+      t.classList.remove('hidden');
+      setTimeout(function() { t.classList.add('hidden'); }, 2500);
+    }
+
+    function renderGuidesCards() {
+      var grid = document.getElementById('guides-cards-grid');
+      grid.innerHTML = '';
+      for (var i = 0; i < GUIDES_LIST.length; i++) {
+        var g = GUIDES_LIST[i];
+        var card = document.createElement('div');
+        card.className = 'clean-card p-6 flex flex-col justify-between';
+        card.innerHTML =
+          '<div>' +
+            '<div class="flex items-center justify-between text-xs mb-3">' +
+              '<span class="px-2.5 py-1 rounded-full bg-orange-100 text-terracottaDark font-bold">' + g.category + '</span>' +
+              '<span class="text-stone-500 font-semibold">' + g.readTime + '</span>' +
+            '</div>' +
+            '<h3 class="font-display font-bold text-lg text-charcoal mb-2">' + g.title + '</h3>' +
+            '<p class="text-xs text-stone-600 leading-relaxed mb-4">' + g.summary + '</p>' +
+          '</div>' +
+          '<button type="button" onclick="openGuideArticle(\'' + g.id + '\')" class="text-left text-xs font-bold text-terracotta hover:underline">Read Full Guide &#8594;</button>';
+        grid.appendChild(card);
+      }
+    }
+
+    function openGuideArticle(guideId) {
+      showMainView('article');
+      for (var i = 0; i < GUIDES_LIST.length; i++) {
+        if (GUIDES_LIST[i].id === guideId) {
+          var g = GUIDES_LIST[i];
+          document.getElementById('article-reader-body').innerHTML =
+            '<span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">' + g.category + ' • ' + g.readTime + '</span>' +
+            '<h1 class="font-display font-extrabold text-2xl sm:text-4xl text-charcoal mt-3 mb-4">' + g.title + '</h1>' +
+            '<div class="space-y-4 text-base leading-relaxed text-stone-700">' + g.content + '</div>';
+        }
+      }
+    }
+
+    function submitContactMessage() {
+      var name = (document.getElementById('cf-name').value || '').trim();
+      var email = (document.getElementById('cf-email').value || '').trim();
+      var msg = (document.getElementById('cf-msg').value || '').trim();
+      if (!name || !email || !msg) {
+        showCleanToast('Please fill in your name, email, and message.');
+        return;
+      }
+      document.getElementById('cf-name').value = '';
+      document.getElementById('cf-email').value = '';
+      document.getElementById('cf-msg').value = '';
+      showCleanToast('Thank you! Your message has been received by the WorkFlowora team.');
+    }
+
+    function acceptCookies(choice) {
+      try { localStorage.setItem('wf_cookie_consent', choice); } catch (e) {}
+      var b = document.getElementById('cookie-consent-banner');
+      if (b) b.classList.add('hidden');
+      showCleanToast('Cookie preferences saved.');
+    }
+
+    function showLegalPage(type) {
+      showMainView('legal');
+      var box = document.getElementById('legal-content-box');
+      if (type === 'about') {
+        box.innerHTML =
+          '<span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">ABOUT &amp; EDITORIAL STANDARDS</span>' +
+          '<h1 class="font-display font-extrabold text-3xl text-charcoal mt-2 mb-4">About WorkFlowora</h1>' +
+          '<p>Welcome to <strong>WorkFlowora</strong> (<code>https://www.workflowora.com</code>), an independent utility platform providing 100% free online financial calculators, text formatting tools, AI prompt generators, and step-by-step productivity guides.</p>' +
+          '<h2 class="font-display font-bold text-xl text-charcoal mt-6 mb-2">Our Mission &amp; Value Proposition</h2>' +
+          '<p>Millions of professionals, students, freelancers, and small business owners waste valuable time navigating paywalled apps or cluttered spreadsheets for simple daily calculations. WorkFlowora was built to offer instant, browser-based tools with zero registration gates and complete client-side privacy.</p>' +
+          '<h2 class="font-display font-bold text-xl text-charcoal mt-6 mb-2">Editorial &amp; Formula Accuracy Policy</h2>' +
+          '<ul class="list-disc pl-6 space-y-2">' +
+            '<li><strong>Verified Mathematical Models:</strong> Every financial, loan EMI, compound interest, profit margin, and health calculator is tested against standard industry equations.</li>' +
+            '<li><strong>100% Client-Side Processing:</strong> Numbers, invoices, and text entered into our calculators are processed directly inside your browser and are never transmitted to or stored on external servers.</li>' +
+            '<li><strong>Continuous Updates:</strong> Our editorial and engineering team regularly audits and updates our guides and utilities based on user feedback.</li>' +
+          '</ul>';
+      } else if (type === 'contact') {
+        box.innerHTML =
+          '<span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">SUPPORT &amp; FEEDBACK</span>' +
+          '<h1 class="font-display font-extrabold text-3xl text-charcoal mt-2 mb-3">Contact Us</h1>' +
+          '<p>Have a question about one of our calculators, spotted an issue, or want to request a new free tool? Send us a message using the form below or email our editorial desk at <strong>contact@workflowora.com</strong>. We respond within 24–48 business hours.</p>' +
+          '<div class="mt-6 p-6 rounded-2xl bg-stone-50 border border-stone-200 space-y-4">' +
+            '<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">' +
+              '<div><label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="cf-name">Your Name</label><input id="cf-name" type="text" placeholder="Enter your full name" class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm" /></div>' +
+              '<div><label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="cf-email">Your Email Address</label><input id="cf-email" type="email" placeholder="you@example.com" class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm" /></div>' +
+            '</div>' +
+            '<div><label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="cf-msg">Message or Tool Request</label><textarea id="cf-msg" rows="4" placeholder="How can we help you?" class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm"></textarea></div>' +
+            '<button type="button" onclick="submitContactMessage()" class="btn-coral px-6 py-3 text-sm">Send Message</button>' +
+          '</div>';
+      } else if (type === 'privacy') {
+        box.innerHTML =
+          '<span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">LEGAL &amp; ADSENSE COMPLIANCE</span>' +
+          '<h1 class="font-display font-extrabold text-3xl text-charcoal mt-2 mb-3">Privacy Policy &amp; Cookie Disclosure</h1>' +
+          '<p class="text-xs text-stone-500">Last Updated: November 1, 2026</p>' +
+          '<p>At <strong>WorkFlowora</strong> (accessible from <code>https://www.workflowora.com</code>), protecting the privacy of our visitors is one of our highest priorities. This Privacy Policy document details the types of information collected and how we safeguard your data.</p>' +
+          '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">1. Client-Side Calculator Data Processing</h2>' +
+          '<p>All interactive tools on WorkFlowora—including our Loan EMI Calculator, Compound Interest Calculator, Invoice Generator, Word Counter, and Password Generator—execute 100% locally inside your web browser using JavaScript. We do not collect, transmit, or store the financial figures, personal dates, or text documents you enter into these utilities.</p>' +
+          '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">2. Google DoubleClick DART Cookie &amp; AdSense</h2>' +
+          '<p>Google is a third-party vendor on our website. It uses cookies, known as DART cookies, to serve advertisements to our site visitors based upon their visit to <code>www.workflowora.com</code> and other sites on the internet. Visitors may choose to decline the use of DART cookies by visiting the Google Ad and Content Network Privacy Policy at: <code>https://policies.google.com/technologies/ads</code></p>' +
+          '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">3. Log Files &amp; Analytics</h2>' +
+          '<p>WorkFlowora follows a standard procedure of using server log files. The information collected includes Internet Protocol (IP) addresses, browser type, date/time stamp, and referring pages. This data is not linked to personally identifiable information and is used solely to analyze trends and administer the site.</p>' +
+          '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">4. GDPR &amp; CCPA Data Protection Rights</h2>' +
+          '<p>Visitors from the European Economic Area (EEA), the United Kingdom, and California have the right to access, rectify, erase, or restrict the processing of their personal data, and to opt out of personalized advertising cookies at any time using our Cookie Consent notice or browser settings.</p>';
+      } else if (type === 'disclaimer') {
+        box.innerHTML =
+          '<span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">IMPORTANT DISCLOSURE</span>' +
+          '<h1 class="font-display font-extrabold text-3xl text-charcoal mt-2 mb-3">Financial, Legal &amp; Health Disclaimer</h1>' +
+          '<p>The calculators, AI prompt generators, and educational articles published on <strong>WorkFlowora</strong> (<code>https://www.workflowora.com</code>) are intended strictly for general informational and educational purposes.</p>' +
+          '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">Not Certified Financial or Legal Advice</h2>' +
+          '<p>Results produced by our Loan &amp; Mortgage EMI Calculator, Compound Interest Calculator, Profit Margin Calculator, and Freelance Rate Calculator are mathematical estimates based on user inputs. They do not constitute certified financial, tax, investment, or legal advice. Always consult a qualified financial advisor or lending institution before making binding financial decisions.</p>' +
+          '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">Not Medical Advice</h2>' +
+          '<p>Our BMI &amp; Daily Calorie Calculator provides general wellness estimates based on standard formulas and should never replace professional medical advice, diagnosis, or treatment from a qualified healthcare provider.</p>';
+      } else {
+        box.innerHTML =
+          '<span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">USER AGREEMENT</span>' +
+          '<h1 class="font-display font-extrabold text-3xl text-charcoal mt-2 mb-3">Terms and Conditions</h1>' +
+          '<p class="text-xs text-stone-500">Last Updated: November 1, 2026</p>' +
+          '<p>By accessing and using <strong>WorkFlowora</strong> (<code>https://www.workflowora.com</code>), you accept and agree to be bound by these Terms and Conditions.</p>' +
+          '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">1. License to Use Free Tools</h2>' +
+          '<p>You are granted a free, non-exclusive license to use our online calculators, invoice generators, and text utilities for personal, academic, or commercial workflow purposes. You may not scrape, clone, or redistribute our source code without written permission.</p>' +
+          '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">2. Accuracy of Materials &amp; Limitation of Liability</h2>' +
+          '<p>All tools and guides on WorkFlowora are provided on an "as-is" basis. WorkFlowora makes no warranties regarding the completeness or reliability of calculation outputs and shall not be held liable for any damages arising from the use or inability to use the materials on this website.</p>';
+      }
+    }
+
+    window.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'a') {
+        e.preventDefault();
+        showMainView('cms');
+      }
+    });
+    window.addEventListener('hashchange', function() {
+      if (window.location.hash === '#admin') showMainView('cms');
+    });
+    window.addEventListener('DOMContentLoaded', function() {
+      if (window.location.hash === '#admin') showMainView('cms');
+      renderToolCards();
+      renderGuidesCards();
+      calcLoanEMI();
+      calcCompound();
+      calcMarginROAS();
+      calcFreelanceRate();
+      calcInvoice();
+      calcWordCount();
+      generateCleanPrompt();
+      calcBMI();
+      calcExactAge();
+      calcPercentage();
+      try {
+        if (!localStorage.getItem('wf_cookie_consent')) {
+          document.getElementById('cookie-consent-banner').classList.remove('hidden');
+        }
+      } catch (e) {}
+    });
+  </script>
+</body>
+</html>
