@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>WorkFlowora — Free Online Calculators, Text Utilities &amp; Smart Work Tools</title>
-  <meta name="description" content="WorkFlowora offers 12+ free online financial calculators, text utilities, AI prompt builders, invoice &amp; QR tools, and practical guides. Zero signup required." />
+  <meta name="description" content="WorkFlowora offers 16+ free online financial calculators, text utilities, AI prompt builders, invoice &amp; QR tools, and practical guides. Zero signup required." />
   <!-- Custom SVG Brand Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23EA580C'/%3E%3Cpath d='M14 20L23 44L32 25L41 44L50 20' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='14' r='3.5' fill='%23FDE047'/%3E%3C/svg%3E" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -88,7 +88,7 @@
     "@type": "WebSite",
     "name": "WorkFlowora",
     "url": "https://www.workflowora.com/",
-    "description": "12+ Free Online Financial Calculators, Text Utilities, AI Prompt Builders, and Practical Productivity Guides."
+    "description": "16+ Free Online Financial Calculators, Text Utilities, AI Prompt Builders, and Practical Productivity Guides."
   }
   </script>
 </head>
@@ -195,16 +195,16 @@
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
           <button type="button" data-cat="all" onclick="setCategoryFilter('all')" class="cat-filter-btn cat-pill-active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition">
-            All Tools (8)
+            All Tools (<span id="count-cat-all">16</span>)
           </button>
           <button type="button" data-cat="Money &amp; Business" onclick="setCategoryFilter('Money & Business')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#128176; Money &amp; Business (3)
+            &#128176; Money &amp; Business (<span id="count-cat-money">8</span>)
           </button>
           <button type="button" data-cat="Writing &amp; AI" onclick="setCategoryFilter('Writing & AI')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#9997;&#65039; Writing &amp; AI (3)
+            &#9997;&#65039; Writing &amp; AI (<span id="count-cat-writing">3</span>)
           </button>
           <button type="button" data-cat="Daily Life" onclick="setCategoryFilter('Daily Life')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#128197; Daily Life &amp; Math (2)
+            &#128197; Daily Life &amp; Math (<span id="count-cat-daily">5</span>)
           </button>
         </div>
       </section>
@@ -312,6 +312,10 @@
           <button type="button" onclick="openToolWorkspace('age')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Age Calculator</button>
           <button type="button" onclick="openToolWorkspace('percent')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Percentage</button>
           <button type="button" onclick="openToolWorkspace('password')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Password &amp; QR</button>
+          <button type="button" onclick="openToolWorkspace('cacltv')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">LTV:CAC Ratio</button>
+          <button type="button" onclick="openToolWorkspace('dti')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">DTI Mortgage</button>
+          <button type="button" onclick="openToolWorkspace('creditpayoff')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Credit Card Payoff</button>
+          <button type="button" onclick="openToolWorkspace('salary')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Salary &amp; 50/30/20</button>
         </div>
       </div>
 
@@ -769,6 +773,236 @@
         </div>
       </div>
 
+
+      <!-- 13. SAAS LTV:CAC & PAYBACK PERIOD CALCULATOR -->
+      <div id="workspace-cacltv" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">SAAS &amp; UNIT ECONOMICS</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Customer Acquisition Cost (CAC) &amp; LTV Ratio Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Calculate your Customer Lifetime Value (LTV), LTV:CAC Golden Ratio, and CAC Payback Period in months.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="ltv-arpu">Monthly Revenue / Customer (ARPU $)</label>
+                <input id="ltv-arpu" type="number" value="120" min="1" oninput="calcCACLTV()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="ltv-margin">Gross Profit Margin (%)</label>
+                <input id="ltv-margin" type="number" value="75" min="1" max="100" oninput="calcCACLTV()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="ltv-churn">Monthly Customer Churn (%)</label>
+                <input id="ltv-churn" type="number" value="3.5" min="0.1" max="100" step="0.1" oninput="calcCACLTV()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="ltv-cac">Customer Acquisition Cost (CAC $)</label>
+                <input id="ltv-cac" type="number" value="650" min="1" oninput="calcCACLTV()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">LTV : CAC Ratio</span>
+              <span id="ltv-status-badge" class="px-3 py-1 rounded-full bg-green-600 text-white text-xs font-bold">Healthy Scaling (3.0x+)</span>
+            </div>
+            <div id="ltv-ratio-out" class="font-display font-extrabold text-3xl sm:text-4xl text-amber-300">3.96 : 1</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div>
+                <span class="text-stone-400 block">Customer LTV</span>
+                <strong id="ltv-val-out" class="text-base text-white">$2,571</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">CAC Payback</span>
+                <strong id="ltv-payback-out" class="text-base text-emerald-400">7.2 Months</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Avg. Lifespan</span>
+                <strong id="ltv-life-out" class="text-base text-white">28.6 Months</strong>
+              </div>
+            </div>
+            <div class="space-y-1 pt-2">
+              <div class="flex justify-between text-[11px] text-stone-300">
+                <span>CAC Cost Share</span>
+                <span>Net LTV Profit Multiple</span>
+              </div>
+              <div class="w-full h-3 rounded-full bg-stone-700 overflow-hidden flex">
+                <div id="ltv-bar-cac" class="bg-orange-500 h-full" style="width: 25%"></div>
+                <div id="ltv-bar-profit" class="bg-emerald-500 h-full" style="width: 75%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. DEBT-TO-INCOME (DTI) & MORTGAGE QUALIFIER CALCULATOR -->
+      <div id="workspace-dti" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">MORTGAGE &amp; LOAN UNDERWRITING</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Debt-to-Income (DTI) Ratio &amp; 28/36 Mortgage Qualifier</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Check your Front-End Housing DTI and Back-End Total DTI against standard US mortgage approval limits.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 space-y-4">
+            <div>
+              <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="dti-income">Gross Monthly Income (Pre-Tax $)</label>
+              <input id="dti-income" type="number" value="8500" min="100" oninput="calcDTI()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="dti-housing">Monthly Housing / Mortgage ($)</label>
+                <input id="dti-housing" type="number" value="2100" min="0" oninput="calcDTI()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="dti-other">Other Monthly Debt Minimums ($)</label>
+                <input id="dti-other" type="number" value="650" min="0" oninput="calcDTI()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Total Back-End DTI Ratio</span>
+              <span id="dti-status-badge" class="px-3 py-1 rounded-full bg-green-600 text-white text-xs font-bold">28/36 Rule Qualified</span>
+            </div>
+            <div id="dti-back-out" class="font-display font-extrabold text-3xl sm:text-4xl text-amber-300">32.4% Total DTI</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div>
+                <span class="text-stone-400 block">Front-End Housing</span>
+                <strong id="dti-front-out" class="text-base text-white">24.7%</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Max 28% Housing</span>
+                <strong id="dti-max-house" class="text-base text-emerald-400">$2,380/mo</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Max 36% Total Debt</span>
+                <strong id="dti-max-total" class="text-base text-white">$3,060/mo</strong>
+              </div>
+            </div>
+            <div class="space-y-1 pt-2">
+              <div class="flex justify-between text-[11px] text-stone-300">
+                <span id="dti-bar-label">Debt Load: 32.4% of Gross Income</span>
+                <span>Safe Limit: 36%</span>
+              </div>
+              <div class="w-full h-3 rounded-full bg-stone-700 overflow-hidden">
+                <div id="dti-bar-fill" class="bg-emerald-500 h-full" style="width: 32.4%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. CREDIT CARD PAYOFF & CONSOLIDATION CALCULATOR -->
+      <div id="workspace-creditpayoff" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">DEBT ELIMINATION &amp; APR SAVER</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Credit Card Payoff &amp; Loan Consolidation Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">See how long it takes to pay off revolving credit card debt and how much interest you save by lowering your APR.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="cc-bal">Credit Card Balance ($)</label>
+                <input id="cc-bal" type="number" value="8500" min="50" oninput="calcCreditPayoff()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="cc-apr">Credit Card APR (%)</label>
+                <input id="cc-apr" type="number" value="22.9" min="1" max="50" step="0.1" oninput="calcCreditPayoff()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="cc-pay">Planned Monthly Payment ($)</label>
+                <input id="cc-pay" type="number" value="280" min="15" oninput="calcCreditPayoff()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="cc-loan-apr">Consolidation Loan APR (%)</label>
+                <input id="cc-loan-apr" type="number" value="10.5" min="1" max="35" step="0.1" oninput="calcCreditPayoff()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="text-xs font-bold uppercase tracking-wider text-stone-400">Payoff Timeline &amp; Interest Saved</div>
+            <div id="cc-months-out" class="font-display font-extrabold text-3xl sm:text-4xl text-amber-300">45 Months (3.8 Yrs)</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div>
+                <span class="text-stone-400 block">Card Interest</span>
+                <strong id="cc-int-out" class="text-base text-orange-400">$4,082</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Loan Interest (10.5%)</span>
+                <strong id="cc-loan-int-out" class="text-base text-white">$1,368</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Consolidation Savings</span>
+                <strong id="cc-saved-out" class="text-base text-emerald-400">Save $2,714!</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. SALARY TO HOURLY & 50/30/20 BUDGET PLANNER -->
+      <div id="workspace-salary" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">PAYCHECK &amp; MONTHLY BUDGET</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Salary to Hourly Paycheck &amp; 50/30/20 Budget Planner</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Convert annual salary into hourly/biweekly pay and automatically split net take-home pay using the 50/30/20 rule.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="sal-annual">Annual Gross Salary ($)</label>
+                <input id="sal-annual" type="number" value="75000" min="1000" oninput="calcSalaryBudget()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="sal-hours">Hours Worked / Week</label>
+                <input id="sal-hours" type="number" value="40" min="1" max="100" oninput="calcSalaryBudget()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="sal-tax">Est. Effective Tax (%)</label>
+                <input id="sal-tax" type="number" value="22" min="0" max="60" oninput="calcSalaryBudget()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Net Monthly Take-Home Pay</span>
+              <span id="sal-hourly-out" class="px-3 py-1 rounded-full bg-stone-800 text-amber-300 text-xs font-bold">$36.06 / hr gross</span>
+            </div>
+            <div id="sal-net-mo-out" class="font-display font-extrabold text-3xl sm:text-4xl text-emerald-400">$4,875.00 / month</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div>
+                <span class="text-stone-400 block">50% Essential Needs</span>
+                <strong id="sal-needs-out" class="text-base text-white">$2,438/mo</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">30% Lifestyle Wants</span>
+                <strong id="sal-wants-out" class="text-base text-amber-300">$1,463/mo</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">20% Savings &amp; Debt</span>
+                <strong id="sal-save-out" class="text-base text-emerald-400">$975/mo</strong>
+              </div>
+            </div>
+            <div class="w-full h-3 rounded-full bg-stone-700 overflow-hidden flex">
+              <div class="bg-blue-500 h-full" style="width: 50%"></div>
+              <div class="bg-amber-400 h-full" style="width: 30%"></div>
+              <div class="bg-emerald-500 h-full" style="width: 20%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- SEO & ADSENSE VALUE BOOSTER: HOW IT WORKS & FAQ ACCORDION BELOW EVERY TOOL -->
       <div class="no-print clean-card p-6 sm:p-8 space-y-4 bg-white">
         <span class="text-xs font-bold uppercase tracking-wider text-terracotta">HELPFUL GUIDE &amp; FAQ</span>
@@ -1039,6 +1273,38 @@
         badge: 'Security & QR',
         title: 'Password & QR Code Generator',
         desc: 'Generate unbreakable passwords and downloadable QR codes for any link.'
+      },
+      {
+        id: 'cacltv',
+        cat: 'Money & Business',
+        icon: '🧲',
+        badge: 'SaaS & Growth',
+        title: 'SaaS LTV:CAC & Payback Calculator',
+        desc: 'Calculate Customer Lifetime Value (LTV), LTV:CAC ratio, and payback period in months.'
+      },
+      {
+        id: 'dti',
+        cat: 'Money & Business',
+        icon: '🏠',
+        badge: '28/36 Rule',
+        title: 'Debt-to-Income (DTI) Mortgage Calculator',
+        desc: 'Check Front-End and Back-End DTI ratios against US mortgage underwriting limits.'
+      },
+      {
+        id: 'creditpayoff',
+        cat: 'Money & Business',
+        icon: '💳',
+        badge: 'Debt Payoff',
+        title: 'Credit Card Payoff & Consolidation Calculator',
+        desc: 'See your debt-free payoff timeline and interest saved by consolidating high-APR cards.'
+      },
+      {
+        id: 'salary',
+        cat: 'Daily Life',
+        icon: '💵',
+        badge: '50/30/20 Rule',
+        title: 'Salary to Hourly & 50/30/20 Budget Planner',
+        desc: 'Convert annual salary to hourly pay and split take-home income into 50/30/20 buckets.'
       }
     ];
 
@@ -1879,6 +2145,129 @@
         openToolWorkspace(requestedTool);
       }
     });
+    
+    function updateCategoryFilterCounts() {
+      var moneyCount = 0, writingCount = 0, dailyCount = 0;
+      for (var i = 0; i < TOOLS_DIRECTORY.length; i++) {
+        if (TOOLS_DIRECTORY[i].cat === 'Money & Business') moneyCount++;
+        else if (TOOLS_DIRECTORY[i].cat === 'Writing & AI') writingCount++;
+        else if (TOOLS_DIRECTORY[i].cat === 'Daily Life') dailyCount++;
+      }
+      var elAll = document.getElementById('count-cat-all');
+      var elMoney = document.getElementById('count-cat-money');
+      var elWriting = document.getElementById('count-cat-writing');
+      var elDaily = document.getElementById('count-cat-daily');
+      if (elAll) elAll.textContent = TOOLS_DIRECTORY.length;
+      if (elMoney) elMoney.textContent = moneyCount;
+      if (elWriting) elWriting.textContent = writingCount;
+      if (elDaily) elDaily.textContent = dailyCount;
+    }
+
+    function calcCACLTV() {
+      var arpu = Math.max(1, parseFloat(document.getElementById('ltv-arpu').value) || 120);
+      var margin = Math.max(1, Math.min(100, parseFloat(document.getElementById('ltv-margin').value) || 75)) / 100;
+      var churn = Math.max(0.1, Math.min(100, parseFloat(document.getElementById('ltv-churn').value) || 3.5)) / 100;
+      var cac = Math.max(1, parseFloat(document.getElementById('ltv-cac').value) || 650);
+
+      var lifespanMonths = 1 / churn;
+      var monthlyGrossProfit = arpu * margin;
+      var ltv = monthlyGrossProfit * lifespanMonths;
+      var ratio = ltv / cac;
+      var paybackMonths = cac / monthlyGrossProfit;
+
+      document.getElementById('ltv-ratio-out').textContent = ratio.toFixed(2) + ' : 1';
+      document.getElementById('ltv-val-out').textContent = '$' + Math.round(ltv).toLocaleString();
+      document.getElementById('ltv-payback-out').textContent = paybackMonths.toFixed(1) + ' Months';
+      document.getElementById('ltv-life-out').textContent = lifespanMonths.toFixed(1) + ' Months';
+
+      var badge = document.getElementById('ltv-status-badge');
+      if (ratio < 1.8) {
+        badge.textContent = 'Under 2:1 (High CAC Risk)';
+        badge.className = 'px-3 py-1 rounded-full bg-red-600 text-white text-xs font-bold';
+      } else if (ratio < 3.0) {
+        badge.textContent = 'Moderate (Target 3.0x+)';
+        badge.className = 'px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold';
+      } else {
+        badge.textContent = 'Healthy Scaling (3.0x+)';
+        badge.className = 'px-3 py-1 rounded-full bg-green-600 text-white text-xs font-bold';
+      }
+      var cacShare = Math.min(90, Math.max(10, Math.round((cac / (ltv + cac)) * 100)));
+      document.getElementById('ltv-bar-cac').style.width = cacShare + '%';
+      document.getElementById('ltv-bar-profit').style.width = (100 - cacShare) + '%';
+    }
+
+    function calcDTI() {
+      var income = Math.max(100, parseFloat(document.getElementById('dti-income').value) || 8500);
+      var housing = Math.max(0, parseFloat(document.getElementById('dti-housing').value) || 2100);
+      var other = Math.max(0, parseFloat(document.getElementById('dti-other').value) || 650);
+
+      var frontDTI = (housing / income) * 100;
+      var backDTI = ((housing + other) / income) * 100;
+      var maxHouse28 = income * 0.28;
+      var maxTotal36 = income * 0.36;
+
+      document.getElementById('dti-front-out').textContent = frontDTI.toFixed(1) + '%';
+      document.getElementById('dti-back-out').textContent = backDTI.toFixed(1) + '% Total DTI';
+      document.getElementById('dti-max-house').textContent = '$' + Math.round(maxHouse28).toLocaleString() + '/mo';
+      document.getElementById('dti-max-total').textContent = '$' + Math.round(maxTotal36).toLocaleString() + '/mo';
+      document.getElementById('dti-bar-label').textContent = 'Debt Load: ' + backDTI.toFixed(1) + '% of Gross Income';
+      document.getElementById('dti-bar-fill').style.width = Math.min(100, backDTI) + '%';
+
+      var badge = document.getElementById('dti-status-badge');
+      if (frontDTI <= 28 && backDTI <= 36) {
+        badge.textContent = '28/36 Conventional Qualified';
+        badge.className = 'px-3 py-1 rounded-full bg-green-600 text-white text-xs font-bold';
+      } else if (backDTI <= 43) {
+        badge.textContent = 'FHA / Standard Eligible (≤43%)';
+        badge.className = 'px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold';
+      } else {
+        badge.textContent = 'High DTI (>43% Underwriting Risk)';
+        badge.className = 'px-3 py-1 rounded-full bg-red-600 text-white text-xs font-bold';
+      }
+    }
+
+    function calcCreditPayoff() {
+      var bal = Math.max(50, parseFloat(document.getElementById('cc-bal').value) || 8500);
+      var apr = Math.max(1, parseFloat(document.getElementById('cc-apr').value) || 22.9) / 100;
+      var pay = Math.max(15, parseFloat(document.getElementById('cc-pay').value) || 280);
+      var loanApr = Math.max(1, parseFloat(document.getElementById('cc-loan-apr').value) || 10.5) / 100;
+
+      var rCard = apr / 12;
+      var minInterest = bal * rCard;
+      if (pay <= minInterest + 5) {
+        pay = Math.ceil(minInterest + Math.max(25, bal * 0.01));
+      }
+      var monthsCard = -Math.log(1 - (bal * rCard) / pay) / Math.log(1 + rCard);
+      var totalCardInt = (monthsCard * pay) - bal;
+
+      var rLoan = loanApr / 12;
+      var monthsLoan = -Math.log(1 - (bal * rLoan) / pay) / Math.log(1 + rLoan);
+      var totalLoanInt = Math.max(0, (monthsLoan * pay) - bal);
+      var saved = Math.max(0, totalCardInt - totalLoanInt);
+
+      var mRound = Math.ceil(monthsCard);
+      document.getElementById('cc-months-out').textContent = mRound + ' Months (' + (mRound / 12).toFixed(1) + ' Yrs)';
+      document.getElementById('cc-int-out').textContent = '$' + Math.round(totalCardInt).toLocaleString();
+      document.getElementById('cc-loan-int-out').textContent = '$' + Math.round(totalLoanInt).toLocaleString();
+      document.getElementById('cc-saved-out').textContent = 'Save $' + Math.round(saved).toLocaleString() + '!';
+    }
+
+    function calcSalaryBudget() {
+      var annual = Math.max(1000, parseFloat(document.getElementById('sal-annual').value) || 75000);
+      var hours = Math.max(1, parseFloat(document.getElementById('sal-hours').value) || 40);
+      var tax = Math.max(0, Math.min(60, parseFloat(document.getElementById('sal-tax').value) || 22)) / 100;
+
+      var hourlyGross = annual / (hours * 52);
+      var netAnnual = annual * (1 - tax);
+      var netMonthly = netAnnual / 12;
+
+      document.getElementById('sal-hourly-out').textContent = '$' + hourlyGross.toFixed(2) + ' / hr gross';
+      document.getElementById('sal-net-mo-out').textContent = '$' + netMonthly.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' / month';
+      document.getElementById('sal-needs-out').textContent = '$' + Math.round(netMonthly * 0.50).toLocaleString() + '/mo';
+      document.getElementById('sal-wants-out').textContent = '$' + Math.round(netMonthly * 0.30).toLocaleString() + '/mo';
+      document.getElementById('sal-save-out').textContent = '$' + Math.round(netMonthly * 0.20).toLocaleString() + '/mo';
+    }
+
     window.addEventListener('DOMContentLoaded', function() {
       if (window.location.hash === '#admin') showMainView('cms');
       var params = new URLSearchParams(window.location.search);
@@ -1891,8 +2280,13 @@
       if (requestedTool) {
         openToolWorkspace(requestedTool);
       }
+      updateCategoryFilterCounts();
       renderToolCards();
       renderGuidesCards();
+      calcCACLTV();
+      calcDTI();
+      calcCreditPayoff();
+      calcSalaryBudget();
       calcLoanEMI();
       calcCompound();
       calcMarginROAS();
