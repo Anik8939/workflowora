@@ -154,7 +154,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center clean-card p-6 sm:p-10 bg-white">
           <div class="lg:col-span-7 space-y-5 text-left">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold uppercase tracking-wide">
-              <span>&#10003; 12 Free Instant Tools &#8226; Zero Signup &#8226; 100% Browser Private</span>
+              <span>&#10003; <span id="hero-tools-count">16</span> Free Instant Tools &#8226; <span id="hero-guides-count">30</span> Expert Guides &#8226; Zero Signup &#8226; 100% Browser Private</span>
             </div>
 
             <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-charcoal tracking-tight leading-tight">
@@ -162,7 +162,7 @@
             </h1>
 
             <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
-              Choose any free utility below—from <strong>Loan EMI, Compound Interest &amp; Invoice Generators</strong> to <strong>Word Counters, AI Prompt Builders, and QR Makers</strong>.
+              Choose any of our <strong>16 free browser utilities</strong> below—from <strong>Loan EMI, Compound Interest, LTV:CAC &amp; DTI Mortgage Calculators</strong> to <strong>Credit Card Payoff, Salary 50/30/20 Planners, Invoice Generators, and AI Prompt Builders</strong>.
             </p>
 
             <!-- Search Bar -->
@@ -171,7 +171,7 @@
                 id="tool-search-input"
                 type="search"
                 oninput="filterToolCards()"
-                placeholder="Search any tool (e.g., Loan, Compound Interest, Invoice, Word Counter, BMI, Password)..."
+                placeholder="Search all 16 tools (e.g., Loan, Compound Interest, LTV:CAC, DTI Mortgage, Credit Card, Salary, Invoice)..."
                 aria-label="Search tools"
                 class="w-full pl-12 pr-4 py-4 rounded-2xl bg-stone-50 border-2 border-stone-300 text-charcoal placeholder-stone-400 text-sm sm:text-base shadow-sm focus:outline-none focus:border-terracotta"
               />
@@ -209,7 +209,7 @@
         </div>
       </section>
 
-      <!-- 12 Visual Tool Cards Grid -->
+      <!-- 16 Visual Tool Cards Grid -->
       <section aria-label="Tools Directory">
         <div id="tools-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
       </section>
@@ -245,7 +245,7 @@
       <section id="popular-guides-section" class="space-y-6">
         <div class="flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 pb-4">
           <div>
-            <span class="text-xs font-bold uppercase tracking-wider text-terracotta">PRACTICAL GUIDES &amp; ARTICLES</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-terracotta"><span id="guides-sec-count">30</span> IN-DEPTH PRACTICAL GUIDES &amp; FORMULAS</span>
             <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-1">Learn How to Work Smarter &amp; Manage Money</h2>
           </div>
         </div>
@@ -1141,6 +1141,9 @@
           <li><button type="button" onclick="openToolWorkspace('margin')" class="hover:text-terracotta">Profit Margin &amp; ROAS Calculator</button></li>
           <li><button type="button" onclick="openToolWorkspace('freelance')" class="hover:text-terracotta">Freelance Hourly Rate Calculator</button></li>
           <li><button type="button" onclick="openToolWorkspace('invoice')" class="hover:text-terracotta">Printable Invoice Generator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('cacltv')" class="hover:text-terracotta">SaaS LTV:CAC &amp; Payback Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('dti')" class="hover:text-terracotta">Debt-to-Income (DTI) Mortgage Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('creditpayoff')" class="hover:text-terracotta">Credit Card Payoff &amp; APR Calculator</button></li>
         </ul>
       </div>
 
@@ -1153,6 +1156,8 @@
           <li><button type="button" onclick="openToolWorkspace('bmi')" class="hover:text-terracotta">BMI &amp; Calorie Calculator</button></li>
           <li><button type="button" onclick="openToolWorkspace('age')" class="hover:text-terracotta">Exact Age Calculator</button></li>
           <li><button type="button" onclick="openToolWorkspace('percent')" class="hover:text-terracotta">Discount &amp; Percentage Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('password')" class="hover:text-terracotta">Password &amp; QR Code Generator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('salary')" class="hover:text-terracotta">Salary to Hourly &amp; 50/30/20 Planner</button></li>
         </ul>
       </div>
 
@@ -2094,10 +2099,10 @@
         box.innerHTML =
           '<span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">LEGAL &amp; ADSENSE COMPLIANCE</span>' +
           '<h1 class="font-display font-extrabold text-3xl text-charcoal mt-2 mb-3">Privacy Policy &amp; Cookie Disclosure</h1>' +
-          '<p class="text-xs text-stone-500">Last Updated: November 1, 2026</p>' +
+          '<p class="text-xs text-stone-500">Last Updated: November 4, 2026</p>' +
           '<p>At <strong>WorkFlowora</strong> (accessible from <code>https://www.workflowora.com</code>), protecting the privacy of our visitors is one of our highest priorities. This Privacy Policy document details the types of information collected and how we safeguard your data.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">1. Client-Side Calculator Data Processing</h2>' +
-          '<p>All interactive tools on WorkFlowora—including our Loan EMI Calculator, Compound Interest Calculator, Invoice Generator, Word Counter, and Password Generator—execute 100% locally inside your web browser using JavaScript. We do not collect, transmit, or store the financial figures, personal dates, or text documents you enter into these utilities.</p>' +
+          '<p>All 16 interactive tools on WorkFlowora—including our Loan EMI Calculator, Compound Interest Calculator, SaaS LTV:CAC Calculator, DTI Mortgage Calculator, Credit Card Payoff Calculator, Salary 50/30/20 Planner, Invoice Generator, Word Counter, and Password Generator—execute 100% locally inside your web browser using JavaScript. We do not collect, transmit, or store the financial figures, personal dates, or text documents you enter into these utilities.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">2. Google DoubleClick DART Cookie &amp; AdSense</h2>' +
           '<p>Google is a third-party vendor on our website. It uses cookies, known as DART cookies, to serve advertisements to our site visitors based upon their visit to <code>www.workflowora.com</code> and other sites on the internet. Visitors may choose to decline the use of DART cookies by visiting the Google Ad and Content Network Privacy Policy at: <code>https://policies.google.com/technologies/ads</code></p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">3. Log Files &amp; Analytics</h2>' +
@@ -2110,14 +2115,14 @@
           '<h1 class="font-display font-extrabold text-3xl text-charcoal mt-2 mb-3">Financial, Legal &amp; Health Disclaimer</h1>' +
           '<p>The calculators, AI prompt generators, and educational articles published on <strong>WorkFlowora</strong> (<code>https://www.workflowora.com</code>) are intended strictly for general informational and educational purposes.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">Not Certified Financial or Legal Advice</h2>' +
-          '<p>Results produced by our Loan &amp; Mortgage EMI Calculator, Compound Interest Calculator, Profit Margin Calculator, and Freelance Rate Calculator are mathematical estimates based on user inputs. They do not constitute certified financial, tax, investment, or legal advice. Always consult a qualified financial advisor or lending institution before making binding financial decisions.</p>' +
+          '<p>Results produced by our Loan &amp; Mortgage EMI Calculator, Compound Interest Calculator, Profit Margin &amp; ROAS Calculator, SaaS LTV:CAC Calculator, DTI Mortgage Qualifier, Credit Card Payoff Calculator, Salary 50/30/20 Planner, and Freelance Rate Calculator are mathematical estimates based on user inputs. They do not constitute certified financial, tax, investment, or legal advice. Always consult a qualified financial advisor or lending institution before making binding financial decisions.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">Not Medical Advice</h2>' +
           '<p>Our BMI &amp; Daily Calorie Calculator provides general wellness estimates based on standard formulas and should never replace professional medical advice, diagnosis, or treatment from a qualified healthcare provider.</p>';
       } else {
         box.innerHTML =
           '<span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">USER AGREEMENT</span>' +
           '<h1 class="font-display font-extrabold text-3xl text-charcoal mt-2 mb-3">Terms and Conditions</h1>' +
-          '<p class="text-xs text-stone-500">Last Updated: November 1, 2026</p>' +
+          '<p class="text-xs text-stone-500">Last Updated: November 4, 2026</p>' +
           '<p>By accessing and using <strong>WorkFlowora</strong> (<code>https://www.workflowora.com</code>), you accept and agree to be bound by these Terms and Conditions.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">1. License to Use Free Tools</h2>' +
           '<p>You are granted a free, non-exclusive license to use our online calculators, invoice generators, and text utilities for personal, academic, or commercial workflow purposes. You may not scrape, clone, or redistribute our source code without written permission.</p>' +
@@ -2161,6 +2166,12 @@
       if (elMoney) elMoney.textContent = moneyCount;
       if (elWriting) elWriting.textContent = writingCount;
       if (elDaily) elDaily.textContent = dailyCount;
+      var elHeroTools = document.getElementById('hero-tools-count');
+      var elHeroGuides = document.getElementById('hero-guides-count');
+      var elGuidesSec = document.getElementById('guides-sec-count');
+      if (elHeroTools) elHeroTools.textContent = TOOLS_DIRECTORY.length;
+      if (elHeroGuides && typeof GUIDES_LIST !== 'undefined') elHeroGuides.textContent = GUIDES_LIST.length;
+      if (elGuidesSec && typeof GUIDES_LIST !== 'undefined') elGuidesSec.textContent = GUIDES_LIST.length;
     }
 
     function calcCACLTV() {
