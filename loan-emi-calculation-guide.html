@@ -172,6 +172,72 @@
             document.getElementById('emb-ln-tot').textContent = '$' + Math.round(tot).toLocaleString();
           }
         </script>
+
+        <div class="pt-3 border-t border-stone-700/80 flex flex-wrap items-center justify-between gap-2 text-xs">
+          <div class="flex flex-wrap gap-2">
+            <button type="button" onclick="shareArticleCalcUrl()" class="px-3.5 py-2 rounded-xl bg-terracotta hover:bg-terracottaDark text-white font-bold transition">&#128279; Share Calculation Link</button>
+            <button type="button" onclick="downloadArticleCalcCSV()" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold transition">&#128229; Download Excel (CSV)</button>
+            <button type="button" onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-600 text-stone-200 font-bold transition">&#128424; Print / Save PDF</button>
+          </div>
+          <details class="w-full mt-2 pt-2 border-t border-stone-800">
+            <summary class="cursor-pointer font-semibold text-stone-300 hover:text-amber-300">&lt;/&gt; Embed This Calculator on Your Blog or Website (Free Widget Code)</summary>
+            <div class="mt-2 flex items-center gap-2">
+              <input id="art-embed-code" type="text" readonly value='<iframe src="https://www.workflowora.com/" width="100%" height="580" style="border:1px solid #E7E5E4;border-radius:16px;" loading="lazy"></iframe><p style="font-size:12px;">Calculator by <a href="https://www.workflowora.com/" target="_blank" rel="noopener">WorkFlowora</a></p>' class="w-full p-2 rounded-lg bg-stone-950 border border-stone-700 text-amber-300 font-mono text-[11px]" />
+              <button type="button" onclick="navigator.clipboard.writeText(document.getElementById('art-embed-code').value); alert('Embed code copied!');" class="px-3 py-2 rounded-lg bg-terracotta text-white font-bold shrink-0">Copy Code</button>
+            </div>
+          </details>
+        </div>
+        <script>
+          function shareArticleCalcUrl() {
+            var box = document.getElementById('embedded-calculator');
+            var inps = box.querySelectorAll('input[type="number"]');
+            var usp = new URLSearchParams();
+            for (var i = 0; i < inps.length; i++) {
+              if (inps[i].id) usp.set(inps[i].id, inps[i].value);
+            }
+            var url = window.location.origin + window.location.pathname + '?' + usp.toString() + '#embedded-calculator';
+            if (navigator.clipboard) navigator.clipboard.writeText(url);
+            window.history.replaceState({}, '', '?' + usp.toString() + '#embedded-calculator');
+            alert('Shareable calculation link copied to clipboard!\n' + url);
+          }
+          function downloadArticleCalcCSV() {
+            var box = document.getElementById('embedded-calculator');
+            var rows = [['WorkFlowora Report', document.title], ['Source URL', window.location.href], [], ['Metric / Input', 'Value']];
+            var inps = box.querySelectorAll('input[type="number"]');
+            for (var i = 0; i < inps.length; i++) {
+              var lbl = box.querySelector('label[for="' + inps[i].id + '"]');
+              rows.push([lbl ? lbl.textContent.trim() : inps[i].id, inps[i].value]);
+            }
+            var outs = box.querySelectorAll('strong[id^="emb-"]');
+            for (var j = 0; j < outs.length; j++) {
+              rows.push([outs[j].id, outs[j].textContent.trim()]);
+            }
+            var csv = rows.map(function(r) { return r.map(function(c) { return '"' + String(c || '').replace(/"/g, '""') + '"'; }).join(','); }).join('\n');
+            var blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            var a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'WorkFlowora_Calculation_Report.csv';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          }
+          window.addEventListener('DOMContentLoaded', function() {
+            var embedInp = document.getElementById('art-embed-code');
+            if (embedInp) {
+              embedInp.value = '<iframe src="' + window.location.origin + window.location.pathname + '#embedded-calculator" width="100%" height="560" style="border:1px solid #E7E5E4;border-radius:16px;" loading="lazy"></iframe><p style="font-size:12px;">Calculator powered by <a href="' + window.location.origin + window.location.pathname + '" target="_blank" rel="noopener">' + document.title.split('|')[0].trim() + ' — WorkFlowora</a></p>';
+            }
+            if (window.location.search.length > 1) {
+              var usp = new URLSearchParams(window.location.search);
+              usp.forEach(function(val, key) {
+                var el = document.getElementById(key);
+                if (el) {
+                  el.value = val;
+                  el.dispatchEvent(new Event('input'));
+                }
+              });
+            }
+          });
+        </script>
       </div>
 
       <div class="space-y-4 text-base leading-relaxed text-stone-700">

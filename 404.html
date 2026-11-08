@@ -196,6 +196,17 @@
           </div>
         </div>
 
+        <!-- Saved Calculations Bar on Homepage (Appears Automatically When User Saves Any Result) -->
+        <div id="home-saved-calc-wrap" class="hidden pt-2">
+          <div class="p-4 rounded-2xl bg-amber-50/90 border border-amber-200 space-y-2 text-xs">
+            <div class="flex items-center justify-between">
+              <span class="font-extrabold text-terracottaDark uppercase tracking-wider">&#128190; Your Saved Calculations (Click to Re-Open):</span>
+              <button type="button" onclick="clearSavedCalcHistory()" class="text-stone-500 hover:text-red-600 underline font-semibold">Clear All</button>
+            </div>
+            <div id="home-saved-calc-list" class="flex flex-wrap gap-2"></div>
+          </div>
+        </div>
+
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
           <button type="button" data-cat="all" onclick="setCategoryFilter('all')" class="cat-filter-btn cat-pill-active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition">
@@ -1007,6 +1018,54 @@
         </div>
       </div>
 
+
+      <!-- VIRAL RETENTION & SHARE SUITE: SHAREABLE LINK, CSV DOWNLOAD, SAVED HISTORY & EMBED WIDGET -->
+      <div class="no-print clean-card p-5 sm:p-6 bg-stone-900 text-white space-y-4 border-2 border-orange-500/30">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <span class="text-[11px] font-extrabold uppercase tracking-wider text-amber-300">&#128640; Power User Actions &amp; Export Suite</span>
+            <h2 class="font-display font-bold text-base sm:text-lg text-white">Save, Export to Excel (CSV), or Share Your Exact Calculation</h2>
+          </div>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <button type="button" onclick="shareActiveCalculationLink()" class="px-3.5 py-2 rounded-xl bg-terracotta hover:bg-terracottaDark text-white font-bold transition flex items-center gap-1.5">
+              <span>&#128279;</span> <span>Copy Shareable Link</span>
+            </button>
+            <button type="button" onclick="exportActiveCalcCSV()" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold transition flex items-center gap-1.5">
+              <span>&#128229;</span> <span>Download Excel (CSV)</span>
+            </button>
+            <button type="button" onclick="saveCalculationToHistory()" class="px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-600 text-amber-300 font-bold transition flex items-center gap-1.5">
+              <span>&#128190;</span> <span>Save to My History</span>
+            </button>
+            <button type="button" onclick="window.print()" class="px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-600 text-stone-200 font-bold transition flex items-center gap-1.5">
+              <span>&#128424;</span> <span>Print / PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Saved Calculations History Drawer -->
+        <div id="saved-calc-history-box" class="hidden pt-3 border-t border-stone-700 space-y-2">
+          <div class="flex items-center justify-between text-xs">
+            <span class="font-bold text-stone-300">&#128190; Your Saved Calculations (Stored in Browser):</span>
+            <button type="button" onclick="clearSavedCalcHistory()" class="text-stone-400 hover:text-red-400 underline">Clear History</button>
+          </div>
+          <div id="saved-calc-history-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2.5 text-xs"></div>
+        </div>
+
+        <!-- Free Backlink Embed Widget Generator -->
+        <details class="pt-2 border-t border-stone-800 text-xs">
+          <summary class="cursor-pointer font-bold text-stone-300 hover:text-amber-300 transition">
+            &lt;/&gt; Embed This Free Calculator on Your Website or Blog (Get Instant HTML Widget Code)
+          </summary>
+          <div class="mt-3 p-3.5 rounded-xl bg-stone-950 border border-stone-700 space-y-2">
+            <p class="text-stone-400">Copy the snippet below to embed this live calculator on your WordPress, Webflow, Ghost, or custom website:</p>
+            <div class="flex items-center gap-2">
+              <input id="embed-code-input" type="text" readonly value='<iframe src="https://www.workflowora.com/?tool=loan" width="100%" height="620" style="border:1px solid #E7E5E4;border-radius:16px;" loading="lazy"></iframe><p style="font-size:12px;margin-top:6px;">Powered by <a href="https://www.workflowora.com/" target="_blank" rel="noopener">WorkFlowora Free Calculators</a></p>' class="w-full p-2.5 rounded-lg bg-stone-900 border border-stone-700 text-amber-300 font-mono text-[11px]" />
+              <button type="button" onclick="copyEmbedWidgetCode()" class="px-3.5 py-2.5 rounded-lg bg-terracotta hover:bg-terracottaDark text-white font-bold shrink-0">Copy Embed Code</button>
+            </div>
+          </div>
+        </details>
+      </div>
+
       <!-- SEO & ADSENSE VALUE BOOSTER: HOW IT WORKS & FAQ ACCORDION BELOW EVERY TOOL -->
       <div class="no-print clean-card p-6 sm:p-8 space-y-4 bg-white">
         <span class="text-xs font-bold uppercase tracking-wider text-terracotta">HELPFUL GUIDE &amp; FAQ</span>
@@ -1734,6 +1793,7 @@
     }
 
     function openToolWorkspace(toolId) {
+      updateEmbedCodeForTool(toolId);
       recordRecentTool(toolId);
       showMainView('tool');
       var workspaces = document.querySelectorAll('.tool-workspace');
@@ -2284,7 +2344,209 @@
     }
 
     updateCategoryFilterCounts(); renderToolCards(); renderGuidesCards();
+    
+    var currentActiveToolId = 'loan';
+
+    function getActiveWorkspaceEl() {
+      return document.getElementById('workspace-' + currentActiveToolId);
+    }
+
+    function updateEmbedCodeForTool(toolId) {
+      currentActiveToolId = toolId;
+      var inp = document.getElementById('embed-code-input');
+      if (inp) {
+        inp.value = '<iframe src="https://www.workflowora.com/?tool=' + toolId + '" width="100%" height="620" style="border:1px solid #E7E5E4;border-radius:16px;" loading="lazy"></iframe><p style="font-size:12px;margin-top:6px;">Powered by <a href="https://www.workflowora.com/?tool=' + toolId + '" target="_blank" rel="noopener">WorkFlowora Free Online Calculators</a></p>';
+      }
+    }
+
+    function copyEmbedWidgetCode() {
+      var inp = document.getElementById('embed-code-input');
+      if (inp && navigator.clipboard) {
+        navigator.clipboard.writeText(inp.value);
+        showCleanToast('Embed HTML code copied to clipboard!');
+      }
+    }
+
+    function collectActiveToolData() {
+      var ws = getActiveWorkspaceEl();
+      if (!ws) return { title: 'WorkFlowora Calculation', inputs: [], outputs: [], params: {} };
+      var h1 = ws.querySelector('h1');
+      var title = h1 ? h1.textContent.trim() : currentActiveToolId;
+      var inputs = [];
+      var params = { tool: currentActiveToolId };
+      var inpEls = ws.querySelectorAll('input, select, textarea');
+      for (var i = 0; i < inpEls.length; i++) {
+        var el = inpEls[i];
+        if (!el.id) continue;
+        var lblEl = ws.querySelector('label[for="' + el.id + '"]');
+        var label = lblEl ? lblEl.textContent.replace(/\s+/g, ' ').trim() : el.id;
+        inputs.push({ id: el.id, label: label, value: el.value });
+        if (el.value && String(el.value).length < 120) {
+          params[el.id] = el.value;
+        }
+      }
+      var outputs = [];
+      var outEls = ws.querySelectorAll('[id$="-out"], [id$="-words"], [id$="-chars"], [id$="-read"], [id$="-speak"], [id="pw-output"]');
+      for (var j = 0; j < outEls.length; j++) {
+        var oel = outEls[j];
+        var val = (oel.textContent || oel.value || '').replace(/\s+/g, ' ').trim();
+        if (val && val.length < 100) {
+          outputs.push({ id: oel.id, value: val });
+        }
+      }
+      return { title: title, inputs: inputs, outputs: outputs, params: params };
+    }
+
+    function shareActiveCalculationLink() {
+      var data = collectActiveToolData();
+      var usp = new URLSearchParams(data.params);
+      var shareUrl = window.location.origin + window.location.pathname + '?' + usp.toString();
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(shareUrl);
+      }
+      window.history.replaceState({}, '', '?' + usp.toString());
+      showCleanToast('Shareable calculation link copied! Anyone opening it will see your exact numbers.');
+    }
+
+    function exportActiveCalcCSV() {
+      var data = collectActiveToolData();
+      var rows = [
+        ['WorkFlowora Calculation Report', data.title],
+        ['Generated At', new Date().toISOString().slice(0, 19).replace('T', ' ')],
+        ['Website URL', 'https://www.workflowora.com/?tool=' + currentActiveToolId],
+        [],
+        ['SECTION', 'FIELD / METRIC', 'VALUE']
+      ];
+      for (var i = 0; i < data.inputs.length; i++) {
+        rows.push(['Input Parameter', data.inputs[i].label, String(data.inputs[i].value)]);
+      }
+      for (var j = 0; j < data.outputs.length; j++) {
+        rows.push(['Calculated Output', data.outputs[j].id, String(data.outputs[j].value)]);
+      }
+      var csvContent = rows.map(function(r) {
+        return r.map(function(cell) {
+          return '"' + String(cell || '').replace(/"/g, '""') + '"';
+        }).join(',');
+      }).join('\n');
+
+      var blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      var url = URL.createObjectURL(blob);
+      var a = document.createElement('a');
+      a.href = url;
+      a.download = 'WorkFlowora_' + currentActiveToolId + '_Report.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showCleanToast('Excel (CSV) report downloaded!');
+    }
+
+    function saveCalculationToHistory() {
+      var data = collectActiveToolData();
+      var usp = new URLSearchParams(data.params);
+      var primaryOut = data.outputs.length > 0 ? data.outputs[0].value : 'Saved';
+      var item = {
+        toolId: currentActiveToolId,
+        title: data.title,
+        result: primaryOut,
+        query: '?' + usp.toString(),
+        date: new Date().toLocaleDateString(undefined, { month: 'short', day: 'numeric' })
+      };
+      try {
+        var existing = JSON.parse(localStorage.getItem('wf_saved_calcs') || '[]');
+        existing.unshift(item);
+        if (existing.length > 8) existing = existing.slice(0, 8);
+        localStorage.setItem('wf_saved_calcs', JSON.stringify(existing));
+      } catch (e) {}
+      renderSavedCalcHistory();
+      showCleanToast('Calculation saved to your browser history!');
+    }
+
+    function clearSavedCalcHistory() {
+      try { localStorage.removeItem('wf_saved_calcs'); } catch (e) {}
+      renderSavedCalcHistory();
+      showCleanToast('Saved calculation history cleared.');
+    }
+
+    function restoreSavedCalculation(queryStr) {
+      window.history.replaceState({}, '', queryStr);
+      applyUrlQueryParameters();
+    }
+
+    function renderSavedCalcHistory() {
+      var list = [];
+      try { list = JSON.parse(localStorage.getItem('wf_saved_calcs') || '[]'); } catch (e) {}
+      var box1 = document.getElementById('saved-calc-history-box');
+      var grid1 = document.getElementById('saved-calc-history-list');
+      var boxHome = document.getElementById('home-saved-calc-wrap');
+      var gridHome = document.getElementById('home-saved-calc-list');
+
+      if (!list || list.length === 0) {
+        if (box1) box1.classList.add('hidden');
+        if (boxHome) boxHome.classList.add('hidden');
+        return;
+      }
+      if (box1 && grid1) {
+        box1.classList.remove('hidden');
+        grid1.innerHTML = '';
+        for (var i = 0; i < list.length; i++) {
+          (function(it) {
+            var d = document.createElement('button');
+            d.type = 'button';
+            d.className = 'text-left p-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-600 transition flex items-center justify-between gap-2';
+            d.innerHTML = '<div class="truncate"><div class="font-bold text-amber-300 truncate">' + it.result + '</div><div class="text-[11px] text-stone-300 truncate">' + it.title + ' • ' + it.date + '</div></div><span class="text-stone-400 shrink-0">&#8594;</span>';
+            d.onclick = function() { restoreSavedCalculation(it.query); };
+            grid1.appendChild(d);
+          })(list[i]);
+        }
+      }
+      if (boxHome && gridHome) {
+        boxHome.classList.remove('hidden');
+        gridHome.innerHTML = '';
+        for (var j = 0; j < list.length; j++) {
+          (function(it) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.className = 'px-3 py-1.5 rounded-xl bg-white border border-amber-300 hover:border-terracotta text-charcoal font-semibold transition flex items-center gap-2 shadow-sm';
+            b.innerHTML = '<span class="font-extrabold text-terracottaDark">' + it.result + '</span><span class="text-stone-500">(' + it.title.split(' ')[0] + ' • ' + it.date + ')</span>';
+            b.onclick = function() { restoreSavedCalculation(it.query); };
+            gridHome.appendChild(b);
+          })(list[j]);
+        }
+      }
+    }
+
+    function applyUrlQueryParameters() {
+      var params = new URLSearchParams(window.location.search);
+      var requestedTool = params.get('tool');
+      if (requestedTool) {
+        openToolWorkspace(requestedTool);
+      }
+      params.forEach(function(val, key) {
+        if (key === 'tool') return;
+        var el = document.getElementById(key);
+        if (el) {
+          el.value = val;
+        }
+      });
+      calcLoanEMI();
+      calcCompound();
+      calcMarginROAS();
+      calcFreelanceRate();
+      calcInvoice();
+      calcWordCount();
+      generateCleanPrompt();
+      calcBMI();
+      calcExactAge();
+      calcPercentage();
+      calcCACLTV();
+      calcDTI();
+      calcCreditPayoff();
+      calcSalaryBudget();
+    }
+
     window.addEventListener('DOMContentLoaded', function() {
+      renderSavedCalcHistory();
+      if (window.location.search.length > 1) { setTimeout(applyUrlQueryParameters, 150); }
       if (window.location.hash === '#admin') showMainView('cms');
       var params = new URLSearchParams(window.location.search);
       var requestedTool = params.get('tool');
