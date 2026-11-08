@@ -76,6 +76,41 @@
       border-color: #141413;
       color: #141413;
     }
+
+    html.dark-mode body {
+      background-color: #0F0F0E !important;
+      color: #F5F5F4 !important;
+    }
+    html.dark-mode header,
+    html.dark-mode footer,
+    html.dark-mode .clean-card,
+    html.dark-mode details,
+    html.dark-mode #legal-content-box {
+      background-color: #1C1917 !important;
+      border-color: #292524 !important;
+      color: #F5F5F4 !important;
+    }
+    html.dark-mode .text-charcoal {
+      color: #FAF9F5 !important;
+    }
+    html.dark-mode .text-stone-600,
+    html.dark-mode .text-stone-700,
+    html.dark-mode .text-stone-500 {
+      color: #A8A29E !important;
+    }
+    html.dark-mode input,
+    html.dark-mode select,
+    html.dark-mode textarea {
+      background-color: #292524 !important;
+      border-color: #44403C !important;
+      color: #FAF9F5 !important;
+    }
+    html.dark-mode .bg-stone-50,
+    html.dark-mode .bg-stone-100 {
+      background-color: #262320 !important;
+      border-color: #3F3B37 !important;
+    }
+
     @media print {
       header, footer, .no-print { display: none !important; }
       body { background: #FFFFFF; }
@@ -128,6 +163,9 @@
         <button type="button" onclick="scrollToSection('popular-guides-section')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
           How-To Guides
         </button>
+        <button type="button" onclick="scrollToSection('templates-vault-section')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+          Free Templates &amp; Formulas
+        </button>
         <button type="button" onclick="showLegalPage('about')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
           About Us
         </button>
@@ -138,8 +176,21 @@
 
       <!-- Highlight Action Button -->
       <div class="flex items-center gap-2">
-        <button type="button" onclick="openToolWorkspace('loan')" class="btn-coral px-4 py-2.5 text-xs sm:text-sm shadow-sm">
-          Popular: Loan &amp; EMI Tool &#8594;
+        <label for="global-currency-select" class="sr-only">Select Currency</label>
+        <select id="global-currency-select" onchange="setGlobalCurrency(this.value)" aria-label="Currency Selector" class="px-2.5 py-2 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer">
+          <option value="$">$ USD</option>
+          <option value="€">€ EUR</option>
+          <option value="£">£ GBP</option>
+          <option value="C$">C$ CAD</option>
+          <option value="A$">A$ AUD</option>
+          <option value="₹">₹ INR</option>
+          <option value="৳">৳ BDT</option>
+        </select>
+        <button type="button" onclick="toggleDarkMode()" id="dark-mode-btn" aria-label="Toggle Dark Mode" class="px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition">
+          &#127769; Dark
+        </button>
+        <button type="button" onclick="openToolWorkspace('loan')" class="hidden sm:inline-flex btn-coral px-4 py-2.5 text-xs sm:text-sm shadow-sm">
+          Loan &amp; EMI Tool &#8594;
         </button>
       </div>
     </div>
@@ -301,6 +352,79 @@
             <li><a href="/basal-metabolic-rate-bmr-vs-tdee-macro-split-guide.html" class="text-xs text-stone-600 hover:text-terracotta underline decoration-stone-300">BMR vs. TDEE Explained: How to Calculate Your Calorie Deficit & Protein Macros Without Crash Dieting</a></li>
           </ul>
         </details>
+      </section>
+
+      <!-- FREE COPY-PASTE TEMPLATES VAULT & MASTER FORMULA CHEAT SHEET -->
+      <section id="templates-vault-section" class="space-y-8 pt-4">
+        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-terracotta">FREE COPY-PASTE TOOLKIT &amp; CHEAT SHEETS</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-1">Ready-to-Use Financial Scripts, Business Clauses &amp; Master Formulas</h2>
+            <p class="text-xs sm:text-sm text-stone-600 mt-1">Copy proven email templates, contract clauses, and spreadsheet formulas in one click.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="clean-card p-6 flex flex-col justify-between space-y-4">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">Invoice &amp; Cash Flow</span>
+              <h3 class="font-display font-bold text-lg text-charcoal mt-2">Polite Overdue Invoice Reminder + Late Fee Email</h3>
+              <p id="tpl-1" class="mt-2 p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-700 font-mono leading-relaxed">Subject: Friendly Reminder: Invoice #[INV-2026] (Past Due) — Hi [Name], I hope your week is going well. Just a quick note that Invoice #[INV-2026] for [Amount] was due on [Date] under Net 15 terms. Please let me know once payment is scheduled so we can waive the 1.5% monthly late finance charge. Thank you!</p>
+            </div>
+            <button type="button" onclick="copyElementText('tpl-1', 'Invoice reminder template copied!')" class="btn-coral px-4 py-2.5 text-xs w-full">&#128203; Copy Email Template</button>
+          </div>
+
+          <div class="clean-card p-6 flex flex-col justify-between space-y-4">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">Freelance Contracts</span>
+              <h3 class="font-display font-bold text-lg text-charcoal mt-2">Scope Creep Protection &amp; Change-Order Clause</h3>
+              <p id="tpl-2" class="mt-2 p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-700 font-mono leading-relaxed">Scope &amp; Revisions Policy: This fixed project fee includes up to two (2) rounds of revisions on the agreed deliverables. Additional deliverables, new pages, or out-of-scope requests will be quoted separately via a written Change Order or billed at our standard rate of $95/hour.</p>
+            </div>
+            <button type="button" onclick="copyElementText('tpl-2', 'Contract clause copied!')" class="btn-coral px-4 py-2.5 text-xs w-full">&#128203; Copy Contract Clause</button>
+          </div>
+
+          <div class="clean-card p-6 flex flex-col justify-between space-y-4">
+            <div>
+              <span class="px-2.5 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">Personal Finance</span>
+              <h3 class="font-display font-bold text-lg text-charcoal mt-2">Credit Card APR Reduction Negotiation Script</h3>
+              <p id="tpl-3" class="mt-2 p-3 rounded-xl bg-stone-50 border border-stone-200 text-xs text-stone-700 font-mono leading-relaxed">Hi, I have been a loyal cardholder for [X] years with an on-time payment history. I received a 0% balance transfer / 11% consolidation loan offer from another lender, but I would prefer to stay with you if we can lower my current APR from [24%] to [14%–16%] or enroll in a hardship rate reduction.</p>
+            </div>
+            <button type="button" onclick="copyElementText('tpl-3', 'Negotiation script copied!')" class="btn-coral px-4 py-2.5 text-xs w-full">&#128203; Copy Phone Script</button>
+          </div>
+        </div>
+
+        <!-- Master Financial & Business Formulas Reference Table -->
+        <div class="clean-card p-6 sm:p-8 bg-white space-y-4">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-terracotta">&#128218; QUICK FORMULA CHEAT SHEET</span>
+              <h3 class="font-display font-extrabold text-xl text-charcoal">Master Reference Table: 10 Essential Finance &amp; Business Equations</h3>
+            </div>
+            <span class="text-xs font-semibold text-stone-500">Bookmark This Page (Ctrl + D) for Instant Reference</span>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full text-left border-collapse border border-stone-200 text-xs sm:text-sm">
+              <thead>
+                <tr class="bg-stone-100 text-charcoal font-bold">
+                  <th class="p-3 border border-stone-200">Metric / Concept</th>
+                  <th class="p-3 border border-stone-200">Exact Mathematical Formula</th>
+                  <th class="p-3 border border-stone-200">2026 Healthy Target Benchmark</th>
+                  <th class="p-3 border border-stone-200">Interactive Tool</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="p-3 border border-stone-200 font-bold">Monthly Loan EMI</td><td class="p-3 border border-stone-200 font-mono">P &times; r &times; (1+r)^n &divide; ((1+r)^n &minus; 1)</td><td class="p-3 border border-stone-200">Total EMI &le; 15% of Gross Income</td><td class="p-3 border border-stone-200"><button type="button" onclick="openToolWorkspace('loan')" class="text-terracotta font-bold underline">Open EMI Tool &rarr;</button></td></tr>
+                <tr><td class="p-3 border border-stone-200 font-bold">Break-Even ROAS</td><td class="p-3 border border-stone-200 font-mono">1 &divide; Gross Profit Margin % (decimal)</td><td class="p-3 border border-stone-200">Actual ROAS &ge; 1.5x Break-Even</td><td class="p-3 border border-stone-200"><button type="button" onclick="openToolWorkspace('margin')" class="text-terracotta font-bold underline">Open ROAS Tool &rarr;</button></td></tr>
+                <tr><td class="p-3 border border-stone-200 font-bold">SaaS LTV : CAC Ratio</td><td class="p-3 border border-stone-200 font-mono">((ARPA &times; Margin %) &divide; Churn) &divide; CAC</td><td class="p-3 border border-stone-200">3.0 : 1 to 5.0 : 1 (&lt;12 Mo Payback)</td><td class="p-3 border border-stone-200"><button type="button" onclick="openToolWorkspace('cacltv')" class="text-terracotta font-bold underline">Open LTV:CAC &rarr;</button></td></tr>
+                <tr><td class="p-3 border border-stone-200 font-bold">Mortgage DTI Ratio</td><td class="p-3 border border-stone-200 font-mono">(Total Monthly Debt &divide; Gross Income) &times; 100</td><td class="p-3 border border-stone-200">&le; 28% Front-End / &le; 36% Back-End</td><td class="p-3 border border-stone-200"><button type="button" onclick="openToolWorkspace('dti')" class="text-terracotta font-bold underline">Open DTI Tool &rarr;</button></td></tr>
+                <tr><td class="p-3 border border-stone-200 font-bold">Gross Margin vs. Markup</td><td class="p-3 border border-stone-200 font-mono">Margin = (P&minus;C)/P &bull; Markup = (P&minus;C)/C</td><td class="p-3 border border-stone-200">50%+ Margin (100% Keystone Markup)</td><td class="p-3 border border-stone-200"><button type="button" onclick="openToolWorkspace('margin')" class="text-terracotta font-bold underline">Open Margin Tool &rarr;</button></td></tr>
+                <tr><td class="p-3 border border-stone-200 font-bold">Rule of 72 (Doubling Time)</td><td class="p-3 border border-stone-200 font-mono">Years to Double = 72 &divide; Annual Return %</td><td class="p-3 border border-stone-200">9.0 Years at 8% Annual Return</td><td class="p-3 border border-stone-200"><button type="button" onclick="openToolWorkspace('compound')" class="text-terracotta font-bold underline">Open Compound &rarr;</button></td></tr>
+                <tr><td class="p-3 border border-stone-200 font-bold">Freelance Floor Rate</td><td class="p-3 border border-stone-200 font-mono">(Target Income + Overhead) &times; 1.30 &divide; Billable Hrs</td><td class="p-3 border border-stone-200">25 Billable Hrs/Wk + 30% Tax Buffer</td><td class="p-3 border border-stone-200"><button type="button" onclick="openToolWorkspace('freelance')" class="text-terracotta font-bold underline">Open Rate Tool &rarr;</button></td></tr>
+                <tr><td class="p-3 border border-stone-200 font-bold">50/30/20 Net Budget</td><td class="p-3 border border-stone-200 font-mono">50% Needs &bull; 30% Wants &bull; 20% Savings/Debt</td><td class="p-3 border border-stone-200">20%+ Automated on Payday</td><td class="p-3 border border-stone-200"><button type="button" onclick="openToolWorkspace('salary')" class="text-terracotta font-bold underline">Open 50/30/20 &rarr;</button></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
 
     </div>
@@ -1018,6 +1142,38 @@
         </div>
       </div>
 
+
+
+      <!-- SMART "WHAT-IF" SAVINGS & PROFIT OPTIMIZER + DYNAMIC YEAR-BY-YEAR SCHEDULE TABLE -->
+      <div id="smart-whatif-advisor-card" class="no-print clean-card p-6 sm:p-8 bg-amber-50/80 border-2 border-amber-200 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="px-2.5 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-extrabold uppercase tracking-wider">&#128161; Smart "What-If" Optimization Advisor</span>
+            <h2 class="font-display font-extrabold text-lg sm:text-xl text-charcoal mt-1">3 Personalized Ways to Improve Your Numbers Today</h2>
+          </div>
+          <span class="text-xs font-semibold text-stone-500">Live Mathematical Sensitivity Analysis</span>
+        </div>
+        <div id="smart-whatif-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm"></div>
+      </div>
+
+      <!-- DYNAMIC YEAR-BY-YEAR AMORTIZATION / GROWTH SCHEDULE TABLE -->
+      <div id="dynamic-schedule-card" class="clean-card p-6 sm:p-8 bg-white space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-terracotta">&#128197; Complete Period-by-Period Breakdown</span>
+            <h2 id="dynamic-schedule-title" class="font-display font-extrabold text-lg sm:text-xl text-charcoal">Year-by-Year Amortization &amp; Projection Schedule</h2>
+          </div>
+          <button type="button" onclick="exportScheduleTableCSV()" class="no-print px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition">
+            &#128229; Download Full Table (CSV)
+          </button>
+        </div>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left border-collapse border border-stone-200 text-xs sm:text-sm" id="dynamic-schedule-table">
+            <thead id="dynamic-schedule-thead" class="bg-stone-100 text-charcoal font-bold"></thead>
+            <tbody id="dynamic-schedule-tbody"></tbody>
+          </table>
+        </div>
+      </div>
 
       <!-- VIRAL RETENTION & SHARE SUITE: SHAREABLE LINK, CSV DOWNLOAD, SAVED HISTORY & EMBED WIDGET -->
       <div class="no-print clean-card p-5 sm:p-6 bg-stone-900 text-white space-y-4 border-2 border-orange-500/30">
@@ -1794,6 +1950,7 @@
 
     function openToolWorkspace(toolId) {
       updateEmbedCodeForTool(toolId);
+      setTimeout(function() { updateSmartAdvisorAndSchedule(toolId); }, 30);
       recordRecentTool(toolId);
       showMainView('tool');
       var workspaces = document.querySelectorAll('.tool-workspace');
@@ -1827,6 +1984,7 @@
       document.getElementById('ln-int-pct-label').textContent = 'Interest: ' + intPct + '%';
       document.getElementById('ln-bar-principal').style.width = prinPct + '%';
       document.getElementById('ln-bar-interest').style.width = intPct + '%';
+      if (typeof updateSmartAdvisorAndSchedule === 'function' && currentActiveToolId === 'loan') updateSmartAdvisorAndSchedule('loan');
     }
 
     // 2. Compound Interest
@@ -2196,6 +2354,12 @@
     }
 
     window.addEventListener('keydown', function(e) {
+      if (e.key === '/' && document.activeElement && ['INPUT', 'TEXTAREA', 'SELECT'].indexOf(document.activeElement.tagName) === -1) {
+        e.preventDefault();
+        showMainView('home');
+        var s = document.getElementById('tool-search-input');
+        if (s) s.focus();
+      }
       if ((e.ctrlKey || e.metaKey) && e.shiftKey && e.key.toLowerCase() === 'a') {
         e.preventDefault();
         showMainView('cms');
@@ -2544,7 +2708,165 @@
       calcSalaryBudget();
     }
 
+    
+    var CURR = '$';
+
+    function setGlobalCurrency(sym) {
+      var prev = CURR;
+      CURR = sym || '$';
+      try { localStorage.setItem('wf_currency', CURR); } catch (e) {}
+      var sel = document.getElementById('global-currency-select');
+      if (sel && sel.value !== CURR) sel.value = CURR;
+      calcLoanEMI();
+      calcCompound();
+      calcMarginROAS();
+      calcFreelanceRate();
+      calcInvoice();
+      calcPercentage();
+      calcCACLTV();
+      calcDTI();
+      calcCreditPayoff();
+      calcSalaryBudget();
+      updateSmartAdvisorAndSchedule(currentActiveToolId);
+      // Replace leading $ in outputs if currency is not $
+      var outNodes = document.querySelectorAll('[id$="-out"], #smart-whatif-grid strong, #dynamic-schedule-tbody td');
+      for (var i = 0; i < outNodes.length; i++) {
+        var t = outNodes[i].textContent;
+        if (t && t.indexOf('$') !== -1 && CURR !== '$') {
+          outNodes[i].textContent = t.replace(/\$/g, CURR);
+        }
+      }
+      showCleanToast('Currency updated to ' + CURR);
+    }
+
+    function toggleDarkMode() {
+      var htmlEl = document.documentElement;
+      var isDark = htmlEl.classList.toggle('dark-mode');
+      try { localStorage.setItem('wf_dark_mode', isDark ? '1' : '0'); } catch (e) {}
+      var btn = document.getElementById('dark-mode-btn');
+      if (btn) btn.innerHTML = isDark ? '&#9728;&#65039; Light' : '&#127769; Dark';
+    }
+
+    function updateSmartAdvisorAndSchedule(toolId) {
+      var grid = document.getElementById('smart-whatif-grid');
+      var schedCard = document.getElementById('dynamic-schedule-card');
+      var thead = document.getElementById('dynamic-schedule-thead');
+      var tbody = document.getElementById('dynamic-schedule-tbody');
+      var schedTitle = document.getElementById('dynamic-schedule-title');
+      if (!grid || !schedCard) return;
+
+      var c = CURR || '$';
+      if (toolId === 'loan') {
+        var P = Math.max(100, parseFloat(document.getElementById('ln-amount').value) || 25000);
+        var ar = Math.max(0.1, parseFloat(document.getElementById('ln-rate').value) || 7.5);
+        var yrs = Math.max(1, parseFloat(document.getElementById('ln-years').value) || 5);
+        var r = (ar / 12) / 100;
+        var n = yrs * 12;
+        var emi = (P * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+        var totInt = (emi * n) - P;
+        // What if +$75/mo extra?
+        var extraPay = emi + 75;
+        var nExtra = Math.ceil(-Math.log(1 - (P * r) / extraPay) / Math.log(1 + r));
+        var intSavedExtra = Math.max(0, Math.round(totInt - ((nExtra * extraPay) - P)));
+        var mosSaved = Math.max(1, n - nExtra);
+        // What if 1% lower APR?
+        var rLow = (Math.max(0.5, ar - 1.0) / 12) / 100;
+        var emiLow = (P * rLow * Math.pow(1 + rLow, n)) / (Math.pow(1 + rLow, n) - 1);
+        var intSavedRefi = Math.max(0, Math.round(totInt - ((emiLow * n) - P)));
+
+        grid.innerHTML =
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>1. Pay +' + c + '75/Mo Extra Principal:</strong> Cuts your loan term by <strong class="text-sage">' + mosSaved + ' months</strong> and saves <strong class="text-sage">' + c + intSavedExtra.toLocaleString() + '</strong> in interest.</div>' +
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>2. Negotiate -1.0% Lower APR:</strong> Qualifying for ' + Math.max(0.5, ar - 1.0).toFixed(1) + '% APR saves <strong class="text-sage">' + c + intSavedRefi.toLocaleString() + '</strong> over the loan lifecycle.</div>' +
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>3. Bi-Weekly Half-Payments:</strong> Paying half your EMI every 2 weeks equals <strong>13 full payments/year</strong>, shaving ~' + Math.max(1, Math.round(yrs * 0.8)) + ' months off early.</div>';
+
+        schedCard.classList.remove('hidden');
+        schedTitle.textContent = 'Year-by-Year Loan Amortization Schedule (' + c + P.toLocaleString() + ' at ' + ar + '% for ' + yrs + ' Years)';
+        thead.innerHTML = '<tr><th class="p-3 border border-stone-200">Year</th><th class="p-3 border border-stone-200">Annual EMI Paid</th><th class="p-3 border border-stone-200">Principal Paid</th><th class="p-3 border border-stone-200">Interest Paid</th><th class="p-3 border border-stone-200">Ending Loan Balance</th></tr>';
+        var bal = P;
+        var rowsHtml = '';
+        for (var y = 1; y <= Math.min(30, yrs); y++) {
+          var yrInt = 0, yrPrin = 0;
+          for (var m = 1; m <= 12; m++) {
+            var mInt = bal * r;
+            var mPrin = Math.min(bal, emi - mInt);
+            yrInt += mInt;
+            yrPrin += mPrin;
+            bal = Math.max(0, bal - mPrin);
+          }
+          rowsHtml += '<tr><td class="p-2.5 border border-stone-200 font-bold">Year ' + y + '</td><td class="p-2.5 border border-stone-200">' + c + Math.round(yrInt + yrPrin).toLocaleString() + '</td><td class="p-2.5 border border-stone-200 text-sage font-semibold">' + c + Math.round(yrPrin).toLocaleString() + '</td><td class="p-2.5 border border-stone-200 text-terracottaDark">' + c + Math.round(yrInt).toLocaleString() + '</td><td class="p-2.5 border border-stone-200 font-bold">' + c + Math.round(bal).toLocaleString() + '</td></tr>';
+        }
+        tbody.innerHTML = rowsHtml;
+      } else if (toolId === 'compound') {
+        var init = parseFloat(document.getElementById('ci-init').value) || 5000;
+        var mo = parseFloat(document.getElementById('ci-monthly').value) || 300;
+        var rate = (parseFloat(document.getElementById('ci-rate').value) || 8) / 100;
+        var yrs = Math.max(1, parseFloat(document.getElementById('ci-years').value) || 10);
+        var r = rate / 12;
+        var n = yrs * 12;
+        var fvBase = init * Math.pow(1 + r, n) + mo * ((Math.pow(1 + r, n) - 1) / r);
+        var fvPlus100 = init * Math.pow(1 + r, n) + (mo + 100) * ((Math.pow(1 + r, n) - 1) / r);
+        var nPlus5 = (yrs + 5) * 12;
+        var fvPlus5Y = init * Math.pow(1 + r, nPlus5) + mo * ((Math.pow(1 + r, nPlus5) - 1) / r);
+
+        grid.innerHTML =
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>1. Add +' + c + '100/Month Contribution:</strong> Lifts your final portfolio by <strong class="text-sage">+' + c + Math.round(fvPlus100 - fvBase).toLocaleString() + '</strong> to ' + c + Math.round(fvPlus100).toLocaleString() + '.</div>' +
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>2. Stay Invested +5 Extra Years:</strong> Extending from ' + yrs + ' to ' + (yrs + 5) + ' years grows your wealth to <strong class="text-sage">' + c + Math.round(fvPlus5Y).toLocaleString() + '</strong>.</div>' +
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>3. Rule of 72 Doubling Speed:</strong> At ' + (rate * 100).toFixed(1) + '% annual return, every dollar you invest doubles every <strong>' + (72 / (rate * 100)).toFixed(1) + ' years</strong>.</div>';
+
+        schedCard.classList.remove('hidden');
+        schedTitle.textContent = 'Year-by-Year Compounding Wealth Schedule (' + yrs + '-Year Projection)';
+        thead.innerHTML = '<tr><th class="p-3 border border-stone-200">Year</th><th class="p-3 border border-stone-200">Total Principal Contributed</th><th class="p-3 border border-stone-200">Total Compound Interest</th><th class="p-3 border border-stone-200">Ending Portfolio Balance</th></tr>';
+        var rowsHtml = '';
+        for (var y = 1; y <= Math.min(35, yrs); y++) {
+          var mCount = y * 12;
+          var yFv = init * Math.pow(1 + r, mCount) + mo * ((Math.pow(1 + r, mCount) - 1) / r);
+          var yPrin = init + (mo * mCount);
+          var yInt = yFv - yPrin;
+          rowsHtml += '<tr><td class="p-2.5 border border-stone-200 font-bold">Year ' + y + '</td><td class="p-2.5 border border-stone-200">' + c + Math.round(yPrin).toLocaleString() + '</td><td class="p-2.5 border border-stone-200 text-sage font-semibold">+' + c + Math.round(yInt).toLocaleString() + '</td><td class="p-2.5 border border-stone-200 font-bold">' + c + Math.round(yFv).toLocaleString() + '</td></tr>';
+        }
+        tbody.innerHTML = rowsHtml;
+      } else {
+        schedCard.classList.add('hidden');
+        grid.innerHTML =
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>1. Benchmark Your Baseline:</strong> Save your current calculation using the <strong>Save to My History</strong> button below so you can track monthly improvements.</div>' +
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>2. Test a 15% Efficiency Gain:</strong> Adjust your primary cost, churn, or rate input by 15% to see how compound unit economics multiplies your net result.</div>' +
+          '<div class="p-4 rounded-xl bg-white border border-amber-200"><strong>3. Share or Export to Excel:</strong> Use <strong>Copy Shareable Link</strong> or <strong>Download Excel (CSV)</strong> below to collaborate with your team or advisor.</div>';
+      }
+    }
+
+    function exportScheduleTableCSV() {
+      var tbl = document.getElementById('dynamic-schedule-table');
+      if (!tbl) return;
+      var rows = [];
+      var trs = tbl.querySelectorAll('tr');
+      for (var i = 0; i < trs.length; i++) {
+        var cells = trs[i].querySelectorAll('th, td');
+        var row = [];
+        for (var j = 0; j < cells.length; j++) {
+          row.push('"' + cells[j].textContent.trim().replace(/"/g, '""') + '"');
+        }
+        rows.push(row.join(','));
+      }
+      var blob = new Blob([rows.join('\n')], { type: 'text/csv;charset=utf-8;' });
+      var a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'WorkFlowora_Yearly_Schedule.csv';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      showCleanToast('Full yearly schedule downloaded as CSV!');
+    }
+
     window.addEventListener('DOMContentLoaded', function() {
+      try {
+        if (localStorage.getItem('wf_dark_mode') === '1') {
+          document.documentElement.classList.add('dark-mode');
+          var db = document.getElementById('dark-mode-btn');
+          if (db) db.innerHTML = '&#9728;&#65039; Light';
+        }
+        var savedCurr = localStorage.getItem('wf_currency');
+        if (savedCurr && savedCurr !== '$') setTimeout(function() { setGlobalCurrency(savedCurr); }, 180);
+      } catch (e) {}
       renderSavedCalcHistory();
       if (window.location.search.length > 1) { setTimeout(applyUrlQueryParameters, 150); }
       if (window.location.hash === '#admin') showMainView('cms');

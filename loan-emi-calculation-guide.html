@@ -61,6 +61,13 @@
     "mainEntity": [{"@type": "Question", "name": "How accurate is the interactive calculator on this page?", "acceptedAnswer": {"@type": "Answer", "text": "Our embedded calculator uses standard mathematical equations used by corporate FP&A analysts, commercial banks, and growth marketing teams, running 100% locally in your browser."}}, {"@type": "Question", "name": "Should I use gross revenue or gross profit margin when calculating LTV:CAC or Break-Even ROAS?", "acceptedAnswer": {"@type": "Answer", "text": "Always use Gross Profit Margin (after subtracting COGS, fulfillment, and payment processing fees) so your ratio reflects real net contribution profit."}}, {"@type": "Question", "name": "Is my financial or business data stored on any server when I use this tool?", "acceptedAnswer": {"@type": "Answer", "text": "Never. All WorkFlowora calculators execute 100% client-side in your browser for complete privacy."}}]
   }
   </script>
+  <style>
+    html.dark-mode body { background-color: #0F0F0E !important; color: #F5F5F4 !important; }
+    html.dark-mode header, html.dark-mode footer, html.dark-mode article, html.dark-mode details { background-color: #1C1917 !important; border-color: #292524 !important; color: #F5F5F4 !important; }
+    html.dark-mode .text-charcoal { color: #FAF9F5 !important; }
+    html.dark-mode .text-stone-600, html.dark-mode .text-stone-700, html.dark-mode .text-stone-500 { color: #A8A29E !important; }
+    html.dark-mode .bg-stone-50, html.dark-mode .bg-stone-100 { background-color: #262320 !important; border-color: #3F3B37 !important; }
+  </style>
 </head>
 <body class="bg-[#FAF9F5] text-[#141413] font-sans min-h-screen flex flex-col">
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
@@ -77,9 +84,12 @@
           <span class="block text-xs text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
         </div>
       </a>
-      <a href="/?tool=loan" class="bg-terracotta hover:bg-terracottaDark text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition">
+      <div class="flex items-center gap-2">
+        <button type="button" id="art-dark-btn" onclick="toggleArticleDark()" class="px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition">&#127769; Dark</button>
+        <a href="/?tool=loan" class="bg-terracotta hover:bg-terracottaDark text-white font-bold px-4 py-2.5 rounded-xl text-xs sm:text-sm transition">
         Open Loan & Mortgage EMI Calculator &rarr;
-      </a>
+        </a>
+      </div>
     </div>
   </header>
 
@@ -440,5 +450,22 @@
   <footer class="bg-white border-t border-stone-200 py-8 text-center text-xs text-stone-500 mt-12">
     &copy; 2026 <strong>WorkFlowora</strong> (<a href="https://www.workflowora.com" class="underline">www.workflowora.com</a>). All Rights Reserved.
   </footer>
+  <script>
+    function toggleArticleDark() {
+      var isDark = document.documentElement.classList.toggle('dark-mode');
+      try { localStorage.setItem('wf_dark_mode', isDark ? '1' : '0'); } catch (e) {}
+      var b = document.getElementById('art-dark-btn');
+      if (b) b.innerHTML = isDark ? '&#9728;&#65039; Light' : '&#127769; Dark';
+    }
+    try {
+      if (localStorage.getItem('wf_dark_mode') === '1') {
+        document.documentElement.classList.add('dark-mode');
+        window.addEventListener('DOMContentLoaded', function() {
+          var b = document.getElementById('art-dark-btn');
+          if (b) b.innerHTML = '&#9728;&#65039; Light';
+        });
+      }
+    } catch (e) {}
+  </script>
 </body>
 </html>
