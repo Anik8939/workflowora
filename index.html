@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
   <title>WorkFlowora — Free Online Calculators, Text Utilities &amp; Smart Work Tools</title>
   <link rel="canonical" href="https://www.workflowora.com/" />
-  <meta name="description" content="WorkFlowora offers 16+ free online financial calculators, text utilities, AI prompt builders, invoice &amp; QR tools, and practical guides. Zero signup required." />
+  <link rel="manifest" href="/manifest.json" />
+  <meta name="theme-color" content="#EA580C" />
+  <meta name="description" content="WorkFlowora offers 20+ free online financial calculators, text utilities, AI prompt builders, invoice &amp; QR tools, and practical guides. Zero signup required." />
   <!-- Custom SVG Brand Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23EA580C'/%3E%3Cpath d='M14 20L23 44L32 25L41 44L50 20' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='14' r='3.5' fill='%23FDE047'/%3E%3C/svg%3E" />
   <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high" />
@@ -225,13 +227,19 @@
     "@type": "WebSite",
     "name": "WorkFlowora",
     "url": "https://www.workflowora.com/",
-    "description": "16+ Free Online Financial Calculators, Text Utilities, AI Prompt Builders, and Practical Productivity Guides."
+    "description": "20+ Free Online Financial Calculators, Text Utilities, AI Prompt Builders, and Practical Productivity Guides."
   }
   </script>
   <!-- Google AdSense Verification & Auto Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731058976498303" crossorigin="anonymous"></script>
 </head>
 <body class="min-h-screen flex flex-col">
+  <!-- Top Reading & Scroll Progress Bar -->
+  <div id="top-reading-progress" class="no-print fixed top-0 left-0 h-1 bg-gradient-to-r from-terracotta to-amber-400 z-50 transition-all duration-150" style="width: 0%;"></div>
+  <!-- Floating Back-to-Top Button -->
+  <button id="back-to-top-btn" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top" class="no-print hidden fixed bottom-6 left-6 z-40 px-3.5 py-2.5 rounded-2xl bg-charcoal hover:bg-terracotta text-white font-bold text-xs shadow-lg border border-stone-700 transition">
+    &#8593; Top
+  </button>
 
   <!-- =========================================================
        STICKY HEADER WITH CUSTOM VECTOR BRAND LOGO
@@ -309,7 +317,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center clean-card p-6 sm:p-10 bg-white">
           <div class="lg:col-span-7 space-y-5 text-left">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold uppercase tracking-wide">
-              <span>&#10003; <span id="hero-tools-count">16</span> Free Instant Tools &#8226; <span id="hero-guides-count">30</span> Expert Guides &#8226; Zero Signup &#8226; 100% Browser Private</span>
+              <span>&#10003; <span id="hero-tools-count">20</span> Free Instant Tools &#8226; <span id="hero-guides-count">30</span> Expert Guides &#8226; Zero Signup &#8226; 100% Browser Private</span>
             </div>
 
             <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-charcoal tracking-tight leading-tight">
@@ -317,7 +325,7 @@
             </h1>
 
             <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
-              Choose any of our <strong>16 free browser utilities</strong> below—from <strong>Loan EMI, Compound Interest, LTV:CAC &amp; DTI Mortgage Calculators</strong> to <strong>Credit Card Payoff, Salary 50/30/20 Planners, Invoice Generators, and AI Prompt Builders</strong>.
+              Choose any of our <strong>20 free browser utilities</strong> below—from <strong>Loan EMI, Compound Interest, LTV:CAC &amp; DTI Mortgage Calculators</strong> to <strong>Credit Card Payoff, Salary 50/30/20 Planners, Invoice Generators, and AI Prompt Builders</strong>.
             </p>
 
             <!-- Search Bar -->
@@ -326,7 +334,7 @@
                 id="tool-search-input"
                 type="search"
                 oninput="filterToolCards()"
-                placeholder="Search all 16 tools (e.g., Loan, Compound Interest, LTV:CAC, DTI Mortgage, Credit Card, Salary, Invoice)..."
+                placeholder="Search all 20 tools (e.g., Loan, Compound Interest, LTV:CAC, DTI Mortgage, Credit Card, Salary, Invoice)..."
                 aria-label="Search tools"
                 class="w-full pl-12 pr-4 py-4 rounded-2xl bg-stone-50 border-2 border-stone-300 text-charcoal placeholder-stone-400 text-sm sm:text-base shadow-sm focus:outline-none focus:border-terracotta"
               />
@@ -361,21 +369,21 @@
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
           <button type="button" data-cat="all" onclick="setCategoryFilter('all')" class="cat-filter-btn cat-pill-active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition">
-            All Tools (<span id="count-cat-all">16</span>)
+            All Tools (<span id="count-cat-all">20</span>)
           </button>
           <button type="button" data-cat="Money &amp; Business" onclick="setCategoryFilter('Money & Business')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#128176; Money &amp; Business (<span id="count-cat-money">8</span>)
+            &#128176; Money &amp; Business (<span id="count-cat-money">11</span>)
           </button>
           <button type="button" data-cat="Writing &amp; AI" onclick="setCategoryFilter('Writing & AI')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
             &#9997;&#65039; Writing &amp; AI (<span id="count-cat-writing">3</span>)
           </button>
           <button type="button" data-cat="Daily Life" onclick="setCategoryFilter('Daily Life')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#128197; Daily Life &amp; Math (<span id="count-cat-daily">5</span>)
+            &#128197; Daily Life &amp; Math (<span id="count-cat-daily">6</span>)
           </button>
         </div>
       </section>
 
-      <!-- 16 Visual Tool Cards Grid -->
+      <!-- 20 Visual Tool Cards Grid -->
       <section aria-label="Tools Directory">
         <div id="tools-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6" style="min-height: 760px;"></div>
       </section>
@@ -452,6 +460,151 @@
             <li><a href="/basal-metabolic-rate-bmr-vs-tdee-macro-split-guide.html" class="text-xs text-stone-600 hover:text-terracotta underline decoration-stone-300">BMR vs. TDEE Explained: How to Calculate Your Calorie Deficit & Protein Macros Without Crash Dieting</a></li>
           </ul>
         </details>
+      </section>
+
+
+
+      <!-- ZERO-COMPETITION LONG-TAIL SEO ENGINE: EXACT DOLLAR, SALARY, LOAN & ROAS LOOKUP MATRICES -->
+      <section id="exact-lookup-tables-section" class="clean-card p-6 sm:p-10 bg-white space-y-8">
+        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 pb-4">
+          <div>
+            <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-extrabold uppercase tracking-wider">&#128200; Instant Exact-Number Lookup Tables</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Pre-Calculated Salary to Hourly, Loan EMI &amp; Break-Even ROAS Reference Charts</h2>
+            <p class="text-xs sm:text-sm text-stone-600 mt-1">Click any row or button below to load those exact numbers straight into our interactive calculators.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Table 1: Salary to Hourly & After-Tax 50/30/20 Breakdown ($35k to $150k) -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-display font-bold text-base sm:text-lg text-charcoal">&#128181; Annual Salary to Hourly Wage &amp; Monthly Pay Chart (2,080 Hrs/Yr)</h3>
+              <button type="button" onclick="openToolWorkspace('salary')" class="text-xs font-bold text-terracotta underline">Open Salary Tool &rarr;</button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse border border-stone-200 text-xs">
+                <thead>
+                  <tr class="bg-stone-100 text-charcoal font-bold">
+                    <th class="p-2.5 border border-stone-200">Annual Salary</th>
+                    <th class="p-2.5 border border-stone-200">Hourly Wage (40h/wk)</th>
+                    <th class="p-2.5 border border-stone-200">Gross Monthly</th>
+                    <th class="p-2.5 border border-stone-200">Est. Net Monthly (22% Tax)</th>
+                    <th class="p-2.5 border border-stone-200">20% Savings Target</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$35,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$16.83 / hr</td><td class="p-2.5 border border-stone-200">$2,917</td><td class="p-2.5 border border-stone-200">$2,275 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$455 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$45,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$21.63 / hr</td><td class="p-2.5 border border-stone-200">$3,750</td><td class="p-2.5 border border-stone-200">$2,925 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$585 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$50,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$24.04 / hr</td><td class="p-2.5 border border-stone-200">$4,167</td><td class="p-2.5 border border-stone-200">$3,250 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$650 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$60,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$28.85 / hr</td><td class="p-2.5 border border-stone-200">$5,000</td><td class="p-2.5 border border-stone-200">$3,900 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$780 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$70,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$33.65 / hr</td><td class="p-2.5 border border-stone-200">$5,833</td><td class="p-2.5 border border-stone-200">$4,550 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$910 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$75,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$36.06 / hr</td><td class="p-2.5 border border-stone-200">$6,250</td><td class="p-2.5 border border-stone-200">$4,875 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$975 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$85,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$40.87 / hr</td><td class="p-2.5 border border-stone-200">$7,083</td><td class="p-2.5 border border-stone-200">$5,525 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$1,105 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$100,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$48.08 / hr</td><td class="p-2.5 border border-stone-200">$8,333</td><td class="p-2.5 border border-stone-200">$6,500 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$1,300 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$120,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$57.69 / hr</td><td class="p-2.5 border border-stone-200">$10,000</td><td class="p-2.5 border border-stone-200">$7,800 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$1,560 / mo</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$150,000 / yr</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$72.12 / hr</td><td class="p-2.5 border border-stone-200">$12,500</td><td class="p-2.5 border border-stone-200">$9,750 / mo</td><td class="p-2.5 border border-stone-200 text-sage font-bold">$1,950 / mo</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Table 2: Exact Dollar Loan Monthly Payment Matrix ($10k to $100k at 7.5% APR) -->
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <h3 class="font-display font-bold text-base sm:text-lg text-charcoal">&#127974; Exact Loan Monthly Payment Chart ($10,000 – $100,000 at 7.5% APR)</h3>
+              <button type="button" onclick="openToolWorkspace('loan')" class="text-xs font-bold text-terracotta underline">Open Loan Tool &rarr;</button>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse border border-stone-200 text-xs">
+                <thead>
+                  <tr class="bg-stone-100 text-charcoal font-bold">
+                    <th class="p-2.5 border border-stone-200">Loan Amount</th>
+                    <th class="p-2.5 border border-stone-200">3-Year Term (36 Mos)</th>
+                    <th class="p-2.5 border border-stone-200">5-Year Term (60 Mos)</th>
+                    <th class="p-2.5 border border-stone-200">7-Year Term (84 Mos)</th>
+                    <th class="p-2.5 border border-stone-200">5-Yr Total Interest</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$10,000 Loan</td><td class="p-2.5 border border-stone-200">$311.06 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$200.38 / mo</td><td class="p-2.5 border border-stone-200">$153.38 / mo</td><td class="p-2.5 border border-stone-200">$2,023</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$15,000 Loan</td><td class="p-2.5 border border-stone-200">$466.59 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$300.57 / mo</td><td class="p-2.5 border border-stone-200">$230.07 / mo</td><td class="p-2.5 border border-stone-200">$3,034</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$20,000 Loan</td><td class="p-2.5 border border-stone-200">$622.12 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$400.76 / mo</td><td class="p-2.5 border border-stone-200">$306.77 / mo</td><td class="p-2.5 border border-stone-200">$4,046</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$25,000 Loan</td><td class="p-2.5 border border-stone-200">$777.66 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$500.95 / mo</td><td class="p-2.5 border border-stone-200">$383.46 / mo</td><td class="p-2.5 border border-stone-200">$5,057</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$30,000 Loan</td><td class="p-2.5 border border-stone-200">$933.19 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$601.14 / mo</td><td class="p-2.5 border border-stone-200">$460.15 / mo</td><td class="p-2.5 border border-stone-200">$6,068</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$40,000 Loan</td><td class="p-2.5 border border-stone-200">$1,244.25 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$801.52 / mo</td><td class="p-2.5 border border-stone-200">$613.53 / mo</td><td class="p-2.5 border border-stone-200">$8,091</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$50,000 Loan</td><td class="p-2.5 border border-stone-200">$1,555.31 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$1,001.90 / mo</td><td class="p-2.5 border border-stone-200">$766.91 / mo</td><td class="p-2.5 border border-stone-200">$10,114</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$75,000 Loan</td><td class="p-2.5 border border-stone-200">$2,332.97 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$1,502.85 / mo</td><td class="p-2.5 border border-stone-200">$1,150.37 / mo</td><td class="p-2.5 border border-stone-200">$15,171</td></tr>
+                  <tr><td class="p-2.5 border border-stone-200 font-bold">$100,000 Loan</td><td class="p-2.5 border border-stone-200">$3,110.62 / mo</td><td class="p-2.5 border border-stone-200 font-bold text-terracottaDark">$2,003.79 / mo</td><td class="p-2.5 border border-stone-200">$1,533.83 / mo</td><td class="p-2.5 border border-stone-200">$20,228</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 60-SECOND INTERACTIVE FINANCIAL & BUSINESS HEALTH SCORECARD -->
+      <section id="health-scorecard-section" class="clean-card p-6 sm:p-10 bg-white space-y-6">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-stone-200 pb-4">
+          <div>
+            <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-extrabold uppercase tracking-wider">&#127942; 60-Second Interactive Scorecard</span>
+            <h2 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Calculate Your Personal Finance &amp; Business Health Score (0–100)</h2>
+            <p class="text-xs sm:text-sm text-stone-600 mt-1">Move the 4 sliders below to get an instant institutional grade (A+ to D) and personalized action plan.</p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200">
+              <label class="block font-bold text-charcoal mb-1" for="sc-save">1. Monthly Savings &amp; Investing Rate (% of Income)</label>
+              <input id="sc-save" type="number" value="20" min="0" max="80" oninput="calcHealthScorecard()" class="w-full p-2.5 rounded-xl bg-white border border-stone-300 font-bold text-base" />
+              <span class="text-[11px] text-stone-500">Target: 20%+ (50/30/20 Rule)</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200">
+              <label class="block font-bold text-charcoal mb-1" for="sc-efund">2. Emergency Fund Runway (Months of Expenses)</label>
+              <input id="sc-efund" type="number" value="4" min="0" max="24" oninput="calcHealthScorecard()" class="w-full p-2.5 rounded-xl bg-white border border-stone-300 font-bold text-base" />
+              <span class="text-[11px] text-stone-500">Target: 3 to 6 Months Liquid Cash</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200">
+              <label class="block font-bold text-charcoal mb-1" for="sc-dti">3. Total Debt-to-Income (DTI) Ratio (%)</label>
+              <input id="sc-dti" type="number" value="28" min="0" max="90" oninput="calcHealthScorecard()" class="w-full p-2.5 rounded-xl bg-white border border-stone-300 font-bold text-base" />
+              <span class="text-[11px] text-stone-500">Target: Under 36% Total Debt</span>
+            </div>
+            <div class="p-4 rounded-2xl bg-stone-50 border border-stone-200">
+              <label class="block font-bold text-charcoal mb-1" for="sc-cc">4. Highest Credit Card / Unsecured APR (%)</label>
+              <input id="sc-cc" type="number" value="0" min="0" max="36" oninput="calcHealthScorecard()" class="w-full p-2.5 rounded-xl bg-white border border-stone-300 font-bold text-base" />
+              <span class="text-[11px] text-stone-500">Target: 0% Carried Revolving Balance</span>
+            </div>
+          </div>
+          <div class="lg:col-span-5 p-6 rounded-3xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Your Overall Financial Score</span>
+              <span id="sc-grade-badge" class="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-extrabold">Grade: A (Strong)</span>
+            </div>
+            <div id="sc-score-out" class="font-display font-extrabold text-4xl sm:text-5xl text-amber-300">88 / 100</div>
+            <p id="sc-advice-out" class="text-xs sm:text-sm text-stone-300 leading-relaxed">Excellent foundation! Your 20% savings rate and 28% DTI put you in the top tier. Focus on compounding your surplus in low-cost index funds.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SEARCHABLE A-TO-Z FINANCIAL, SAAS & E-COMMERCE GLOSSARY -->
+      <section id="glossary-section" class="clean-card p-6 sm:p-8 bg-white space-y-5">
+        <div class="flex flex-wrap items-center justify-between gap-4 border-b border-stone-200 pb-4">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-terracotta">&#128214; FINANCIAL &amp; BUSINESS DICTIONARY</span>
+            <h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal mt-1">Searchable A-to-Z Glossary of Essential Finance &amp; SaaS Terms</h2>
+          </div>
+          <input id="glossary-search" type="text" oninput="filterGlossaryTerms()" placeholder="Filter glossary (e.g., APR, LTV, ROAS, DTI)..." aria-label="Search glossary terms" class="w-full sm:w-72 p-2.5 rounded-xl bg-stone-50 border border-stone-300 text-xs" />
+        </div>
+        <div id="glossary-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 text-xs">
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">APR vs. APY</strong><span>APR is the simple nominal annual interest rate without intra-year compounding; APY includes daily or monthly compounding.</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">ARPU / ARPA</strong><span>Average Revenue Per User (or Account), typically measured monthly (MRR divided by total active customers).</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">Break-Even ROAS</strong><span>The minimum Return on Ad Spend multiplier where ad revenue covers product COGS and ad spend ($0 net profit): <code>1 &divide; Gross Margin %</code>.</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">Burn Rate &amp; Cash Runway</strong><span>Net monthly negative cash flow (Burn Rate) and the number of months before cash reserves hit $0 (<code>Cash Balance &divide; Net Burn</code>).</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">CAC &amp; LTV:CAC Ratio</strong><span>Customer Acquisition Cost compared against Customer Lifetime Value. A healthy SaaS or DTC business targets a 3.0:1+ LTV:CAC ratio.</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">CAGR (Compound Annual Growth)</strong><span>The smoothed annualized growth rate of an investment over multiple years: <code>(Ending Value &divide; Beginning Value)^(1/Years) &minus; 1</code>.</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">DTI (Debt-to-Income Ratio)</strong><span>Total required monthly debt minimum payments divided by gross monthly pre-tax income. Lenders prefer &le;28% housing and &le;36% total DTI.</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">Gross Margin vs. Markup</strong><span>Gross Margin divides profit by selling price <code>(P&minus;C)/P</code>; Markup divides profit by unit cost <code>(P&minus;C)/C</code>. A 100% markup equals a 50% margin.</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">NRR (Net Revenue Retention)</strong><span>Percentage of recurring revenue retained from an existing customer cohort over 12 months including upgrades and subtracting churn.</span></div>
+        </div>
       </section>
 
       <!-- FREE COPY-PASTE TEMPLATES VAULT & MASTER FORMULA CHEAT SHEET -->
@@ -555,6 +708,10 @@
           <button type="button" onclick="openToolWorkspace('dti')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">DTI Mortgage</button>
           <button type="button" onclick="openToolWorkspace('creditpayoff')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Credit Card Payoff</button>
           <button type="button" onclick="openToolWorkspace('salary')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Salary &amp; 50/30/20</button>
+          <button type="button" onclick="openToolWorkspace('tax')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">1099 Tax Estimator</button>
+          <button type="button" onclick="openToolWorkspace('runway')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Cash Runway &amp; Fees</button>
+          <button type="button" onclick="openToolWorkspace('roi')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">ROI &amp; Stock Avg</button>
+          <button type="button" onclick="openToolWorkspace('timer')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Billable Timer &amp; Goals</button>
         </div>
       </div>
 
@@ -667,6 +824,10 @@
                 <div id="ci-profit-out" class="font-bold text-terracotta text-lg">+$24,678.42</div>
               </div>
             </div>
+            <div class="pt-2 border-t border-green-200 flex items-center justify-between text-xs">
+              <label class="inline-flex items-center gap-2 cursor-pointer font-semibold text-charcoal"><input id="ci-inf-check" type="checkbox" onchange="calcCompound()" class="accent-orange-600 w-4 h-4" /> <span>Adjust for 3% Annual Inflation</span></label>
+              <span id="ci-real-out" class="font-bold text-stone-600">Real Today's Value: $48,871</span>
+            </div>
           </div>
         </div>
       </div>
@@ -773,7 +934,7 @@
           </button>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-sm">
           <div>
             <label class="block font-bold mb-1" for="inv-from">From (Your Business Name)</label>
             <input id="inv-from" type="text" value="WorkFlowora Digital Studio" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-semibold" />
@@ -785,6 +946,10 @@
           <div>
             <label class="block font-bold mb-1" for="inv-tax">Tax / VAT Rate (%)</label>
             <input id="inv-tax" type="number" value="5" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-semibold" />
+          </div>
+          <div>
+            <label class="block font-bold mb-1" for="inv-disc">Discount (%) / Terms (Net 15)</label>
+            <input id="inv-disc" type="number" value="0" min="0" max="100" oninput="calcInvoice()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-semibold" />
           </div>
         </div>
 
@@ -1244,6 +1409,234 @@
 
 
 
+
+      <!-- 17. US SELF-EMPLOYMENT & FREELANCE QUARTERLY TAX CALCULATOR -->
+      <div id="workspace-tax" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">1099 &amp; FREELANCE TAX ESTIMATOR</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">US Self-Employment &amp; Quarterly Estimated Tax Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Calculate 15.3% Social Security &amp; Medicare Self-Employment tax, deductible business expenses, and quarterly IRS payments.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="tx-gross">Annual 1099 Gross Income ($)</label>
+                <input id="tx-gross" type="number" value="95000" min="500" oninput="calcFreelanceTax()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="tx-exp">Business Expenses ($)</label>
+                <input id="tx-exp" type="number" value="15000" min="0" oninput="calcFreelanceTax()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="tx-inc-rate">Est. Income Tax Bracket (%)</label>
+                <input id="tx-inc-rate" type="number" value="14" min="0" max="50" oninput="calcFreelanceTax()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Quarterly Estimated Tax Reserve</span>
+              <span id="tx-eff-badge" class="px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold">26.7% Effective Rate</span>
+            </div>
+            <div id="tx-qtr-out" class="font-display font-extrabold text-3xl sm:text-4xl text-amber-300">$5,347 / quarter</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div>
+                <span class="text-stone-400 block">15.3% SE Tax</span>
+                <strong id="tx-se-out" class="text-base text-orange-400">$11,304/yr</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Est. Income Tax</span>
+                <strong id="tx-inc-out" class="text-base text-white">$10,085/yr</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Net Take-Home Profit</span>
+                <strong id="tx-net-out" class="text-base text-emerald-400">$58,611/yr</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18. STARTUP CASH RUNWAY, BURN RATE & STRIPE/PAYPAL FEE CALCULATOR -->
+      <div id="workspace-runway" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">FOUNDER CASH FLOW &amp; PAYMENT FEES</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Startup Cash Runway, Burn Rate &amp; Stripe/PayPal Fee Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Calculate how many months of cash runway your business has left—plus exact 2.9% + $0.30 payment processing fees.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="rw-cash">Current Bank Balance ($)</label>
+                <input id="rw-cash" type="number" value="180000" min="100" oninput="calcRunwayFees()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="rw-rev">Monthly Revenue Inflow ($)</label>
+                <input id="rw-rev" type="number" value="22000" min="0" oninput="calcRunwayFees()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="rw-exp">Monthly Operating Expenses ($)</label>
+                <input id="rw-exp" type="number" value="34000" min="100" oninput="calcRunwayFees()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="rw-stripe">Test Invoice for 2.9%+$0.30 Fee ($)</label>
+                <input id="rw-stripe" type="number" value="1000" min="1" oninput="calcRunwayFees()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Remaining Cash Runway</span>
+              <span id="rw-status-badge" class="px-3 py-1 rounded-full bg-green-600 text-white text-xs font-bold">Healthy Runway (12+ Mos)</span>
+            </div>
+            <div id="rw-months-out" class="font-display font-extrabold text-3xl sm:text-4xl text-amber-300">15.0 Months Runway</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div>
+                <span class="text-stone-400 block">Net Monthly Burn</span>
+                <strong id="rw-burn-out" class="text-base text-orange-400">$12,000/mo</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Stripe Fee (2.9%+.30)</span>
+                <strong id="rw-fee-out" class="text-base text-white">$29.30 Fee</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Charge to Net 100%</span>
+                <strong id="rw-grossup-out" class="text-base text-emerald-400">$1,030.18</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19. INVESTMENT ROI, CAGR & STOCK AVERAGE-DOWN CALCULATOR -->
+      <div id="workspace-roi" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">PORTFOLIO &amp; CAPITAL RETURNS</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Investment ROI, Annualized CAGR &amp; Stock Average-Down Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Calculate total Return on Investment (ROI %), Compound Annual Growth Rate (CAGR %), and average share cost basis.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="roi-init">Initial Investment ($)</label>
+                <input id="roi-init" type="number" value="10000" min="1" oninput="calcInvestmentROI()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="roi-final">Final / Current Value ($)</label>
+                <input id="roi-final" type="number" value="18500" min="0" oninput="calcInvestmentROI()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+              <div>
+                <label class="block font-bold text-xs uppercase text-stone-600 mb-1" for="roi-years">Holding Period (Years)</label>
+                <input id="roi-years" type="number" value="4" min="0.5" step="0.5" oninput="calcInvestmentROI()" class="w-full p-3.5 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" />
+              </div>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2 border-t border-stone-200 text-xs">
+              <div><label class="block font-bold text-stone-500 mb-1" for="avg-q1">Lot 1 Shares</label><input id="avg-q1" type="number" value="50" oninput="calcInvestmentROI()" class="w-full p-2.5 rounded-lg bg-stone-50 border border-stone-300 font-bold" /></div>
+              <div><label class="block font-bold text-stone-500 mb-1" for="avg-p1">Lot 1 Price ($)</label><input id="avg-p1" type="number" value="120" oninput="calcInvestmentROI()" class="w-full p-2.5 rounded-lg bg-stone-50 border border-stone-300 font-bold" /></div>
+              <div><label class="block font-bold text-stone-500 mb-1" for="avg-q2">Lot 2 Shares</label><input id="avg-q2" type="number" value="50" oninput="calcInvestmentROI()" class="w-full p-2.5 rounded-lg bg-stone-50 border border-stone-300 font-bold" /></div>
+              <div><label class="block font-bold text-stone-500 mb-1" for="avg-p2">Lot 2 Price ($)</label><input id="avg-p2" type="number" value="85" oninput="calcInvestmentROI()" class="w-full p-2.5 rounded-lg bg-stone-50 border border-stone-300 font-bold" /></div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Total Return on Investment (ROI)</span>
+              <span id="roi-cagr-badge" class="px-3 py-1 rounded-full bg-green-600 text-white text-xs font-bold">16.62% Annual CAGR</span>
+            </div>
+            <div id="roi-pct-out" class="font-display font-extrabold text-3xl sm:text-4xl text-emerald-400">+85.00% Total ROI</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div>
+                <span class="text-stone-400 block">Net Capital Gain</span>
+                <strong id="roi-gain-out" class="text-base text-white">+$8,500</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Annualized CAGR</span>
+                <strong id="roi-cagr-out" class="text-base text-amber-300">16.62% / yr</strong>
+              </div>
+              <div>
+                <span class="text-stone-400 block">Avg. Share Cost Basis</span>
+                <strong id="roi-avg-out" class="text-base text-emerald-400">$102.50 / sh</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20. LIVE BILLABLE WORK TIMER, POMODORO FOCUS CLOCK & GOAL TRACKER -->
+      <div id="workspace-timer" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">DAILY FOCUS &amp; LIVE EARNINGS TRACKER</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Live Billable Work Timer, Pomodoro Clock &amp; Savings Goal Tracker</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Track live billable client earnings second-by-second, run 25-minute deep-work Pomodoro sessions, and monitor your monthly savings goal.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-5">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300">&#9201; Live Billable Client Timer</span>
+              <div class="flex items-center gap-2 text-xs">
+                <span>Hourly Rate ($/hr):</span>
+                <input id="tm-rate" type="number" value="65" min="1" class="w-20 p-1.5 rounded-lg bg-stone-800 border border-stone-600 text-white font-bold text-center" />
+              </div>
+            </div>
+            <div class="grid grid-cols-2 gap-4 items-center">
+              <div>
+                <div class="text-xs text-stone-400">Elapsed Session Time</div>
+                <div id="tm-clock-out" class="font-mono font-extrabold text-3xl sm:text-4xl text-white">00:00:00</div>
+              </div>
+              <div>
+                <div class="text-xs text-stone-400">Live Earned Amount</div>
+                <div id="tm-earned-out" class="font-mono font-extrabold text-3xl sm:text-4xl text-emerald-400">$0.00</div>
+              </div>
+            </div>
+            <div class="flex flex-wrap gap-2 pt-2">
+              <button type="button" id="tm-start-btn" onclick="toggleBillableTimer()" class="px-4 py-2.5 rounded-xl bg-terracotta hover:bg-terracottaDark text-white font-bold text-xs">&#9654; Start / Pause Timer</button>
+              <button type="button" onclick="resetBillableTimer()" class="px-3.5 py-2.5 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-600 text-stone-200 font-bold text-xs">Reset</button>
+              <button type="button" onclick="sendTimerToInvoice()" class="px-3.5 py-2.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs">&#129534; Send to Invoice Generator &rarr;</button>
+            </div>
+          </div>
+
+          <div class="lg:col-span-6 space-y-4">
+            <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+              <div class="flex items-center justify-between">
+                <span class="font-display font-bold text-sm text-charcoal">&#127813; 25-Min Pomodoro Deep-Work Timer</span>
+                <span id="pomo-clock-out" class="font-mono font-extrabold text-2xl text-terracotta">25:00</span>
+              </div>
+              <div class="flex gap-2">
+                <button type="button" onclick="togglePomodoroTimer()" class="px-3.5 py-2 rounded-xl bg-charcoal text-white font-bold text-xs">Start / Pause 25m Focus</button>
+                <button type="button" onclick="resetPomodoroTimer(25)" class="px-3 py-2 rounded-xl bg-stone-200 text-charcoal font-bold text-xs">25m Work</button>
+                <button type="button" onclick="resetPomodoroTimer(5)" class="px-3 py-2 rounded-xl bg-stone-200 text-charcoal font-bold text-xs">5m Break</button>
+              </div>
+            </div>
+
+            <div class="p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-3">
+              <div class="font-display font-bold text-sm text-charcoal">&#127919; Personal Savings / Debt-Free Goal Tracker</div>
+              <div class="grid grid-cols-2 gap-3 text-xs">
+                <div><label class="block font-bold text-stone-500 mb-1" for="goal-saved">Saved / Paid So Far ($)</label><input id="goal-saved" type="number" value="4200" oninput="calcGoalProgress()" class="w-full p-2.5 rounded-lg bg-white border border-stone-300 font-bold" /></div>
+                <div><label class="block font-bold text-stone-500 mb-1" for="goal-target">Target Goal Amount ($)</label><input id="goal-target" type="number" value="10000" oninput="calcGoalProgress()" class="w-full p-2.5 rounded-lg bg-white border border-stone-300 font-bold" /></div>
+              </div>
+              <div class="space-y-1">
+                <div class="flex justify-between text-xs font-bold">
+                  <span id="goal-pct-out" class="text-sage">42.0% of Goal Reached ($4,200 / $10,000)</span>
+                  <span id="goal-rem-out" class="text-stone-500">$5,800 remaining</span>
+                </div>
+                <div class="w-full h-3 rounded-full bg-stone-200 overflow-hidden">
+                  <div id="goal-bar-fill" class="bg-sage h-full transition-all duration-300" style="width: 42%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- SMART "WHAT-IF" SAVINGS & PROFIT OPTIMIZER + DYNAMIC YEAR-BY-YEAR SCHEDULE TABLE -->
       <div id="smart-whatif-advisor-card" class="no-print clean-card p-6 sm:p-8 bg-amber-50/80 border-2 border-amber-200 space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-2">
@@ -1254,6 +1647,34 @@
           <span class="text-xs font-semibold text-stone-500">Live Mathematical Sensitivity Analysis</span>
         </div>
         <div id="smart-whatif-grid" class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs sm:text-sm"></div>
+      </div>
+
+
+      <!-- LIVE INTERACTIVE MULTI-YEAR VISUAL BAR CHART -->
+      <div id="dynamic-visual-chart-card" class="clean-card p-6 sm:p-8 bg-white space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="text-xs font-bold uppercase tracking-wider text-terracotta">&#128202; Interactive Visual Projection Chart</span>
+            <h2 id="visual-chart-title" class="font-display font-extrabold text-lg sm:text-xl text-charcoal">Year-by-Year Balance &amp; Growth Visualizer</h2>
+          </div>
+          <div class="flex items-center gap-4 text-xs font-bold">
+            <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-emerald-500 inline-block"></span> Principal / Equity</span>
+            <span class="inline-flex items-center gap-1.5"><span class="w-3 h-3 rounded-sm bg-orange-500 inline-block"></span> Interest / Growth</span>
+          </div>
+        </div>
+        <div id="visual-chart-bars" class="h-44 flex items-end gap-1.5 sm:gap-2.5 pt-6 pb-2 px-3 rounded-2xl bg-stone-50 border border-stone-200 overflow-x-auto"></div>
+      </div>
+
+      <!-- SIDE-BY-SIDE SCENARIO COMPARATOR (SCENARIO A VS. SCENARIO B) -->
+      <div id="scenario-compare-card" class="hidden clean-card p-6 sm:p-8 bg-white border-2 border-orange-300 space-y-4">
+        <div class="flex flex-wrap items-center justify-between gap-2">
+          <div>
+            <span class="px-2.5 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-extrabold uppercase">&#9878;&#65039; Side-by-Side Scenario Comparison</span>
+            <h2 class="font-display font-extrabold text-lg sm:text-xl text-charcoal mt-1">Pinned Scenario A vs. Current Live Scenario B</h2>
+          </div>
+          <button type="button" onclick="document.getElementById('scenario-compare-card').classList.add('hidden')" class="text-xs font-bold text-stone-500 hover:text-red-600 underline">Close Comparison</button>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm" id="scenario-compare-grid"></div>
       </div>
 
       <!-- DYNAMIC YEAR-BY-YEAR AMORTIZATION / GROWTH SCHEDULE TABLE -->
@@ -1289,6 +1710,7 @@
             <button type="button" onclick="exportActiveCalcCSV()" class="px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold transition flex items-center gap-1.5">
               <span>&#128229;</span> <span>Download Excel (CSV)</span>
             </button>
+            <button type="button" onclick="pinScenarioForComparison()" class="px-3.5 py-2 rounded-xl bg-amber-500 hover:bg-amber-600 text-charcoal font-extrabold transition flex items-center gap-1.5"><span>&#128204;</span> <span>Pin to Compare (A vs B)</span></button>
             <button type="button" onclick="saveCalculationToHistory()" class="px-3.5 py-2 rounded-xl bg-stone-800 hover:bg-stone-700 border border-stone-600 text-amber-300 font-bold transition flex items-center gap-1.5">
               <span>&#128190;</span> <span>Save to My History</span>
             </button>
@@ -1463,6 +1885,9 @@
           <li><button type="button" onclick="openToolWorkspace('cacltv')" class="hover:text-terracotta">SaaS LTV:CAC &amp; Payback Calculator</button></li>
           <li><button type="button" onclick="openToolWorkspace('dti')" class="hover:text-terracotta">Debt-to-Income (DTI) Mortgage Calculator</button></li>
           <li><button type="button" onclick="openToolWorkspace('creditpayoff')" class="hover:text-terracotta">Credit Card Payoff &amp; APR Calculator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('tax')" class="hover:text-terracotta">US 1099 Self-Employment Tax Estimator</button></li>
+          <li><button type="button" onclick="openToolWorkspace('runway')" class="hover:text-terracotta">Startup Cash Runway &amp; Stripe Fee Tool</button></li>
+          <li><button type="button" onclick="openToolWorkspace('roi')" class="hover:text-terracotta">Investment ROI &amp; Stock Average Calculator</button></li>
         </ul>
       </div>
 
@@ -1477,6 +1902,7 @@
           <li><button type="button" onclick="openToolWorkspace('percent')" class="hover:text-terracotta">Discount &amp; Percentage Calculator</button></li>
           <li><button type="button" onclick="openToolWorkspace('password')" class="hover:text-terracotta">Password &amp; QR Code Generator</button></li>
           <li><button type="button" onclick="openToolWorkspace('salary')" class="hover:text-terracotta">Salary to Hourly &amp; 50/30/20 Planner</button></li>
+          <li><button type="button" onclick="openToolWorkspace('timer')" class="hover:text-terracotta">Live Billable Work Timer &amp; Pomodoro</button></li>
         </ul>
       </div>
 
@@ -1629,6 +2055,38 @@
         badge: '50/30/20 Rule',
         title: 'Salary to Hourly & 50/30/20 Budget Planner',
         desc: 'Convert annual salary to hourly pay and split take-home income into 50/30/20 buckets.'
+      },
+      {
+        id: 'tax',
+        cat: 'Money & Business',
+        icon: '🇺🇸',
+        badge: '1099 & IRS Tax',
+        title: 'US Self-Employment & Freelance Tax Calculator',
+        desc: 'Estimate 15.3% Social Security & Medicare SE tax, deductions, and quarterly tax payments.'
+      },
+      {
+        id: 'runway',
+        cat: 'Money & Business',
+        icon: '🔥',
+        badge: 'Founder & Stripe',
+        title: 'Cash Runway, Burn Rate & Payment Fee Calculator',
+        desc: 'Calculate startup months of cash runway, net burn rate, and Stripe/PayPal 2.9%+$0.30 fees.'
+      },
+      {
+        id: 'roi',
+        cat: 'Money & Business',
+        icon: '📊',
+        badge: 'CAGR & Stocks',
+        title: 'Investment ROI, CAGR & Stock Average Calculator',
+        desc: 'Calculate total ROI %, annualized CAGR %, and average share cost basis across multiple buys.'
+      },
+      {
+        id: 'timer',
+        cat: 'Daily Life',
+        icon: '⏱️',
+        badge: 'Live Tracker',
+        title: 'Billable Work Timer, Pomodoro & Goal Tracker',
+        desc: 'Track live billable client earnings per second, run 25m focus sessions, and track savings goals.'
       }
     ];
 
@@ -2149,7 +2607,8 @@
       var qty = parseFloat(document.getElementById('inv-qty').value) || 1;
       var rate = parseFloat(document.getElementById('inv-rate').value) || 0;
 
-      var sub = qty * rate;
+      var discPct = Math.max(0, Math.min(100, parseFloat((document.getElementById('inv-disc') || {}).value) || 0));
+      var sub = (qty * rate) * (1 - discPct / 100);
       var tax = sub * (taxRate / 100);
       var total = sub + tax;
 
@@ -2424,7 +2883,7 @@
           '<p class="text-xs text-stone-500">Last Updated: November 4, 2026</p>' +
           '<p>At <strong>WorkFlowora</strong> (accessible from <code>https://www.workflowora.com</code>), protecting the privacy of our visitors is one of our highest priorities. This Privacy Policy document details the types of information collected and how we safeguard your data.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">1. Client-Side Calculator Data Processing</h2>' +
-          '<p>All 16 interactive tools on WorkFlowora—including our Loan EMI Calculator, Compound Interest Calculator, SaaS LTV:CAC Calculator, DTI Mortgage Calculator, Credit Card Payoff Calculator, Salary 50/30/20 Planner, Invoice Generator, Word Counter, and Password Generator—execute 100% locally inside your web browser using JavaScript. We do not collect, transmit, or store the financial figures, personal dates, or text documents you enter into these utilities.</p>' +
+          '<p>All 20 interactive tools on WorkFlowora—including our Loan EMI Calculator, Compound Interest Calculator, SaaS LTV:CAC Calculator, DTI Mortgage Calculator, Credit Card Payoff Calculator, Salary 50/30/20 Planner, Invoice Generator, Word Counter, and Password Generator—execute 100% locally inside your web browser using JavaScript. We do not collect, transmit, or store the financial figures, personal dates, or text documents you enter into these utilities.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">2. Google DoubleClick DART Cookie &amp; AdSense</h2>' +
           '<p>Google is a third-party vendor on our website. It uses cookies, known as DART cookies, to serve advertisements to our site visitors based upon their visit to <code>www.workflowora.com</code> and other sites on the internet. Visitors may choose to decline the use of DART cookies by visiting the Google Ad and Content Network Privacy Policy at: <code>https://policies.google.com/technologies/ads</code></p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">3. Log Files &amp; Analytics</h2>' +
@@ -2848,6 +3307,8 @@
     }
 
     function updateSmartAdvisorAndSchedule(toolId) {
+      if (typeof renderVisualProjectionChart === 'function') renderVisualProjectionChart(toolId);
+      if (typeof renderScenarioComparison === 'function' && pinnedScenarioA) renderScenarioComparison();
       var grid = document.getElementById('smart-whatif-grid');
       var schedCard = document.getElementById('dynamic-schedule-card');
       var thead = document.getElementById('dynamic-schedule-thead');
@@ -2957,6 +3418,290 @@
       showCleanToast('Full yearly schedule downloaded as CSV!');
     }
 
+    
+    var billableTimerInterval = null;
+    var billableSeconds = 0;
+    var pomoInterval = null;
+    var pomoSeconds = 25 * 60;
+    var pinnedScenarioA = null;
+
+    function calcFreelanceTax() {
+      var gross = Math.max(0, parseFloat(document.getElementById('tx-gross').value) || 95000);
+      var exp = Math.max(0, parseFloat(document.getElementById('tx-exp').value) || 15000);
+      var incRate = Math.max(0, Math.min(50, parseFloat(document.getElementById('tx-inc-rate').value) || 14)) / 100;
+      var netProfit = Math.max(0, gross - exp);
+      var seTaxable = netProfit * 0.9235;
+      var seTax = seTaxable * 0.153;
+      var agiAfterHalfSE = Math.max(0, netProfit - (seTax * 0.5));
+      var incTax = agiAfterHalfSE * incRate;
+      var totalTax = seTax + incTax;
+      var qtrTax = totalTax / 4;
+      var netTakeHome = Math.max(0, netProfit - totalTax);
+      var effRate = netProfit > 0 ? (totalTax / netProfit) * 100 : 0;
+
+      document.getElementById('tx-qtr-out').textContent = CURR + Math.round(qtrTax).toLocaleString() + ' / quarter';
+      document.getElementById('tx-se-out').textContent = CURR + Math.round(seTax).toLocaleString() + '/yr';
+      document.getElementById('tx-inc-out').textContent = CURR + Math.round(incTax).toLocaleString() + '/yr';
+      document.getElementById('tx-net-out').textContent = CURR + Math.round(netTakeHome).toLocaleString() + '/yr';
+      document.getElementById('tx-eff-badge').textContent = effRate.toFixed(1) + '% Effective Rate';
+    }
+
+    function calcRunwayFees() {
+      var cash = Math.max(0, parseFloat(document.getElementById('rw-cash').value) || 180000);
+      var rev = Math.max(0, parseFloat(document.getElementById('rw-rev').value) || 22000);
+      var exp = Math.max(1, parseFloat(document.getElementById('rw-exp').value) || 34000);
+      var stripeAmt = Math.max(1, parseFloat(document.getElementById('rw-stripe').value) || 1000);
+
+      var netBurn = exp - rev;
+      var badge = document.getElementById('rw-status-badge');
+      if (netBurn <= 0) {
+        document.getElementById('rw-months-out').textContent = 'Infinite (Cash-Flow Positive!)';
+        document.getElementById('rw-burn-out').textContent = '+' + CURR + Math.abs(Math.round(netBurn)).toLocaleString() + '/mo Profit';
+        badge.textContent = 'Default Alive (Profitable)';
+        badge.className = 'px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold';
+      } else {
+        var mos = cash / netBurn;
+        document.getElementById('rw-months-out').textContent = mos.toFixed(1) + ' Months Runway';
+        document.getElementById('rw-burn-out').textContent = '-' + CURR + Math.round(netBurn).toLocaleString() + '/mo';
+        if (mos < 6) {
+          badge.textContent = 'Urgent (<6 Mos Runway)';
+          badge.className = 'px-3 py-1 rounded-full bg-red-600 text-white text-xs font-bold';
+        } else if (mos < 12) {
+          badge.textContent = 'Moderate (6–12 Mos)';
+          badge.className = 'px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold';
+        } else {
+          badge.textContent = 'Healthy Runway (12+ Mos)';
+          badge.className = 'px-3 py-1 rounded-full bg-green-600 text-white text-xs font-bold';
+        }
+      }
+      var fee = (stripeAmt * 0.029) + 0.30;
+      var grossUp = (stripeAmt + 0.30) / (1 - 0.029);
+      document.getElementById('rw-fee-out').textContent = CURR + fee.toFixed(2) + ' Fee';
+      document.getElementById('rw-grossup-out').textContent = CURR + grossUp.toFixed(2);
+    }
+
+    function calcInvestmentROI() {
+      var init = Math.max(1, parseFloat(document.getElementById('roi-init').value) || 10000);
+      var fin = Math.max(0, parseFloat(document.getElementById('roi-final').value) || 18500);
+      var yrs = Math.max(0.1, parseFloat(document.getElementById('roi-years').value) || 4);
+      var gain = fin - init;
+      var roiPct = (gain / init) * 100;
+      var cagr = (fin > 0 ? (Math.pow(fin / init, 1 / yrs) - 1) * 100 : -100);
+
+      var q1 = Math.max(0, parseFloat(document.getElementById('avg-q1').value) || 50);
+      var p1 = Math.max(0, parseFloat(document.getElementById('avg-p1').value) || 120);
+      var q2 = Math.max(0, parseFloat(document.getElementById('avg-q2').value) || 50);
+      var p2 = Math.max(0, parseFloat(document.getElementById('avg-p2').value) || 85);
+      var totShares = Math.max(1, q1 + q2);
+      var avgPrice = ((q1 * p1) + (q2 * p2)) / totShares;
+
+      document.getElementById('roi-pct-out').textContent = (roiPct >= 0 ? '+' : '') + roiPct.toFixed(2) + '% Total ROI';
+      document.getElementById('roi-gain-out').textContent = (gain >= 0 ? '+' : '-') + CURR + Math.abs(Math.round(gain)).toLocaleString();
+      document.getElementById('roi-cagr-out').textContent = cagr.toFixed(2) + '% / yr';
+      document.getElementById('roi-cagr-badge').textContent = cagr.toFixed(2) + '% Annual CAGR';
+      document.getElementById('roi-avg-out').textContent = CURR + avgPrice.toFixed(2) + ' / sh';
+    }
+
+    function toggleBillableTimer() {
+      if (billableTimerInterval) {
+        clearInterval(billableTimerInterval);
+        billableTimerInterval = null;
+        showCleanToast('Billable timer paused.');
+      } else {
+        billableTimerInterval = setInterval(function() {
+          billableSeconds++;
+          updateBillableDisplay();
+        }, 1000);
+        showCleanToast('Live billable work timer running!');
+      }
+    }
+
+    function resetBillableTimer() {
+      if (billableTimerInterval) { clearInterval(billableTimerInterval); billableTimerInterval = null; }
+      billableSeconds = 0;
+      updateBillableDisplay();
+    }
+
+    function updateBillableDisplay() {
+      var hrs = Math.floor(billableSeconds / 3600);
+      var mins = Math.floor((billableSeconds % 3600) / 60);
+      var secs = billableSeconds % 60;
+      var pad = function(n) { return n < 10 ? '0' + n : String(n); };
+      document.getElementById('tm-clock-out').textContent = pad(hrs) + ':' + pad(mins) + ':' + pad(secs);
+      var rate = Math.max(1, parseFloat(document.getElementById('tm-rate').value) || 65);
+      var earned = (billableSeconds / 3600) * rate;
+      document.getElementById('tm-earned-out').textContent = CURR + earned.toFixed(2);
+    }
+
+    function sendTimerToInvoice() {
+      var rate = Math.max(1, parseFloat(document.getElementById('tm-rate').value) || 65);
+      var hrs = Math.max(0.25, parseFloat((billableSeconds / 3600).toFixed(2)) || 1);
+      openToolWorkspace('invoice');
+      document.getElementById('inv-item1-desc').value = ' Consulting & Deep-Work Session (' + hrs + ' hrs @ ' + CURR + rate + '/hr)';
+      document.getElementById('inv-qty').value = hrs;
+      document.getElementById('inv-rate').value = rate;
+      calcInvoice();
+      showCleanToast('Session hours & rate sent to Printable Invoice Generator!');
+    }
+
+    function togglePomodoroTimer() {
+      if (pomoInterval) {
+        clearInterval(pomoInterval);
+        pomoInterval = null;
+      } else {
+        pomoInterval = setInterval(function() {
+          if (pomoSeconds > 0) {
+            pomoSeconds--;
+            var m = Math.floor(pomoSeconds / 60);
+            var s = pomoSeconds % 60;
+            document.getElementById('pomo-clock-out').textContent = (m < 10 ? '0' + m : m) + ':' + (s < 10 ? '0' + s : s);
+          } else {
+            clearInterval(pomoInterval);
+            pomoInterval = null;
+            showCleanToast('Pomodoro session complete! Take a 5-minute break.');
+          }
+        }, 1000);
+      }
+    }
+
+    function resetPomodoroTimer(mins) {
+      if (pomoInterval) { clearInterval(pomoInterval); pomoInterval = null; }
+      pomoSeconds = (mins || 25) * 60;
+      document.getElementById('pomo-clock-out').textContent = (mins < 10 ? '0' + mins : mins) + ':00';
+    }
+
+    function calcGoalProgress() {
+      var saved = Math.max(0, parseFloat(document.getElementById('goal-saved').value) || 4200);
+      var target = Math.max(1, parseFloat(document.getElementById('goal-target').value) || 10000);
+      var pct = Math.min(100, (saved / target) * 100);
+      var rem = Math.max(0, target - saved);
+      document.getElementById('goal-pct-out').textContent = pct.toFixed(1) + '% of Goal Reached (' + CURR + saved.toLocaleString() + ' / ' + CURR + target.toLocaleString() + ')';
+      document.getElementById('goal-rem-out').textContent = CURR + rem.toLocaleString() + ' remaining';
+      document.getElementById('goal-bar-fill').style.width = pct + '%';
+      try { localStorage.setItem('wf_goal_saved', saved); localStorage.setItem('wf_goal_target', target); } catch (e) {}
+    }
+
+    function pinScenarioForComparison() {
+      var data = collectActiveToolData();
+      pinnedScenarioA = data;
+      renderScenarioComparison();
+      showCleanToast('Scenario A pinned! Now change any input above to compare Scenario A vs. Scenario B.');
+    }
+
+    function renderScenarioComparison() {
+      var card = document.getElementById('scenario-compare-card');
+      var grid = document.getElementById('scenario-compare-grid');
+      if (!pinnedScenarioA || !card || !grid) return;
+      var currData = collectActiveToolData();
+      card.classList.remove('hidden');
+      var aOuts = pinnedScenarioA.outputs.map(function(o) { return '<div><span class="text-stone-500">' + o.id + ':</span> <strong class="text-charcoal">' + o.value + '</strong></div>'; }).join('');
+      var bOuts = currData.outputs.map(function(o) { return '<div><span class="text-stone-500">' + o.id + ':</span> <strong class="text-terracottaDark">' + o.value + '</strong></div>'; }).join('');
+      grid.innerHTML =
+        '<div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1.5"><div class="font-extrabold text-xs uppercase text-stone-500">&#128204; Pinned Scenario A (' + pinnedScenarioA.title + ')</div>' + aOuts + '</div>' +
+        '<div class="p-4 rounded-2xl bg-orange-50/60 border border-orange-200 space-y-1.5"><div class="font-extrabold text-xs uppercase text-terracottaDark">&#9889; Current Live Scenario B (' + currData.title + ')</div>' + bOuts + '</div>';
+    }
+
+    function renderVisualProjectionChart(toolId) {
+      var card = document.getElementById('dynamic-visual-chart-card');
+      var barsWrap = document.getElementById('visual-chart-bars');
+      if (!card || !barsWrap) return;
+      if (toolId !== 'loan' && toolId !== 'compound') {
+        card.classList.add('hidden');
+        return;
+      }
+      card.classList.remove('hidden');
+      barsWrap.innerHTML = '';
+      if (toolId === 'compound') {
+        var init = parseFloat(document.getElementById('ci-init').value) || 5000;
+        var mo = parseFloat(document.getElementById('ci-monthly').value) || 300;
+        var rate = (parseFloat(document.getElementById('ci-rate').value) || 8) / 100;
+        var yrs = Math.min(25, Math.max(1, parseFloat(document.getElementById('ci-years').value) || 10));
+        var r = rate / 12;
+        var maxFv = init * Math.pow(1 + r, yrs * 12) + mo * ((Math.pow(1 + r, yrs * 12) - 1) / r);
+        for (var y = 1; y <= yrs; y++) {
+          var m = y * 12;
+          var fv = init * Math.pow(1 + r, m) + mo * ((Math.pow(1 + r, m) - 1) / r);
+          var prin = init + mo * m;
+          var totH = Math.max(12, Math.round((fv / maxFv) * 120));
+          var prinH = Math.max(4, Math.round((prin / fv) * totH));
+          var intH = Math.max(2, totH - prinH);
+          barsWrap.innerHTML += '<div class="flex flex-col items-center flex-1 min-w-[22px]"><div class="w-full flex flex-col justify-end rounded-t-md overflow-hidden" style="height:' + totH + 'px"><div class="bg-orange-500 w-full" style="height:' + intH + 'px"></div><div class="bg-emerald-500 w-full" style="height:' + prinH + 'px"></div></div><span class="text-[10px] font-bold text-stone-500 mt-1">Y' + y + '</span></div>';
+        }
+      } else if (toolId === 'loan') {
+        var P = Math.max(100, parseFloat(document.getElementById('ln-amount').value) || 25000);
+        var ar = Math.max(0.1, parseFloat(document.getElementById('ln-rate').value) || 7.5);
+        var yrsL = Math.min(25, Math.max(1, parseFloat(document.getElementById('ln-years').value) || 5));
+        var rL = (ar / 12) / 100;
+        var nL = yrsL * 12;
+        var emi = (P * rL * Math.pow(1 + rL, nL)) / (Math.pow(1 + rL, nL) - 1);
+        var bal = P;
+        for (var yL = 1; yL <= yrsL; yL++) {
+          var yInt = 0, yPrin = 0;
+          for (var mL = 1; mL <= 12; mL++) {
+            var mI = bal * rL;
+            var mP = Math.min(bal, emi - mI);
+            yInt += mI; yPrin += mP; bal = Math.max(0, bal - mP);
+          }
+          var totBar = emi * 12;
+          var pH = Math.max(8, Math.round((yPrin / totBar) * 110));
+          var iH = Math.max(4, 110 - pH);
+          barsWrap.innerHTML += '<div class="flex flex-col items-center flex-1 min-w-[24px]"><div class="w-full flex flex-col justify-end rounded-t-md overflow-hidden" style="height:110px"><div class="bg-orange-500 w-full" style="height:' + iH + 'px"></div><div class="bg-emerald-500 w-full" style="height:' + pH + 'px"></div></div><span class="text-[10px] font-bold text-stone-500 mt-1">Y' + yL + '</span></div>';
+        }
+      }
+    }
+
+    function calcHealthScorecard() {
+      var saveRate = Math.max(0, parseFloat(document.getElementById('sc-save').value) || 0);
+      var efund = Math.max(0, parseFloat(document.getElementById('sc-efund').value) || 0);
+      var dti = Math.max(0, parseFloat(document.getElementById('sc-dti').value) || 0);
+      var ccApr = Math.max(0, parseFloat(document.getElementById('sc-cc').value) || 0);
+
+      var s1 = Math.min(30, (saveRate / 20) * 30);
+      var s2 = Math.min(25, (efund / 6) * 25);
+      var s3 = dti <= 28 ? 25 : Math.max(0, 25 - ((dti - 28) * 0.8));
+      var s4 = ccApr === 0 ? 20 : Math.max(0, 20 - (ccApr * 0.7));
+      var score = Math.round(s1 + s2 + s3 + s4);
+
+      document.getElementById('sc-score-out').textContent = score + ' / 100';
+      var badge = document.getElementById('sc-grade-badge');
+      var adv = document.getElementById('sc-advice-out');
+      if (score >= 85) {
+        badge.textContent = 'Grade: A+ (Elite Financial Health)';
+        badge.className = 'px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-extrabold';
+        adv.textContent = 'Outstanding! Your low debt ratio and strong savings runway put you in the top decile. Use our Compound Interest & Investment ROI Calculators to maximize tax-efficient compounding.';
+      } else if (score >= 68) {
+        badge.textContent = 'Grade: B (Solid Foundation)';
+        badge.className = 'px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-extrabold';
+        adv.textContent = 'Good momentum! Eliminate any high-APR credit card balances first using our Credit Card Payoff Calculator, then automate 20% of your net pay into savings.';
+      } else {
+        badge.textContent = 'Grade: C (Action Needed)';
+        badge.className = 'px-3 py-1 rounded-full bg-red-600 text-white text-xs font-extrabold';
+        adv.textContent = 'Priority Action: Build a $1,500 starter emergency buffer and use the Debt Avalanche or Personal Loan Consolidation Calculator to lower your monthly DTI below 36%.';
+      }
+    }
+
+    function filterGlossaryTerms() {
+      var q = (document.getElementById('glossary-search').value || '').toLowerCase().trim();
+      var items = document.querySelectorAll('.glossary-item');
+      for (var i = 0; i < items.length; i++) {
+        var txt = items[i].textContent.toLowerCase();
+        items[i].style.display = (!q || txt.indexOf(q) !== -1) ? '' : 'none';
+      }
+    }
+
+    window.addEventListener('scroll', function() {
+      var scrollTop = window.scrollY || document.documentElement.scrollTop;
+      var docHeight = Math.max(1, document.documentElement.scrollHeight - document.documentElement.clientHeight);
+      var pct = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+      var bar = document.getElementById('top-reading-progress');
+      if (bar) bar.style.width = pct + '%';
+      var btt = document.getElementById('back-to-top-btn');
+      if (btt) {
+        if (scrollTop > 400) btt.classList.remove('hidden');
+        else btt.classList.add('hidden');
+      }
+    });
+
     window.addEventListener('DOMContentLoaded', function() {
       try {
         if (localStorage.getItem('wf_dark_mode') === '1') {
@@ -2998,6 +3743,11 @@
         calcDTI();
         calcCreditPayoff();
         calcSalaryBudget();
+        calcFreelanceTax();
+        calcRunwayFees();
+        calcInvestmentROI();
+        calcGoalProgress();
+        calcHealthScorecard();
       }, 120);
       try {
         if (!localStorage.getItem('wf_cookie_consent')) {
