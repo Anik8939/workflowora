@@ -285,11 +285,11 @@
        STICKY HEADER WITH CUSTOM VECTOR BRAND LOGO
        ========================================================= -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
-    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-10 py-3 flex items-center justify-between gap-3 overflow-x-auto">
+    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-2">
       <!-- Custom SVG Brand Logo -->
       <button type="button" onclick="showMainView('home')" class="flex items-center gap-2.5 text-left focus:outline-none group shrink-0 whitespace-nowrap">
-        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition shrink-0">
-          <svg class="w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition shrink-0">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 20L22 46L32 25L42 46L52 20" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="32" cy="13" r="4" fill="#FDE047"/>
           </svg>
@@ -299,42 +299,45 @@
             <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-charcoal">WorkFlowora</span>
             <span class="px-1.5 py-0.5 rounded-full bg-orange-100 text-terracottaDark font-bold text-[10px] uppercase tracking-wider">PRO</span>
           </div>
-          <span id="nav-brand-sub" class="block text-[11px] text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
+          <span id="nav-brand-sub" class="hidden 2xl:block text-[11px] text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
         </div>
       </button>
 
-      <!-- Clean Single-Line Navigation Menu -->
-      <nav aria-label="Main Menu" class="hidden xl:flex items-center gap-1 shrink-0 whitespace-nowrap">
+      <!-- Clean Single-Line Navigation Menu (Zero Scrollbar, Zero Wrapping) -->
+      <nav aria-label="Main Menu" class="hidden lg:flex items-center gap-1 shrink-0 whitespace-nowrap">
         <button id="nav-btn-tools" type="button" onclick="showMainView('home')" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
-          All Free Tools
+          All Tools (32)
         </button>
         <button id="nav-btn-guides" type="button" onclick="scrollToSection('popular-guides-section')" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
-          How-To Guides
+          Guides (32)
         </button>
         <button id="nav-btn-global" type="button" onclick="scrollToSection('global-hub-comparator-section')" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
-          Global Tax &amp; Pay
+          Global Tax
         </button>
         <button id="nav-btn-templates" type="button" onclick="scrollToSection('templates-vault-section')" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
-          Templates &amp; Formulas
+          Templates
+        </button>
+        <button id="nav-btn-request" type="button" onclick="scrollToSection('feature-request-section')" class="px-2.5 py-1.5 rounded-xl text-xs font-bold text-terracotta hover:bg-orange-50 transition whitespace-nowrap shrink-0">
+          &#128161; Request Tool
         </button>
         <a id="nav-link-about" href="/about-us.html" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
-          About Us
+          About
         </a>
         <a id="nav-link-contact" href="/contact-us.html" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
           Contact
         </a>
       </nav>
 
-      <!-- Right Action Controls (Never Wraps) -->
-      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0 whitespace-nowrap">
+      <!-- Compact Right Action Controls (Fits Any Screen Without Slider) -->
+      <div class="flex items-center gap-1.5 shrink-0 whitespace-nowrap">
         <label for="global-lang-select" class="sr-only">Select Language</label>
         <select id="global-lang-select" onchange="setGlobalLanguage(this.value)" aria-label="Language Selector" class="px-2 py-1.5 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer whitespace-nowrap shrink-0">
-          <option value="en">&#127482;&#127480; EN (English)</option>
-          <option value="de">&#127465;&#127466; DE (Deutsch)</option>
-          <option value="fr">&#127467;&#127479; FR (Fran&#231;ais)</option>
-          <option value="es">&#127466;&#127480; ES (Espa&#241;ol)</option>
-          <option value="ja">&#127471;&#127477; JA (&#26085;&#26412;&#35486;)</option>
-          <option value="pt">&#127463;&#127479; PT (Portugu&#234;s)</option>
+          <option value="en" selected>&#127482;&#127480; EN</option>
+          <option value="de">&#127465;&#127466; DE</option>
+          <option value="fr">&#127467;&#127479; FR</option>
+          <option value="es">&#127466;&#127480; ES</option>
+          <option value="ja">&#127471;&#127477; JA</option>
+          <option value="pt">&#127463;&#127479; PT</option>
         </select>
         <label for="global-currency-select" class="sr-only">Select Currency</label>
         <select id="global-currency-select" onchange="setGlobalCurrency(this.value)" aria-label="Currency Selector" class="px-2 py-1.5 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer whitespace-nowrap shrink-0">
@@ -353,21 +356,22 @@
         <button type="button" onclick="toggleDarkMode()" id="dark-mode-btn" aria-label="Toggle Dark Mode" class="px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition whitespace-nowrap shrink-0">
           &#127769; Dark
         </button>
-        <button id="nav-cta-loan" type="button" onclick="openToolWorkspace('loan')" class="hidden md:inline-flex btn-coral px-3.5 py-2 text-xs shadow-sm whitespace-nowrap shrink-0">
+        <button id="nav-cta-loan" type="button" onclick="openToolWorkspace('loan')" class="hidden xl:inline-flex btn-coral px-3 py-1.5 text-xs shadow-sm whitespace-nowrap shrink-0">
           Loan &amp; EMI &#8594;
         </button>
       </div>
     </div>
-    <!-- Quick Navigation Bar (Visible below XL breakpoint so Laptop & Tablet never wrap) -->
-    <nav aria-label="Quick Menu" class="xl:hidden border-t border-stone-200 px-4 py-1.5 flex items-center gap-2 overflow-x-auto text-xs font-bold whitespace-nowrap">
-      <button id="mnav-tools" type="button" onclick="showMainView('home')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">All 32 Tools</button>
-      <button id="mnav-guides" type="button" onclick="scrollToSection('popular-guides-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">32 Guides</button>
-      <button id="mnav-global" type="button" onclick="scrollToSection('global-hub-comparator-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Global Tax &amp; Pay</button>
-      <button id="mnav-tables" type="button" onclick="scrollToSection('exact-lookup-tables-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Salary &amp; Loan Charts</button>
-      <button id="mnav-score" type="button" onclick="scrollToSection('health-scorecard-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Health Scorecard</button>
-      <button id="mnav-tpl" type="button" onclick="scrollToSection('templates-vault-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Templates &amp; Formulas</button>
-      <a id="mnav-about" href="/about-us.html" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">About</a>
-      <a id="mnav-contact" href="/contact-us.html" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Contact</a>
+    <!-- Mobile/Tablet Wrapped Quick Bar (Only on small screens <1024px, flex-wrap so NO horizontal slider!) -->
+    <nav aria-label="Quick Menu" class="lg:hidden border-t border-stone-200 px-4 py-2 flex flex-wrap items-center gap-1.5 text-xs font-bold">
+      <button id="mnav-tools" type="button" onclick="showMainView('home')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal">All 32 Tools</button>
+      <button id="mnav-guides" type="button" onclick="scrollToSection('popular-guides-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal">32 Guides</button>
+      <button id="mnav-global" type="button" onclick="scrollToSection('global-hub-comparator-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal">Global Tax</button>
+      <button id="mnav-request" type="button" onclick="scrollToSection('feature-request-section')" class="px-2.5 py-1 rounded-lg bg-orange-100 text-terracottaDark">&#128161; Request Tool</button>
+      <button id="mnav-tables" type="button" onclick="scrollToSection('exact-lookup-tables-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal">Charts</button>
+      <button id="mnav-score" type="button" onclick="scrollToSection('health-scorecard-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal">Scorecard</button>
+      <button id="mnav-tpl" type="button" onclick="scrollToSection('templates-vault-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal">Templates</button>
+      <a id="mnav-about" href="/about-us.html" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal">About</a>
+      <a id="mnav-contact" href="/contact-us.html" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal">Contact</a>
     </nav>
   </header>
 
@@ -853,6 +857,89 @@
           </div>
         </div>
       </section>
+
+      <!-- VISITOR SUGGESTION, TOOL REQUEST & COMMUNITY ROADMAP SECTION -->
+      <section id="feature-request-section" class="clean-card p-6 sm:p-10 bg-white space-y-6 border-2 border-orange-500/30">
+        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 pb-4">
+          <div>
+            <span id="req-sec-badge" class="text-xs font-bold uppercase tracking-wider text-terracotta">&#128161; VISITOR SUGGESTIONS &amp; CUSTOM TOOL REQUESTS</span>
+            <h2 id="req-sec-title" class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-1">Need a New Calculator or Feature? Submit Your Request</h2>
+            <p id="req-sec-desc" class="text-xs sm:text-sm text-stone-600 mt-1">Tell us what calculator, business template, or improvement you want next. We build and ship the most requested tools 100% free.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <!-- Left: Instant Suggestion & Feature Request Form -->
+          <form id="visitor-request-form" onsubmit="submitVisitorFeatureRequest(event)" class="lg:col-span-7 bg-stone-50 p-5 sm:p-6 rounded-2xl border border-stone-200 space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="req-visitor-name" id="req-lbl-name" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Your Name (Optional)</label>
+                <input id="req-visitor-name" type="text" placeholder="e.g., Alex Rivera" class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm text-charcoal" />
+              </div>
+              <div>
+                <label for="req-visitor-email" id="req-lbl-email" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Email for Notification (Optional)</label>
+                <input id="req-visitor-email" type="email" placeholder="you@example.com" class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm text-charcoal" />
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="req-type-select" id="req-lbl-type" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">What Would You Like to Request?</label>
+                <select id="req-type-select" class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm font-semibold text-charcoal cursor-pointer">
+                  <option value="New Calculator / Tool">&#129518; New Calculator / Online Tool</option>
+                  <option value="Feature Improvement">&#10024; Feature or UI Improvement</option>
+                  <option value="New How-To Guide">&#128214; New Financial / Business Guide</option>
+                  <option value="Bug Report / Feedback">&#128030; Report a Bug or Formula Feedback</option>
+                </select>
+              </div>
+              <div>
+                <label for="req-cat-select" id="req-lbl-cat" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Category</label>
+                <select id="req-cat-select" class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm font-semibold text-charcoal cursor-pointer">
+                  <option value="Money & Business">&#128176; Money, Finance &amp; Business</option>
+                  <option value="Writing & AI">&#9997;&#65039; Writing, SEO &amp; AI</option>
+                  <option value="Daily Life & Math">&#128197; Daily Life, Health &amp; Math</option>
+                  <option value="Global / Other">&#127757; Global Tax / Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="req-title-input" id="req-lbl-title" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Requested Tool Name or Suggestion Title *</label>
+              <input id="req-title-input" type="text" required placeholder="e.g., Real Estate Rental Cash-Flow Calculator or Crypto Tax Estimator" class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm font-semibold text-charcoal" />
+            </div>
+
+            <div>
+              <label for="req-details-input" id="req-lbl-details" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Details / How Should It Work? *</label>
+              <textarea id="req-details-input" rows="3" required placeholder="Describe what inputs, formulas, or features you would like us to include..." class="w-full p-3 rounded-xl bg-white border border-stone-300 text-sm text-charcoal"></textarea>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-3 pt-1">
+              <button id="req-submit-btn" type="submit" class="btn-coral px-6 py-3 text-xs sm:text-sm font-extrabold shadow-md cursor-pointer">
+                &#128640; Submit Suggestion &amp; Add to Roadmap
+              </button>
+              <span id="req-privacy-note" class="text-[11px] text-stone-500">&#128274; Instant submission &bull; 100% Free Forever</span>
+            </div>
+
+            <div id="req-success-box" class="hidden p-4 rounded-xl bg-emerald-50 border border-emerald-300 text-emerald-900 text-xs space-y-2">
+              <div class="font-bold text-sm">&#9989; Thank you! Your suggestion has been added to our live board!</div>
+              <p id="req-success-msg">We review every visitor request to prioritize new tools. Want to also send a copy directly to our inbox?</p>
+              <div class="pt-1">
+                <a id="req-mailto-link" href="mailto:contact@workflowora.com" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs no-underline transition">&#128231; Send Copy via Email (contact@workflowora.com)</a>
+              </div>
+            </div>
+          </form>
+
+          <!-- Right: Live Community Requested Tools & Upvote Board -->
+          <div class="lg:col-span-5 space-y-4">
+            <div class="flex items-center justify-between">
+              <h3 id="req-board-heading" class="font-display font-bold text-base sm:text-lg text-charcoal">&#128293; Top Visitor-Requested Ideas (Click to Upvote)</h3>
+              <span class="px-2.5 py-1 rounded-full bg-orange-100 text-terracottaDark font-bold text-[11px]">Live Queue</span>
+            </div>
+            <div id="visitor-requests-list" class="space-y-3"></div>
+          </div>
+        </div>
+      </section>
+
 
     </div>
 
@@ -4751,8 +4838,321 @@
        ========================================================= */
 
     // Save original English TOOLS_DIRECTORY and GUIDES_LIST on load so switching back to EN is 100% exact
+
+    /* =========================================================
+       V16 100% INSTANT ZERO-RELOAD 6-LANGUAGE NATIVE ENGINE
+       (EN, DE, FR, ES, JA, PT) + VISITOR FEATURE REQUEST SYSTEM
+       ========================================================= */
+
+    // Immediately clear any lingering Google Translate cookies so external scripts NEVER corrupt or mix languages
+    (function clearLegacyGoogleTranslateCookies() {
+      try {
+        var d = window.location.hostname;
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        if (d) {
+          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + d;
+          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + d;
+        }
+      } catch (e) {}
+    })();
+
     var ORIG_TOOLS_EN = JSON.parse(JSON.stringify(TOOLS_DIRECTORY));
     var ORIG_GUIDES_EN = JSON.parse(JSON.stringify(GUIDES_LIST));
+
+    // Complete 32-Guide Card Translations (DE, FR, ES, JA, PT) so every guide card translates in 0ms!
+    var GUIDES_I18N = {
+      de: {
+        'guide-1': { cat: 'Geld & Finanzen', rt: '8 Min. Lesezeit', title: 'Kreditrate (EMI) exakt berechnen & Tausende Euro Zinsen sparen (Guide 2026)', sum: 'Erfahren Sie, wie monatliche Zinseszinsen bei Immobilien- und Ratenkrediten wirken und wie Sondertilgungen Jahre sparen.' },
+        'guide-2': { cat: 'Geld & Finanzen', rt: '7 Min. Lesezeit', title: 'Die Macht des Zinseszinses: Wie 300 €/Monat langfristiges Vermögen aufbauen', sum: 'Warum regelmäßiges monatliches Investieren und Zinseszinseffekt langfristig jedes Market-Timing schlagen.' },
+        'guide-3': { cat: 'Business & SaaS', rt: '9 Min. Lesezeit', title: 'Freelancer-Stundensatz kalkulieren: So verkaufen Sie sich nie wieder unter Wert', sum: 'Wie Sie nicht-abrechenbare Stunden, Steuern, Softwarekosten und Urlaubstage korrekt in Ihren Stundensatz einpreisen.' },
+        'guide-4': { cat: 'Business & SaaS', rt: '8 Min. Lesezeit', title: 'Gewinnmarge vs. Aufschlag (Markup) & Break-Even-ROAS: Der Business-Mathe-Guide', sum: 'Verstehen Sie den Unterschied zwischen Handelsmarge und Kalkulationsaufschlag sowie Ihren Mindest-ROAS für Werbeanzeigen.' },
+        'guide-5': { cat: 'KI & Produktivität', rt: '6 Min. Lesezeit', title: 'Die 4-Teile-Formel für perfekte KI-Prompts (ChatGPT, Claude & Gemini)', sum: 'Nutzen Sie Rolle + Aufgabe + Rahmenbedingungen + Ausgabeformat für erstklassige KI-Ergebnisse in Sekunden.' },
+        'guide-6': { cat: 'Business & SaaS', rt: '7 Min. Lesezeit', title: 'Professionelle Rechnungen erstellen, die 2x schneller bezahlt werden', sum: 'Die 7 Pflichtangaben jeder Geschäftsrechnung, um Zahlungsverzögerungen bei Firmenkunden zu vermeiden.' },
+        'guide-7': { cat: 'Karriere & Alltag', rt: '7 Min. Lesezeit', title: 'BMI & Täglicher Kalorienbedarf (TDEE) verstehen: Der Praxis-Gesundheitsguide', sum: 'Wissenschaftlich fundierte Erklärung der BMI-Kategorien und Ihres täglichen Grund- und Leistungsumsatzes.' },
+        'guide-8': { cat: 'KI & Produktivität', rt: '8 Min. Lesezeit', title: 'SEO-Text-Best-Practices: Ideale Wortanzahl & saubere URL-Slugs 2026', sum: 'Warum sprechende URL-Slugs und optimale Lesezeiten sowohl Google-Rankings als auch die Verweildauer steigern.' },
+        'guide-9': { cat: 'Geld & Finanzen', rt: '8 Min. Lesezeit', title: 'Ratenkredit vs. Kreditkartenschulden: Was sollten Sie zuerst tilgen?', sum: 'Vergleichen Sie günstige Ratenkredite mit 20 %+ Kreditkartenzinsen und sparen Sie durch kluge Umschuldung.' },
+        'guide-10': { cat: 'Geld & Finanzen', rt: '6 Min. Lesezeit', title: 'Wie groß muss Ihr Notgroschen 2026 wirklich sein? (3-6-9-Monats-Regel)', sum: 'Berechnen Sie Ihre optimale Liquiditätsreserve auf Basis Ihrer monatlichen Fixkosten.' },
+        'guide-11': { cat: 'Business & SaaS', rt: '7 Min. Lesezeit', title: 'Rabatt-Psychologie: Wie Sie 20 %-Aktionen starten, ohne Ihre Marge zu zerstören', sum: 'Warum 20 % Rabatt oft die Hälfte Ihres Nettogewinns auffrisst – und wie Staffelpreise Ihre Marge schützen.' },
+        'guide-12': { cat: 'Business & SaaS', rt: '9 Min. Lesezeit', title: 'Customer Acquisition Cost (CAC) & Lifetime Value (LTV): Die 3:1-Regel erklärt', sum: 'Meistern Sie das 3:1-LTV:CAC-Verhältnis, mit dem erfolgreiche Gründer und SaaS-Firmen profitabel skalieren.' },
+        'guide-13': { cat: 'Geld & Finanzen', rt: '7 Min. Lesezeit', title: 'Die 50/30/20-Budget-Regel: Monatliches Nettoeinkommen stressfrei aufteilen', sum: 'Teilen Sie Ihr Einkommen systematisch in 50 % Fixkosten, 30 % Lebensstil und 20 % Vermögensaufbau auf.' },
+        'guide-14': { cat: 'KI & Produktivität', rt: '8 Min. Lesezeit', title: '5 praktische KI-Workflows, die jede Woche 10+ Stunden Arbeit sparen', sum: 'Schritt-für-Schritt-Workflows für Recherche, Gliederung und Kundenangebote bei 100 % menschlicher Qualität.' },
+        'guide-15': { cat: 'KI & Produktivität', rt: '6 Min. Lesezeit', title: 'Passwort-Sicherheit 2026: Warum Länge wichtiger ist als Sonderzeichen', sum: 'Wie moderne Grafikkarten 8-stellige Passwörter knacken und warum 16+ Zeichen echte Sicherheit bieten.' },
+        'guide-16': { cat: 'Business & SaaS', rt: '6 Min. Lesezeit', title: '7 clevere Wege, wie Selbstständige & KMU mit QR-Codes mehr Kunden gewinnen', sum: 'Von Rechnungs-Zahlungslinks bis zu digitalen Visitenkarten: 7 umsatzstarke QR-Code-Einsatzgebiete.' },
+        'guide-17': { cat: 'Karriere & Alltag', rt: '7 Min. Lesezeit', title: 'Lesegeschwindigkeit & Sprechtempo (WPM): Wie viele Wörter hat eine 5-Minuten-Rede?', sum: 'Exakte Wort-zu-Minuten-Tabellen für YouTube-Skripte, Keynotes, Podcasts und Fachartikel.' },
+        'guide-18': { cat: 'Karriere & Alltag', rt: '6 Min. Lesezeit', title: 'Warum das exakte chronologische Alter für Visa, Prüfungen & Rente zählt', sum: 'Wie Schaltjahre und Monatslängen offizielle Altersberechnungen bei Behörden und Versicherungen beeinflussen.' },
+        'guide-19': { cat: 'KI & Produktivität', rt: '6 Min. Lesezeit', title: 'Title Case vs. Sentence Case: Typografie-Regeln für Headlines, Code & UI', sum: 'Wann Sie Groß-/Kleinschreibung und Bindestrich-Slugs in Webdesign, Blogs und Programmierung nutzen.' },
+        'guide-20': { cat: 'Business & SaaS', rt: '8 Min. Lesezeit', title: 'Monatliche Retainer vs. Stundenabrechnung: Planbares Freelancer-Einkommen aufbauen', sum: 'Beenden Sie das Auftrags-Auf-und-Ab, indem Sie Einzelprojekte in monatliche Wartungs- und Beratungsverträge wandeln.' },
+        'guide-21': { cat: 'Business & SaaS', rt: '8 Min. Lesezeit', title: 'Break-Even-ROAS-Formel: Mindest-Werberendite vor dem Skalieren berechnen', sum: 'So berechnen Sie aus Ihrer Bruttomarge den exakten Break-Even-ROAS für Meta-, TikTok- und Google-Ads.' },
+        'guide-22': { cat: 'Geld & Finanzen', rt: '7 Min. Lesezeit', title: 'Nominalzins (APR) vs. Effektivzins (APY): Warum Banken zwei Zinssätze nutzen', sum: 'Der mathematische Unterschied zwischen APR und APY und wie unterjährige Verzinsung Ihre Rendite verändert.' },
+        'guide-23': { cat: 'Geld & Finanzen', rt: '8 Min. Lesezeit', title: 'Schulden-Einkommens-Quote (DTI): Die 28/36-Regel bei der Baufinanzierung', sum: 'Berechnen Sie Ihre maximale monatliche Kreditbelastung für eine reibungslose Hypothekenzusage.' },
+        'guide-24': { cat: 'Business & SaaS', rt: '8 Min. Lesezeit', title: 'Bruttomarge vs. Nettogewinnmarge: Formeln, Branchen-Benchmarks & Preisfehler', sum: 'Alle wichtigen Buchhaltungsformeln und Umrechnungstabellen zwischen Aufschlag, Rohmarge und Umsatzrendite.' },
+        'guide-25': { cat: 'Business & SaaS', rt: '9 Min. Lesezeit', title: 'SaaS Churn-Rate & Net Revenue Retention (NRR): Abo-Mathematik für Gründer', sum: 'Wie monatliche Kündigungsraten den LTV bestimmen und warum 110 %+ NRR der stärkste Wachstumsmotor ist.' },
+        'guide-26': { cat: 'Geld & Finanzen', rt: '7 Min. Lesezeit', title: 'Die Mindestraten-Falle bei Kreditkarten: Wie Tageszinsen Sie in Schulden halten', sum: 'Die Mathematik hinter 2 %-Mindestraten und wie Sie mit der Lawinen-Methode tausende Euro Zinsen sparen.' },
+        'guide-27': { cat: 'Business & SaaS', rt: '8 Min. Lesezeit', title: 'Value-Based Pricing vs. Stundenlohn: Projekte nach Kunden-ROI bepreisen', sum: 'Die 10x-ROI-Preisformel für Berater und Agenturen, um 5.000 € bis 15.000 € pro Projekt zu erzielen.' },
+        'guide-28': { cat: 'Business & SaaS', rt: '7 Min. Lesezeit', title: 'Netto 15 vs. Netto 30 Zahlungsziele: Verzugszinsen & Skonto richtig berechnen', sum: 'Wie 2 % Skonto und klare Zahlungsziele Ihren Cashflow beschleunigen und Zahlungsausfälle verhindern.' },
+        'guide-29': { cat: 'Karriere & Alltag', rt: '6 Min. Lesezeit', title: 'Wie viele Wörter hat eine 5-, 10- oder 20-Minuten-Präsentation? WPM-Leitfaden', sum: 'Finden Sie die optimale Wortanzahl für Pitches, Reden und Webinare je nach Sprechgeschwindigkeit.' },
+        'guide-30': { cat: 'Karriere & Alltag', rt: '8 Min. Lesezeit', title: 'Grundumsatz (BMR) vs. Gesamtumsatz (TDEE): Kaloriendefizit & Makros berechnen', sum: 'Berechnen Sie Ihren Stoffwechsel nach der Mifflin-St-Jeor-Formel für nachhaltigen Fettabbau oder Muskelaufbau.' },
+        'guide-31': { cat: 'Business & SaaS', rt: '9 Min. Lesezeit', title: 'Selbstständigen-Steuer & Quartals-Vorauszahlungen: Praxis-Guide (2026)', sum: 'Wie Sozialabgaben, Betriebsausgaben und vierteljährliche Steuer-Rücklagen für Freelancer funktionieren.' },
+        'guide-32': { cat: 'Business & SaaS', rt: '8 Min. Lesezeit', title: 'Startup Cash-Runway & Burn-Rate-Formel: So erreichen Gründer Default Alive', sum: 'Berechnen Sie Gross Burn vs. Net Burn, verbleibende Runway-Monate und wann Ihr Startup profitabel trägt.' }
+      },
+      fr: {
+        'guide-1': { cat: 'Argent & Finance', rt: '8 min de lecture', title: 'Comment Calculer Votre Vraie Mensualité de Prêt (EMI) et Économiser des Milliers d\'Euros', sum: 'Comprenez le fonctionnement des intérêts mensuels sur les prêts immobiliers et comment un remboursement anticipé réduit la durée.' },
+        'guide-2': { cat: 'Argent & Finance', rt: '7 min de lecture', title: 'La Puissance des Intérêts Composés : Comment 300 €/Mois Bâtissent un Patrimoine', sum: 'Découvrez pourquoi l\'investissement mensuel régulier bat systématiquement les tentatives de spéculation.' },
+        'guide-3': { cat: 'Business & SaaS', rt: '9 min de lecture', title: 'Comment Fixer Votre Tarif Horaire & TJM Freelance Sans Vous Sous-Évaluer', sum: 'Intégrez vos heures non facturables, charges sociales, logiciels et congés dans votre vrai tarif plancher.' },
+        'guide-4': { cat: 'Business & SaaS', rt: '8 min de lecture', title: 'Marge Brute vs Coefficient (Markup) & ROAS Seuil de Rentabilité : Le Guide Complet', sum: 'Maîtrisez la différence entre taux de marge et taux de marque ainsi que le calcul du Break-Even ROAS.' },
+        'guide-5': { cat: 'IA & Productivité', rt: '6 min de lecture', title: 'La Formule en 4 Parties pour Écrire des Prompts IA Parfaits (ChatGPT, Claude & Gemini)', sum: 'Utilisez Rôle + Tâche + Contraintes + Format de Sortie pour obtenir des réponses d\'expert en quelques secondes.' },
+        'guide-6': { cat: 'Business & SaaS', rt: '7 min de lecture', title: 'Comment Créer des Factures Clients Professionnelles Payées 2x Plus Vite', sum: 'Les 7 mentions indispensables sur chaque facture pour éviter les blocages comptables chez vos clients.' },
+        'guide-7': { cat: 'Carrière & Quotidien', rt: '7 min de lecture', title: 'Comprendre Votre IMC et Vos Besoins Caloriques Quotidiens (TDEE)', sum: 'Explication scientifique des tranches d\'IMC et du calcul de votre dépense énergétique de maintien.' },
+        'guide-8': { cat: 'IA & Productivité', rt: '8 min de lecture', title: 'Bonnes Pratiques Rédaction SEO : Nombre de Mots Idéal & Slugs URL Propres (2026)', sum: 'Pourquoi des URLs courtes et un temps de lecture clair améliorent votre positionnement Google.' },
+        'guide-9': { cat: 'Argent & Finance', rt: '8 min de lecture', title: 'Prêt Personnel vs Dette de Carte de Crédit : Lequel Rembourser en Premier ?', sum: 'Comparez les prêts à taux fixe avec les crédits renouvelables à 20 %+ et économisez grâce au rachat de crédit.' },
+        'guide-10': { cat: 'Argent & Finance', rt: '6 min de lecture', title: 'Combien d\'Épargne de Précaution Faut-il Vraiment en 2026 ? (Règle des 3-6-9 Mois)', sum: 'Calculez votre matelas de sécurité exact selon vos charges mensuelles incompressibles.' },
+        'guide-11': { cat: 'Business & SaaS', rt: '7 min de lecture', title: 'Psychologie des Promotions : Faire -20 % Sans Détruire Votre Marge Nette', sum: 'Pourquoi une remise de 20 % peut diviser votre bénéfice par deux et comment utiliser les offres groupées.' },
+        'guide-12': { cat: 'Business & SaaS', rt: '9 min de lecture', title: 'Coût d\'Acquisition Client (CAC) & Lifetime Value (LTV) : Le Ratio d\'Or 3:1', sum: 'Comprenez le ratio LTV:CAC de 3:1 exigé par les investisseurs pour scaler vos campagnes d\'acquisition.' },
+        'guide-13': { cat: 'Argent & Finance', rt: '7 min de lecture', title: 'La Règle Budgétaire 50/30/20 : Répartir Votre Salaire Mensuel Sans Stress', sum: 'Divisez votre revenu net en 50 % Besoins, 30 % Envies et 20 % Épargne et Investissement.' },
+        'guide-14': { cat: 'IA & Productivité', rt: '8 min de lecture', title: '5 Workflows IA Pratiques qui Font Gagner 10+ Heures de Travail par Semaine', sum: 'Des méthodes concrètes pour accélérer vos recherches, plans d\'articles et propositions commerciales.' },
+        'guide-15': { cat: 'IA & Productivité', rt: '6 min de lecture', title: 'Sécurité des Mots de Passe en 2026 : Pourquoi la Longueur Bat la Complexité', sum: 'Voyez pourquoi un mot de passe aléatoire de 16 caractères résiste aux attaques par force brute.' },
+        'guide-16': { cat: 'Business & SaaS', rt: '6 min de lecture', title: '7 Façons Intelligentes d\'Utiliser les QR Codes pour Gagner Plus de Clients', sum: 'Des liens de paiement sur facture aux cartes de visite numériques : 7 usages à forte conversion.' },
+        'guide-17': { cat: 'Carrière & Quotidien', rt: '7 min de lecture', title: 'Vitesse de Lecture & Temps de Parole (MPM) : Combien de Mots pour un Discours de 5 Min ?', sum: 'Tableau de conversion mots/minutes pour calibrer vos scripts YouTube, présentations et discours.' },
+        'guide-18': { cat: 'Carrière & Quotidien', rt: '6 min de lecture', title: 'Pourquoi l\'Âge Chronologique Exact Compte pour les Concours, Visas et Retraites', sum: 'Comment les années bissextiles influencent le calcul officiel de l\'âge administratif.' },
+        'guide-19': { cat: 'IA & Productivité', rt: '6 min de lecture', title: 'Majuscules de Titre vs Phrase : Règles Typographiques pour le Web & le Code', sum: 'Guide pratique des conventions de casse pour vos titres d\'articles, interfaces UI et URLs.' },
+        'guide-20': { cat: 'Business & SaaS', rt: '8 min de lecture', title: 'Abonnements Mensuels (Retainers) vs Facturation Horaire : Créer un Revenu Récurrent', sum: 'Transformez vos missions ponctuelles en contrats d\'accompagnement mensuels prévisibles.' },
+        'guide-21': { cat: 'Business & SaaS', rt: '8 min de lecture', title: 'Formule du Break-Even ROAS : Calculer Votre Rentabilité Publicitaire Avant de Scaler', sum: 'Calculez votre ROAS minimum rentable à partir de votre marge brute sur Meta Ads et Google Ads.' },
+        'guide-22': { cat: 'Argent & Finance', rt: '7 min de lecture', title: 'TAEG (APR) vs Rendement Annuel (APY) : Comprendre la Différence Mathématique', sum: 'Comment la fréquence de capitalisation modifie le coût réel d\'un emprunt ou le gain d\'un placement.' },
+        'guide-23': { cat: 'Argent & Finance', rt: '8 min de lecture', title: 'Guide du Taux d\'Endettement (DTI) : La Règle 28/36 des Banques Immobilières', sum: 'Calculez votre capacité d\'emprunt maximale selon vos revenus et charges mensuelles.' },
+        'guide-24': { cat: 'Business & SaaS', rt: '8 min de lecture', title: 'Marge Brute vs Marge Nette : Formules Exactes, Benchmarks & Erreurs de Prix', sum: 'Toutes les formules comptables indispensables pour piloter la rentabilité de votre entreprise.' },
+        'guide-25': { cat: 'Business & SaaS', rt: '9 min de lecture', title: 'Taux d\'Attrition (Churn) SaaS & Rétention Nette (NRR) : L\'Impact sur le LTV:CAC', sum: 'Comment réduire le churn mensuel et atteindre 110 %+ de NRR grâce à l\'expansion.' },
+        'guide-26': { cat: 'Argent & Finance', rt: '7 min de lecture', title: 'Le Piège du Paiement Minimum des Cartes de Crédit : Comment En Sortir Rapidement', sum: 'Comparez la méthode Avalanche et la consolidation de dettes pour éliminer vos crédits coûteux.' },
+        'guide-27': { cat: 'Business & SaaS', rt: '8 min de lecture', title: 'Tarification à la Valeur vs Taux Horaire : Facturer selon le ROI Client', sum: 'La méthode Value-Based Pricing pour vendre vos projets de conseil entre 5 000 € et 15 000 €.' },
+        'guide-28': { cat: 'Business & SaaS', rt: '7 min de lecture', title: 'Conditions de Paiement Net 15 vs Net 30 : Calculer les Pénalités de Retard', sum: 'Protégez votre trésorerie avec des conditions d\'escompte 2/10 Net 30 et des clauses de retard claires.' },
+        'guide-29': { cat: 'Carrière & Quotidien', rt: '6 min de lecture', title: 'Combien de Mots pour un Discours de 5, 10 ou 20 Minutes ? Guide de Rythme Oratoire', sum: 'Calibrez la longueur exacte de vos pitchs, conférences TED et présentations professionnelles.' },
+        'guide-30': { cat: 'Carrière & Quotidien', rt: '8 min de lecture', title: 'Métabolisme de Base (BMR) vs Dépense Totale (TDEE) : Calculer Votre Déficit Calorique', sum: 'Utilisez l\'équation de Mifflin-St Jeor pour définir vos calories et macros sans régime extrême.' },
+        'guide-31': { cat: 'Business & SaaS', rt: '9 min de lecture', title: 'Charges Sociales & Impôts Trimestriels des Indépendants : Guide Pratique (2026)', sum: 'Anticipez vos cotisations, abattements professionnels et acomptes fiscaux en toute sérénité.' },
+        'guide-32': { cat: 'Business & SaaS', rt: '8 min de lecture', title: 'Trésorerie Startup (Cash Runway) & Burn Rate Mensuel : Atteindre le Default Alive', sum: 'Calculez votre autonomie financière en mois et pilotez votre startup vers la rentabilité.' }
+      },
+      es: {
+        'guide-1': { cat: 'Dinero y Finanzas', rt: '8 min de lectura', title: 'Cómo Calcular tu Cuota de Préstamo (EMI) y Ahorrar Miles en Intereses (Guía 2026)', sum: 'Aprende cómo funciona la capitalización mensual en hipotecas y cómo 1 pago extra al año reduce años de deuda.' },
+        'guide-2': { cat: 'Dinero y Finanzas', rt: '7 min de lectura', title: 'El Poder del Interés Compuesto: Cómo $300/Mes Construyen Riqueza a Largo Plazo', sum: 'Descubre por qué invertir mensualmente con interés compuesto supera cualquier intento de adivinar el mercado.' },
+        'guide-3': { cat: 'Negocios y SaaS', rt: '9 min de lectura', title: 'Cómo Calcular tu Tarifa por Hora Freelance Sin Malvender tu Trabajo', sum: 'Incluye horas no facturables, impuestos, software y vacaciones para encontrar tu tarifa mínima real.' },
+        'guide-4': { cat: 'Negocios y SaaS', rt: '8 min de lectura', title: 'Margen de Beneficio vs. Recargo (Markup) y Break-Even ROAS: Guía Completa', sum: 'Domina la diferencia exacta entre margen bruto y recargo, y calcula el ROAS mínimo para no perder dinero.' },
+        'guide-5': { cat: 'IA y Productividad', rt: '6 min de lectura', title: 'La Fórmula de 4 Partes para Escribir Prompts de IA Perfectos (ChatGPT, Claude y Gemini)', sum: 'Usa Rol + Tarea + Restricciones + Formato de Salida para obtener respuestas de nivel experto.' },
+        'guide-6': { cat: 'Negocios y SaaS', rt: '7 min de lectura', title: 'Cómo Crear Facturas Profesionales que Tus Clientes Paguen 2 Veces Más Rápido', sum: 'Los 7 campos esenciales que toda factura comercial necesita para evitar retrasos contables.' },
+        'guide-7': { cat: 'Carrera y Vida Diaria', rt: '7 min de lectura', title: 'Entendiendo tu IMC y Gasto Calórico Diario (TDEE): Guía Práctica de Salud', sum: 'Explicación respaldada por la ciencia sobre rangos de IMC y calorías diarias de mantenimiento.' },
+        'guide-8': { cat: 'IA y Productividad', rt: '8 min de lectura', title: 'Mejores Prácticas de Redacción SEO: Extensión Ideal y Slugs URL Limpios en 2026', sum: 'Por qué los slugs amigables y tiempos de lectura claros mejoran tu posicionamiento en Google.' },
+        'guide-9': { cat: 'Dinero y Finanzas', rt: '8 min de lectura', title: 'Préstamo Personal vs. Deuda de Tarjeta de Crédito: ¿Cuál Pagar Primero?', sum: 'Compara préstamos a tasa fija contra tarjetas del 22%+ APR y ahorra miles consolidando deudas.' },
+        'guide-10': { cat: 'Dinero y Finanzas', rt: '6 min de lectura', title: '¿Cuánto Fondo de Emergencia Necesitas Realmente en 2026? (Regla 3-6-9 Meses)', sum: 'Calcula tu colchón financiero exacto según tus gastos mensuales esenciales.' },
+        'guide-11': { cat: 'Negocios y SaaS', rt: '7 min de lectura', title: 'La Psicología de los Descuentos: Cómo Hacer Ofertas del 20% Sin Matar tu Margen', sum: 'Por qué un 20% de descuento puede borrar la mitad de tu ganancia neta y cómo usar packs con seguridad.' },
+        'guide-12': { cat: 'Negocios y SaaS', rt: '9 min de lectura', title: 'Costo de Adquisición (CAC) y Valor de Vida (LTV): La Regla de Oro 3:1 Explicada', sum: 'Domina la proporción 3:1 LTV:CAC que usan los fundadores exitosos para escalar campañas pagadas.' },
+        'guide-13': { cat: 'Dinero y Finanzas', rt: '7 min de lectura', title: 'La Regla de Presupuesto 50/30/20: Cómo Dividir tu Sueldo Mensual Sin Estrés', sum: 'Divide tu sueldo neto en 50% Necesidades, 30% Estilo de Vida y 20% Ahorro e Inversión.' },
+        'guide-14': { cat: 'IA y Productividad', rt: '8 min de lectura', title: '5 Flujos de Trabajo con IA que Ahorran 10+ Horas de Investigación y Redacción', sum: 'Procesos paso a paso con IA para investigar, estructurar y redactar propuestas en menos tiempo.' },
+        'guide-15': { cat: 'IA y Productividad', rt: '6 min de lectura', title: 'Seguridad de Contraseñas en 2026: Por Qué la Longitud Supera a la Complejidad', sum: 'Mira cómo los ataques modernos rompen claves de 8 caracteres y por qué 16+ caracteres son blindados.' },
+        'guide-16': { cat: 'Negocios y SaaS', rt: '6 min de lectura', title: '7 Formas Inteligentes en que Negocios y Freelancers Usan Códigos QR para Vender Más', sum: 'Desde enlaces de pago en facturas PDF hasta tarjetas digitales: 7 usos de códigos QR de alta conversión.' },
+        'guide-17': { cat: 'Carrera y Vida Diaria', rt: '7 min de lectura', title: 'Velocidad de Lectura y Habla (PPM): ¿Cuántas Palabras Tiene un Discurso de 5 Minutos?', sum: 'Tabla exacta de conversión de palabras a minutos para guiones de YouTube, conferencias y artículos.' },
+        'guide-18': { cat: 'Carrera y Vida Diaria', rt: '6 min de lectura', title: 'Por Qué la Edad Cronológica Exacta Importa para Exámenes, Visas y Jubilación', sum: 'Cómo los años bisiestos y la duración de los meses afectan el cálculo oficial de edad.' },
+        'guide-19': { cat: 'IA y Productividad', rt: '6 min de lectura', title: 'Title Case vs. Sentence Case: Reglas de Tipografía para Titulares, Código y UI', sum: 'Hoja de referencia práctica sobre mayúsculas, minúsculas y slugs en diseño web y programación.' },
+        'guide-20': { cat: 'Negocios y SaaS', rt: '8 min de lectura', title: 'Igualas Mensuales (Retainers) vs. Cobro por Hora: Crea Ingresos Recurrentes', sum: 'Sal del ciclo de altibajos convirtiendo clientes de proyectos únicos en ingresos mensuales predecibles.' },
+        'guide-21': { cat: 'Negocios y SaaS', rt: '8 min de lectura', title: 'Fórmula de Break-Even ROAS: Calcula tu Retorno Publicitario Mínimo Antes de Escalar', sum: 'Calcula el ROAS mínimo rentable a partir de tu margen bruto para campañas en Meta y Google Ads.' },
+        'guide-22': { cat: 'Dinero y Finanzas', rt: '7 min de lectura', title: 'APR vs. APY Explicado: Por Qué los Bancos Usan Dos Tasas de Interés Diferentes', sum: 'Entiende la diferencia matemática entre tasa nominal (APR) y rendimiento efectivo anual (APY).' },
+        'guide-23': { cat: 'Dinero y Finanzas', rt: '8 min de lectura', title: 'Guía de Relación Deuda-Ingresos (DTI): La Regla 28/36 para Aprobar Hipotecas', sum: 'Calcula tu ratio DTI frontal y total para saber cuánto préstamo hipotecario puedes obtener.' },
+        'guide-24': { cat: 'Negocios y SaaS', rt: '8 min de lectura', title: 'Margen Bruto vs. Margen Neto: Fórmulas Exactas, Benchmarks y Errores de Precio', sum: 'Deja de confundir recargo, margen bruto y margen neto con estas fórmulas y tablas de conversión.' },
+        'guide-25': { cat: 'Negocios y SaaS', rt: '9 min de lectura', title: 'Tasa de Cancelación (Churn) SaaS y Retención Neta (NRR): Matemática de Suscripciones', sum: 'Cómo el churn mensual define el LTV y por qué una NRR superior al 110% impulsa el crecimiento.' },
+        'guide-26': { cat: 'Dinero y Finanzas', rt: '7 min de lectura', title: 'La Trampa del Pago Mínimo de Tarjetas de Crédito: Cómo Salir de Deudas Rápido', sum: 'Conoce la matemática del interés diario compuesto y cómo el método Avalancha ahorra miles.' },
+        'guide-27': { cat: 'Negocios y SaaS', rt: '8 min de lectura', title: 'Precios Basados en Valor vs. Cobro por Hora: Cómo Cobrar por el ROI del Cliente', sum: 'Usa la fórmula de 10x ROI para cotizar proyectos de consultoría de $5,000 a $15,000.' },
+        'guide-28': { cat: 'Negocios y SaaS', rt: '7 min de lectura', title: 'Términos de Factura Net 15 vs. Net 30: Cómo Calcular Recargos por Mora', sum: 'Aprende a aplicar descuentos por pronto pago 2/10 Net 30 e intereses por facturas vencidas.' },
+        'guide-29': { cat: 'Carrera y Vida Diaria', rt: '6 min de lectura', title: '¿Cuántas Palabras Tiene un Discurso de 5, 10 o 20 Minutos? Tabla de Ritmo y PPM', sum: 'Encuentra el conteo exacto de palabras para presentaciones, charlas TED y pitches de ventas.' },
+        'guide-30': { cat: 'Carrera y Vida Diaria', rt: '8 min de lectura', title: 'BMR vs. TDEE Explicado: Calcula tu Déficit Calórico y Macros Sin Dietas Extremas', sum: 'Usa la ecuación de Mifflin-St Jeor para calcular tu metabolismo basal y gasto energético diario.' },
+        'guide-31': { cat: 'Negocios y SaaS', rt: '9 min de lectura', title: 'Impuestos de Trabajo Independiente (15.3%) y Pagos Trimestrales: Guía 2026', sum: 'Cómo calcular impuestos de autónomos, deducir gastos operativos y planificar pagos trimestrales.' },
+        'guide-32': { cat: 'Negocios y SaaS', rt: '8 min de lectura', title: 'Cash Runway de Startups y Fórmula de Burn Rate Mensual: Alcanza el Default Alive', sum: 'Calcula el burn rate bruto vs. neto y cuántos meses de caja le quedan a tu startup.' }
+      },
+      ja: {
+        'guide-1': { cat: 'お金・金融', rt: '8分で読める', title: 'ローン月々返済額（EMI）の正確な計算方法と総利息を大幅に減らすコツ（2026年版）', sum: '住宅ローンやマイカーローンの月利計算の仕組みと、年1回の繰上返済で返済期間を何年も短縮する方法を解説。' },
+        'guide-2': { cat: 'お金・金融', rt: '7分で読める', title: '複利の力：毎月3万円の積立投資がいかに長期で大きな資産を築くか', sum: '相場タイミングを計るよりも、毎月の継続的な積立と複利運用が着実に資産を増やす数学的理由。' },
+        'guide-3': { cat: 'ビジネス・SaaS', rt: '9分で読める', title: 'フリーランスの時給・日給単価の決め方：安売りを防ぐ損益分岐レート計算', sum: '非稼働時間、税金・社会保険料、ツール代を考慮して、目標手取りから最低請求単価を逆算する方法。' },
+        'guide-4': { cat: 'ビジネス・SaaS', rt: '8分で読める', title: '粗利率（マージン）と原価率・値入率の違い＆損益分岐点ROAS完全ガイド', sum: '利益率とマークアップの正確な違いと、広告費で赤字にならないための最低目標ROASの計算式。' },
+        'guide-5': { cat: 'AI・業務効率化', rt: '6分で読める', title: 'ChatGPT・Claude・Geminiで常に最高品質の回答を引き出す「4要素プロンプト公式」', sum: '役割＋課題＋制約条件＋出力形式の4つを組み合わせ、数秒で専門家レベルの出力を得る実践テクニック。' },
+        'guide-6': { cat: 'ビジネス・SaaS', rt: '7分で読める', title: '入金スピードが2倍速くなる！プロフェッショナルな請求書の作り方7つの必須項目', sum: '法人の経理処理で差し戻しを防ぎ、期日通りにスムーズに支払ってもらうための請求書チェックリスト。' },
+        'guide-7': { cat: 'キャリア・日常', rt: '7分で読める', title: 'BMIと1日の総消費カロリー（TDEE）の正しい理解：科学的な健康・体型管理ガイド', sum: 'BMI判定基準の意味と、現在の体重を維持・減量するために必要な1日のカロリー計算方法。' },
+        'guide-8': { cat: 'AI・業務効率化', rt: '8分で読める', title: '2026年SEOライティング最新基準：最適な記事文字数とクリーンなURLスラッグ設計', sum: 'わかりやすいURLスラッグと読了時間の明示がGoogle検索順位と読者満足度の両方を高める理由。' },
+        'guide-9': { cat: 'お金・金融', rt: '8分で読める', title: 'カードローン・リボ払い vs 低金利おまとめローン：どちらを優先して返済すべきか？', sum: '年利15〜18%のリボ・カード残高を低金利ローンへ借り換えて支払利息を大幅に削減するシミュレーション。' },
+        'guide-10': { cat: 'お金・金融', rt: '6分で読める', title: '2026年に本当に必要な生活防衛資金はいくら？（3・6・9ヶ月ルールで計算）', sum: '毎月の必須生活費をベースに、会社員・フリーランスそれぞれが確保すべき現金安全網を算出します。' },
+        'guide-11': { cat: 'ビジネス・SaaS', rt: '7分で読める', title: '割引セールの心理学：利益率を潰さずに20%オフキャンペーンを成功させる方法', sum: '安易な20%割引が純利益を半減させる仕組みと、セット販売・段階的割引で利益を守る価格戦略。' },
+        'guide-12': { cat: 'ビジネス・SaaS', rt: '9分で読める', title: '顧客獲得コスト（CAC）と生涯価値（LTV）：黄金比率「3:1」の計算と改善法', sum: '投資家や急成長SaaS・EC企業が広告拡大の判断基準にするLTV:CAC比率3:1の使い方を徹底解説。' },
+        'guide-13': { cat: 'お金・金融', rt: '7分で読める', title: '50/30/20家計予算ルール：ストレスなく毎月の手取り収入を管理する黄金比', sum: '手取り月収を「必需品50%・ゆとり費30%・貯蓄投資20%」に分けるだけでお金が自然に貯まる仕組み。' },
+        'guide-14': { cat: 'AI・業務効率化', rt: '8分で読める', title: '毎週10時間以上のリサーチ・執筆時間を短縮する5つの実践AIワークフロー', sum: '調査・構成案作成・提案書ドラフトを70%高速化しつつ、人間ならではの品質を保つステップ。' },
+        'guide-15': { cat: 'AI・業務効率化', rt: '6分で読める', title: '2026年のパスワード安全性：なぜ複雑な記号より「文字数の長さ」が重要なのか', sum: '最新GPUによる総当たり攻撃の仕組みと、16文字以上のランダム文字列が解読不可能な数学的根拠。' },
+        'guide-16': { cat: 'ビジネス・SaaS', rt: '6分で読める', title: '小規模ビジネスやフリーランスがQRコードを活用して集客・成約を増やす7つの方法', sum: '請求書PDFの決済リンクからデジタル名刺まで、無料で今すぐ使える高成約率QRコード活用術。' },
+        'guide-17': { cat: 'キャリア・日常', rt: '7分で読める', title: '平均読書速度とスピーチ時間（WPM）：5分間のプレゼン原稿は何文字が最適？', sum: 'YouTube台本、基調講演、プレゼン発表の時間をピタリと合わせる文字数・分数換算チャート。' },
+        'guide-18': { cat: 'キャリア・日常', rt: '6分で読める', title: '試験・ビザ申請・年金手続きで「正確な満年齢・日数計算」が重要な理由', sum: 'うるう年や月ごとの日数差が公的書類や資格試験の年齢制限判定に与える影響をわかりやすく解説。' },
+        'guide-19': { cat: 'AI・業務効率化', rt: '6分で読める', title: 'タイトルケース vs センテンスケース：英語見出し・UI・コードの表記ルールまとめ', sum: '英文記事タイトル、ボタンUI、プログラム変数、URLスラッグの正しい大文字・小文字使い分け表。' },
+        'guide-20': { cat: 'ビジネス・SaaS', rt: '8分で読める', title: '月額リテイナー契約 vs 時給請求：安定した継続報酬を作るフリーランス戦略', sum: '単発案件の収入の波から抜け出し、クライアントに喜ばれる月額顧問・保守契約へ移行する手順。' },
+        'guide-21': { cat: 'ビジネス・SaaS', rt: '8分で読める', title: '損益分岐点ROASの計算式：広告予算を拡大する前に知るべき最低目標ROAS', sum: '粗利率から損益分岐ROASを1秒で計算し、Meta広告やGoogle広告の黒字ラインを見極める方法。' },
+        'guide-22': { cat: 'お金・金融', rt: '7分で読める', title: 'APR（表面金利）とAPY（実質年率）の違い：複利頻度が利息に与える影響', sum: 'ローンの借入金利と預金・運用の実質利回りで銀行が異なる指標を使う理由を数式でスッキリ理解。' },
+        'guide-23': { cat: 'お金・金融', rt: '8分で読める', title: '返済負担率（DTI）ガイド：住宅ローン審査で使われる「28/36ルール」とは？', sum: '年収に対する住居費と総借入返済額の安全な比率を計算し、無理のない借入限度額を把握しましょう。' },
+        'guide-24': { cat: 'ビジネス・SaaS', rt: '8分で読める', title: '粗利率・営業利益率・マークアップの正確な計算式と業界別ベンチマーク一覧', sum: '値入率と利益率の混同による価格設定ミスを防ぎ、確実に利益を残すための会計数式ガイド。' },
+        'guide-25': { cat: 'ビジネス・SaaS', rt: '9分で読める', title: 'SaaS解約率（Churn Rate）と売上継続率（NRR）：サブスク成長の数学', sum: '月次チャーンがLTVに与える影響と、NRR 110%以上が最強の成長エンジンになる理由。' },
+        'guide-26': { cat: 'お金・金融', rt: '7分で読める', title: 'クレジットカード最低返済額の罠：日割り複利から抜け出す完済ステップ', sum: 'ミニマムペイメントが元金を減らさない仕組みと、アバランチ法・借り換えによる早期完済術。' },
+        'guide-27': { cat: 'ビジネス・SaaS', rt: '8分で読める', title: '価値ベース価格設定（Value-Based Pricing）：顧客ROIから案件単価を決める方法', sum: '時間の切り売りをやめ、クライアントへの利益貢献度（10倍ROI）に基づいて高単価提案を行う技術。' },
+        'guide-28': { cat: 'ビジネス・SaaS', rt: '7分で読める', title: '請求書の支払サイト（Net 15 / Net 30）と遅延損害金・早期支払割引の計算', sum: 'キャッシュフローを改善する早期入金インセンティブと、支払遅延を防ぐ明確な契約条項の書き方。' },
+        'guide-29': { cat: 'キャリア・日常', rt: '6分で読める', title: '5分・10分・20分のスピーチ原稿は何文字？プレゼン速度とWPM早見表', sum: '1分ピッチから15分講演まで、聞き取りやすい話す速度に合わせた最適文字数ガイド。' },
+        'guide-30': { cat: 'キャリア・日常', rt: '8分で読める', title: '基礎代謝（BMR）と総消費カロリー（TDEE）：無理なく痩せるカロリー＆PFC計算', sum: 'ミフリン・セントジョール式で正確な代謝量を求め、筋肉を維持しながら減量する栄養バランスを算出。' },
+        'guide-31': { cat: 'ビジネス・SaaS', rt: '9分で読める', title: '個人事業主・フリーランスの自営業税＆予定納税シミュレーション完全ガイド（2026）', sum: '事業所得に対する税金・社会保険料の計算構造と、資金ショートを防ぐ四半期ごとの納税準備法。' },
+        'guide-32': { cat: 'ビジネス・SaaS', rt: '8分で読める', title: 'スタートアップの資金ランウェイ＆バーンレート計算式：Default Aliveへの道', sum: 'グロスバーンとネットバーンの違い、残り資金月数の計算、黒字化までの成長率目標の立て方。' }
+      },
+      pt: {
+        'guide-1': { cat: 'Dinheiro e Finanças', rt: '8 min de leitura', title: 'Como Calcular sua Parcela de Empréstimo (EMI) e Economizar Milhares em Juros (2026)', sum: 'Entenda como funcionam os juros compostos mensais em financiamentos e como 1 parcela extra por ano corta anos da dívida.' },
+        'guide-2': { cat: 'Dinheiro e Finanças', rt: '7 min de leitura', title: 'O Poder dos Juros Compostos: Como R$ 300/Mês Constroem Patrimônio no Longo Prazo', sum: 'Descubra como investir mensalmente com consistência supera qualquer tentativa de acertar o topo ou fundo do mercado.' },
+        'guide-3': { cat: 'Negócios e SaaS', rt: '9 min de leitura', title: 'Como Precificar seu Valor Hora Freelance Sem Desvalorizar seu Trabalho', sum: 'Por que a maioria dos freelancers esquece de somar horas não faturáveis, impostos e softwares—e como achar seu preço mínimo.' },
+        'guide-4': { cat: 'Negócios e SaaS', rt: '8 min de leitura', title: 'Margem de Lucro vs. Markup e Break-Even ROAS: O Guia Completo de Matemática de Negócios', sum: 'Entenda a diferença exata entre margem bruta e markup e aprenda a calcular seu ROAS mínimo de equilíbrio.' },
+        'guide-5': { cat: 'IA e Produtividade', rt: '6 min de leitura', title: 'A Fórmula de 4 Partes para Escrever Prompts de IA Perfeitos (ChatGPT, Claude e Gemini)', sum: 'Use Papel + Tarefa + Restrições + Formato de Saída para obter respostas de nível especialista em segundos.' },
+        'guide-6': { cat: 'Negócios e SaaS', rt: '7 min de leitura', title: 'Como Criar Faturas Profissionais para Clientes que São Pagas 2x Mais Rápido', sum: 'Os 7 campos essenciais que toda fatura precisa ter para evitar atrasos no setor financeiro dos clientes.' },
+        'guide-7': { cat: 'Carreira e Dia a Dia', rt: '7 min de leitura', title: 'Entendendo seu IMC e Gasto Calórico Diário (TDEE): Guia Prático de Saúde', sum: 'Explicação clara e baseada na ciência sobre as faixas de IMC e como estimar suas calorias diárias de manutenção.' },
+        'guide-8': { cat: 'IA e Produtividade', rt: '8 min de leitura', title: 'Boas Práticas de Escrita SEO: Tamanho Ideal de Artigo e URLs Amigáveis em 2026', sum: 'Veja por que slugs de URL limpos e tempo de leitura escaneável melhoram seu ranking no Google.' },
+        'guide-9': { cat: 'Dinheiro e Finanças', rt: '8 min de leitura', title: 'Empréstimo Pessoal vs. Dívida de Cartão de Crédito: Qual Quitar Primeiro?', sum: 'Compare empréstimos de taxa fixa contra juros rotativos de cartão e veja como a consolidação economiza milhares.' },
+        'guide-10': { cat: 'Dinheiro e Finanças', rt: '6 min de leitura', title: 'Quanto de Reserva de Emergência Você Realmente Precisa em 2026? (Regra 3-6-9 Meses)', sum: 'Use a regra de 3 a 9 meses para calcular sua reserva financeira ideal com base no seu custo de vida mensal.' },
+        'guide-11': { cat: 'Negócios e SaaS', rt: '7 min de leitura', title: 'A Psicologia dos Descontos: Como Fazer Promoções de 20% Sem Destruir sua Margem', sum: 'Por que um desconto de 20% pode cortar metade do seu lucro líquido e como criar kits lucrativos.' },
+        'guide-12': { cat: 'Negócios e SaaS', rt: '9 min de leitura', title: 'Custo de Aquisição (CAC) e Lifetime Value (LTV): A Proporção Áurea de 3:1 Explicada', sum: 'Domine a métrica 3:1 LTV:CAC que fundadores e investidores usam para escalar anúncios pagos com lucro.' },
+        'guide-13': { cat: 'Dinheiro e Finanças', rt: '7 min de leitura', title: 'A Regra de Orçamento 50/30/20: Como Dividir sua Renda Mensal Sem Estresse', sum: 'Um sistema simples para dividir seu salário líquido em Essenciais (50%), Estilo de Vida (30%) e Investimentos (20%).' },
+        'guide-14': { cat: 'IA e Produtividade', rt: '8 min de leitura', title: '5 Fluxos de Trabalho Práticos com IA que Economizam 10+ Horas por Semana', sum: 'Passo a passo com IA para acelerar pesquisas, roteiros e propostas comerciais mantendo qualidade humana.' },
+        'guide-15': { cat: 'IA e Produtividade', rt: '6 min de leitura', title: 'Segurança de Senhas em 2026: Por Que o Comprimento Vence a Complexidade', sum: 'Veja como placas de vídeo modernas quebram senhas de 8 dígitos e por que 16+ caracteres são blindados.' },
+        'guide-16': { cat: 'Negócios e SaaS', rt: '6 min de leitura', title: '7 Maneiras Inteligentes de Usar Códigos QR para Conquistar Mais Clientes', sum: 'De links de pagamento em faturas PDF a cartões digitais: 7 usos de QR Codes com alta conversão.' },
+        'guide-17': { cat: 'Carreira e Dia a Dia', rt: '7 min de leitura', title: 'Velocidade Média de Leitura e Fala (PPM): Quantas Palavras Tem um Discurso de 5 Minutos?', sum: 'Use esta tabela exata de palavras por minuto para roteiros de YouTube, palestras e apresentações.' },
+        'guide-18': { cat: 'Carreira e Dia a Dia', rt: '6 min de leitura', title: 'Por Que a Idade Cronológica Exata Importa para Concursos, Vistos e Aposentadoria', sum: 'Como anos bissextos e meses de diferentes durações afetam o cálculo oficial de idade em formulários.' },
+        'guide-19': { cat: 'IA e Produtividade', rt: '6 min de leitura', title: 'Title Case vs. Sentence Case: Regras de Tipografia para Títulos, Código e UI', sum: 'Guia prático de quando usar Iniciais Maiúsculas, formato de frase e slugs em sites e programação.' },
+        'guide-20': { cat: 'Negócios e SaaS', rt: '8 min de leitura', title: 'Contratos Mensais (Retainers) vs. Cobrança por Hora: Crie Renda Recorrente Previsível', sum: 'Saia da montanha-russa do freelancer transformando projetos avulsos em contratos de recorrência mensal.' },
+        'guide-21': { cat: 'Negócios e SaaS', rt: '8 min de leitura', title: 'Fórmula de Break-Even ROAS: Calcule seu Retorno Mínimo em Anúncios Antes de Escalar', sum: 'Aprenda a calcular seu ROAS de equilíbrio a partir da margem bruta para escalar Meta Ads e Google Ads.' },
+        'guide-22': { cat: 'Dinheiro e Finanças', rt: '7 min de leitura', title: 'APR vs. APY Explicado: Por Que os Bancos Usam Duas Taxas de Juros Diferentes', sum: 'Entenda a diferença matemática entre taxa nominal anual (APR) e taxa efetiva com capitalização (APY).' },
+        'guide-23': { cat: 'Dinheiro e Finanças', rt: '8 min de leitura', title: 'Guia de Comprometimento de Renda (DTI): A Regra 28/36 para Aprovar Financiamentos', sum: 'Calcule seu índice DTI para descobrir exatamente qual valor de financiamento imobiliário cabe no seu bolso.' },
+        'guide-24': { cat: 'Negócios e SaaS', rt: '8 min de leitura', title: 'Margem Bruta vs. Margem Líquida: Fórmulas Exatas, Benchmarks e Erros de Preço', sum: 'Pare de confundir markup, margem bruta e margem líquida com nossas fórmulas e tabelas práticas.' },
+        'guide-25': { cat: 'Negócios e SaaS', rt: '9 min de leitura', title: 'Taxa de Churn SaaS e Retenção Líquida (NRR): Como a Matemática de Assinaturas Impacta o LTV', sum: 'Veja como o cancelamento mensal define o LTV e por que NRR acima de 110% acelera o valuation.' },
+        'guide-26': { cat: 'Dinheiro e Finanças', rt: '7 min de leitura', title: 'A Armadilha do Pagamento Mínimo do Cartão: Como os Juros Compostos Diários Prendem Você', sum: 'Entenda a matemática dos juros rotativos e como o método Avalanche ou consolidação economiza milhares.' },
+        'guide-27': { cat: 'Negócios e SaaS', rt: '8 min de leitura', title: 'Precificação Baseada em Valor vs. Hora Técnica: Como Cobrar pelo ROI do Cliente', sum: 'Aprenda a fórmula de 10x ROI para fechar projetos de consultoria de R$ 10.000 a R$ 50.000.' },
+        'guide-28': { cat: 'Negócios e SaaS', rt: '7 min de leitura', title: 'Prazos de Fatura Net 15 vs. Net 30: Como Calcular Multa, Juros de Mora e Descontos', sum: 'Domine os prazos de faturamento corporativo e calcule encargos de atraso de forma profissional.' },
+        'guide-29': { cat: 'Carreira e Dia a Dia', rt: '6 min de leitura', title: 'Quantas Palavras Tem um Discurso de 5, 10 ou 20 Minutos? Tabela de Ritmo e PPM', sum: 'Descubra a contagem exata de palavras para pitches de vendas, palestras e vídeos no ritmo ideal.' },
+        'guide-30': { cat: 'Carreira e Dia a Dia', rt: '8 min de leitura', title: 'TMB (BMR) vs. TDEE Explicado: Como Calcular Déficit Calórico e Macros Sem Dieta Radical', sum: 'Use a equação de Mifflin-St Jeor para calcular sua taxa metabólica basal e gasto calórico diário.' },
+        'guide-31': { cat: 'Negócios e SaaS', rt: '9 min de leitura', title: 'Impostos para Autônomos, Freelancers e Empresas: Guia de Planejamento Trimestral (2026)', sum: 'Entenda como calcular impostos sobre serviços, deduções permitidas e reservas trimestrais sem surpresas.' },
+        'guide-32': { cat: 'Negócios e SaaS', rt: '8 min de leitura', title: 'Cash Runway de Startups e Fórmula de Burn Rate Mensal: Como Atingir o Default Alive', sum: 'Calcule burn rate bruto vs. líquido, meses restantes de caixa e quando sua startup atinge o equilíbrio.' }
+      }
+    };
+
+    var DEFAULT_REQUESTS = [
+      { id: 'req-1', title: 'Real Estate Rental Cash-on-Cash ROI & Cap Rate Calculator', cat: 'Money & Business', type: 'New Calculator / Tool', votes: 48 },
+      { id: 'req-2', title: 'Shopify vs. Amazon FBA Referral & Fulfillment Fee Comparator', cat: 'Money & Business', type: 'New Calculator / Tool', votes: 39 },
+      { id: 'req-3', title: 'Crypto & Stock Capital Gains Tax Estimator (Short vs Long Term)', cat: 'Money & Business', type: 'New Calculator / Tool', votes: 31 },
+      { id: 'req-4', title: 'Multi-Page Client Proposal & Statement of Work (SOW) PDF Maker', cat: 'Writing & AI', type: 'Feature Improvement', votes: 27 }
+    ];
+
+    function getVisitorRequests() {
+      try {
+        var raw = localStorage.getItem('wf_visitor_requests');
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (Array.isArray(parsed) && parsed.length > 0) return parsed;
+        }
+      } catch (e) {}
+      return JSON.parse(JSON.stringify(DEFAULT_REQUESTS));
+    }
+
+    function renderVisitorRequestsBoard() {
+      var listEl = document.getElementById('visitor-requests-list');
+      if (!listEl) return;
+      var items = getVisitorRequests();
+      var upvoted = [];
+      try { upvoted = JSON.parse(localStorage.getItem('wf_upvoted_ids') || '[]'); } catch (e) {}
+
+      var html = '';
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        var hasVoted = upvoted.indexOf(it.id) !== -1;
+        var btnCls = hasVoted
+          ? 'px-3 py-1.5 rounded-xl bg-terracotta text-white font-extrabold text-xs flex items-center gap-1 shadow-sm'
+          : 'px-3 py-1.5 rounded-xl bg-stone-100 hover:bg-orange-100 text-charcoal font-extrabold text-xs border border-stone-300 flex items-center gap-1 transition';
+        html += '<div class="p-3.5 rounded-2xl bg-stone-50 border border-stone-200 flex items-center justify-between gap-3">' +
+          '<div class="space-y-1">' +
+            '<div class="flex flex-wrap items-center gap-1.5">' +
+              '<span class="px-2 py-0.5 rounded bg-orange-100 text-terracottaDark font-bold text-[10px] uppercase">' + it.cat + '</span>' +
+              '<span class="text-[11px] text-stone-500 font-semibold">' + it.type + '</span>' +
+            '</div>' +
+            '<div class="font-display font-bold text-xs sm:text-sm text-charcoal">' + it.title.replace(/</g, '&lt;') + '</div>' +
+          '</div>' +
+          '<button type="button" onclick="upvoteVisitorRequest(\'' + it.id + '\')" class="' + btnCls + ' shrink-0">' +
+            '<span>&#128077;</span><span>' + it.votes + '</span>' +
+          '</button>' +
+        '</div>';
+      }
+      listEl.innerHTML = html;
+    }
+
+    function upvoteVisitorRequest(reqId) {
+      var items = getVisitorRequests();
+      var upvoted = [];
+      try { upvoted = JSON.parse(localStorage.getItem('wf_upvoted_ids') || '[]'); } catch (e) {}
+      if (upvoted.indexOf(reqId) !== -1) {
+        if (typeof showCleanToast === 'function') showCleanToast('You already upvoted this request!');
+        return;
+      }
+      for (var i = 0; i < items.length; i++) {
+        if (items[i].id === reqId) {
+          items[i].votes += 1;
+          break;
+        }
+      }
+      upvoted.push(reqId);
+      try {
+        localStorage.setItem('wf_visitor_requests', JSON.stringify(items));
+        localStorage.setItem('wf_upvoted_ids', JSON.stringify(upvoted));
+      } catch (e) {}
+      renderVisitorRequestsBoard();
+      if (typeof showCleanToast === 'function') showCleanToast('Upvote recorded! Thank you for shaping our roadmap.');
+    }
+
+    function submitVisitorFeatureRequest(e) {
+      if (e) e.preventDefault();
+      var nameEl = document.getElementById('req-visitor-name');
+      var emailEl = document.getElementById('req-visitor-email');
+      var typeEl = document.getElementById('req-type-select');
+      var catEl = document.getElementById('req-cat-select');
+      var titleEl = document.getElementById('req-title-input');
+      var detailsEl = document.getElementById('req-details-input');
+
+      var title = (titleEl ? titleEl.value : '').trim();
+      var details = (detailsEl ? detailsEl.value : '').trim();
+      if (!title || !details) return;
+
+      var typeVal = typeEl ? typeEl.value : 'New Calculator / Tool';
+      var catVal = catEl ? catEl.value : 'Money & Business';
+      var nameVal = (nameEl ? nameEl.value : '').trim() || 'Anonymous Visitor';
+      var emailVal = (emailEl ? emailEl.value : '').trim() || 'Not provided';
+
+      var items = getVisitorRequests();
+      var newId = 'req-user-' + Date.now();
+      items.unshift({
+        id: newId,
+        title: title,
+        cat: catVal,
+        type: typeVal,
+        votes: 1
+      });
+      if (items.length > 8) items = items.slice(0, 8);
+      try { localStorage.setItem('wf_visitor_requests', JSON.stringify(items)); } catch (err) {}
+      renderVisitorRequestsBoard();
+
+      var mailto = document.getElementById('req-mailto-link');
+      if (mailto) {
+        var subj = '[WorkFlowora Feature Request] ' + typeVal + ': ' + title;
+        var body = 'Requested By: ' + nameVal + ' (' + emailVal + ')\n' +
+                   'Category: ' + catVal + '\n' +
+                   'Request Type: ' + typeVal + '\n' +
+                   'Title: ' + title + '\n\n' +
+                   'Details:\n' + details + '\n';
+        mailto.href = 'mailto:contact@workflowora.com?subject=' + encodeURIComponent(subj) + '&body=' + encodeURIComponent(body);
+      }
+
+      var box = document.getElementById('req-success-box');
+      if (box) box.classList.remove('hidden');
+      if (titleEl) titleEl.value = '';
+      if (detailsEl) detailsEl.value = '';
+      if (typeof showCleanToast === 'function') showCleanToast('Feature request added to the live board!');
+    }
+
 
     // Complete 32-Tool Translations for the World's Top 6 Most Valuable Languages
     var TOOLS_I18N = {
@@ -4931,11 +5331,11 @@
     var UI_I18N = {
       en: {
         brandSub: 'Free Online Calculators & Smart Work Tools',
-        navTools: 'All Free Tools',
-        navGuides: 'How-To Guides',
-        navGlobal: 'Global Tax & Pay',
-        navTemplates: 'Templates & Formulas',
-        navAbout: 'About Us',
+        navTools: 'All Tools (32)',
+        navGuides: 'Guides (32)',
+        navGlobal: 'Global Tax',
+        navTemplates: 'Templates',
+        navAbout: 'About',
         navContact: 'Contact',
         navLoan: 'Loan & EMI \u2192',
         heroPill: '\u2713 32 Free Instant Tools \u2022 32 Expert Guides \u2022 Zero Signup \u2022 100% Browser Private',
@@ -4958,10 +5358,10 @@
       },
       de: {
         brandSub: 'Kostenlose Online-Rechner & Smarte Business-Tools',
-        navTools: 'Alle 32 Tools',
-        navGuides: 'Praxis-Guides',
-        navGlobal: 'Globaler Steuervergleich',
-        navTemplates: 'Vorlagen & Formeln',
+        navTools: 'Tools (32)',
+        navGuides: 'Guides (32)',
+        navGlobal: 'Steuern',
+        navTemplates: 'Vorlagen',
         navAbout: 'Über uns',
         navContact: 'Kontakt',
         navLoan: 'Kreditrechner \u2194',
@@ -4985,10 +5385,10 @@
       },
       fr: {
         brandSub: 'Calculateurs en Ligne Gratuits & Outils Professionnels',
-        navTools: 'Les 32 Outils',
-        navGuides: 'Guides Pratiques',
-        navGlobal: 'Impôts & Revenus Mondiaux',
-        navTemplates: 'Modèles & Formules',
+        navTools: 'Outils (32)',
+        navGuides: 'Guides (32)',
+        navGlobal: 'Fiscalité',
+        navTemplates: 'Modèles',
         navAbout: 'À Propos',
         navContact: 'Contact',
         navLoan: 'Calculateur Prêt \u2192',
@@ -5012,10 +5412,10 @@
       },
       es: {
         brandSub: 'Calculadoras Online Gratis y Herramientas de Negocios',
-        navTools: 'Las 32 Herramientas',
-        navGuides: 'Guías Prácticas',
-        navGlobal: 'Impuestos y Sueldo Global',
-        navTemplates: 'Plantillas y Fórmulas',
+        navTools: 'Herramientas (32)',
+        navGuides: 'Guías (32)',
+        navGlobal: 'Impuestos',
+        navTemplates: 'Plantillas',
         navAbout: 'Nosotros',
         navContact: 'Contacto',
         navLoan: 'Préstamos y EMI \u2192',
@@ -5039,10 +5439,10 @@
       },
       ja: {
         brandSub: '無料の金融・ビジネス計算ツール＆業務効率化ガイド',
-        navTools: '全32種の無料ツール',
-        navGuides: '実践ガイド記事',
-        navGlobal: '世界8都市・税金比較',
-        navTemplates: 'テンプレート＆計算式',
+        navTools: '全ツール (32)',
+        navGuides: 'ガイド (32)',
+        navGlobal: '世界税制',
+        navTemplates: 'テンプレ',
         navAbout: '運営者情報',
         navContact: 'お問い合わせ',
         navLoan: 'ローン計算機 \u2192',
@@ -5066,11 +5466,11 @@
       },
       pt: {
         brandSub: 'Calculadoras Online Gratuitas e Ferramentas de Negócios',
-        navTools: 'Todas as 32 Ferramentas',
-        navGuides: 'Guias Práticos',
-        navGlobal: 'Impostos e Renda Global',
-        navTemplates: 'Modelos e Fórmulas',
-        navAbout: 'Sobre Nós',
+        navTools: 'Ferramentas (32)',
+        navGuides: 'Guias (32)',
+        navGlobal: 'Impostos',
+        navTemplates: 'Modelos',
+        navAbout: 'Sobre',
         navContact: 'Contato',
         navLoan: 'Empréstimo e EMI \u2192',
         heroPill: '\u2713 32 Ferramentas Gratuitas \u2022 32 Guias Especializados \u2022 Sem Cadastro \u2022 100% Privado no Navegador',
@@ -5261,54 +5661,7 @@
       }
     }
 
-    function triggerGoogleTranslateBridge(lang) {
-      try {
-        var domain = window.location.hostname;
-        if (lang === 'en') {
-          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-          if (domain) {
-            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain;
-            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + domain;
-          }
-        } else {
-          var val = '/en/' + lang;
-          document.cookie = 'googtrans=' + val + '; path=/';
-          if (domain) {
-            document.cookie = 'googtrans=' + val + '; path=/; domain=' + domain;
-          }
-        }
-        var combo = document.querySelector('.goog-te-combo');
-        if (combo) {
-          combo.value = (lang === 'en') ? '' : lang;
-          combo.dispatchEvent(new Event('change'));
-        } else if (lang !== 'en' && !window. WF_GT_LOADED) {
-          window.WF_GT_LOADED = true;
-          var gtDiv = document.createElement('div');
-          gtDiv.id = 'google_translate_element';
-          gtDiv.style.display = 'none';
-          document.body.appendChild(gtDiv);
-          window.googleTranslateElementInit = function() {
-            new google.translate.TranslateElement({
-              pageLanguage: 'en',
-              includedLanguages: 'en,de,fr,es,ja,pt',
-              autoDisplay: false
-            }, 'google_translate_element');
-            setTimeout(function() {
-              var c2 = document.querySelector('.goog-te-combo');
-              if (c2 && window.WF_ACTIVE_LANG && window.WF_ACTIVE_LANG !== 'en') {
-                c2.value = window.WF_ACTIVE_LANG;
-                c2.dispatchEvent(new Event('change'));
-              }
-            }, 600);
-          };
-          var s = document.createElement('script');
-          s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-          s.async = true;
-          document.head.appendChild(s);
-        }
-      } catch (e) {}
-    }
-
+    
     function setGlobalLanguage(lang, silent) {
       if (!UI_I18N[lang]) lang = 'en';
       window.WF_ACTIVE_LANG = lang;
@@ -5410,7 +5763,54 @@
       applyPhraseTranslations(lang);
 
       // 4. Trigger Layer 3 Google Neural Full-Page Translator for deep prose, tables & guides
-      triggerGoogleTranslateBridge(lang);
+            // 4. Translate All 32 Guides in GUIDES_LIST in 0ms
+      var gDict = GUIDES_I18N[lang];
+      for (var gIdx = 0; gIdx < GUIDES_LIST.length; gIdx++) {
+        var origG = ORIG_GUIDES_EN[gIdx];
+        var curG = GUIDES_LIST[gIdx];
+        if (lang === 'en' || !gDict || !gDict[origG.id]) {
+          curG.category = origG.category;
+          curG.readTime = origG.readTime;
+          curG.title = origG.title;
+          curG.summary = origG.summary;
+        } else {
+          curG.category = gDict[origG.id].cat;
+          curG.readTime = gDict[origG.id].rt;
+          curG.title = gDict[origG.id].title;
+          curG.summary = gDict[origG.id].sum;
+        }
+      }
+      if (typeof renderGuidesCards === 'function') renderGuidesCards();
+
+      // 5. Translate Visitor Feature Request Section
+      var reqI18n = {
+        en: { navReq: '💡 Request Tool', badge: '💡 VISITOR SUGGESTIONS & CUSTOM TOOL REQUESTS', title: 'Need a New Calculator or Feature? Submit Your Request', desc: 'Tell us what calculator, business template, or improvement you want next. We build and ship the most requested tools 100% free.', name: 'Your Name (Optional)', email: 'Email for Notification (Optional)', type: 'What Would You Like to Request?', cat: 'Category', rtitle: 'Requested Tool Name or Suggestion Title *', details: 'Details / How Should It Work? *', btn: '🚀 Submit Suggestion & Add to Roadmap', board: '🔥 Top Visitor-Requested Ideas (Click to Upvote)' },
+        de: { navReq: '💡 Tool wünschen', badge: '💡 NUTZERVORSCHLÄGE & TOOL-WÜNSCHE', title: 'Fehlt Ihnen ein Rechner oder Feature? Vorschlag einreichen', desc: 'Sagen Sie uns, welchen Rechner, welche Vorlage oder Verbesserung Sie sich wünschen. Wir entwickeln die beliebtesten Ideen 100 % kostenlos.', name: 'Ihr Name (Optional)', email: 'E-Mail für Benachrichtigung (Optional)', type: 'Was möchten Sie vorschlagen?', cat: 'Kategorie', rtitle: 'Name des gewünschten Tools oder Vorschlags *', details: 'Details / Welche Berechnung oder Funktion wünschen Sie sich? *', btn: '🚀 Vorschlag absenden & zur Roadmap hinzufügen', board: '🔥 Beliebteste Nutzer-Wünsche (Zum Abstimmen klicken)' },
+        fr: { navReq: '💡 Suggérer', badge: '💡 SUGGESTIONS DES VISITEURS & DEMANDES D\'OUTILS', title: 'Besoin d\'un Nouveau Calculateur ou Fonctionnalité ? Envoyez Votre Idée', desc: 'Dites-nous quel calculateur, modèle ou amélioration vous souhaitez voir ajouté. Nous développons les outils les plus demandés 100 % gratuitement.', name: 'Votre Nom (Optionnel)', email: 'E-mail de Notification (Optionnel)', type: 'Que Souhaitez-Vous Demander ?', cat: 'Catégorie', rtitle: 'Nom de l\'Outil ou Titre de la Suggestion *', details: 'Détails / Comment Cet Outil Devrait-il Fonctionner ? *', btn: '🚀 Envoyer la Suggestion & Ajouter à la Roadmap', board: '🔥 Idées les Plus Demandées (Cliquez pour Voter)' },
+        es: { navReq: '💡 Sugerir', badge: '💡 SUGERENCIAS DE VISITANTES Y SOLICITUD DE HERRAMIENTAS', title: '¿Necesitas una Nueva Calculadora o Función? Envía tu Solicitud', desc: 'Cuéntanos qué calculadora, plantilla o mejora te gustaría que agreguemos. Desarrollamos las herramientas más votadas 100% gratis.', name: 'Tu Nombre (Opcional)', email: 'Correo para Notificación (Opcional)', type: '¿Qué Te Gustaría Solicitar?', cat: 'Categoría', rtitle: 'Nombre de la Calculadora o Sugerencia *', details: 'Detalles / ¿Cómo Debería Funcionar? *', btn: '🚀 Enviar Sugerencia y Agregar al Roadmap', board: '🔥 Ideas Más Solicitadas por Visitantes (Votar)' },
+        ja: { navReq: '💡 リクエスト', badge: '💡 新機能・新しい計算ツールのリクエスト受付', title: '欲しい計算ツールや改善アイデアはありますか？リクエストを送る', desc: '追加してほしい計算機、ビジネステンプレート、改善点をお知らせください。リクエストの多い機能から100%無料で順次実装します。', name: 'お名前（任意）', email: '公開通知用メールアドレス（任意）', type: 'リクエストの種類', cat: 'カテゴリー', rtitle: '希望するツール名・機能タイトル *', details: '詳細・どのような計算や機能が欲しいですか？ *', btn: '🚀 リクエストを送信してボードに追加', board: '🔥 ユーザーからの人気リクエスト一覧（👍で投票）' },
+        pt: { navReq: '💡 Sugerir', badge: '💡 SUGESTÕES DE VISITANTES E PEDIDOS DE FERRAMENTAS', title: 'Precisa de uma Nova Calculadora ou Recurso? Envie sua Sugestão', desc: 'Conte-nos qual calculadora, modelo ou melhoria você quer ver no site. Criamos as ferramentas mais pedidas 100% de graça.', name: 'Seu Nome (Opcional)', email: 'E-mail para Aviso (Opcional)', type: 'O Que Você Gostaria de Solicitar?', cat: 'Categoria', rtitle: 'Nome da Calculadora ou Título da Sugestão *', details: 'Detalhes / Como Deveria Funcionar? *', btn: '🚀 Enviar Sugestão e Adicionar ao Roadmap', board: '🔥 Ideias Mais Pedidas pelos Visitantes (Clique para Votar)' }
+      };
+      var rq = reqI18n[lang] || reqI18n.en;
+      var rqMap = {
+        'nav-btn-request': rq.navReq,
+        'mnav-request': rq.navReq,
+        'req-sec-badge': rq.badge,
+        'req-sec-title': rq.title,
+        'req-sec-desc': rq.desc,
+        'req-lbl-name': rq.name,
+        'req-lbl-email': rq.email,
+        'req-lbl-type': rq.type,
+        'req-lbl-cat': rq.cat,
+        'req-lbl-title': rq.rtitle,
+        'req-lbl-details': rq.details,
+        'req-submit-btn': rq.btn,
+        'req-board-heading': rq.board
+      };
+      for (var rKey in rqMap) {
+        var rEl = document.getElementById(rKey);
+        if (rEl) rEl.textContent = rqMap[rKey];
+      }
 
       try { localStorage.setItem('wf_lang', lang); } catch (e) {}
       if (!silent && typeof showCleanToast === 'function') {
@@ -5495,15 +5895,13 @@
       showCleanToast('Downloaded viral result card (PNG)!');
     }
 
-    // Initialize Global Comparator & Saved Language on Load
+    // Initialize Global Comparator, Visitor Request Board & Default English Language on Load
     document.addEventListener('DOMContentLoaded', function() {
       calcGlobalComparator();
-      try {
-        var savedLang = localStorage.getItem('wf_lang');
-        if (savedLang && UI_I18N[savedLang] && savedLang !== 'en') {
-          setGlobalLanguage(savedLang, true);
-        }
-      } catch (e) {}
+      renderVisitorRequestsBoard();
+      var sel = document.getElementById('global-lang-select');
+      if (sel) sel.value = 'en';
+      setGlobalLanguage('en', true);
     });
 
     window.addEventListener('DOMContentLoaded', function() {
@@ -5513,12 +5911,7 @@
           var db = document.getElementById('dark-mode-btn');
           if (db) db.innerHTML = '&#9728;&#65039; Light';
         }
-        var savedLang = localStorage.getItem('wf_lang');
-        if (savedLang && savedLang !== 'en') {
-          var lSel = document.getElementById('global-lang-select');
-          if (lSel) lSel.value = savedLang;
-          setGlobalLanguage(savedLang);
-        }
+        
         var qParam = new URLSearchParams(window.location.search).get('q');
         if (qParam) {
           var sInp = document.getElementById('tool-search-input');

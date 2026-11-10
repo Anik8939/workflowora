@@ -212,10 +212,10 @@
 </head>
 <body class="bg-[#FAF9F5] text-[#141413] font-sans min-h-screen flex flex-col">
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
-    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-10 py-3 flex items-center justify-between gap-3 overflow-x-auto">
+    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-2">
       <a href="/" class="flex items-center gap-2.5 text-left focus:outline-none group shrink-0 whitespace-nowrap no-underline">
-        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition shrink-0">
-          <svg class="w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition shrink-0">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 20L22 46L32 25L42 46L52 20" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="32" cy="13" r="4" fill="#FDE047"/>
           </svg>
@@ -225,28 +225,29 @@
             <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-charcoal">WorkFlowora</span>
             <span class="px-1.5 py-0.5 rounded-full bg-orange-100 text-terracottaDark font-bold text-[10px] uppercase tracking-wider">PRO</span>
           </div>
-          <span id="sub-brand-tag" class="block text-[11px] text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
+          <span id="sub-brand-tag" class="hidden 2xl:block text-[11px] text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
         </div>
       </a>
-      <nav aria-label="Page Navigation" class="hidden lg:flex items-center gap-1.5 shrink-0 whitespace-nowrap">
-        <a id="sub-nav-tools" href="/" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">All 32 Tools</a>
-        <a id="sub-nav-guides" href="/#popular-guides-section" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">32 How-To Guides</a>
-        <a id="sub-nav-global" href="/#global-hub-comparator-section" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">Global Tax &amp; Pay</a>
-        <a id="sub-nav-about" href="/about-us.html" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">About Us</a>
-        <a id="sub-nav-contact" href="/contact-us.html" class="px-3 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">Contact</a>
+      <nav aria-label="Page Navigation" class="hidden lg:flex items-center gap-1 shrink-0 whitespace-nowrap">
+        <a id="sub-nav-tools" href="/" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">All Tools (32)</a>
+        <a id="sub-nav-guides" href="/#popular-guides-section" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">Guides (32)</a>
+        <a id="sub-nav-global" href="/#global-hub-comparator-section" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">Global Tax</a>
+        <a id="sub-nav-request" href="/#feature-request-section" class="px-2.5 py-1.5 rounded-xl text-xs font-bold text-terracotta hover:bg-orange-50 transition whitespace-nowrap shrink-0">&#128161; Request Tool</a>
+        <a id="sub-nav-about" href="/about-us.html" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">About</a>
+        <a id="sub-nav-contact" href="/contact-us.html" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">Contact</a>
       </nav>
-      <div class="flex items-center gap-2 shrink-0 whitespace-nowrap">
+      <div class="flex items-center gap-1.5 shrink-0 whitespace-nowrap">
         <label for="global-lang-select" class="sr-only">Select Language</label>
         <select id="global-lang-select" onchange="setSubpageLanguage(this.value)" aria-label="Language Selector" class="px-2 py-1.5 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer whitespace-nowrap shrink-0">
-          <option value="en">&#127482;&#127480; EN (English)</option>
-          <option value="de">&#127465;&#127466; DE (Deutsch)</option>
-          <option value="fr">&#127467;&#127479; FR (Fran&#231;ais)</option>
-          <option value="es">&#127466;&#127480; ES (Espa&#241;ol)</option>
-          <option value="ja">&#127471;&#127477; JA (&#26085;&#26412;&#35486;)</option>
-          <option value="pt">&#127463;&#127479; PT (Portugu&#234;s)</option>
+          <option value="en" selected>&#127482;&#127480; EN</option>
+          <option value="de">&#127465;&#127466; DE</option>
+          <option value="fr">&#127467;&#127479; FR</option>
+          <option value="es">&#127466;&#127480; ES</option>
+          <option value="ja">&#127471;&#127477; JA</option>
+          <option value="pt">&#127463;&#127479; PT</option>
         </select>
         <button type="button" onclick="toggleDarkMode()" id="dark-mode-btn" aria-label="Toggle Dark Mode" class="px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition whitespace-nowrap shrink-0">&#127769; Dark</button>
-        <a id="sub-nav-cta" href="/" class="btn-coral px-3.5 py-2 text-xs font-bold whitespace-nowrap shrink-0 no-underline">Open All 32 Tools &#8594;</a>
+        <a id="sub-nav-cta" href="/" class="hidden sm:inline-flex btn-coral px-3 py-1.5 text-xs font-bold whitespace-nowrap shrink-0 no-underline">All 32 Tools &#8594;</a>
       </div>
     </div>
   </header>
@@ -716,70 +717,37 @@
       if (lbl) lbl.textContent = 'Stop Audio Reader';
     }
   </script>
-<style>
-  iframe.goog-te-banner-frame, .goog-te-banner-frame, .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; visibility: hidden !important; height: 0 !important; }
-  body { top: 0px !important; position: static !important; }
-  .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
-</style>
 <script>
+  (function() {
+    try {
+      var d = window.location.hostname;
+      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+      if (d) {
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + d;
+        document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + d;
+      }
+    } catch (e) {}
+  })();
   var SUB_UI_I18N = {
-    en: { tag: 'Free Online Calculators & Smart Work Tools', tools: 'All 32 Tools', guides: '32 How-To Guides', global: 'Global Tax & Pay', about: 'About Us', contact: 'Contact', cta: 'Open All 32 Tools →' },
-    de: { tag: 'Kostenlose Online-Rechner & Smarte Business-Tools', tools: 'Alle 32 Tools', guides: '32 Praxis-Guides', global: 'Globaler Steuervergleich', about: 'Über uns', contact: 'Kontakt', cta: 'Alle 32 Tools öffnen →' },
-    fr: { tag: 'Calculateurs en Ligne Gratuits & Outils Pro', tools: 'Les 32 Outils', guides: '32 Guides Pratiques', global: 'Impôts & Revenus', about: 'À Propos', contact: 'Contact', cta: 'Ouvrir les 32 Outils →' },
-    es: { tag: 'Calculadoras Online Gratis y Herramientas', tools: 'Las 32 Herramientas', guides: '32 Guías Prácticas', global: 'Impuestos y Sueldo', about: 'Nosotros', contact: 'Contacto', cta: 'Abrir 32 Herramientas →' },
-    ja: { tag: '無料の金融・ビジネス計算ツール＆実践ガイド', tools: '全32ツール', guides: '32本の解説ガイド', global: '世界8都市・税金比較', about: '運営者情報', contact: 'お問い合わせ', cta: '全32ツールを開く →' },
-    pt: { tag: 'Calculadoras Online Gratuitas e Ferramentas', tools: 'Todas as 32 Ferramentas', guides: '32 Guias Práticos', global: 'Impostos e Renda', about: 'Sobre Nós', contact: 'Contato', cta: 'Abrir 32 Ferramentas →' }
+    en: { tag: 'Free Online Calculators & Smart Work Tools', tools: 'All Tools (32)', guides: 'Guides (32)', global: 'Global Tax', req: '💡 Request Tool', about: 'About', contact: 'Contact', cta: 'All 32 Tools \u2192' },
+    de: { tag: 'Kostenlose Online-Rechner & Smarte Business-Tools', tools: 'Tools (32)', guides: 'Guides (32)', global: 'Steuern', req: '💡 Tool wünschen', about: 'Über uns', contact: 'Kontakt', cta: 'Alle 32 Tools \u2192' },
+    fr: { tag: 'Calculateurs en Ligne Gratuits & Outils Pro', tools: 'Outils (32)', guides: 'Guides (32)', global: 'Fiscalité', req: '💡 Suggérer', about: 'À Propos', contact: 'Contact', cta: 'Les 32 Outils \u2192' },
+    es: { tag: 'Calculadoras Online Gratis y Herramientas', tools: 'Herramientas (32)', guides: 'Guías (32)', global: 'Impuestos', req: '💡 Sugerir', about: 'Nosotros', contact: 'Contacto', cta: '32 Herramientas \u2192' },
+    ja: { tag: '無料の金融・ビジネス計算ツール＆実践ガイド', tools: '全ツール (32)', guides: 'ガイド (32)', global: '世界税制', req: '💡 リクエスト', about: '運営情報', contact: 'お問い合わせ', cta: '全32ツール \u2192' },
+    pt: { tag: 'Calculadoras Online Gratuitas e Ferramentas', tools: 'Ferramentas (32)', guides: 'Guias (32)', global: 'Impostos', req: '💡 Sugerir', about: 'Sobre', contact: 'Contato', cta: '32 Ferramentas \u2192' }
   };
   function setSubpageLanguage(lang) {
     if (!SUB_UI_I18N[lang]) lang = 'en';
-    window.WF_ACTIVE_LANG = lang;
     var u = SUB_UI_I18N[lang];
     var sel = document.getElementById('global-lang-select');
     if (sel && sel.value !== lang) sel.value = lang;
-    var ids = { 'sub-brand-tag': u.tag, 'sub-nav-tools': u.tools, 'sub-nav-guides': u.guides, 'sub-nav-global': u.global, 'sub-nav-about': u.about, 'sub-nav-contact': u.contact, 'sub-nav-cta': u.cta };
+    var ids = { 'sub-brand-tag': u.tag, 'sub-nav-tools': u.tools, 'sub-nav-guides': u.guides, 'sub-nav-global': u.global, 'sub-nav-request': u.req, 'sub-nav-about': u.about, 'sub-nav-contact': u.contact, 'sub-nav-cta': u.cta };
     for (var k in ids) { var el = document.getElementById(k); if (el) el.textContent = ids[k]; }
-    try { localStorage.setItem('wf_lang', lang); } catch (e) {}
-    var domain = window.location.hostname;
-    if (lang === 'en') {
-      document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-      if (domain) document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain;
-    } else {
-      document.cookie = 'googtrans=/en/' + lang + '; path=/';
-      if (domain) document.cookie = 'googtrans=/en/' + lang + '; path=/; domain=' + domain;
-    }
-    var combo = document.querySelector('.goog-te-combo');
-    if (combo) {
-      combo.value = (lang === 'en') ? '' : lang;
-      combo.dispatchEvent(new Event('change'));
-    } else if (lang !== 'en' && !window.WF_GT_SUB_LOADED) {
-      window.WF_GT_SUB_LOADED = true;
-      var gtDiv = document.createElement('div');
-      gtDiv.id = 'google_translate_element';
-      gtDiv.style.display = 'none';
-      document.body.appendChild(gtDiv);
-      window.googleTranslateElementInit = function() {
-        new google.translate.TranslateElement({ pageLanguage: 'en', includedLanguages: 'en,de,fr,es,ja,pt', autoDisplay: false }, 'google_translate_element');
-        setTimeout(function() {
-          var c2 = document.querySelector('.goog-te-combo');
-          if (c2 && window.WF_ACTIVE_LANG && window.WF_ACTIVE_LANG !== 'en') {
-            c2.value = window.WF_ACTIVE_LANG;
-            c2.dispatchEvent(new Event('change'));
-          }
-        }, 600);
-      };
-      var s = document.createElement('script');
-      s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
-      s.async = true;
-      document.head.appendChild(s);
-    }
   }
   document.addEventListener('DOMContentLoaded', function() {
-    try {
-      var saved = localStorage.getItem('wf_lang');
-      if (saved && SUB_UI_I18N[saved] && saved !== 'en') {
-        setSubpageLanguage(saved);
-      }
-    } catch (e) {}
+    var sel = document.getElementById('global-lang-select');
+    if (sel) sel.value = 'en';
+    setSubpageLanguage('en');
   });
 </script>
 </body>
