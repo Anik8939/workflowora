@@ -251,6 +251,27 @@
       }
     } catch (e) {}
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "WorkFlowora",
+    "alternateName": "WorkFlowora PRO Free Calculators & Smart Work Tools",
+    "url": "https://www.workflowora.com/",
+    "inLanguage": ["en", "de", "fr", "es", "ja", "pt"],
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.workflowora.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+  <style>
+    /* Hide Google Translate top banner & tooltips completely while allowing seamless full-page neural translation */
+    iframe.goog-te-banner-frame, .goog-te-banner-frame, .skiptranslate, #goog-gt-tt, .goog-te-balloon-frame { display: none !important; visibility: hidden !important; height: 0 !important; }
+    body { top: 0px !important; position: static !important; }
+    .goog-text-highlight { background-color: transparent !important; box-shadow: none !important; }
+  </style>
 </head>
 <body class="min-h-screen flex flex-col">
   <!-- Top Reading & Scroll Progress Bar -->
@@ -264,84 +285,89 @@
        STICKY HEADER WITH CUSTOM VECTOR BRAND LOGO
        ========================================================= -->
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
-    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-3.5 flex items-center justify-between gap-4">
+    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-10 py-3 flex items-center justify-between gap-3 overflow-x-auto">
       <!-- Custom SVG Brand Logo -->
-      <button type="button" onclick="showMainView('home')" class="flex items-center gap-3 text-left focus:outline-none group">
-        <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition">
-          <svg class="w-7 h-7" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button type="button" onclick="showMainView('home')" class="flex items-center gap-2.5 text-left focus:outline-none group shrink-0 whitespace-nowrap">
+        <div class="w-10 h-10 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition shrink-0">
+          <svg class="w-6 h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M12 20L22 46L32 25L42 46L52 20" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
             <circle cx="32" cy="13" r="4" fill="#FDE047"/>
           </svg>
         </div>
         <div>
-          <div class="flex items-center gap-1">
-            <span class="font-display font-extrabold text-xl sm:text-2xl tracking-tight text-charcoal">WorkFlowora</span>
-            <span class="px-2 py-0.5 rounded-full bg-orange-100 text-terracottaDark font-bold text-[10px] uppercase tracking-wider">PRO</span>
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-charcoal">WorkFlowora</span>
+            <span class="px-1.5 py-0.5 rounded-full bg-orange-100 text-terracottaDark font-bold text-[10px] uppercase tracking-wider">PRO</span>
           </div>
-          <span class="block text-xs text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
+          <span id="nav-brand-sub" class="block text-[11px] text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
         </div>
       </button>
 
-      <!-- Clean Navigation Menu -->
-      <nav aria-label="Main Menu" class="hidden md:flex items-center gap-1.5">
-        <button type="button" onclick="showMainView('home')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+      <!-- Clean Single-Line Navigation Menu -->
+      <nav aria-label="Main Menu" class="hidden xl:flex items-center gap-1 shrink-0 whitespace-nowrap">
+        <button id="nav-btn-tools" type="button" onclick="showMainView('home')" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
           All Free Tools
         </button>
-        <button type="button" onclick="scrollToSection('popular-guides-section')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+        <button id="nav-btn-guides" type="button" onclick="scrollToSection('popular-guides-section')" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
           How-To Guides
         </button>
-        <button type="button" onclick="scrollToSection('templates-vault-section')" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
-          Free Templates &amp; Formulas
+        <button id="nav-btn-global" type="button" onclick="scrollToSection('global-hub-comparator-section')" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
+          Global Tax &amp; Pay
         </button>
-        <a href="/about-us.html" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+        <button id="nav-btn-templates" type="button" onclick="scrollToSection('templates-vault-section')" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
+          Templates &amp; Formulas
+        </button>
+        <a id="nav-link-about" href="/about-us.html" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
           About Us
         </a>
-        <a href="/contact-us.html" class="px-3.5 py-2 rounded-xl text-sm font-semibold text-stone-800 hover:bg-stone-100 transition">
+        <a id="nav-link-contact" href="/contact-us.html" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">
           Contact
         </a>
       </nav>
 
-      <!-- Highlight Action Button -->
-      <div class="flex items-center gap-2">
+      <!-- Right Action Controls (Never Wraps) -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0 whitespace-nowrap">
         <label for="global-lang-select" class="sr-only">Select Language</label>
-        <select id="global-lang-select" onchange="setGlobalLanguage(this.value)" aria-label="Language Selector" class="px-2 py-2 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer">
-          <option value="en">&#127760; EN</option>
-          <option value="es">&#127466;&#127480; ES</option>
-          <option value="de">&#127465;&#127466; DE</option>
-          <option value="fr">&#127467;&#127479; FR</option>
-          <option value="pt">&#127463;&#127479; PT</option>
-          <option value="ar">&#127462;&#127466; AR</option>
-          <option value="hi">&#127470;&#127475; HI</option>
-          <option value="bn">&#127463;&#127465; BN</option>
+        <select id="global-lang-select" onchange="setGlobalLanguage(this.value)" aria-label="Language Selector" class="px-2 py-1.5 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer whitespace-nowrap shrink-0">
+          <option value="en">&#127482;&#127480; EN (English)</option>
+          <option value="de">&#127465;&#127466; DE (Deutsch)</option>
+          <option value="fr">&#127467;&#127479; FR (Fran&#231;ais)</option>
+          <option value="es">&#127466;&#127480; ES (Espa&#241;ol)</option>
+          <option value="ja">&#127471;&#127477; JA (&#26085;&#26412;&#35486;)</option>
+          <option value="pt">&#127463;&#127479; PT (Portugu&#234;s)</option>
         </select>
         <label for="global-currency-select" class="sr-only">Select Currency</label>
-        <select id="global-currency-select" onchange="setGlobalCurrency(this.value)" aria-label="Currency Selector" class="px-2.5 py-2 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer">
+        <select id="global-currency-select" onchange="setGlobalCurrency(this.value)" aria-label="Currency Selector" class="px-2 py-1.5 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer whitespace-nowrap shrink-0">
           <option value="$">$ USD</option>
           <option value="€">€ EUR</option>
           <option value="£">£ GBP</option>
+          <option value="¥">¥ JPY</option>
+          <option value="CHF ">CHF</option>
           <option value="C$">C$ CAD</option>
           <option value="A$">A$ AUD</option>
-          <option value="₹">₹ INR</option>
-          <option value="৳">৳ BDT</option>
+          <option value="R$">R$ BRL</option>
         </select>
-        <button type="button" onclick="openCommandPalette()" title="Quick Jump (Ctrl+K)" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition"><span>&#128269;</span><span>Quick Jump</span><kbd class="px-1.5 py-0.5 rounded bg-white border border-stone-300 text-[10px] font-mono">Ctrl+K</kbd></button>
-        <button type="button" onclick="toggleDarkMode()" id="dark-mode-btn" aria-label="Toggle Dark Mode" class="px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition">
+        <button type="button" onclick="openCommandPalette()" title="Quick Jump (Ctrl+K)" class="hidden sm:inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition whitespace-nowrap shrink-0">
+          <span>&#128269;</span><span id="nav-quick-jump-lbl" class="hidden 2xl:inline">Quick Jump</span><kbd class="px-1.5 py-0.5 rounded bg-white border border-stone-300 text-[10px] font-mono">Ctrl+K</kbd>
+        </button>
+        <button type="button" onclick="toggleDarkMode()" id="dark-mode-btn" aria-label="Toggle Dark Mode" class="px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition whitespace-nowrap shrink-0">
           &#127769; Dark
         </button>
-        <button type="button" onclick="openToolWorkspace('loan')" class="hidden sm:inline-flex btn-coral px-4 py-2.5 text-xs sm:text-sm shadow-sm">
-          Loan &amp; EMI Tool &#8594;
+        <button id="nav-cta-loan" type="button" onclick="openToolWorkspace('loan')" class="hidden md:inline-flex btn-coral px-3.5 py-2 text-xs shadow-sm whitespace-nowrap shrink-0">
+          Loan &amp; EMI &#8594;
         </button>
       </div>
     </div>
-    <!-- Mobile Quick Navigation Bar (Visible on Mobile & Tablet) -->
-    <nav aria-label="Mobile Quick Menu" class="md:hidden border-t border-stone-200 px-4 py-2 flex items-center gap-2 overflow-x-auto text-xs font-bold whitespace-nowrap">
-      <button type="button" onclick="showMainView('home')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">All 32 Tools</button>
-      <button type="button" onclick="scrollToSection('popular-guides-section')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">32 Guides</button>
-      <button type="button" onclick="scrollToSection('exact-lookup-tables-section')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">Salary &amp; Loan Charts</button>
-      <button type="button" onclick="scrollToSection('health-scorecard-section')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">Health Scorecard</button>
-      <button type="button" onclick="scrollToSection('templates-vault-section')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">Templates &amp; Formulas</button>
-      <a href="/about-us.html" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">About</a>
-      <a href="/contact-us.html" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">Contact</a>
+    <!-- Quick Navigation Bar (Visible below XL breakpoint so Laptop & Tablet never wrap) -->
+    <nav aria-label="Quick Menu" class="xl:hidden border-t border-stone-200 px-4 py-1.5 flex items-center gap-2 overflow-x-auto text-xs font-bold whitespace-nowrap">
+      <button id="mnav-tools" type="button" onclick="showMainView('home')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">All 32 Tools</button>
+      <button id="mnav-guides" type="button" onclick="scrollToSection('popular-guides-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">32 Guides</button>
+      <button id="mnav-global" type="button" onclick="scrollToSection('global-hub-comparator-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Global Tax &amp; Pay</button>
+      <button id="mnav-tables" type="button" onclick="scrollToSection('exact-lookup-tables-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Salary &amp; Loan Charts</button>
+      <button id="mnav-score" type="button" onclick="scrollToSection('health-scorecard-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Health Scorecard</button>
+      <button id="mnav-tpl" type="button" onclick="scrollToSection('templates-vault-section')" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Templates &amp; Formulas</button>
+      <a id="mnav-about" href="/about-us.html" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">About</a>
+      <a id="mnav-contact" href="/contact-us.html" class="px-2.5 py-1 rounded-lg bg-stone-100 text-charcoal whitespace-nowrap shrink-0">Contact</a>
     </nav>
   </header>
 
@@ -358,7 +384,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center clean-card p-6 sm:p-10 bg-white">
           <div class="lg:col-span-7 space-y-5 text-left">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold uppercase tracking-wide">
-              <span>&#10003; <span id="hero-tools-count">32</span> Free Instant Tools &#8226; <span id="hero-guides-count">32</span> Expert Guides &#8226; Zero Signup &#8226; 100% Browser Private</span>
+              <span id="hero-top-pill">&#10003; <span id="hero-tools-count">32</span> Free Instant Tools &#8226; <span id="hero-guides-count">32</span> Expert Guides &#8226; Zero Signup &#8226; 100% Browser Private</span>
             </div>
 
             <h1 id="hero-main-heading" class="font-display font-extrabold text-3xl sm:text-5xl text-charcoal tracking-tight leading-tight">
@@ -410,19 +436,19 @@
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
           <button type="button" data-cat="all" onclick="setCategoryFilter('all')" class="cat-filter-btn cat-pill-active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition">
-            All Tools (<span id="count-cat-all">32</span>)
+            <span id="cat-lbl-all">All Tools</span> (<span id="count-cat-all">32</span>)
           </button>
           <button type="button" data-cat="Money &amp; Business" onclick="setCategoryFilter('Money & Business')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#128176; Money &amp; Business (<span id="count-cat-money">20</span>)
+            &#128176; <span id="cat-lbl-money">Money &amp; Business</span> (<span id="count-cat-money">20</span>)
           </button>
           <button type="button" data-cat="Writing &amp; AI" onclick="setCategoryFilter('Writing & AI')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#9997;&#65039; Writing &amp; AI (<span id="count-cat-writing">4</span>)
+            &#9997;&#65039; <span id="cat-lbl-writing">Writing &amp; AI</span> (<span id="count-cat-writing">4</span>)
           </button>
           <button type="button" data-cat="Daily Life" onclick="setCategoryFilter('Daily Life')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#128197; Daily Life &amp; Math (<span id="count-cat-daily">8</span>)
+            &#128197; <span id="cat-lbl-daily">Daily Life &amp; Math</span> (<span id="count-cat-daily">8</span>)
           </button>
           <button type="button" data-cat="favorites" onclick="setCategoryFilter('favorites')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#11088; My Favorites (<span id="count-cat-fav">0</span>)
+            &#11088; <span id="cat-lbl-fav">My Favorites</span> (<span id="count-cat-fav">0</span>)
           </button>
         </div>
       </section>
@@ -554,6 +580,61 @@
 
 
       <!-- ZERO-COMPETITION LONG-TAIL SEO ENGINE: EXACT DOLLAR, SALARY, LOAN & ROAS LOOKUP MATRICES -->
+      
+      <!-- INTERACTIVE GLOBAL INCOME, TAX & PURCHASING POWER COMPARATOR -->
+      <section id="global-hub-comparator-section" class="clean-card p-6 sm:p-10 bg-white space-y-6 border-2 border-orange-500/20">
+        <div class="flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 pb-4">
+          <div>
+            <span id="glb-sec-badge" class="text-xs font-bold uppercase tracking-wider text-terracotta">&#127757; GLOBAL WEALTH &amp; TAX ARBITRAGE ENGINE</span>
+            <h2 id="glb-sec-title" class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-1">Global Income, Effective Tax &amp; Purchasing Power Comparator (2026)</h2>
+            <p id="glb-sec-desc" class="text-xs sm:text-sm text-stone-600 mt-1">Compare how far your gross annual salary or freelance/SaaS profit goes across 8 Tier-1 global hubs after income tax, social contributions, and executive living costs.</p>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 bg-stone-50 p-5 rounded-2xl border border-stone-200">
+          <div>
+            <label for="glb-income-input" id="glb-lbl-income" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Annual Gross Income / Profit</label>
+            <input id="glb-income-input" type="number" value="120000" min="10000" step="5000" oninput="calcGlobalComparator()" class="w-full p-3 rounded-xl bg-white border border-stone-300 font-bold text-charcoal text-base" />
+          </div>
+          <div>
+            <label for="glb-lifestyle-select" id="glb-lbl-style" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Household &amp; Living Standard</label>
+            <select id="glb-lifestyle-select" onchange="calcGlobalComparator()" class="w-full p-3 rounded-xl bg-white border border-stone-300 font-bold text-charcoal text-sm cursor-pointer">
+              <option value="0.75">Lean Professional / Remote Solo (0.75x Cost)</option>
+              <option value="1.0" selected>Standard Executive / Single City Center (1.0x Cost)</option>
+              <option value="1.55">Family / Couple 2-Bedroom Prime Area (1.55x Cost)</option>
+            </select>
+          </div>
+          <div>
+            <label for="glb-roi-select" id="glb-lbl-roi" class="block text-xs font-bold uppercase tracking-wider text-stone-700 mb-1.5">Surplus Investment Return (Annual %)</label>
+            <select id="glb-roi-select" onchange="calcGlobalComparator()" class="w-full p-3 rounded-xl bg-white border border-stone-300 font-bold text-charcoal text-sm cursor-pointer">
+              <option value="0.06">6% Conservative Index / Bonds</option>
+              <option value="0.08" selected>8% S&amp;P 500 Historical Real Average</option>
+              <option value="0.10">10% Growth Equity Portfolio</option>
+              <option value="0.12">12% High-Growth / Reinvested Business</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="overflow-x-auto rounded-2xl border border-stone-200">
+          <table class="w-full text-left border-collapse text-xs sm:text-sm">
+            <thead>
+              <tr class="bg-stone-100 text-charcoal border-b border-stone-200 font-bold">
+                <th class="p-3.5">Global Hub / Country</th>
+                <th class="p-3.5">Est. Effective Tax + Social</th>
+                <th class="p-3.5">Annual Net Take-Home</th>
+                <th class="p-3.5">Est. Annual Living Cost</th>
+                <th class="p-3.5">Annual Investable Surplus</th>
+                <th class="p-3.5">10-Yr Compounded Wealth</th>
+              </tr>
+            </thead>
+            <tbody id="glb-comparator-tbody" class="divide-y divide-stone-200"></tbody>
+          </table>
+        </div>
+        <p id="glb-sec-note" class="text-[11px] text-stone-500 leading-relaxed">
+          *Note: Effective tax rates reflect combined federal/national, municipal, and mandatory social security approximations for standard single filers at the selected income bracket. Always consult a licensed CPA or international tax advisor in your jurisdiction.
+        </p>
+      </section>
+
       <section id="exact-lookup-tables-section" class="clean-card p-6 sm:p-10 bg-white space-y-8">
         <div class="flex flex-wrap items-end justify-between gap-4 border-b border-stone-200 pb-4">
           <div>
@@ -3055,7 +3136,7 @@
             '<p class="text-xs text-stone-600 leading-relaxed mb-5">' + t.desc + '</p>' +
           '</div>' +
           '<div class="pt-3 border-t border-stone-100 flex items-center justify-between text-xs font-bold text-terracotta">' +
-            '<span>Open Free Tool</span>' +
+            '<span class="tool-card-cta-lbl">' + (window.WF_CURRENT_CTA_TOOL || 'Open Free Tool') + '</span>' +
             '<span>&#8594;</span>' +
           '</div>';
         grid.appendChild(card);
@@ -3782,7 +3863,7 @@
         }
       }
       var outputs = [];
-      var outEls = ws.querySelectorAll('[id$="-out"], [id$="-words"], [id$="-chars"], [id$="-read"], [id$="-speak"], [id="pw-output"]');
+      var outEls = ws.querySelectorAll('[id$="-out"], [id$="-words"], [id$="-chars"], [id$="-read"], [id$="-speak"], #pw-output');
       for (var j = 0; j < outEls.length; j++) {
         var oel = outEls[j];
         var val = (oel.textContent || oel.value || '').replace(/\s+/g, ' ').trim();
@@ -4661,59 +4742,680 @@
     }
 
     
-    var I18N_DICT = {
-      en: {
-        h1: 'What do you want to <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calculate or solve</span> today?',
-        sub: 'Choose any of our <strong>32 free browser utilities</strong> below—from <strong>Loan EMI, Compound Interest, LTV:CAC &amp; FIRE Retirement</strong> to <strong>Paystub PDF, Freelance Contracts, and AI Prompt Builders</strong>.',
-        ph: 'Search all 32 tools (e.g., Loan, Compound Interest, LTV:CAC, Paystub, Contract, Tax)...'
-      },
-      es: {
-        h1: '¿Qué quieres <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calcular o resolver</span> hoy?',
-        sub: 'Elige cualquiera de nuestras <strong>32 calculadoras gratuitas</strong>—desde <strong>Préstamos EMI, Interés Compuesto, LTV:CAC y ROAS</strong> hasta <strong>Facturas PDF, Contratos y Utilidades IA</strong>.',
-        ph: 'Buscar en las 32 herramientas (ej. Loan, Compound, ROAS, Invoice, Tax)...'
-      },
+    
+    
+    /* =========================================================
+       V15 FULL-WEBSITE 6-LANGUAGE TRANSLATION ENGINE (EN, DE, FR, ES, JA, PT)
+       + GLOBAL TAX & PURCHASING POWER COMPARATOR
+       + VIRAL RESULT IMAGE CARD GENERATOR
+       ========================================================= */
+
+    // Save original English TOOLS_DIRECTORY and GUIDES_LIST on load so switching back to EN is 100% exact
+    var ORIG_TOOLS_EN = JSON.parse(JSON.stringify(TOOLS_DIRECTORY));
+    var ORIG_GUIDES_EN = JSON.parse(JSON.stringify(GUIDES_LIST));
+
+    // Complete 32-Tool Translations for the World's Top 6 Most Valuable Languages
+    var TOOLS_I18N = {
       de: {
-        h1: 'Was möchten Sie heute <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">berechnen oder lösen</span>?',
-        sub: 'Nutzen Sie <strong>32 kostenlose Online-Rechner</strong>—von <strong>Kreditrechner, Zinseszins, LTV:CAC &amp; Break-Even ROAS</strong> bis hin zu <strong>Rechnungsgenerator, Wörter pro Minute &amp; KI-Prompts</strong>.',
-        ph: 'Alle 32 Tools durchsuchen (z.B. Loan, Compound, ROAS, Word Counter)...'
+        loan: { badge: 'Hohe Nachfrage', title: 'Kredit- & Hypotheken-Ratenrechner (EMI)', desc: 'Berechnen Sie monatliche Kreditraten, Gesamtzinsen und das Tilgungs-Zins-Verhältnis.' },
+        compound: { badge: 'Vermögen', title: 'Zinseszins- & Vermögensrechner', desc: 'Simulieren Sie, wie Ihre Ersparnisse und monatlichen Sparpläne durch Zinseszinseffekt wachsen.' },
+        margin: { badge: 'Business', title: 'Gewinnmargen-, Aufschlag- & ROAS-Rechner', desc: 'Berechnen Sie Nettogewinn pro Bestellung, Bruttomarge (%) und Werbe-ROAS.' },
+        freelance: { badge: 'Einkommen', title: 'Freelancer Stundensatz- & Tagessatz-Rechner', desc: 'Ermitteln Sie Ihren optimalen Stunden- oder Tagessatz für Ihr Wunsch-Jahreseinkommen.' },
+        invoice: { badge: 'Druckbares PDF', title: 'Sofort-Rechnungsgenerator (PDF)', desc: 'Erstellen Sie professionelle Kundenrechnungen mit automatischer Steuerberechnung und 1-Klick-PDF.' },
+        wordcount: { badge: 'Essentiell', title: 'Wort- & Zeichenzähler mit Lesezeit', desc: 'Zählen Sie Wörter, Zeichen, Sätze sowie Lese- und Sprechzeit in Echtzeit.' },
+        prompt: { badge: 'KI-Tool', title: '1-Klick KI-Prompt-Generator', desc: 'Verwandeln Sie einfache Ideen in strukturierte Experten-Prompts für ChatGPT, Claude & Gemini.' },
+        case: { badge: 'Formatierung', title: 'Text-Groß-/Kleinschreibung & SEO-Slug-Generator', desc: 'Konvertieren Sie Text in GROSSBUCHSTABEN, Titel-Stil und saubere SEO-URL-Slugs.' },
+        bmi: { badge: 'Gesundheit', title: 'BMI- & Täglicher Kalorienbedarfsrechner (TDEE)', desc: 'Prüfen Sie Ihren Body-Mass-Index (BMI) und Ihren täglichen Kalorienumsatz.' },
+        age: { badge: 'Alltag', title: 'Exakter Alters- & Lebenstage-Rechner', desc: 'Berechnen Sie Ihr genaues Alter in Jahren, Monaten, Tagen und gelebten Gesamttagen.' },
+        percent: { badge: 'Schnell-Mathe', title: 'Rabatt-, Mehrwertsteuer- & Prozentrechner', desc: 'Berechnen Sie Einkaufsrabatte, Steuerprozente und Endpreise sekundenschnell.' },
+        password: { badge: 'Sicherheit & QR', title: 'Passwort- & QR-Code-Generator', desc: 'Erstellen Sie hochsichere Passwörter und druckbare QR-Codes für jede URL.' },
+        cacltv: { badge: 'SaaS & Wachstum', title: 'SaaS LTV:CAC & Amortisations-Rechner', desc: 'Berechnen Sie Customer Lifetime Value (LTV), LTV:CAC-Verhältnis und CAC-Payback in Monaten.' },
+        dti: { badge: '28/36-Regel', title: 'Schulden-Einkommens-Verhältnis (DTI) Hypothekenrechner', desc: 'Prüfen Sie Ihre Front-End- und Back-End-DTI-Quote nach Banken-Kreditrichtlinien.' },
+        creditpayoff: { badge: 'Schuldenfrei', title: 'Kreditkarten-Tilgungs- & Umschuldungsrechner', desc: 'Sehen Sie Ihren Tilgungsplan und Ihre Zinsersparnis durch Kreditumschuldung.' },
+        salary: { badge: '50/30/20-Regel', title: 'Gehalts-, Stundenlohn- & 50/30/20-Budgetplaner', desc: 'Rechnen Sie Jahresgehalt in Stundenlohn um und teilen Sie Ihr Nettoeinkommen nach 50/30/20 auf.' },
+        tax: { badge: 'Steuern & Freelance', title: 'Selbstständigen- & Quartalssteuer-Schätzer', desc: 'Schätzen Sie Sozialabgaben, Betriebsausgaben-Abzüge und vierteljährliche Steuervorauszahlungen.' },
+        runway: { badge: 'Gründer & Stripe', title: 'Startup Cash-Runway, Burn-Rate & Gebührenrechner', desc: 'Berechnen Sie verbleibende Startup-Monate (Runway), Burn-Rate und Stripe/PayPal-Gebühren.' },
+        roi: { badge: 'CAGR & Aktien', title: 'Investment-ROI, Jährliche CAGR & Aktien-Durchschnittsrechner', desc: 'Berechnen Sie Gesamt-ROI %, jährliche Wachstumsrate (CAGR) und durchschnittlichen Aktien-Kaufkurs.' },
+        timer: { badge: 'Live-Tracker', title: 'Abrechenbarer Arbeits-Timer, Pomodoro & Sparziel-Tracker', desc: 'Erfassen Sie Ihr Honorar pro Sekunde live, nutzen Sie 25-Min-Fokus-Timer und Sparziele.' },
+        breakeven: { badge: 'Unit Economics', title: 'Break-Even-Stückzahl & Zielgewinn-Simulator', desc: 'Berechnen Sie die nötige Verkaufsmenge und den Umsatz zur Deckung aller Fixkosten.' },
+        serp: { badge: 'SEO-Vorschau', title: 'SEO-Titel, Meta-Description & Google SERP-Tester', desc: 'Prüfen Sie Ihr Google-Suchergebnis live mit optimaler 60-Zeichen-Titel- & 160-Zeichen-Länge.' },
+        unitconv: { badge: 'All-in-One', title: 'Einheiten-, Gewichts-, Längen- & Temperatur-Umrechner', desc: 'Rechnen Sie kg in Pfund, cm in Zoll/Fuß, km in Meilen und Celsius in Fahrenheit um.' },
+        tipbill: { badge: 'Rechnung teilen', title: 'Trinkgeld-, Steuer- & Gruppenrechnungs-Teiler', desc: 'Berechnen Sie Trinkgeld, Steuern und den genauen Pro-Kopf-Betrag für Gruppen.' },
+        paystub: { badge: 'Gratis PDF (0€)', title: 'Gehaltsabrechnungs- & Honorarbeleg-Generator (PDF)', desc: 'Erstellen Sie wasserzeichenfreie Gehaltsabrechnungen mit Steuerabzügen und 1-Klick-PDF-Druck.' },
+        contract: { badge: 'Vertrag & NDA', title: 'Freelancer-Dienstleistungsvertrag & NDA-Generator', desc: 'Erstellen Sie unterschriftsreife Freelancer-Verträge mit Leistungsumfang und Geheimhaltung (NDA).' },
+        abtest: { badge: 'CRO & Wachstum', title: 'A/B-Test Statistische Signifikanz & Umsatz-Rechner', desc: 'Prüfen Sie Z-Score-Konfidenz und Conversion-Steigerung (%) vor dem Website-Rollout.' },
+        utm: { badge: 'GA4 & Leads', title: 'GA4 Kampagnen-UTM & WhatsApp-Lead-Link-Generator', desc: 'Erstellen Sie messbare Google Analytics 4 UTM-Links und direkte WhatsApp-Chat-Links.' },
+        retirement: { badge: 'FIRE & 4%-Regel', title: 'FIRE Ruhestands- & 4%-Entnahmerechner', desc: 'Berechnen Sie Ihr 25x-Vermögensziel für finanzielle Freiheit und Ihre sichere monatliche Rente.' },
+        refinance: { badge: 'Umschuldung', title: 'Hypotheken- & Kredit-Umschuldungsrechner', desc: 'Sehen Sie monatliche Ersparnisse, Break-Even-Monate der Abschlusskosten und Gesamtzinsersparnis.' },
+        saasmetrics: { badge: 'Rule of 40', title: 'SaaS-Unternehmenswert, ARR & Rule-of-40-Rechner', desc: 'Berechnen Sie Annual Recurring Revenue (ARR), Rule-of-40-Score und SaaS-Exit-Bewertung.' },
+        dropship: { badge: 'Import & FBA', title: 'E-Commerce Landed-Cost, Zoll & Stückgewinn-Rechner', desc: 'Berechnen Sie die wahren Stückkosten nach Fracht, Einfuhrzoll und Amazon FBA / Shopify-Gebühren.' }
       },
       fr: {
-        h1: 'Que voulez-vous <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calculer ou résoudre</span> aujourd\'hui ?',
-        sub: 'Découvrez nos <strong>32 outils gratuits</strong>—<strong>Calculatrice de Prêt, Intérêts Composés, LTV:CAC, ROAS, Factures PDF, Contrats Freelance et IA</strong>.',
-        ph: 'Rechercher parmi les 32 outils (ex. Loan, Compound, ROAS, Invoice)...'
+        loan: { badge: 'Très Demandé', title: 'Calculateur de Prêt & Mensualités Hypothécaires (EMI)', desc: 'Calculez vos mensualités de crédit, le coût total des intérêts et le ratio capital/intérêts.' },
+        compound: { badge: 'Patrimoine', title: 'Calculateur d\'Intérêts Composés & Croissance', desc: 'Projetez la croissance de votre épargne et de vos investissements mensuels grâce aux intérêts composés.' },
+        margin: { badge: 'Business', title: 'Calculateur de Marge Bénéficiaire & ROAS Publicitaire', desc: 'Calculez le bénéfice net par commande, la marge brute (%) et le ROAS de vos campagnes.' },
+        freelance: { badge: 'Revenus', title: 'Calculateur de Tarif Horaire & TJM Freelance', desc: 'Déterminez combien facturer par heure ou par jour (TJM) pour atteindre votre objectif de revenu.' },
+        invoice: { badge: 'PDF Imprimable', title: 'Générateur de Facture & Devis Imprimable (PDF)', desc: 'Créez des factures clients professionnelles avec calcul automatique des taxes et impression PDF.' },
+        wordcount: { badge: 'Essentiel', title: 'Compteur de Mots, Caractères & Temps de Lecture', desc: 'Comptez les mots, caractères, phrases et le temps de lecture ou d\'élocution en temps réel.' },
+        prompt: { badge: 'Outil IA', title: 'Générateur de Prompts IA en 1 Clic', desc: 'Transformez une idée simple en prompt expert structuré pour ChatGPT, Claude et Gemini.' },
+        case: { badge: 'Formatage', title: 'Convertisseur de Casse & Générateur de Slug SEO', desc: 'Convertissez vos textes en MAJUSCULES, Titre et URLs SEO propres instantanément.' },
+        bmi: { badge: 'Santé', title: 'Calculateur d\'IMC & Besoins Caloriques (TDEE)', desc: 'Vérifiez votre Indice de Masse Corporelle (IMC) et votre dépense énergétique quotidienne.' },
+        age: { badge: 'Quotidien', title: 'Calculateur d\'Âge Exact (Années, Mois & Jours)', desc: 'Trouvez votre âge exact en années, mois, jours et le nombre total de jours vécus.' },
+        percent: { badge: 'Calcul Rapide', title: 'Calculateur de Remise, TVA & Pourcentage', desc: 'Calculez les remises commerciales, taxes et prix finaux en une seconde.' },
+        password: { badge: 'Sécurité & QR', title: 'Générateur de Mot de Passe Fort & QR Code', desc: 'Générez des mots de passe inviolables et des QR codes téléchargeables gratuitement.' },
+        cacltv: { badge: 'SaaS & Croissance', title: 'Calculateur SaaS LTV:CAC & Durée d\'Amortissement', desc: 'Calculez la valeur vie client (LTV), le ratio LTV:CAC et les mois de remboursement CAC.' },
+        dti: { badge: 'Règle 28/36', title: 'Calculateur de Taux d\'Endettement (DTI) Immobilier', desc: 'Vérifiez votre taux d\'endettement par rapport aux critères d\'octroi de prêt immobilier.' },
+        creditpayoff: { badge: 'Remboursement', title: 'Calculateur de Remboursement & Rachat de Crédit', desc: 'Visualisez votre calendrier de désendettement et les intérêts économisés par regroupement.' },
+        salary: { badge: 'Règle 50/30/20', title: 'Convertisseur Salaire Horaire & Budget 50/30/20', desc: 'Convertissez votre salaire annuel en taux horaire et répartissez votre budget selon la règle 50/30/20.' },
+        tax: { badge: 'Impôts & Indépendant', title: 'Simulateur de Charges & Impôts Indépendant / Freelance', desc: 'Estimez vos cotisations sociales, déductions fiscales et acomptes trimestriels.' },
+        runway: { badge: 'Startup & Stripe', title: 'Calculateur de Trésorerie (Runway), Burn Rate & Frais Stripe', desc: 'Calculez l\'autonomie financière de votre startup, le burn rate net et les frais Stripe/PayPal.' },
+        roi: { badge: 'CAGR & Bourse', title: 'Calculateur de ROI, TCAC (CAGR) & Prix Moyen d\'Action', desc: 'Calculez le rendement total (ROI %), la croissance annualisée (CAGR) et le PRU boursier.' },
+        timer: { badge: 'Suivi en Direct', title: 'Chronomètre Facturable, Pomodoro & Objectif d\'Épargne', desc: 'Suivez vos revenus facturables en direct à la seconde, vos sessions focus 25 min et votre épargne.' },
+        breakeven: { badge: 'Seuil de Rentabilité', title: 'Simulateur de Seuil de Rentabilité (Break-Even) & Profit', desc: 'Calculez le nombre d\'unités et le chiffre d\'affaires requis pour couvrir vos charges fixes.' },
+        serp: { badge: 'Aperçu SEO', title: 'Analyseur de Titre SEO, Meta Description & Aperçu Google', desc: 'Prévisualisez votre extrait Google en direct et vérifiez la longueur optimale (60 / 160 caract.).' },
+        unitconv: { badge: 'Tout-en-Un', title: 'Convertisseur d\'Unités, Poids, Longueur & Température', desc: 'Convertissez kg en livres, cm en pouces/pieds, km en miles et Celsius en Fahrenheit.' },
+        tipbill: { badge: 'Partage d\'Addition', title: 'Calculateur de Pourboire, Taxes & Partage d\'Addition', desc: 'Calculez le pourboire, les taxes et la part exacte par personne au restaurant.' },
+        paystub: { badge: 'PDF Gratuit (0€)', title: 'Générateur de Fiche de Paie & Relevé de Revenus (PDF)', desc: 'Créez des bulletins de paie sans filigrane avec calcul des cotisations et impression PDF.' },
+        contract: { badge: 'Juridique & NDA', title: 'Générateur de Contrat de Prestation Freelance & NDA', desc: 'Créez un contrat de prestation indépendant prêt à signer avec clause de confidentialité (NDA).' },
+        abtest: { badge: 'CRO & Conversion', title: 'Calculateur de Significativité Statistique A/B Test', desc: 'Vérifiez la confiance statistique (score Z) et le gain de conversion (%) de vos pages.' },
+        utm: { badge: 'GA4 & Leads', title: 'Générateur de Liens UTM GA4 & Liens WhatsApp Directs', desc: 'Créez des URLs tracées pour Google Analytics 4 et des liens WhatsApp click-to-chat.' },
+        retirement: { badge: 'FIRE & Règle des 4%', title: 'Calculateur d\'Indépendance Financière (FIRE) & Retraite', desc: 'Calculez votre capital d\'indépendance financière (25x) et votre rente mensuelle sûre à 4%.' },
+        refinance: { badge: 'Renégociation', title: 'Calculateur d\'Économies de Refinancement de Prêt', desc: 'Analysez vos économies mensuelles, le seuil de rentabilité des frais et les intérêts gagnés.' },
+        saasmetrics: { badge: 'Règle des 40', title: 'Calculateur de Valorisation SaaS, ARR & Règle des 40', desc: 'Calculez le revenu annuel récurrent (ARR), le score Rule of 40 et la valorisation SaaS.' },
+        dropship: { badge: 'Import & FBA', title: 'Calculateur de Coût de Revient Import, Douane & FBA', desc: 'Calculez le coût unitaire réel après transport, droits de douane et frais Amazon FBA / Shopify.' }
+      },
+      es: {
+        loan: { badge: 'Alta Demanda', title: 'Calculadora de Préstamos, Hipotecas y Cuota Mensual (EMI)', desc: 'Calcula tu cuota mensual, el interés total y la proporción de capital vs. intereses.' },
+        compound: { badge: 'Patrimonio', title: 'Calculadora de Interés Compuesto e Inversión', desc: 'Proyecta cómo crecen tus ahorros y aportes mensuales a lo largo del tiempo.' },
+        margin: { badge: 'Negocios', title: 'Calculadora de Margen de Beneficio y ROAS Publicitario', desc: 'Obtén la ganancia neta por pedido, el porcentaje de margen bruto y el ROAS de tus anuncios.' },
+        freelance: { badge: 'Ingresos', title: 'Calculadora de Tarifa por Hora y Día para Freelancers', desc: 'Calcula cuánto cobrar por hora o por día para alcanzar tu meta de ingresos anuales.' },
+        invoice: { badge: 'PDF Imprimible', title: 'Generador Instantáneo de Facturas y Presupuestos (PDF)', desc: 'Crea facturas profesionales sin marca de agua con cálculo de impuestos e impresión PDF.' },
+        wordcount: { badge: 'Esencial', title: 'Contador de Palabras, Caracteres y Tiempo de Lectura', desc: 'Cuenta palabras, caracteres, oraciones y tiempo de lectura o discurso al instante.' },
+        prompt: { badge: 'Herramienta IA', title: 'Generador de Prompts de IA en 1 Clic', desc: 'Convierte cualquier idea simple en un prompt experto para ChatGPT, Claude y Gemini.' },
+        case: { badge: 'Formato', title: 'Convertidor de Mayúsculas/Minúsculas y Slugs SEO', desc: 'Convierte texto a MAYÚSCULAS, Tipo Título y URLs amigables para SEO.' },
+        bmi: { badge: 'Salud', title: 'Calculadora de IMC y Calorías Diarias (TDEE)', desc: 'Consulta tu Índice de Masa Corporal (IMC) y tu gasto calórico diario de mantenimiento.' },
+        age: { badge: 'Uso Diario', title: 'Calculadora de Edad Exacta (Años, Meses y Días)', desc: 'Descubre tu edad exacta en años, meses, días y el total de días vividos.' },
+        percent: { badge: 'Matemática Rápida', title: 'Calculadora de Descuentos, Impuestos y Porcentajes', desc: 'Calcula descuentos de compras, porcentajes de IVA/impuestos y precios finales.' },
+        password: { badge: 'Seguridad y QR', title: 'Generador de Contraseñas Seguras y Códigos QR', desc: 'Genera contraseñas irrompibles y códigos QR descargables para cualquier enlace.' },
+        cacltv: { badge: 'SaaS y Crecimiento', title: 'Calculadora SaaS de LTV:CAC y Recuperación', desc: 'Calcula el Valor de Vida del Cliente (LTV), ratio LTV:CAC y meses de recuperación.' },
+        dti: { badge: 'Regla 28/36', title: 'Calculadora de Relación Deuda-Ingresos (DTI) Hipotecaria', desc: 'Verifica tus ratios DTI frente a los estándares bancarios de aprobación hipotecaria.' },
+        creditpayoff: { badge: 'Salir de Deudas', title: 'Calculadora de Pago de Tarjetas y Consolidación de Deuda', desc: 'Mira tu fecha libre de deudas y el ahorro en intereses al consolidar tarjetas caras.' },
+        salary: { badge: 'Regla 50/30/20', title: 'Calculadora de Sueldo por Hora y Presupuesto 50/30/20', desc: 'Convierte tu salario anual a pago por hora y divide tus ingresos según la regla 50/30/20.' },
+        tax: { badge: 'Impuestos Freelance', title: 'Calculadora de Impuestos para Autónomos y Freelancers', desc: 'Estima impuestos de trabajo independiente, deducciones y pagos trimestrales.' },
+        runway: { badge: 'Startups y Stripe', title: 'Calculadora de Cash Runway, Burn Rate y Comisiones Stripe', desc: 'Calcula los meses de caja de tu startup, burn rate neto y comisiones de Stripe/PayPal.' },
+        roi: { badge: 'CAGR y Bolsa', title: 'Calculadora de ROI de Inversión, CAGR y Precio Promedio', desc: 'Calcula el ROI total %, crecimiento anual compuesto (CAGR) y costo promedio por acción.' },
+        timer: { badge: 'Reloj en Vivo', title: 'Temporizador de Trabajo Facturable, Pomodoro y Metas', desc: 'Registra ingresos facturables por segundo en vivo, sesiones Pomodoro y metas de ahorro.' },
+        breakeven: { badge: 'Punto de Equilibrio', title: 'Calculadora de Punto de Equilibrio y Meta de Ganancia', desc: 'Calcula las unidades y ventas necesarias para cubrir costos fijos y lograr tu beneficio meta.' },
+        serp: { badge: 'Vista Previa SEO', title: 'Analizador de Título SEO, Meta Descripción y Vista Google', desc: 'Previsualiza tu resultado en Google en vivo y comprueba la longitud óptima de 60 y 160 caracteres.' },
+        unitconv: { badge: 'Todo en Uno', title: 'Convertidor de Unidades, Peso, Longitud y Temperatura', desc: 'Convierte kilos a libras, cm a pulgadas/pies, km a millas y Celsius a Fahrenheit.' },
+        tipbill: { badge: 'Dividir Cuenta', title: 'Calculadora de Propinas, Impuestos y Dividir Cuenta', desc: 'Calcula propinas del 15%–20%, impuestos y el monto exacto por persona en segundos.' },
+        paystub: { badge: 'PDF Gratis ($0)', title: 'Generador Imprimible de Recibos de Sueldo y Nómina (PDF)', desc: 'Genera recibos de pago sin marca de agua con retenciones e impresión PDF en 1 clic.' },
+        contract: { badge: 'Legal y NDA', title: 'Generador de Contrato de Servicios Freelance y NDA', desc: 'Crea un contrato de servicios profesionales listo para firmar con alcance y acuerdo NDA.' },
+        abtest: { badge: 'CRO y Conversión', title: 'Calculadora de Significancia Estadística para Tests A/B', desc: 'Comprueba la confianza estadística Z-score y el aumento de conversión (%) de tu web.' },
+        utm: { badge: 'GA4 y Leads', title: 'Creador de Enlaces UTM para GA4 y Enlaces de WhatsApp', desc: 'Genera URLs con seguimiento UTM para Google Analytics 4 y enlaces directos de WhatsApp.' },
+        retirement: { badge: 'FIRE y Regla 4%', title: 'Calculadora de Jubilación FIRE y Retiro Seguro del 4%', desc: 'Calcula tu número de Independencia Financiera (25x) y tu ingreso mensual de retiro.' },
+        refinance: { badge: 'Refinanciación', title: 'Calculadora de Ahorro por Refinanciación de Hipoteca', desc: 'Consulta tu ahorro mensual, meses de equilibrio de costos de cierre e intereses ahorrados.' },
+        saasmetrics: { badge: 'Regla del 40', title: 'Calculadora de Valoración SaaS, ARR y Regla del 40', desc: 'Calcula Ingresos Anuales Recurrentes (ARR), puntaje Regla del 40 y valoración de salida SaaS.' },
+        dropship: { badge: 'Importación y FBA', title: 'Calculadora de Costo de Importación, Aranceles y FBA', desc: 'Calcula el costo real por unidad tras flete, aduanas y comisiones de Amazon FBA o Shopify.' }
+      },
+      ja: {
+        loan: { badge: '大人気ツール', title: 'ローン・住宅ローン月々返済額（EMI）計算機', desc: '毎月の返済額、総支払利息、元金と利息の比率グラフを瞬時に計算します。' },
+        compound: { badge: '資産形成', title: '複利運用・積立投資シミュレーター', desc: '初期投資と毎月の積立額が複利効果で将来いくらに増えるかを予測します。' },
+        margin: { badge: 'ビジネス', title: '利益率・値入率・広告ROAS計算機', desc: '注文ごとの純利益、粗利率（%）、広告キャンペーンのROASを算出します。' },
+        freelance: { badge: '収入設計', title: 'フリーランス時給・日給単価計算機', desc: '目標年収を達成するためにクライアントへ請求すべき時給・日給を逆算します。' },
+        invoice: { badge: 'PDF印刷対応', title: '無料インボイス・請求書PDF作成ツール', desc: '消費税の自動計算機能付きで、透かしなしの綺麗な請求書PDFを1クリックで印刷。' },
+        wordcount: { badge: '執筆必須', title: '文字数・単語数・読了時間カウンター', desc: 'テキストを入力するだけで単語数、文字数、文数、読了・スピーチ時間を自動計測。' },
+        prompt: { badge: 'AIツール', title: '1クリックAIプロンプト自動生成ツール', desc: '簡単な指示をChatGPT・Claude・Gemini向けの高精度プロンプトに変換します。' },
+        case: { badge: 'テキスト変換', title: '大文字・小文字変換＆SEO URLスラッグ作成', desc: 'テキストを大文字、タイトルケース、SEOに強いクリーンなURLスラッグへ瞬時に変換。' },
+        bmi: { badge: '健康管理', title: 'BMI＆1日の消費カロリー（TDEE）計算機', desc: '肥満度指数（BMI）と1日の維持カロリー・マクロ栄養素バランスを計算します。' },
+        age: { badge: '日常便利', title: '正確な年齢・生後日数計算機', desc: '生年月日から正確な年齢（何歳何ヶ月何日）と生まれてからの総日数を算出します。' },
+        percent: { badge: 'スピード計算', title: '割引率・消費税・パーセント計算機', desc: 'セール割引後の価格、税額、パーセント増減をワンタッチで計算します。' },
+        password: { badge: 'セキュリティ＆QR', title: '強力パスワード＆QRコード作成ツール', desc: '解読困難な高強度パスワードと、URL用の高解像度QRコードを即座に生成します。' },
+        cacltv: { badge: 'SaaS・成長指標', title: 'SaaS LTV:CAC比率＆回収期間計算機', desc: '顧客生涯価値（LTV）、LTV:CAC比率、顧客獲得コストの回収月数を算出します。' },
+        dti: { badge: '28/36ルール', title: '返済負担率（DTI）＆住宅ローン審査計算機', desc: '年収に対する住居費・総借入返済比率（DTI）を金融機関の審査基準と照合します。' },
+        creditpayoff: { badge: '借金完済', title: 'クレジットカード完済＆おまとめローン計算機', desc: '高金利カードの完済時期と、低金利ローンへの借り換えによる利息削減額を計算。' },
+        salary: { badge: '50/30/20予算', title: '年収・時給換算＆50/30/20家計予算プランナー', desc: '年収を時給換算し、手取り収入を必需品50%・娯楽30%・貯蓄20%へ最適配分します。' },
+        tax: { badge: '個人事業・税金', title: '個人事業主・フリーランス税金シミュレーター', desc: '自営業・フリーランスの社会保険料、経費控除、予定納税額をわかりやすく試算。' },
+        runway: { badge: '起業家・Stripe', title: 'スタートアップ資金ランウェイ＆決済手数料計算機', desc: '資金枯渇までの残り月数（ランウェイ）、バーンレート、Stripe/PayPal手数料を計算。' },
+        roi: { badge: 'CAGR・株式投資', title: '投資ROI・年평균成長率（CAGR）＆取得単価計算機', desc: '投資の総利回り（ROI%）、年平均成長率（CAGR）、株式のナンピン平均取得単価を計算。' },
+        timer: { badge: 'リアルタイム計測', title: '稼働時間タイマー・ポモドーロ＆貯蓄目標トラッカー', desc: '秒単位の稼働報酬をリアルタイム表示し、25分集中ポモドーロと貯蓄達成率を管理。' },
+        breakeven: { badge: '損益分岐点', title: '損益分岐点（Break-Even）＆目標利益シミュレーター', desc: '固定費を回収し目標月間利益を達成するために必要な販売個数と売上高を算出。' },
+        serp: { badge: 'SEOプレビュー', title: 'SEOタイトル・メタディスクリプション＆Google表示確認', desc: 'Google検索結果での見え方をライブ確認し、最適な文字数（60/160文字）を判定。' },
+        unitconv: { badge: 'オールインワン', title: '単位変換ツール（重さ・長さ・温度・面積）', desc: 'kgとポンド、cmとインチ/フィート、kmとマイル、摂氏（℃）と華氏（℉）を瞬時に変換。' },
+        tipbill: { badge: '割り勘・チップ', title: 'チップ・消費税＆グループ割り勘計算機', desc: 'レストランでのチップ、税金、1人あたりの正確な割り勘金額を数秒で計算します。' },
+        paystub: { badge: '無料PDF（¥0）', title: '給与明細・報酬支払明細書ジェネレーター（PDF）', desc: '源泉徴収・社会保険控除を計算し、透かしなしの給与明細PDFを1クリックで印刷。' },
+        contract: { badge: '契約書＆NDA', title: 'フリーランス業務委託契約書＆秘密保持契約（NDA）作成', desc: '業務範囲（スコープ）保護と双方向NDA条項を備えた業務委託契約書を即座に作成。' },
+        abtest: { badge: 'CRO・改善', title: 'A/Bテスト統計的有意差＆コンバージョン改善計算機', desc: 'LPやWeb変更の本番適用前にZスコア信頼度とCVR向上率（%）を統計検証します。' },
+        utm: { badge: 'GA4・集客', title: 'GA4キャンペーンUTMリンク＆WhatsAppリンク作成', desc: 'Google Analytics 4計測用のUTMパラメータ付きURLと直通チャットリンクを生成。' },
+        retirement: { badge: 'FIRE・4%ルール', title: 'FIRE早期リタイア必要資産＆4%取り崩し計算機', desc: '年間支出の25倍（FIRE目標資産額）と、4%ルールによる安全な毎月取り崩し額を算出。' },
+        refinance: { badge: '借り換え診断', title: '住宅ローン・ローン借り換えメリット計算機', desc: '毎月の返済軽減額、諸費用の損益分岐月数、総支払利息の削減額を一目で比較。' },
+        saasmetrics: { badge: 'Rule of 40', title: 'SaaS企業価値評価・ARR＆Rule of 40計算機', desc: '年間経常収益（ARR）、Rule of 40スコア、推定SaaSバリュエーション倍率を算出。' },
+        dropship: { badge: '輸入・FBA原価', title: 'EC輸入総原価（Landed Cost）・関税＆純利益計算機', desc: '国際送料、関税、Amazon FBAやShopify手数料を差し引いた1個あたりの純利益を計算。' }
       },
       pt: {
-        h1: 'O que você quer <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calcular ou resolver</span> hoje?',
-        sub: 'Escolha entre <strong>32 calculadoras gratuitas</strong>—de <strong>Empréstimos, Juros Compostos, LTV:CAC e ROAS</strong> até <strong>Faturas PDF, Contratos e Ferramentas de IA</strong>.',
-        ph: 'Pesquisar nas 32 ferramentas (ex. Loan, Compound, ROAS, Invoice)...'
-      },
-      ar: {
-        h1: 'ماذا تريد أن <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">تحسب أو تحل</span> اليوم؟',
-        sub: 'اختر من بين <strong>32 أداة وحاسبة مجانية</strong>—من <strong>حاسبة القروض والفائدة المركبة والعائد الإعلاني ROAS</strong> إلى <strong>منشئ الفواتير والعقود وأدوات الذكاء الاصطناعي</strong>.',
-        ph: 'ابحث في 32 أداة مجانية (مثل Loan, Compound, ROAS, Invoice)...'
-      },
-      hi: {
-        h1: 'आज आप क्या <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">कैलकुलेट या हल</span> करना चाहते हैं?',
-        sub: 'हमारे <strong>32 मुफ़्त ऑनलाइन कैलकुलेटर और टूल्स</strong> चुनें—<strong>लोन EMI, कंपाउंड इंटरेस्ट, LTV:CAC, ROAS, इनवॉइस PDF और फ्रीलांस कॉन्ट्रैक्ट जनरेटर</strong>।',
-        ph: 'सभी 32 टूल्स में खोजें (जैसे Loan, Compound, ROAS, Salary, Invoice)...'
-      },
-      bn: {
-        h1: 'আজ আপনি কী <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">হিসাব বা সমাধান</span> করতে চান?',
-        sub: 'আমাদের <strong>৩২টি ফ্রি অনলাইন ক্যালকুলেটর ও বিজনেস টুল</strong> ব্যবহার করুন—<strong>লোন ইএমআই, কম্পাউন্ড ইন্টারেস্ট, LTV:CAC, ROAS, ফ্রি পে-স্লিপ ও ইনভয়েস PDF জেনারেটর</strong>।',
-        ph: '৩২টি টুলের যেকোনোটি খুঁজুন (যেমন Loan, Compound, ROAS, Salary, Invoice)...'
+        loan: { badge: 'Alta Procura', title: 'Calculadora de Empréstimo, Hipoteca e Prestação (EMI)', desc: 'Calcule prestações mensais, juros totais e a barra de proporção entre capital e juros.' },
+        compound: { badge: 'Patrimônio', title: 'Calculadora de Juros Compostos e Investimentos', desc: 'Projete como suas economias e aportes mensais crescem ao longo do tempo com juros compostos.' },
+        margin: { badge: 'Negócios', title: 'Calculadora de Margem de Lucro e ROAS de Anúncios', desc: 'Descubra o lucro líquido por pedido, a margem bruta (%) e o ROAS das suas campanhas.' },
+        freelance: { badge: 'Renda', title: 'Calculadora de Valor Hora e Diária para Freelancers', desc: 'Calcule quanto cobrar dos clientes por hora ou por dia para atingir sua meta anual.' },
+        invoice: { badge: 'PDF para Impressão', title: 'Gerador Instantâneo de Faturas e Recibos (PDF)', desc: 'Crie faturas profissionais sem marca d\'água com cálculo de impostos e impressão PDF.' },
+        wordcount: { badge: 'Essencial', title: 'Contador de Palavras, Caracteres e Tempo de Leitura', desc: 'Conte palavras, caracteres, frases e tempo de leitura ou fala em tempo real.' },
+        prompt: { badge: 'Ferramenta IA', title: 'Gerador de Prompts de IA em 1 Clique', desc: 'Transforme qualquer pedido simples em um prompt especialista para ChatGPT, Claude e Gemini.' },
+        case: { badge: 'Formatação', title: 'Conversor de Maiúsculas/Minúsculas e Slug SEO', desc: 'Converta textos para MAIÚSCULAS, Título e URLs amigáveis para SEO instantaneamente.' },
+        bmi: { badge: 'Saúde', title: 'Calculadora de IMC e Calorias Diárias (TDEE)', desc: 'Verifique sua categoria de Índice de Massa Corporal (IMC) e gasto calórico diário.' },
+        age: { badge: 'Uso Diário', title: 'Calculadora de Idade Exata (Anos, Meses e Dias)', desc: 'Descubra sua idade exata em anos, meses, dias e o total de dias vividos.' },
+        percent: { badge: 'Matemática Rápida', title: 'Calculadora de Descontos, Impostos e Porcentagem', desc: 'Calcule descontos em compras, porcentagens de impostos e preços finais sem esforço.' },
+        password: { badge: 'Segurança e QR', title: 'Gerador de Senhas Fortes e Código QR', desc: 'Gere senhas inquebráveis e códigos QR prontos para download para qualquer link.' },
+        cacltv: { badge: 'SaaS e Crescimento', title: 'Calculadora SaaS de LTV:CAC e Payback', desc: 'Calcule o Lifetime Value (LTV), proporção LTV:CAC e tempo de retorno em meses.' },
+        dti: { badge: 'Regra 28/36', title: 'Calculadora de Comprometimento de Renda (DTI) Imobiliário', desc: 'Verifique seus índices DTI frente aos limites bancários de aprovação de financiamento.' },
+        creditpayoff: { badge: 'Quitar Dívidas', title: 'Calculadora de Quitação de Cartão e Consolidação', desc: 'Veja o prazo para ficar livre de dívidas e os juros economizados ao consolidar cartões.' },
+        salary: { badge: 'Regra 50/30/20', title: 'Conversor de Salário por Hora e Orçamento 50/30/20', desc: 'Converta salário anual em valor hora e divida sua renda líquida no método 50/30/20.' },
+        tax: { badge: 'Impostos e Autônomo', title: 'Calculadora de Impostos para Autônomos e Freelancers', desc: 'Estime contribuições previdenciárias, deduções e impostos trimestrais de autônomos.' },
+        runway: { badge: 'Startups e Stripe', title: 'Calculadora de Cash Runway, Burn Rate e Taxas Stripe', desc: 'Calcule os meses de caixa da sua startup, burn rate líquido e taxas do Stripe/PayPal.' },
+        roi: { badge: 'CAGR e Ações', title: 'Calculadora de ROI, CAGR Anualizado e Preço Médio', desc: 'Calcule o ROI total %, crescimento anual composto (CAGR) e preço médio de ações.' },
+        timer: { badge: 'Timer ao Vivo', title: 'Cronômetro de Horas Faturáveis, Pomodoro e Metas', desc: 'Acompanhe ganhos por segundo ao vivo, sessões Pomodoro de 25m e metas de economia.' },
+        breakeven: { badge: 'Ponto de Equilíbrio', title: 'Simulador de Ponto de Equilíbrio (Break-Even) e Lucro', desc: 'Calcule quantas unidades e faturamento são necessários para cobrir custos fixos.' },
+        serp: { badge: 'Prévia SEO', title: 'Analisador de Título SEO, Meta Description e Google SERP', desc: 'Visualize seu snippet do Google ao vivo e valide o tamanho ideal de 60 e 160 caracteres.' },
+        unitconv: { badge: 'Tudo em Um', title: 'Conversor de Unidades, Peso, Comprimento e Temperatura', desc: 'Converta quilos para libras, cm para polegadas/pés, km para milhas e Celsius para Fahrenheit.' },
+        tipbill: { badge: 'Dividir Conta', title: 'Calculadora de Gorjeta, Taxas e Divisão de Conta', desc: 'Calcule gorjetas de restaurante, taxas e a divisão exata por pessoa em segundos.' },
+        paystub: { badge: 'PDF Grátis (R$0)', title: 'Gerador de Holerite e Demonstrativo de Pagamento (PDF)', desc: 'Gere holerites e recibos sem marca d\'água com cálculo de descontos e impressão PDF.' },
+        contract: { badge: 'Contrato e NDA', title: 'Gerador de Contrato de Prestação Freelance e NDA', desc: 'Crie um contrato de prestação de serviços pronto para assinar com proteção de escopo e NDA.' },
+        abtest: { badge: 'CRO e Conversão', title: 'Calculadora de Significância Estatística de Teste A/B', desc: 'Verifique a confiança estatística Z-score e o ganho de conversão (%) antes de publicar.' },
+        utm: { badge: 'GA4 e Leads', title: 'Construtor de Links UTM GA4 e Gerador de Link WhatsApp', desc: 'Gere URLs rastreadas para Google Analytics 4 e links diretos de WhatsApp para vendas.' },
+        retirement: { badge: 'FIRE e Regra 4%', title: 'Calculadora de Independência Financeira (FIRE) e Regra 4%', desc: 'Calcule sua meta de patrimônio 25x e sua renda mensal segura de aposentadoria.' },
+        refinance: { badge: 'Refinanciamento', title: 'Calculadora de Economia no Refinanciamento Imobiliário', desc: 'Veja a economia mensal na parcela, meses de payback das taxas e juros totais poupados.' },
+        saasmetrics: { badge: 'Regra dos 40', title: 'Calculadora de Valuation SaaS, ARR e Regra dos 40', desc: 'Calcule a Receita Recorrente Anual (ARR), pontuação Rule of 40 e valuation de saída SaaS.' },
+        dropship: { badge: 'Importação e FBA', title: 'Calculadora de Custo de Importação, Impostos e FBA', desc: 'Calcule o custo unitário real após frete, impostos de importação e taxas Amazon FBA / Shopify.' }
       }
     };
 
-    function setGlobalLanguage(lang) {
-      var d = I18N_DICT[lang] || I18N_DICT.en;
+    var UI_I18N = {
+      en: {
+        brandSub: 'Free Online Calculators & Smart Work Tools',
+        navTools: 'All Free Tools',
+        navGuides: 'How-To Guides',
+        navGlobal: 'Global Tax & Pay',
+        navTemplates: 'Templates & Formulas',
+        navAbout: 'About Us',
+        navContact: 'Contact',
+        navLoan: 'Loan & EMI \u2192',
+        heroPill: '\u2713 32 Free Instant Tools \u2022 32 Expert Guides \u2022 Zero Signup \u2022 100% Browser Private',
+        h1: 'What do you want to <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calculate or solve</span> today?',
+        sub: 'Choose any of our <strong>32 free browser utilities</strong> below\u2014from <strong>Loan EMI, Compound Interest, LTV:CAC &amp; DTI Mortgage Calculators</strong> to <strong>Credit Card Payoff, Salary 50/30/20 Planners, Invoice Generators, and AI Prompt Builders</strong>.',
+        ph: 'Search all 32 tools (e.g., Loan, Compound, ROAS, DTI, Salary, Tax, Invoice, AI)...',
+        catAll: 'All Tools',
+        catMoney: 'Money & Business',
+        catWriting: 'Writing & AI',
+        catDaily: 'Daily Life & Math',
+        catFav: 'My Favorites',
+        ctaTool: 'Open Free Tool',
+        ctaGuide: 'Read Full Guide',
+        glbBadge: '\ud83c\udf0d GLOBAL WEALTH & TAX ARBITRAGE ENGINE',
+        glbTitle: 'Global Income, Effective Tax & Purchasing Power Comparator (2026)',
+        glbDesc: 'Compare how far your gross annual salary or freelance/SaaS profit goes across 8 Tier-1 global hubs after income tax, social contributions, and executive living costs.',
+        glbIncome: 'Annual Gross Income / Profit',
+        glbStyle: 'Household & Living Standard',
+        glbRoi: 'Surplus Investment Return (Annual %)'
+      },
+      de: {
+        brandSub: 'Kostenlose Online-Rechner & Smarte Business-Tools',
+        navTools: 'Alle 32 Tools',
+        navGuides: 'Praxis-Guides',
+        navGlobal: 'Globaler Steuervergleich',
+        navTemplates: 'Vorlagen & Formeln',
+        navAbout: 'Über uns',
+        navContact: 'Kontakt',
+        navLoan: 'Kreditrechner \u2194',
+        heroPill: '\u2713 32 Kostenlose Sofort-Tools \u2022 32 Experten-Guides \u2022 Ohne Anmeldung \u2022 100% Browser-Privat',
+        h1: 'Was möchten Sie heute <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">berechnen oder lösen</span>?',
+        sub: 'Wählen Sie eines unserer <strong>32 kostenlosen Browser-Tools</strong> – von <strong>Kredit-EMI, Zinseszins, LTV:CAC &amp; Hypothekenrechnern</strong> bis hin zu <strong>Gehaltsplanern, PDF-Rechnungen, Verträgen und KI-Tools</strong>.',
+        ph: 'Alle 32 Tools durchsuchen (z. B. Kredit, Zinseszins, ROAS, Gehalt, Steuer, Rechnung)...',
+        catAll: 'Alle Tools',
+        catMoney: 'Finanzen & Business',
+        catWriting: 'Text & KI',
+        catDaily: 'Alltag & Mathe',
+        catFav: 'Favoriten',
+        ctaTool: 'Kostenloses Tool öffnen',
+        ctaGuide: 'Kompletten Guide lesen',
+        glbBadge: '\ud83c\udf0d GLOBALER STEUER- & KAUFKRAFT-VERGLEICH',
+        glbTitle: 'Globaler Einkommens-, Steuer- & Kaufkraft-Rechner (2026)',
+        glbDesc: 'Vergleichen Sie, wie viel Netto-Einkommen und Sparpotenzial Ihr Jahresgehalt oder Gewinn in 8 führenden Wirtschaftsmetropolen nach Steuern und Lebenshaltungskosten bietet.',
+        glbIncome: 'Brutto-Jahreseinkommen / Gewinn',
+        glbStyle: 'Lebensstandard & Haushalt',
+        glbRoi: 'Anlagerendite auf Überschuss (Jährlich %)'
+      },
+      fr: {
+        brandSub: 'Calculateurs en Ligne Gratuits & Outils Professionnels',
+        navTools: 'Les 32 Outils',
+        navGuides: 'Guides Pratiques',
+        navGlobal: 'Impôts & Revenus Mondiaux',
+        navTemplates: 'Modèles & Formules',
+        navAbout: 'À Propos',
+        navContact: 'Contact',
+        navLoan: 'Calculateur Prêt \u2192',
+        heroPill: '\u2713 32 Outils Gratuits Instantanés \u2022 32 Guides Experts \u2022 Sans Inscription \u2022 100% Privé',
+        h1: 'Que voulez-vous <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calculer ou résoudre</span> aujourd\'hui ?',
+        sub: 'Choisissez parmi nos <strong>32 outils gratuits</strong>\u2014des calculateurs de <strong>Prêt, Intérêts Composés, LTV:CAC &amp; ROAS</strong> aux <strong>Factures PDF, Fiches de Paie, Contrats et Outils IA</strong>.',
+        ph: 'Rechercher parmi les 32 outils (ex. Prêt, Intérêts, ROAS, Salaire, Facture)...',
+        catAll: 'Tous les Outils',
+        catMoney: 'Argent & Business',
+        catWriting: 'Rédaction & IA',
+        catDaily: 'Vie Quotidienne & Maths',
+        catFav: 'Mes Favoris',
+        ctaTool: 'Ouvrir l\'Outil Gratuit',
+        ctaGuide: 'Lire le Guide Complet',
+        glbBadge: '\ud83c\udf0d COMPARATEUR MONDIAL DE FISCALITÉ & POUVOIR D\'ACHAT',
+        glbTitle: 'Comparateur Mondial de Revenu Net, Impôts & Pouvoir d\'Achat (2026)',
+        glbDesc: 'Comparez votre revenu net après impôts, charges sociales et coût de la vie dans 8 grandes capitales économiques mondiales.',
+        glbIncome: 'Revenu Brut Annuel / Bénéfice',
+        glbStyle: 'Niveau de Vie & Foyer',
+        glbRoi: 'Rendement Annuel de l\'Épargne (%)'
+      },
+      es: {
+        brandSub: 'Calculadoras Online Gratis y Herramientas de Negocios',
+        navTools: 'Las 32 Herramientas',
+        navGuides: 'Guías Prácticas',
+        navGlobal: 'Impuestos y Sueldo Global',
+        navTemplates: 'Plantillas y Fórmulas',
+        navAbout: 'Nosotros',
+        navContact: 'Contacto',
+        navLoan: 'Préstamos y EMI \u2192',
+        heroPill: '\u2713 32 Herramientas Gratis \u2022 32 Guías Expertas \u2022 Sin Registro \u2022 100% Privado en tu Navegador',
+        h1: '¿Qué quieres <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calcular o resolver</span> hoy?',
+        sub: 'Elige cualquiera de nuestras <strong>32 calculadoras gratuitas</strong>\u2014desde <strong>Préstamos EMI, Interés Compuesto, LTV:CAC y ROAS</strong> hasta <strong>Facturas PDF, Nóminas, Contratos y Herramientas de IA</strong>.',
+        ph: 'Buscar en las 32 herramientas (ej. Préstamo, Interés, ROAS, Salario, Factura)...',
+        catAll: 'Todas las Herramientas',
+        catMoney: 'Dinero y Negocios',
+        catWriting: 'Redacción e IA',
+        catDaily: 'Vida Diaria y Matemáticas',
+        catFav: 'Mis Favoritos',
+        ctaTool: 'Abrir Herramienta Gratis',
+        ctaGuide: 'Leer Guía Completa',
+        glbBadge: '\ud83c\udf0d COMPARADOR GLOBAL DE IMPUESTOS Y PODER ADQUISITIVO',
+        glbTitle: 'Comparador Global de Sueldo Neto, Impuestos y Ahorro (2026)',
+        glbDesc: 'Compara cuánto rinde tu salario anual o ganancia freelance en 8 centros financieros mundiales tras impuestos y costo de vida.',
+        glbIncome: 'Ingreso Bruto Anual / Ganancia',
+        glbStyle: 'Estilo de Vida y Hogar',
+        glbRoi: 'Retorno Anual de Inversión (%)'
+      },
+      ja: {
+        brandSub: '無料の金融・ビジネス計算ツール＆業務効率化ガイド',
+        navTools: '全32種の無料ツール',
+        navGuides: '実践ガイド記事',
+        navGlobal: '世界8都市・税金比較',
+        navTemplates: 'テンプレート＆計算式',
+        navAbout: '運営者情報',
+        navContact: 'お問い合わせ',
+        navLoan: 'ローン計算機 \u2192',
+        heroPill: '\u2713 全32種の無料計算ツール \u2022 32本の専門ガイド \u2022 登録不要 \u2022 100%ブラウザ完結で安全',
+        h1: '今日、何を<span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">計算・解決</span>したいですか？',
+        sub: '<strong>住宅ローンEMI、複利投資、SaaS LTV:CAC、広告ROAS計算機</strong>から<strong>請求書・給与明細PDF作成、業務委託契約書、AIプロンプト生成</strong>まで、<strong>全32種類の無料ツール</strong>を今すぐ使えます。',
+        ph: '全32ツールを検索（例：ローン, 複利, ROAS, 年収, 税金, 請求書, AI）...',
+        catAll: 'すべてのツール',
+        catMoney: '金融・ビジネス',
+        catWriting: '文章作成・AI',
+        catDaily: '日常生活・計算',
+        catFav: 'お気に入り',
+        ctaTool: '無料ツールを開く',
+        ctaGuide: 'ガイド全文を読む',
+        glbBadge: '\ud83c\udf0d 世界主要8都市・手取り収入＆資産形成シミュレーター',
+        glbTitle: '世界8大都市の税率・手取り年収・購買力比較シミュレーター (2026)',
+        glbDesc: '同じ額面年収・事業利益でも、米国・ドイツ・英国・スイス・ドバイ・シンガポール・ポルトガル・日本で手取り額と10年後の資産がどう変わるかを比較します。',
+        glbIncome: '額面年収 / 年間事業利益',
+        glbStyle: 'ライフスタイル・世帯規模',
+        glbRoi: '余剰資金の年間運用利回り (%)'
+      },
+      pt: {
+        brandSub: 'Calculadoras Online Gratuitas e Ferramentas de Negócios',
+        navTools: 'Todas as 32 Ferramentas',
+        navGuides: 'Guias Práticos',
+        navGlobal: 'Impostos e Renda Global',
+        navTemplates: 'Modelos e Fórmulas',
+        navAbout: 'Sobre Nós',
+        navContact: 'Contato',
+        navLoan: 'Empréstimo e EMI \u2192',
+        heroPill: '\u2713 32 Ferramentas Gratuitas \u2022 32 Guias Especializados \u2022 Sem Cadastro \u2022 100% Privado no Navegador',
+        h1: 'O que você quer <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calcular ou resolver</span> hoje?',
+        sub: 'Escolha entre <strong>32 calculadoras gratuitas</strong>\u2014de <strong>Empréstimos, Juros Compostos, LTV:CAC e ROAS</strong> até <strong>Faturas PDF, Holerites, Contratos e Ferramentas de IA</strong>.',
+        ph: 'Pesquisar nas 32 ferramentas (ex. Empréstimo, Juros, ROAS, Salário, Fatura)...',
+        catAll: 'Todas as Ferramentas',
+        catMoney: 'Dinheiro e Negócios',
+        catWriting: 'Escrita e IA',
+        catDaily: 'Dia a Dia e Matemática',
+        catFav: 'Meus Favoritos',
+        ctaTool: 'Abrir Ferramenta Grátis',
+        ctaGuide: 'Ler Guia Completo',
+        glbBadge: '\ud83c\udf0d COMPARADOR GLOBAL DE IMPOSTOS E PODER DE COMPRA',
+        glbTitle: 'Comparador Global de Renda Líquida, Impostos e Poder de Compra (2026)',
+        glbDesc: 'Compare quanto seu salário anual ou lucro freelance rende em 8 grandes polos financeiros globais após impostos e custo de vida.',
+        glbIncome: 'Renda Bruta Anual / Lucro',
+        glbStyle: 'Padrão de Vida e Família',
+        glbRoi: 'Retorno Anual dos Investimentos (%)'
+      }
+    };
+
+    // Exact phrase dictionary for Layer 2 DOM text-node translation across sections, buttons & workspaces
+    var PHRASE_DICT = {
+      '🕒 Recently Used:': { de: '🕒 Zuletzt genutzt:', fr: '🕒 Récemment utilisé :', es: '🕒 Usado recientemente:', ja: '🕒 最近使ったツール:', pt: '🕒 Usados recentemente:' },
+      '💾 Your Saved Calculations (Click to Re-Open):': { de: '💾 Gespeicherte Berechnungen (Klicken zum Öffnen):', fr: '💾 Vos Calculs Enregistrés (Cliquer pour Ouvrir) :', es: '💾 Tus Cálculos Guardados (Clic para Abrir):', ja: '💾 保存済みの計算履歴（クリックで再表示）:', pt: '💾 Seus Cálculos Salvos (Clique para Abrir):' },
+      'Clear All': { de: 'Alle löschen', fr: 'Tout effacer', es: 'Borrar todo', ja: 'すべて消去', pt: 'Limpar Tudo' },
+      '💎 Zero Paywalls • Zero Watermarks • Zero Signups': { de: '💎 Keine Paywalls • Keine Wasserzeichen • Keine Anmeldung', fr: '💎 Zéro Paywall • Zéro Filigrane • Zéro Inscription', es: '💎 Cero Paywalls • Cero Marcas de Agua • Cero Registro', ja: '💎 課金壁なし・透かしなし・会員登録不要', pt: '💎 Zero Paywalls • Zero Marca d\'Água • Zero Cadastro' },
+      'Printable Paystub Generator →': { de: 'Gehaltsabrechnungs-Generator (PDF) →', fr: 'Générateur de Fiche de Paie (PDF) →', es: 'Generador de Recibo de Sueldo (PDF) →', ja: '給与明細PDFジェネレーター →', pt: 'Gerador de Holerite para Impressão →' },
+      'Instant watermark-free payroll & contractor earnings PDF.': { de: 'Wasserzeichenfreie Gehalts- & Honorarabrechnung als PDF.', fr: 'Bulletin de paie et relevé d\'honoraires PDF sans filigrane.', es: 'Recibo de nómina y honorarios en PDF sin marca de agua.', ja: '透かしなしの給与明細・報酬支払書PDFを即座に作成。', pt: 'Holerite e recibo de pagamento em PDF sem marca d\'água.' },
+      'Freelance Contract & NDA Builder →': { de: 'Freelancer-Vertrag & NDA-Generator →', fr: 'Générateur de Contrat Freelance & NDA →', es: 'Creador de Contrato Freelance y NDA →', ja: '業務委託契約書＆NDA作成ツール →', pt: 'Gerador de Contrato Freelance e NDA →' },
+      'Ready-to-sign service agreement, scope clause & mutual NDA.': { de: 'Unterschriftsreifer Dienstleistungsvertrag inkl. Geheimhaltung (NDA).', fr: 'Contrat de prestation prêt à signer avec clause de confidentialité.', es: 'Contrato de servicios listo para firmar con acuerdo de confidencialidad.', ja: '署名可能な業務委託契約書と双方向NDAをワンクリック作成。', pt: 'Contrato de prestação pronto para assinar com proteção de escopo e NDA.' },
+      'Unlimited PDF Invoice Maker →': { de: 'Unbegrenzter PDF-Rechnungsgenerator →', fr: 'Générateur de Factures PDF Illimité →', es: 'Generador Ilimitado de Facturas PDF →', ja: '無制限の請求書PDF作成ツール →', pt: 'Gerador Ilimitado de Faturas PDF →' },
+      'Clean client invoices with tax, discount & 1-click PDF print.': { de: 'Saubere Kundenrechnungen mit Steuer, Rabatt & 1-Klick-PDF-Druck.', fr: 'Factures clients propres avec taxes, remises et impression PDF.', es: 'Facturas profesionales con impuestos, descuentos e impresión PDF.', ja: '税額・割引計算付きの請求書PDFを1クリックで印刷。', pt: 'Faturas profissionais com impostos, descontos e impressão PDF.' },
+      'A/B Test Significance Suite →': { de: 'A/B-Test Signifikanz-Rechner →', fr: 'Calculateur Statistique A/B Test →', es: 'Calculadora de Significancia A/B Test →', ja: 'A/Bテスト統計的有意差チェッカー →', pt: 'Calculadora de Significância de Teste A/B →' },
+      'Z-score statistical confidence & conversion lift analyzer.': { de: 'Z-Score-Konfidenz und Conversion-Steigerungs-Analyse.', fr: 'Analyse de confiance statistique Z-score et gain de conversion.', es: 'Análisis de confianza estadística Z-score y mejora de conversión.', ja: 'Zスコア統計的信頼度とCVR改善率を瞬時に判定。', pt: 'Análise de confiança estatística Z-score e ganho de conversão.' },
+      'Every financial and health calculator includes color-coded visual bars so you understand your numbers at a glance.': { de: 'Jeder Finanz- und Gesundheitsrechner enthält farbcodierte Balkendiagramme für den sofortigen Überblick.', fr: 'Chaque calculateur inclut des barres visuelles colorées pour comprendre vos chiffres en un coup d\'œil.', es: 'Cada calculadora incluye gráficos visuales codificados por colores para entender tus números al instante.', ja: 'すべての計算ツールに色分けされた視覚チャートを搭載し、直感的に数値を把握できます。', pt: 'Cada calculadora inclui barras visuais coloridas para você entender seus números rapidamente.' },
+      'Your financial data, invoices, and text never leave your computer or phone—everything runs locally.': { de: 'Ihre Finanzdaten, Rechnungen und Texte verlassen niemals Ihr Gerät – alles läuft 100 % lokal im Browser.', fr: 'Vos données financières, factures et textes ne quittent jamais votre appareil—tout s\'exécute localement.', es: 'Tus datos financieros, facturas y textos nunca salen de tu dispositivo; todo se procesa localmente.', ja: '入力した財務データや請求書は外部サーバーへ送信されず、100%お使いの端末内で処理されます。', pt: 'Seus dados financeiros, faturas e textos nunca saem do seu dispositivo—tudo roda localmente.' },
+      'One-Click Copy & Print': { de: '1-Klick Kopieren & PDF-Druck', fr: 'Copie & Impression PDF en 1 Clic', es: 'Copia e Impresión PDF en 1 Clic', ja: 'ワンクリックでコピー＆PDF印刷', pt: 'Copiar e Imprimir PDF em 1 Clique' },
+      'Copy calculation summaries or print clean PDF invoices and schedules with a single button click.': { de: 'Kopieren Sie Berechnungsergebnisse oder drucken Sie saubere PDF-Berichte und Tilgungspläne mit einem Klick.', fr: 'Copiez vos résumés de calcul ou imprimez des factures et échéanciers PDF en un seul clic.', es: 'Copia resúmenes de cálculo o imprime facturas y tablas de amortización en PDF con un solo clic.', ja: '計算結果のコピーや、綺麗なPDF請求書・返済予定表の印刷がボタン1つで完結します。', pt: 'Copie resumos de cálculos ou imprima faturas e tabelas em PDF com apenas um clique.' },
+      'Career & Health': { de: 'Karriere & Gesundheit', fr: 'Carrière & Santé', es: 'Carrera y Salud', ja: 'キャリア・健康', pt: 'Carreira e Saúde' },
+      '📈 Instant Exact-Number Lookup Tables': { de: '📈 Sofort-Referenztabellen mit exakten Werten', fr: '📈 Tableaux de Référence Chiffrés Instantanés', es: '📈 Tablas de Consulta Rápida con Cifras Exactas', ja: '📈 すぐわかる金額別・早見リファレンス表', pt: '📈 Tabelas de Consulta Rápida com Valores Exatos' },
+      'Pre-Calculated Salary to Hourly, Loan EMI & Break-Even ROAS Reference Charts': { de: 'Vorab berechnete Gehalts-, Stundenlohn-, Kredit-EMI- & Break-Even-ROAS-Tabellen', fr: 'Tableaux Pré-calculés : Salaire Horaire, Mensualités de Prêt & Break-Even ROAS', es: 'Tablas Precalculadas de Salario por Hora, Cuota de Préstamo EMI y Break-Even ROAS', ja: '年収・時給換算、ローン月々返済額（EMI）、損益分岐点ROASの早見表', pt: 'Tabelas Pré-Calculadas de Salário por Hora, Parcela de Empréstimo e Break-Even ROAS' },
+      'Click any row or button below to load those exact numbers straight into our interactive calculators.': { de: 'Klicken Sie auf eine beliebige Zeile, um diese Zahlen direkt in den interaktiven Rechner zu laden.', fr: 'Cliquez sur n\'importe quelle ligne pour charger ces chiffres directement dans nos calculateurs.', es: 'Haz clic en cualquier fila para cargar esos números directamente en nuestras calculadoras.', ja: '行またはボタンをクリックすると、その数値がそのまま計算ツールに読み込まれます。', pt: 'Clique em qualquer linha ou botão abaixo para carregar esses valores direto na calculadora.' },
+      '🏆 60-Second Interactive Scorecard': { de: '🏆 Interaktive 60-Sekunden-Scorecard', fr: '🏆 Scorecard Interactive en 60 Secondes', es: '🏆 Scorecard Interactiva en 60 Segundos', ja: '🏆 60秒インタラクティブ財務診断', pt: '🏆 Scorecard Interativo de 60 Segundos' },
+      'Calculate Your Personal Finance & Business Health Score (0–100)': { de: 'Berechnen Sie Ihren Finanz- & Business-Gesundheits-Score (0–100)', fr: 'Calculez Votre Score de Santé Financière & Business (0–100)', es: 'Calcula tu Puntaje de Salud Financiera y de Negocios (0–100)', ja: 'あなたの家計・ビジネス財務健全性スコア（0〜100点）を診断', pt: 'Calcule sua Pontuação de Saúde Financeira e de Negócios (0–100)' },
+      'Move the 4 sliders below to get an instant institutional grade (A+ to D) and personalized action plan.': { de: 'Bewegen Sie die 4 Regler unten für eine sofortige Bewertung (A+ bis D) und Ihren Aktionsplan.', fr: 'Déplacez les 4 curseurs ci-dessous pour obtenir une note (A+ à D) et un plan d\'action personnalisé.', es: 'Mueve los 4 controles deslizantes para obtener tu calificación (A+ a D) y un plan de acción.', ja: '4つのスライダーを動かすだけで、格付け評価（A+〜D）と改善アクションプランを即座に表示します。', pt: 'Mova os 4 controles abaixo para obter sua nota (A+ a D) e um plano de ação personalizado.' },
+      'Your Overall Financial Score': { de: 'Ihr Finanz-Gesamtscore', fr: 'Votre Score Financier Global', es: 'Tu Puntaje Financiero Total', ja: 'あなたの総合財務スコア', pt: 'Sua Pontuação Financeira Geral' },
+      '📖 FINANCIAL & BUSINESS DICTIONARY': { de: '📖 FINANZ- & BUSINESS-LEXIKON', fr: '📖 DICTIONNAIRE FINANCE & BUSINESS', es: '📖 DICCIONARIO DE FINANZAS Y NEGOCIOS', ja: '📖 金融・ビジネス用語辞典', pt: '📖 DICIONÁRIO DE FINANÇAS E NEGÓCIOS' },
+      'FREE COPY-PASTE TOOLKIT & CHEAT SHEETS': { de: 'KOSTENLOSE COPY-PASTE-VORLAGEN & SPICKZETTEL', fr: 'BOÎTE À OUTILS & MODÈLES GRATUITS À COPIER', es: 'KIT DE PLANTILLAS Y FÓRMULAS PARA COPIAR Y PEGAR', ja: 'コピペで使える無料テンプレート＆チートシート集', pt: 'KIT GRATUITO DE MODELOS E CHEAT SHEETS PARA COPIAR' },
+      'Ready-to-Use Financial Scripts, Business Clauses & Master Formulas': { de: 'Sofort nutzbare Finanz-Skripte, Vertragsklauseln & Master-Formeln', fr: 'Scripts Financiers, Clauses Contractuelles & Formules Clés Prêts à l\'Emploi', es: 'Guiones Financieros, Cláusulas de Contrato y Fórmulas Maestras Listas para Usar', ja: '実務ですぐ使える交渉スクリプト・契約条項・必須計算式一覧', pt: 'Scripts Financeiros, Cláusulas de Contrato e Fórmulas Mestras Prontas para Uso' },
+      '📚 QUICK FORMULA CHEAT SHEET': { de: '📚 SCHNELL-FORMELSAMMLUNG', fr: '📚 AIDE-MÉMOIRE DES FORMULES CLÉS', es: '📚 HOJA RÁPIDA DE FÓRMULAS', ja: '📚 重要計算式クイック・チートシート', pt: '📚 TABELA RÁPIDA DE FÓRMULAS' },
+      'Master Reference Table: 10 Essential Finance & Business Equations': { de: 'Master-Referenztabelle: 10 unverzichtbare Finanz- & Business-Formeln', fr: 'Tableau de Référence : 10 Équations Essentielles de Finance & Business', es: 'Tabla Maestra de Referencia: 10 Ecuaciones Esenciales de Finanzas y Negocios', ja: '保存版リファレンス表：金融・ビジネスの必須計算式ベスト10', pt: 'Tabela Mestra de Referência: 10 Equações Essenciais de Finanças e Negócios' },
+      'Global Hub / Country': { de: 'Wirtschaftsmetropole / Land', fr: 'Centre Financier / Pays', es: 'Centro Financiero / País', ja: '都市・国名', pt: 'Polo Global / País' },
+      'Est. Effective Tax + Social': { de: 'Effektive Steuer + Sozialabgaben', fr: 'Impôts + Charges Sociales Est.', es: 'Impuesto Efectivo + Social Est.', ja: '推定実効税率＋社会保険', pt: 'Imposto Efetivo + Social Est.' },
+      'Annual Net Take-Home': { de: 'Jährliches Nettoeinkommen', fr: 'Revenu Net Annuel', es: 'Sueldo Neto Anual', ja: '年間手取り収入', pt: 'Renda Líquida Anual' },
+      'Est. Annual Living Cost': { de: 'Jährliche Lebenshaltungskosten', fr: 'Coût de la Vie Annuel Est.', es: 'Costo de Vida Anual Est.', ja: '年間生活費目安', pt: 'Custo de Vida Anual Est.' },
+      'Annual Investable Surplus': { de: 'Jährlicher Sparüberschuss', fr: 'Épargne Annuelle Investissable', es: 'Excedente Anual Invertible', ja: '年間投資可能余剰額', pt: 'Excedente Anual Investível' },
+      '10-Yr Compounded Wealth': { de: 'Vermögen nach 10 Jahren (Zinseszins)', fr: 'Patrimoine Capitalisé sur 10 Ans', es: 'Patrimonio Compuesto a 10 Años', ja: '10年後の複利運用資産額', pt: 'Patrimônio Acumulado em 10 Anos' },
+      'Money & Business Tools': { de: 'Finanz- & Business-Tools', fr: 'Outils Argent & Business', es: 'Herramientas de Dinero y Negocios', ja: '金融・ビジネス計算ツール', pt: 'Ferramentas de Dinheiro e Negócios' },
+      'Daily & Text Utilities': { de: 'Alltags- & Text-Tools', fr: 'Outils Quotidiens & Texte', es: 'Utilidades Diarias y de Texto', ja: '日常計算・テキスト＆AIツール', pt: 'Utilitários Diários e de Texto' },
+      'Company & Legal': { de: 'Unternehmen & Rechtliches', fr: 'Entreprise & Mentions Légales', es: 'Empresa y Legal', ja: '運営情報・法務表記', pt: 'Empresa e Legal' },
+      '← Back to All 32 Tools': { de: '← Zurück zu allen 32 Tools', fr: '← Retour aux 32 Outils', es: '← Volver a las 32 Herramientas', ja: '← 全32ツール一覧へ戻る', pt: '← Voltar para as 32 Ferramentas' },
+      '📋 Copy Summary': { de: '📋 Zusammenfassung kopieren', fr: '📋 Copier le Résumé', es: '📋 Copiar Resumen', ja: '📋 結果をコピー', pt: '📋 Copiar Resumo' },
+      '🖨️ Save / Print PDF Report': { de: '🖨️ PDF-Bericht speichern / drucken', fr: '🖨️ Enregistrer / Imprimer en PDF', es: '🖨️ Guardar / Imprimir Informe PDF', ja: '🖨️ PDFレポートを保存・印刷', pt: '🖨️ Salvar / Imprimir Relatório PDF' },
+      '🔗 Share Custom Link': { de: '🔗 Link teilen', fr: '🔗 Partager le Lien', es: '🔗 Compartir Enlace', ja: '🔗 計算リンクを共有', pt: '🔗 Compartilhar Link' },
+      '📸 Download Result Image (PNG)': { de: '📸 Ergebnis-Bild herunterladen (PNG)', fr: '📸 Télécharger l\'Image du Résultat (PNG)', es: '📸 Descargar Imagen del Resultado (PNG)', ja: '📸 結果カード画像(PNG)を保存', pt: '📸 Baixar Imagem do Resultado (PNG)' },
+      '📸 Download My Scorecard Image (PNG)': { de: '📸 Scorecard-Bild herunterladen (PNG)', fr: '📸 Télécharger ma Scorecard (PNG)', es: '📸 Descargar Imagen de mi Scorecard (PNG)', ja: '📸 スコアカード画像(PNG)を保存', pt: '📸 Baixar Imagem do Scorecard (PNG)' },
+      '⚖️ Pin to Compare (A vs B)': { de: '⚖️ Zum Vergleich anheften (A vs B)', fr: '⚖️ Épingler pour Comparer (A vs B)', es: '⚖️ Fijar para Comparar (A vs B)', ja: '⚖️ シナリオ比較(A vs B)に固定', pt: '⚖️ Fixar para Comparar (A vs B)' },
+      'Why Pay $19–$49/Month Elsewhere? Everything Here Is 100% Free Forever': {
+        de: 'Warum woanders 19–49 €/Monat zahlen? Hier ist alles 100 % dauerhaft kostenlos',
+        fr: 'Pourquoi payer 19 à 49 $/mois ailleurs ? Ici, tout est 100 % gratuit pour toujours',
+        es: '¿Por qué pagar $19–$49/mes en otro sitio? Aquí todo es 100% gratis para siempre',
+        ja: '他社で月額$19〜$49払う必要はありません。WorkFloworaなら永久に100%無料',
+        pt: 'Por que pagar US$ 19–49/mês em outro lugar? Aqui tudo é 100% gratuito para sempre'
+      },
+      'Learn How to Work Smarter & Manage Money': {
+        de: 'Smarter arbeiten & Finanzen souverän meistern',
+        fr: 'Apprenez à Travailler Plus Intelligemment & Gérer Votre Argent',
+        es: 'Aprende a Trabajar de Forma Inteligente y Gestionar tu Dinero',
+        ja: 'スマートな働き方と資産・資金管理の実践ガイド',
+        pt: 'Aprenda a Trabalhar de Forma Mais Inteligente e Gerenciar seu Dinheiro'
+      },
+      'All Guides (32)': { de: 'Alle Guides (32)', fr: 'Tous les Guides (32)', es: 'Todas las Guías (32)', ja: '全ガイド (32)', pt: 'Todos os Guias (32)' },
+      'Money & Finance': { de: 'Geld & Finanzen', fr: 'Argent & Finance', es: 'Dinero y Finanzas', ja: 'お金・金融', pt: 'Dinheiro e Finanças' },
+      'Business & SaaS': { de: 'Business & SaaS', fr: 'Business & SaaS', es: 'Negocios y SaaS', ja: 'ビジネス・SaaS', pt: 'Negócios e SaaS' },
+      'AI & Productivity': { de: 'KI & Produktivität', fr: 'IA & Productivité', es: 'IA y Productividad', ja: 'AI・業務効率化', pt: 'IA e Produtividade' },
+      'Career & Daily': { de: 'Karriere & Alltag', fr: 'Carrière & Quotidien', es: 'Carrera y Vida Diaria', ja: 'キャリア・日常', pt: 'Carreira e Dia a Dia' },
+      'Instant Salary, Mortgage, Compound Growth & ROAS Reference Charts': {
+        de: 'Sofort-Referenztabellen für Gehalt, Hypothek, Zinseszins & ROAS',
+        fr: 'Tableaux de Référence Instantanés : Salaire, Prêt, Intérêts Composés & ROAS',
+        es: 'Tablas de Referencia Instantánea: Salario, Hipoteca, Interés Compuesto y ROAS',
+        ja: '年収・住宅ローン・複利成長・ROAS 早見リファレンス表',
+        pt: 'Tabelas de Referência Rápida: Salário, Financiamento, Juros Compostos e ROAS'
+      },
+      '60-Second Financial Health & Business Readiness Scorecard': {
+        de: '60-Sekunden Finanzgesundheits- & Business-Scorecard',
+        fr: 'Bilan de Santé Financière & Business en 60 Secondes',
+        es: 'Scorecard de Salud Financiera y Preparación de Negocios en 60 Segundos',
+        ja: '60秒で診断！家計・財務健全性スコアカード',
+        pt: 'Scorecard de Saúde Financeira e Maturidade de Negócios em 60 Segundos'
+      },
+      'Searchable A-to-Z Glossary of Essential Finance & SaaS Terms': {
+        de: 'Durchsuchbares A-bis-Z Glossar der wichtigsten Finanz- & SaaS-Begriffe',
+        fr: 'Glossaire A-à-Z Consultable des Termes Essentiels de la Finance & du SaaS',
+        es: 'Glosario A-Z Buscable de Términos Esenciales de Finanzas y SaaS',
+        ja: '金融・ビジネス・SaaS必須用語 検索可能A-to-Z用語集',
+        pt: 'Glossário A-a-Z Pesquisável de Termos Essenciais de Finanças e SaaS'
+      },
+      'Ready-to-Use Prompts, Email Scripts & Financial Cheat Sheets': {
+        de: 'Sofort einsetzbare KI-Prompts, E-Mail-Vorlagen & Finanz-Spickzettel',
+        fr: 'Prompts Prêts à l\'Emploi, Modèles d\'E-mails & Fiches Financières',
+        es: 'Prompts Listos para Usar, Plantillas de Correo y Hojas de Fórmulas',
+        ja: 'すぐに使えるAIプロンプト・英文メールテンプレート＆財務チートシート',
+        pt: 'Prompts Prontos para Uso, Scripts de E-mail e Cheat Sheets Financeiros'
+      },
+      'Visual Breakdown Charts': { de: 'Visuelle Analyse-Diagramme', fr: 'Graphiques de Répartition Visuels', es: 'Gráficos de Desglose Visual', ja: '視覚的な内訳チャート', pt: 'Gráficos de Divisão Visual' },
+      '100% Browser Privacy': { de: '100 % Browser-Datenschutz', fr: 'Confidentialité 100 % Navigateur', es: 'Privacidad 100% en tu Navegador', ja: '100%ブラウザ完結のプライバシー保護', pt: 'Privacidade 100% no Navegador' },
+      'Built for Everyday Action': { de: 'Gebaut für sofortige Ergebnisse', fr: 'Conçu pour l\'Action Quotidienne', es: 'Diseñado para la Acción Diaria', ja: '実務ですぐに使える実践設計', pt: 'Feito para Ação Prática no Dia a Dia' },
+      'How This Tool Works': { de: 'So funktioniert dieses Tool', fr: 'Comment Fonctionne Cet Outil', es: 'Cómo Funciona Esta Herramienta', ja: 'このツールの仕組みと使い方', pt: 'Como Funciona Esta Ferramenta' },
+      'Core Mathematical Formula': { de: 'Mathematische Kernformel', fr: 'Formule Mathématique Clé', es: 'Fórmula Matemática Principal', ja: '基本となる計算式・数式', pt: 'Fórmula Matemática Principal' },
+      'Step-by-Step Worked Example': { de: 'Schritt-für-Schritt Rechenbeispiel', fr: 'Exemple Chiffré Pas à Pas', es: 'Ejemplo Práctico Paso a Paso', ja: 'ステップ別の具体的な計算例', pt: 'Exemplo Prático Passo a Passo' },
+      'Pro Financial & Business Tips': { de: 'Profi-Tipps für Finanzen & Business', fr: 'Conseils Pro Finance & Business', es: 'Consejos Profesionales de Finanzas y Negocios', ja: '実務で役立つプロの財務・ビジネスヒント', pt: 'Dicas Profissionais de Finanças e Negócios' }
+    };
+
+    var GLOBAL_HUBS_DATA = [
+      { hub: '🇺🇸 USA (Austin / Miami)', effTax: 0.22, baseCost: 42000 },
+      { hub: '🇩🇪 Germany (Berlin / Munich)', effTax: 0.39, baseCost: 36000 },
+      { hub: '🇬🇧 UK (London / Manchester)', effTax: 0.33, baseCost: 44000 },
+      { hub: '🇨🇭 Switzerland (Zurich / Zug)', effTax: 0.21, baseCost: 58000 },
+      { hub: '🇦🇪 UAE (Dubai — 0% Income Tax)', effTax: 0.00, baseCost: 40000 },
+      { hub: '🇸🇬 Singapore (Marina / CBD)', effTax: 0.13, baseCost: 43000 },
+      { hub: '🇵🇹 Portugal (Lisbon / Porto)', effTax: 0.28, baseCost: 26000 },
+      { hub: '🇯🇵 Japan (Tokyo / Fukuoka)', effTax: 0.30, baseCost: 31000 }
+    ];
+
+    function calcGlobalComparator() {
+      var tbody = document.getElementById('glb-comparator-tbody');
+      if (!tbody) return;
+      var incEl = document.getElementById('glb-income-input');
+      var styleEl = document.getElementById('glb-lifestyle-select');
+      var roiEl = document.getElementById('glb-roi-select');
+      var gross = parseFloat(incEl ? incEl.value : 120000) || 120000;
+      var styleMult = parseFloat(styleEl ? styleEl.value : 1.0) || 1.0;
+      var roi = parseFloat(roiEl ? roiEl.value : 0.08) || 0.08;
+      var sym = window.GLOBAL_CURRENCY || '$';
+
+      var rowsHtml = '';
+      for (var i = 0; i < GLOBAL_HUBS_DATA.length; i++) {
+        var h = GLOBAL_HUBS_DATA[i];
+        // Progressive bracket adjustment for higher incomes
+        var adjTax = h.effTax === 0 ? 0 : Math.min(0.52, Math.max(0.10, h.effTax + (gross > 150000 ? 0.04 : (gross < 70000 ? -0.04 : 0))));
+        var netPay = Math.round(gross * (1 - adjTax));
+        var livingCost = Math.round(h.baseCost * styleMult);
+        var surplus = netPay - livingCost;
+        // 10-year future value of annual surplus invested at roi
+        var fv10 = surplus > 0 ? Math.round(surplus * (((Math.pow(1 + roi, 10) - 1) / roi))) : 0;
+        var surplusClass = surplus >= 0 ? 'text-emerald-700 font-extrabold' : 'text-red-600 font-bold';
+
+        rowsHtml += '<tr class="hover:bg-orange-50/40 transition">' +
+          '<td class="p-3.5 font-bold text-charcoal whitespace-nowrap">' + h.hub + '</td>' +
+          '<td class="p-3.5 text-stone-600 font-semibold">' + (adjTax * 100).toFixed(1) + '%</td>' +
+          '<td class="p-3.5 font-bold text-charcoal">' + sym + netPay.toLocaleString() + '/yr</td>' +
+          '<td class="p-3.5 text-stone-600">' + sym + livingCost.toLocaleString() + '/yr</td>' +
+          '<td class="p-3.5 ' + surplusClass + '">' + (surplus >= 0 ? '+' : '-') + sym + Math.abs(surplus).toLocaleString() + '/yr</td>' +
+          '<td class="p-3.5 font-display font-extrabold text-terracotta">' + sym + fv10.toLocaleString() + '</td>' +
+        '</tr>';
+      }
+      tbody.innerHTML = rowsHtml;
+    }
+
+    function applyPhraseTranslations(lang) {
+      var nodes = document.querySelectorAll('h1, h2, h3, h4, button, a, label, th, span, p');
+      for (var i = 0; i < nodes.length; i++) {
+        var el = nodes[i];
+        if (el.children && el.children.length > 0) continue;
+        var cur = (el.textContent || '').trim();
+        if (!cur) continue;
+        if (!el.getAttribute('data-orig-en')) {
+          if (PHRASE_DICT[cur]) {
+            el.setAttribute('data-orig-en', cur);
+          }
+        }
+        var orig = el.getAttribute('data-orig-en');
+        if (orig && PHRASE_DICT[orig]) {
+          el.textContent = (lang === 'en') ? orig : (PHRASE_DICT[orig][lang] || orig);
+        }
+      }
+    }
+
+    function triggerGoogleTranslateBridge(lang) {
+      try {
+        var domain = window.location.hostname;
+        if (lang === 'en') {
+          document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+          if (domain) {
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=' + domain;
+            document.cookie = 'googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.' + domain;
+          }
+        } else {
+          var val = '/en/' + lang;
+          document.cookie = 'googtrans=' + val + '; path=/';
+          if (domain) {
+            document.cookie = 'googtrans=' + val + '; path=/; domain=' + domain;
+          }
+        }
+        var combo = document.querySelector('.goog-te-combo');
+        if (combo) {
+          combo.value = (lang === 'en') ? '' : lang;
+          combo.dispatchEvent(new Event('change'));
+        } else if (lang !== 'en' && !window. WF_GT_LOADED) {
+          window.WF_GT_LOADED = true;
+          var gtDiv = document.createElement('div');
+          gtDiv.id = 'google_translate_element';
+          gtDiv.style.display = 'none';
+          document.body.appendChild(gtDiv);
+          window.googleTranslateElementInit = function() {
+            new google.translate.TranslateElement({
+              pageLanguage: 'en',
+              includedLanguages: 'en,de,fr,es,ja,pt',
+              autoDisplay: false
+            }, 'google_translate_element');
+            setTimeout(function() {
+              var c2 = document.querySelector('.goog-te-combo');
+              if (c2 && window.WF_ACTIVE_LANG && window.WF_ACTIVE_LANG !== 'en') {
+                c2.value = window.WF_ACTIVE_LANG;
+                c2.dispatchEvent(new Event('change'));
+              }
+            }, 600);
+          };
+          var s = document.createElement('script');
+          s.src = 'https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit';
+          s.async = true;
+          document.head.appendChild(s);
+        }
+      } catch (e) {}
+    }
+
+    function setGlobalLanguage(lang, silent) {
+      if (!UI_I18N[lang]) lang = 'en';
+      window.WF_ACTIVE_LANG = lang;
+      var u = UI_I18N[lang];
+      window.WF_CURRENT_CTA_TOOL = u.ctaTool;
+      window.WF_CURRENT_CTA_GUIDE = u.ctaGuide;
+
+      // Sync dropdown value
+      var sel = document.getElementById('global-lang-select');
+      if (sel && sel.value !== lang) sel.value = lang;
+
+      // 1. Update Header & Navigation
+      var mapText = {
+        'nav-brand-sub': u.brandSub,
+        'nav-btn-tools': u.navTools,
+        'nav-btn-guides': u.navGuides,
+        'nav-btn-global': u.navGlobal,
+        'nav-btn-templates': u.navTemplates,
+        'nav-link-about': u.navAbout,
+        'nav-link-contact': u.navContact,
+        'nav-cta-loan': u.navLoan,
+        'mnav-tools': u.navTools,
+        'mnav-guides': u.navGuides,
+        'mnav-global': u.navGlobal,
+        'mnav-tpl': u.navTemplates,
+        'mnav-about': u.navAbout,
+        'mnav-contact': u.navContact,
+        'hero-top-pill': u.heroPill,
+        'cat-lbl-all': u.catAll,
+        'cat-lbl-money': u.catMoney,
+        'cat-lbl-writing': u.catWriting,
+        'cat-lbl-daily': u.catDaily,
+        'cat-lbl-fav': u.catFav,
+        'glb-sec-badge': u.glbBadge,
+        'glb-sec-title': u.glbTitle,
+        'glb-sec-desc': u.glbDesc,
+        'glb-lbl-income': u.glbIncome,
+        'glb-lbl-style': u.glbStyle,
+        'glb-lbl-roi': u.glbRoi
+      };
+      for (var id in mapText) {
+        var el = document.getElementById(id);
+        if (el) el.textContent = mapText[id];
+      }
+
       var h1 = document.getElementById('hero-main-heading');
       var sub = document.getElementById('hero-sub-text');
       var ph = document.getElementById('tool-search-input');
-      if (h1) h1.innerHTML = d.h1;
-      if (sub) sub.innerHTML = d.sub;
-      if (ph) ph.placeholder = d.ph;
+      if (h1) h1.innerHTML = u.h1;
+      if (sub) sub.innerHTML = u.sub;
+      if (ph) ph.placeholder = u.ph;
+
+      // 2. Translate All 32 Tools in TOOLS_DIRECTORY & Re-Render Grid + Workspace Headers
+      var tDict = TOOLS_I18N[lang];
+      for (var i = 0; i < TOOLS_DIRECTORY.length; i++) {
+        var origT = ORIG_TOOLS_EN[i];
+        var curT = TOOLS_DIRECTORY[i];
+        if (lang === 'en' || !tDict || !tDict[origT.id]) {
+          curT.badge = origT.badge;
+          curT.title = origT.title;
+          curT.desc = origT.desc;
+        } else {
+          curT.badge = tDict[origT.id].badge;
+          curT.title = tDict[origT.id].title;
+          curT.desc = tDict[origT.id].desc;
+        }
+        // Also update the corresponding Calculator Workspace H1 & Subtitle so opened tools translate immediately!
+        var wsEl = document.getElementById('workspace-' + origT.id);
+        if (wsEl) {
+          var wsH1 = wsEl.querySelector('h1');
+          var wsP = wsEl.querySelector('p.text-sm.text-stone-600');
+          if (wsH1) wsH1.textContent = curT.title;
+          if (wsP) wsP.textContent = curT.desc;
+        }
+      }
+
+      if (typeof renderToolCards === 'function') renderToolCards();
+      if (typeof renderGuidesCards === 'function') renderGuidesCards();
+      if (typeof recentTools !== 'undefined' && recentTools.length > 0) {
+        var rList = document.getElementById('recently-used-list');
+        if (rList) {
+          rList.innerHTML = '';
+          for (var r = 0; r < recentTools.length; r++) {
+            var rt = recentTools[r];
+            for (var k = 0; k < TOOLS_DIRECTORY.length; k++) {
+              if (TOOLS_DIRECTORY[k].id === rt.id) { rt.title = TOOLS_DIRECTORY[k].title; break; }
+            }
+            var btn = document.createElement('button');
+            btn.type = 'button';
+            btn.className = 'px-2.5 py-1 rounded-lg bg-white border border-stone-200 hover:border-terracotta text-xs font-semibold text-charcoal transition flex items-center gap-1 shadow-sm';
+            btn.innerHTML = '<span>' + rt.icon + '</span><span>' + rt.title + '</span>';
+            (function(id) { btn.onclick = function() { openToolWorkspace(id); }; })(rt.id);
+            rList.appendChild(btn);
+          }
+        }
+      }
+
+      // 3. Apply Layer 2 Phrase & Button Translation across the entire DOM
+      applyPhraseTranslations(lang);
+
+      // 4. Trigger Layer 3 Google Neural Full-Page Translator for deep prose, tables & guides
+      triggerGoogleTranslateBridge(lang);
+
       try { localStorage.setItem('wf_lang', lang); } catch (e) {}
-      showCleanToast('Language updated to ' + lang.toUpperCase());
+      if (!silent && typeof showCleanToast === 'function') {
+        showCleanToast('Website language set to ' + lang.toUpperCase());
+      }
     }
 
     function downloadViralResultImageCard(mode) {
@@ -4722,18 +5424,15 @@
       canvas.height = 630;
       var ctx = canvas.getContext('2d');
 
-      // Rich Dark Obsidian Background with Warm Terracotta Accent Bar
       ctx.fillStyle = '#141413';
       ctx.fillRect(0, 0, 1200, 630);
       ctx.fillStyle = '#EA580C';
       ctx.fillRect(0, 0, 1200, 14);
 
-      // Card Inner Frame
       ctx.strokeStyle = '#332F2B';
       ctx.lineWidth = 3;
       ctx.strokeRect(48, 48, 1104, 534);
 
-      // Brand Header
       ctx.fillStyle = '#EA580C';
       ctx.fillRect(88, 84, 52, 52);
       ctx.fillStyle = '#FFFFFF';
@@ -4745,70 +5444,67 @@
       ctx.fillText('WorkFlowora PRO', 158, 114);
       ctx.fillStyle = '#A8A29E';
       ctx.font = '20px sans-serif';
-      ctx.fillText('32 Free Financial & Business Calculators • www.workflowora.com', 158, 142);
+      ctx.fillText('32 Free Financial & Business Calculators \u2022 www.workflowora.com', 158, 142);
 
       if (mode === 'scorecard') {
         var scoreTxt = document.getElementById('sc-score-out').textContent || '88 / 100';
         var gradeTxt = document.getElementById('sc-grade-badge').textContent || 'Grade: A+';
-        var advTxt = document.getElementById('sc-advice-out').textContent || '';
-
         ctx.fillStyle = '#FDBA74';
-        ctx.font = 'bold 22px sans-serif';
-        ctx.fillText('OFFICIAL 60-SECOND FINANCIAL HEALTH SCORECARD', 88, 225);
-
-        ctx.fillStyle = '#FDE047';
-        ctx.font = 'bold 92px sans-serif';
-        ctx.fillText(scoreTxt, 88, 330);
-
-        ctx.fillStyle = '#4ADE80';
-        ctx.font = 'bold 34px sans-serif';
-        ctx.fillText(gradeTxt, 520, 315);
-
-        ctx.fillStyle = '#E7E5E4';
-        ctx.font = '24px sans-serif';
-        ctx.fillText(advTxt.slice(0, 88), 88, 415);
-        if (advTxt.length > 88) ctx.fillText(advTxt.slice(88, 176), 88, 450);
-      } else {
-        var data = collectActiveToolData();
-        var mainOut = data.outputs.length > 0 ? data.outputs[0].value : 'Verified Calculation';
-
-        ctx.fillStyle = '#FDBA74';
-        ctx.font = 'bold 22px sans-serif';
-        ctx.fillText('VERIFIED FINANCIAL & BUSINESS CALCULATION REPORT', 88, 220);
+        ctx.font = 'bold 24px sans-serif';
+        ctx.fillText('60-SECOND FINANCIAL HEALTH SCORECARD', 88, 220);
 
         ctx.fillStyle = '#FFFFFF';
-        ctx.font = 'bold 40px sans-serif';
-        ctx.fillText(data.title.slice(0, 52), 88, 275);
+        ctx.font = 'bold 74px sans-serif';
+        ctx.fillText('Score: ' + scoreTxt + ' (' + gradeTxt + ')', 88, 315);
 
-        ctx.fillStyle = '#4ADE80';
-        ctx.font = 'bold 76px sans-serif';
-        ctx.fillText(mainOut.slice(0, 28), 88, 375);
+        ctx.fillStyle = '#10B981';
+        ctx.font = 'bold 28px sans-serif';
+        ctx.fillText('Verified Personal Finance & Readiness Benchmark', 88, 385);
+      } else {
+        var data = collectActiveWorkspaceSummary();
+        ctx.fillStyle = '#FDBA74';
+        ctx.font = 'bold 22px sans-serif';
+        ctx.fillText('INSTANT FINANCIAL & BUSINESS SNAPSHOT', 88, 210);
 
-        // List up to 3 inputs
-        ctx.fillStyle = '#D6D3D1';
-        ctx.font = '22px sans-serif';
-        var inLine = [];
-        for (var i = 0; i < Math.min(4, data.inputs.length); i++) {
-          inLine.push(data.inputs[i].label.split('(')[0].trim() + ': ' + data.inputs[i].value);
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 42px sans-serif';
+        ctx.fillText((data.title || 'WorkFlowora Calculator').slice(0, 46), 88, 268);
+
+        var y = 335;
+        var maxRows = Math.min(data.outputs.length, 3);
+        for (var i = 0; i < maxRows; i++) {
+          ctx.fillStyle = '#262320';
+          ctx.fillRect(88, y - 36, 1024, 54);
+          ctx.fillStyle = '#FDE047';
+          ctx.font = 'bold 25px sans-serif';
+          ctx.fillText(data.outputs[i].slice(0, 68), 108, y);
+          y += 68;
         }
-        ctx.fillText(inLine.join('   •   ').slice(0, 95), 88, 445);
       }
 
-      // Footer Callout
-      ctx.fillStyle = '#262320';
-      ctx.fillRect(50, 505, 1100, 75);
-      ctx.fillStyle = '#FDE047';
+      ctx.fillStyle = '#EA580C';
+      ctx.fillRect(88, 505, 1024, 52);
+      ctx.fillStyle = '#FFFFFF';
       ctx.font = 'bold 22px sans-serif';
-      ctx.fillText('Run your own numbers 100% free at:  https://www.workflowora.com', 88, 550);
+      ctx.fillText('Calculate yours 100% free at https://www.workflowora.com', 112, 538);
 
       var link = document.createElement('a');
-      link.download = 'WorkFlowora_Share_Card.png';
+      link.download = 'WorkFlowora-Result-Card.png';
       link.href = canvas.toDataURL('image/png');
-      document.body.appendChild(link);
       link.click();
-      document.body.removeChild(link);
-      showCleanToast('Shareable HD Image Card (PNG) downloaded! Post it on LinkedIn, X, Reddit, or WhatsApp.');
+      showCleanToast('Downloaded viral result card (PNG)!');
     }
+
+    // Initialize Global Comparator & Saved Language on Load
+    document.addEventListener('DOMContentLoaded', function() {
+      calcGlobalComparator();
+      try {
+        var savedLang = localStorage.getItem('wf_lang');
+        if (savedLang && UI_I18N[savedLang] && savedLang !== 'en') {
+          setGlobalLanguage(savedLang, true);
+        }
+      } catch (e) {}
+    });
 
     window.addEventListener('DOMContentLoaded', function() {
       try {
