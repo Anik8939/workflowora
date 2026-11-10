@@ -202,6 +202,13 @@
     }
   </style>
   <link rel="manifest" href="/manifest.json" />
+  <script>
+    try {
+      if (localStorage.getItem('wf_dark_mode') === '1') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body class="bg-[#FAF9F5] text-[#141413] font-sans min-h-screen flex flex-col">
   <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
@@ -219,7 +226,7 @@
         </div>
       </a>
       <nav aria-label="Guide Top Navigation" class="hidden lg:flex items-center gap-4 text-xs font-semibold text-stone-700">
-        <a href="/" class="hover:text-terracotta">All 28 Calculators</a>
+        <a href="/" class="hover:text-terracotta">All 32 Calculators</a>
         <a href="/about-us.html" class="hover:text-terracotta">About Us</a>
         <a href="/contact-us.html" class="hover:text-terracotta">Contact</a>
         <a href="/privacy-policy.html" class="hover:text-terracotta">Privacy Policy</a>
@@ -594,7 +601,7 @@
         &copy; 2026 <strong>WorkFlowora</strong> (<a href="https://www.workflowora.com/" class="underline hover:text-terracotta">www.workflowora.com</a>). All Rights Reserved.
       </div>
       <nav aria-label="Legal and Compliance Links" class="flex flex-wrap items-center justify-center gap-4 font-semibold">
-        <a href="/" class="hover:text-terracotta underline">All 28 Calculators</a>
+        <a href="/" class="hover:text-terracotta underline">All 32 Calculators</a>
         <a href="/about-us.html" class="hover:text-terracotta underline">About Us</a>
         <a href="/contact-us.html" class="hover:text-terracotta underline">Contact Us</a>
         <a href="/privacy-policy.html" class="hover:text-terracotta underline">Privacy Policy</a>

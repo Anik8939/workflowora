@@ -7,14 +7,14 @@
   <link rel="canonical" href="https://www.workflowora.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="WorkFlowora" />
-  <meta property="og:title" content="WorkFlowora — 28 Free Online Financial Calculators, Business Tools &amp; 32 Guides" />
+  <meta property="og:title" content="WorkFlowora — 32 Free Online Financial Calculators, Business Tools &amp; 32 Guides" />
   <meta property="og:description" content="Calculate Loan EMI, Compound Interest, SaaS LTV:CAC, Break-Even ROAS, 1099 Taxes, DTI Ratio, and more with 100% browser privacy." />
   <meta property="og:url" content="https://www.workflowora.com/" />
   <meta property="og:image" content="https://www.workflowora.com/hero.jpg" />
   <meta name="twitter:card" content="summary_large_image" />
   <link rel="manifest" href="/manifest.json" />
   <meta name="theme-color" content="#EA580C" />
-  <meta name="description" content="WorkFlowora offers 28+ free online financial calculators, text utilities, AI prompt builders, invoice &amp; QR tools, and practical guides. Zero signup required." />
+  <meta name="description" content="WorkFlowora offers 32+ free online financial calculators, text utilities, AI prompt builders, invoice &amp; QR tools, and practical guides. Zero signup required." />
   <!-- Custom SVG Brand Favicon -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23EA580C'/%3E%3Cpath d='M14 20L23 44L32 25L41 44L50 20' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='14' r='3.5' fill='%23FDE047'/%3E%3C/svg%3E" />
   <link rel="preload" as="image" href="/hero.jpg" fetchpriority="high" />
@@ -234,11 +234,23 @@
     "@type": "WebSite",
     "name": "WorkFlowora",
     "url": "https://www.workflowora.com/",
-    "description": "28+ Free Online Financial Calculators, Text Utilities, AI Prompt Builders, and Practical Productivity Guides."
+    "description": "32+ Free Online Financial Calculators, Business Utilities, and 32 In-Depth Guides in 8 Languages.",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://www.workflowora.com/?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
   }
   </script>
   <!-- Google AdSense Verification & Auto Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731058976498303" crossorigin="anonymous"></script>
+  <script>
+    try {
+      if (localStorage.getItem('wf_dark_mode') === '1') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    } catch (e) {}
+  </script>
 </head>
 <body class="min-h-screen flex flex-col">
   <!-- Top Reading & Scroll Progress Bar -->
@@ -291,6 +303,17 @@
 
       <!-- Highlight Action Button -->
       <div class="flex items-center gap-2">
+        <label for="global-lang-select" class="sr-only">Select Language</label>
+        <select id="global-lang-select" onchange="setGlobalLanguage(this.value)" aria-label="Language Selector" class="px-2 py-2 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer">
+          <option value="en">&#127760; EN</option>
+          <option value="es">&#127466;&#127480; ES</option>
+          <option value="de">&#127465;&#127466; DE</option>
+          <option value="fr">&#127467;&#127479; FR</option>
+          <option value="pt">&#127463;&#127479; PT</option>
+          <option value="ar">&#127462;&#127466; AR</option>
+          <option value="hi">&#127470;&#127475; HI</option>
+          <option value="bn">&#127463;&#127465; BN</option>
+        </select>
         <label for="global-currency-select" class="sr-only">Select Currency</label>
         <select id="global-currency-select" onchange="setGlobalCurrency(this.value)" aria-label="Currency Selector" class="px-2.5 py-2 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer">
           <option value="$">$ USD</option>
@@ -301,6 +324,7 @@
           <option value="₹">₹ INR</option>
           <option value="৳">৳ BDT</option>
         </select>
+        <button type="button" onclick="openCommandPalette()" title="Quick Jump (Ctrl+K)" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition"><span>&#128269;</span><span>Quick Jump</span><kbd class="px-1.5 py-0.5 rounded bg-white border border-stone-300 text-[10px] font-mono">Ctrl+K</kbd></button>
         <button type="button" onclick="toggleDarkMode()" id="dark-mode-btn" aria-label="Toggle Dark Mode" class="px-3 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition">
           &#127769; Dark
         </button>
@@ -311,7 +335,7 @@
     </div>
     <!-- Mobile Quick Navigation Bar (Visible on Mobile & Tablet) -->
     <nav aria-label="Mobile Quick Menu" class="md:hidden border-t border-stone-200 px-4 py-2 flex items-center gap-2 overflow-x-auto text-xs font-bold whitespace-nowrap">
-      <button type="button" onclick="showMainView('home')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">All 28 Tools</button>
+      <button type="button" onclick="showMainView('home')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">All 32 Tools</button>
       <button type="button" onclick="scrollToSection('popular-guides-section')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">32 Guides</button>
       <button type="button" onclick="scrollToSection('exact-lookup-tables-section')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">Salary &amp; Loan Charts</button>
       <button type="button" onclick="scrollToSection('health-scorecard-section')" class="px-3 py-1 rounded-lg bg-stone-100 text-charcoal">Health Scorecard</button>
@@ -334,15 +358,15 @@
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center clean-card p-6 sm:p-10 bg-white">
           <div class="lg:col-span-7 space-y-5 text-left">
             <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold uppercase tracking-wide">
-              <span>&#10003; <span id="hero-tools-count">28</span> Free Instant Tools &#8226; <span id="hero-guides-count">32</span> Expert Guides &#8226; Zero Signup &#8226; 100% Browser Private</span>
+              <span>&#10003; <span id="hero-tools-count">32</span> Free Instant Tools &#8226; <span id="hero-guides-count">32</span> Expert Guides &#8226; Zero Signup &#8226; 100% Browser Private</span>
             </div>
 
-            <h1 class="font-display font-extrabold text-3xl sm:text-5xl text-charcoal tracking-tight leading-tight">
+            <h1 id="hero-main-heading" class="font-display font-extrabold text-3xl sm:text-5xl text-charcoal tracking-tight leading-tight">
               What do you want to <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calculate or solve</span> today?
             </h1>
 
-            <p class="text-stone-600 text-base sm:text-lg leading-relaxed">
-              Choose any of our <strong>28 free browser utilities</strong> below—from <strong>Loan EMI, Compound Interest, LTV:CAC &amp; DTI Mortgage Calculators</strong> to <strong>Credit Card Payoff, Salary 50/30/20 Planners, Invoice Generators, and AI Prompt Builders</strong>.
+            <p id="hero-sub-text" class="text-stone-600 text-base sm:text-lg leading-relaxed">
+              Choose any of our <strong>32 free browser utilities</strong> below—from <strong>Loan EMI, Compound Interest, LTV:CAC &amp; DTI Mortgage Calculators</strong> to <strong>Credit Card Payoff, Salary 50/30/20 Planners, Invoice Generators, and AI Prompt Builders</strong>.
             </p>
 
             <!-- Search Bar -->
@@ -351,7 +375,7 @@
                 id="tool-search-input"
                 type="search"
                 oninput="filterToolCards()"
-                placeholder="Search all 28 tools (e.g., Loan, Compound Interest, LTV:CAC, DTI Mortgage, Credit Card, Salary, Invoice)..."
+                placeholder="Search all 32 tools (e.g., Loan, Compound Interest, LTV:CAC, DTI Mortgage, Credit Card, Salary, Invoice)..."
                 aria-label="Search tools"
                 class="w-full pl-12 pr-4 py-4 rounded-2xl bg-stone-50 border-2 border-stone-300 text-charcoal placeholder-stone-400 text-sm sm:text-base shadow-sm focus:outline-none focus:border-terracotta"
               />
@@ -386,10 +410,10 @@
         <!-- Category Filter Pills -->
         <div class="flex flex-wrap items-center justify-center gap-2 pt-2">
           <button type="button" data-cat="all" onclick="setCategoryFilter('all')" class="cat-filter-btn cat-pill-active px-4 py-2 rounded-full text-xs sm:text-sm font-bold transition">
-            All Tools (<span id="count-cat-all">28</span>)
+            All Tools (<span id="count-cat-all">32</span>)
           </button>
           <button type="button" data-cat="Money &amp; Business" onclick="setCategoryFilter('Money & Business')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
-            &#128176; Money &amp; Business (<span id="count-cat-money">16</span>)
+            &#128176; Money &amp; Business (<span id="count-cat-money">20</span>)
           </button>
           <button type="button" data-cat="Writing &amp; AI" onclick="setCategoryFilter('Writing & AI')" class="cat-filter-btn cat-pill-inactive px-4 py-2 rounded-full text-xs sm:text-sm font-semibold transition">
             &#9997;&#65039; Writing &amp; AI (<span id="count-cat-writing">4</span>)
@@ -403,7 +427,7 @@
         </div>
       </section>
 
-      <!-- 28 Visual Tool Cards Grid -->
+      <!-- 32 Visual Tool Cards Grid -->
       <section aria-label="Tools Directory">
         <div id="tools-grid-container" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 items-start content-start"></div>
       </section>
@@ -646,6 +670,7 @@
             </div>
             <div id="sc-score-out" class="font-display font-extrabold text-4xl sm:text-5xl text-amber-300">88 / 100</div>
             <p id="sc-advice-out" class="text-xs sm:text-sm text-stone-300 leading-relaxed">Excellent foundation! Your 20% savings rate and 28% DTI put you in the top tier. Focus on compounding your surplus in low-cost index funds.</p>
+            <button type="button" onclick="downloadViralResultImageCard('scorecard')" class="w-full py-2.5 px-4 rounded-xl bg-terracotta hover:bg-terracottaDark text-white font-bold text-xs transition flex items-center justify-center gap-2">&#128248; Download My Scorecard Image (Share on Social Media)</button>
           </div>
         </div>
       </section>
@@ -668,6 +693,9 @@
           <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">CAGR (Compound Annual Growth)</strong><span>The smoothed annualized growth rate of an investment over multiple years: <code>(Ending Value &divide; Beginning Value)^(1/Years) &minus; 1</code>.</span></div>
           <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">DTI (Debt-to-Income Ratio)</strong><span>Total required monthly debt minimum payments divided by gross monthly pre-tax income. Lenders prefer &le;28% housing and &le;36% total DTI.</span></div>
           <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">Gross Margin vs. Markup</strong><span>Gross Margin divides profit by selling price <code>(P&minus;C)/P</code>; Markup divides profit by unit cost <code>(P&minus;C)/C</code>. A 100% markup equals a 50% margin.</span></div>
+                    <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">W&ouml;rter pro Minute (DE) &bull; Zinseszins</strong><span>Normal speaking speed in German &amp; English presentations is <strong>130 W&ouml;rter pro Minute (WPM)</strong> (650 words = 5 mins). Compound interest (<em>Zinseszins</em>) doubles capital in <code>72 &divide; Zinssatz</code> years.</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">Calculadora de Pr&eacute;stamos &amp; ROI (ES)</strong><span>La cuota mensual (EMI) y el retorno de inversi&oacute;n publicitaria (<em>Break-Even ROAS = 1 &divide; Margen Bruto</em>) permiten escalar negocios con rentabilidad.</span></div>
+          <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">Calculatrice d&apos;Int&eacute;r&ecirc;ts &amp; Taux (FR)</strong><span>Comparez le TAEG (APR) et le rendement annuel effectif (APY) ainsi que le ratio d&apos;endettement (DTI &le; 36%) pour vos cr&eacute;dits immobiliers.</span></div>
           <div class="glossary-item p-4 rounded-xl bg-stone-50 border border-stone-200"><strong class="text-charcoal text-sm block mb-1">NRR (Net Revenue Retention)</strong><span>Percentage of recurring revenue retained from an existing customer cohort over 12 months including upgrades and subtracting churn.</span></div>
         </div>
       </section>
@@ -785,6 +813,10 @@
           <button type="button" onclick="openToolWorkspace('contract')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Contract &amp; NDA</button>
           <button type="button" onclick="openToolWorkspace('abtest')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">A/B Test CRO</button>
           <button type="button" onclick="openToolWorkspace('utm')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">UTM &amp; Lead Link</button>
+          <button type="button" onclick="openToolWorkspace('retirement')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">FIRE Retirement</button>
+          <button type="button" onclick="openToolWorkspace('refinance')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Mortgage Refinance</button>
+          <button type="button" onclick="openToolWorkspace('saasmetrics')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">SaaS Valuation</button>
+          <button type="button" onclick="openToolWorkspace('dropship')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white border border-stone-200 hover:border-terracotta">Landed Cost &amp; Tariff</button>
         </div>
       </div>
 
@@ -1937,6 +1969,118 @@
         </div>
       </div>
 
+
+      <!-- 29. FIRE RETIREMENT & 4% SAFE WITHDRAWAL RATE CALCULATOR -->
+      <div id="workspace-retirement" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">FINANCIAL INDEPENDENCE &amp; RETIREMENT (FIRE)</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">FIRE Retirement Number &amp; 4% Safe Withdrawal Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Calculate your exact 25x Financial Independence (FIRE) target portfolio and safe monthly retirement income using the Trinity Study 4% Rule.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div><label class="block font-bold mb-1" for="fire-exp">Annual Retirement Spending ($)</label><input id="fire-exp" type="number" value="48000" min="1000" oninput="calcFIRERetirement()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+            <div><label class="block font-bold mb-1" for="fire-curr">Current Invested Portfolio ($)</label><input id="fire-curr" type="number" value="85000" min="0" oninput="calcFIRERetirement()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+            <div><label class="block font-bold mb-1" for="fire-mo">Monthly Investment ($)</label><input id="fire-mo" type="number" value="1500" min="0" oninput="calcFIRERetirement()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+            <div><label class="block font-bold mb-1" for="fire-yrs">Years Until Retirement</label><input id="fire-yrs" type="number" value="15" min="1" max="50" oninput="calcFIRERetirement()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+          </div>
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Your 25x FIRE Target Number</span>
+              <span id="fire-status-badge" class="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold">On Track for FIRE!</span>
+            </div>
+            <div id="fire-target-out" class="font-display font-extrabold text-3xl sm:text-4xl text-amber-300">$1,200,000 Target</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div><span class="text-stone-400 block">Projected Portfolio (8%)</span><strong id="fire-proj-out" class="text-base text-emerald-400">$799,642</strong></div>
+              <div><span class="text-stone-400 block">4% Safe Monthly Income</span><strong id="fire-safe-out" class="text-base text-white">$2,665 / mo</strong></div>
+              <div><span class="text-stone-400 block">Current FIRE Progress</span><strong id="fire-pct-out" class="text-base text-amber-300">66.6% Projected</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 30. MORTGAGE REFINANCE BREAK-EVEN & SAVINGS CALCULATOR -->
+      <div id="workspace-refinance" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">HOME MORTGAGE &amp; AUTO LOAN REFINANCE</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">Mortgage &amp; Loan Refinance Break-Even Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">See your monthly payment drop, exact months to recoup closing costs, and total lifetime interest saved by refinancing.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs sm:text-sm">
+            <div><label class="block font-bold mb-1" for="rf-bal">Remaining Loan Balance ($)</label><input id="rf-bal" type="number" value="280000" min="1000" oninput="calcRefinance()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+            <div><label class="block font-bold mb-1" for="rf-old">Current Interest Rate (%)</label><input id="rf-old" type="number" value="7.4" min="0.5" max="30" step="0.1" oninput="calcRefinance()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+            <div><label class="block font-bold mb-1" for="rf-new">New Refinance Rate (%)</label><input id="rf-new" type="number" value="5.9" min="0.5" max="30" step="0.1" oninput="calcRefinance()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+            <div><label class="block font-bold mb-1" for="rf-cost">Closing / Refinance Costs ($)</label><input id="rf-cost" type="number" value="4200" min="0" oninput="calcRefinance()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+          </div>
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="text-xs font-bold uppercase tracking-wider text-stone-400">Monthly Payment Savings (25-Yr Remaining)</div>
+            <div id="rf-save-mo-out" class="font-display font-extrabold text-3xl sm:text-4xl text-emerald-400">Save $264.18 / month</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div><span class="text-stone-400 block">Break-Even Timeline</span><strong id="rf-be-out" class="text-base text-amber-300">15.9 Months</strong></div>
+              <div><span class="text-stone-400 block">New Monthly EMI</span><strong id="rf-new-emi-out" class="text-base text-white">$1,786.62/mo</strong></div>
+              <div><span class="text-stone-400 block">Net Lifetime Savings</span><strong id="rf-net-life-out" class="text-base text-emerald-400">$75,054 Saved</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 31. SAAS VALUATION MULTIPLIER, ARR & RULE OF 40 CALCULATOR -->
+      <div id="workspace-saasmetrics" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">SAAS FOUNDER &amp; M&amp;A VALUATION SUITE</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">SaaS Valuation Multiplier, ARR &amp; Rule of 40 Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Calculate Annual Recurring Revenue (ARR), your Rule of 40 efficiency score, and estimated SaaS exit valuation range.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+            <div><label class="block font-bold mb-1" for="sm-mrr">Current Monthly MRR ($)</label><input id="sm-mrr" type="number" value="45000" min="100" oninput="calcSaaSMetrics()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+            <div><label class="block font-bold mb-1" for="sm-growth">YoY Growth Rate (%)</label><input id="sm-growth" type="number" value="32" min="-50" max="500" oninput="calcSaaSMetrics()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+            <div><label class="block font-bold mb-1" for="sm-ebitda">EBITDA Profit Margin (%)</label><input id="sm-ebitda" type="number" value="18" min="-100" max="90" oninput="calcSaaSMetrics()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold text-base" /></div>
+          </div>
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-bold uppercase tracking-wider text-stone-400">Estimated SaaS Enterprise Valuation</span>
+              <span id="sm-r40-badge" class="px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold">Rule of 40: 50% (Elite!)</span>
+            </div>
+            <div id="sm-val-out" class="font-display font-extrabold text-3xl sm:text-4xl text-amber-300">$3.24M – $4.32M</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div><span class="text-stone-400 block">Annualized ARR</span><strong id="sm-arr-out" class="text-base text-white">$540,000 / yr</strong></div>
+              <div><span class="text-stone-400 block">Rule of 40 Score</span><strong id="sm-r40-out" class="text-base text-emerald-400">50.0% Score</strong></div>
+              <div><span class="text-stone-400 block">Revenue Multiple</span><strong id="sm-mult-out" class="text-base text-amber-300">6.0x – 8.0x ARR</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 32. E-COMMERCE LANDED COST, IMPORT TARIFF & FBA/SHOPIFY PROFIT CALCULATOR -->
+      <div id="workspace-dropship" class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6">
+        <div>
+          <span class="px-3 py-1 rounded-full bg-orange-100 text-terracottaDark text-xs font-bold">E-COMMERCE SOURCING &amp; TARIFF CALCULATOR</span>
+          <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal mt-2">E-Commerce Landed Cost, Import Duty &amp; Net Unit Profit Calculator</h1>
+          <p class="text-xs sm:text-sm text-stone-600 mt-1">Calculate true landed cost per unit after freight, customs tariffs, and marketplace referral fees.</p>
+        </div>
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          <div class="lg:col-span-6 grid grid-cols-2 sm:grid-cols-3 gap-4 text-xs sm:text-sm">
+            <div><label class="block font-bold mb-1" for="ld-unit">Factory Unit Cost ($)</label><input id="ld-unit" type="number" value="12.50" step="0.1" oninput="calcLandedCost()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold" /></div>
+            <div><label class="block font-bold mb-1" for="ld-qty">Batch Order Quantity</label><input id="ld-qty" type="number" value="500" min="1" oninput="calcLandedCost()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold" /></div>
+            <div><label class="block font-bold mb-1" for="ld-ship">Total Freight Cost ($)</label><input id="ld-ship" type="number" value="1200" min="0" oninput="calcLandedCost()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold" /></div>
+            <div><label class="block font-bold mb-1" for="ld-duty">Import Duty / Tariff (%)</label><input id="ld-duty" type="number" value="10" min="0" max="100" oninput="calcLandedCost()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold" /></div>
+            <div><label class="block font-bold mb-1" for="ld-sell">Retail Selling Price ($)</label><input id="ld-sell" type="number" value="49.00" min="1" oninput="calcLandedCost()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold" /></div>
+            <div><label class="block font-bold mb-1" for="ld-fee">Marketplace / FBA Fee ($)</label><input id="ld-fee" type="number" value="8.50" min="0" oninput="calcLandedCost()" class="w-full p-3 rounded-xl bg-stone-50 border border-stone-300 font-bold" /></div>
+          </div>
+          <div class="lg:col-span-6 p-6 rounded-2xl bg-stone-900 text-white space-y-4">
+            <div class="text-xs font-bold uppercase tracking-wider text-stone-400">True Landed Cost &amp; Net Batch Profit</div>
+            <div id="ld-batch-out" class="font-display font-extrabold text-3xl sm:text-4xl text-emerald-400">+$12,175 Batch Profit</div>
+            <div class="grid grid-cols-3 gap-3 pt-2 border-t border-stone-700 text-xs">
+              <div><span class="text-stone-400 block">True Landed Cost/Unit</span><strong id="ld-landed-out" class="text-base text-amber-300">$16.15 / unit</strong></div>
+              <div><span class="text-stone-400 block">Net Profit / Unit</span><strong id="ld-net-out" class="text-base text-emerald-400">+$24.35 / unit</strong></div>
+              <div><span class="text-stone-400 block">Net Margin %</span><strong id="ld-margin-out" class="text-base text-white">49.7% Margin</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <!-- SMART "WHAT-IF" SAVINGS & PROFIT OPTIMIZER + DYNAMIC YEAR-BY-YEAR SCHEDULE TABLE -->
       <div id="smart-whatif-advisor-card" class="no-print clean-card p-6 sm:p-8 bg-amber-50/80 border-2 border-amber-200 space-y-4">
         <div class="flex flex-wrap items-center justify-between gap-2">
@@ -2004,6 +2148,7 @@
             <h2 class="font-display font-bold text-base sm:text-lg text-white">Save, Export to Excel (CSV), or Share Your Exact Calculation</h2>
           </div>
           <div class="flex flex-wrap gap-2 text-xs">
+            <button type="button" onclick="downloadViralResultImageCard('tool')" class="px-3.5 py-2 rounded-xl bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white font-extrabold transition flex items-center gap-1.5 shadow-md"><span>&#128248;</span> <span>Download Result Image (PNG)</span></button>
             <button type="button" onclick="shareActiveCalculationLink()" class="px-3.5 py-2 rounded-xl bg-terracotta hover:bg-terracottaDark text-white font-bold transition flex items-center gap-1.5">
               <span>&#128279;</span> <span>Copy Shareable Link</span>
             </button>
@@ -2173,6 +2318,24 @@
   <!-- =========================================================
        CLEAN PROFESSIONAL FOOTER
        ========================================================= -->
+  <!-- CTRL+K QUICK JUMP COMMAND PALETTE MODAL -->
+  <div id="cmd-palette-modal" onclick="if(event.target===this)closeCommandPalette()" class="no-print hidden fixed inset-0 z-50 bg-black/60 backdrop-blur-sm flex items-start justify-center pt-16 sm:pt-24 px-4">
+    <div class="clean-card w-full max-w-2xl bg-white p-5 sm:p-6 shadow-2xl space-y-4 border-2 border-orange-500/40">
+      <div class="flex items-center justify-between gap-2 border-b border-stone-200 pb-3">
+        <div class="flex items-center gap-2 w-full">
+          <span class="text-lg">&#9889;</span>
+          <input id="cmd-palette-input" type="text" oninput="renderCommandPaletteList()" placeholder="Type to jump to any of 32 calculators or 32 guides..." aria-label="Command Palette Search" class="w-full p-2 rounded-lg bg-stone-50 border border-stone-300 text-sm font-semibold focus:outline-none focus:border-terracotta" />
+        </div>
+        <button type="button" onclick="closeCommandPalette()" class="px-2.5 py-1.5 rounded-lg bg-stone-100 hover:bg-stone-200 text-xs font-bold text-stone-600 shrink-0">ESC</button>
+      </div>
+      <div id="cmd-palette-results" class="max-h-80 overflow-y-auto space-y-1.5 pr-1 text-xs"></div>
+      <div class="pt-2 border-t border-stone-200 flex items-center justify-between text-[11px] text-stone-500">
+        <span>Tip: Press <strong>Ctrl + K</strong> (or <strong>/</strong>) anytime to open Quick Jump</span>
+        <span>32 Instant Tools &bull; 32 Pillar Guides</span>
+      </div>
+    </div>
+  </div>
+
   <footer class="bg-white border-t border-stone-200 mt-16 text-stone-600 text-xs sm:text-sm">
     <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-8 lg:px-12 xl:px-16 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
       <div>
@@ -2462,6 +2625,38 @@
         badge: 'GA4 & Leads',
         title: 'Campaign UTM & WhatsApp Link Builder',
         desc: 'Generate tracked Google Analytics 4 UTM URLs and direct WhatsApp click-to-chat lead links.'
+      },
+      {
+        id: 'retirement',
+        cat: 'Money & Business',
+        icon: '🏖️',
+        badge: 'FIRE & 4% Rule',
+        title: 'FIRE Retirement & 4% Safe Withdrawal Calculator',
+        desc: 'Calculate your 25x Financial Independence number and safe monthly retirement income.'
+      },
+      {
+        id: 'refinance',
+        cat: 'Money & Business',
+        icon: '🏡',
+        badge: 'Break-Even',
+        title: 'Mortgage & Loan Refinance Savings Calculator',
+        desc: 'See monthly payment savings, closing-cost break-even months, and net lifetime interest saved.'
+      },
+      {
+        id: 'saasmetrics',
+        cat: 'Money & Business',
+        icon: '🚀',
+        badge: 'Rule of 40',
+        title: 'SaaS Valuation, ARR & Rule of 40 Calculator',
+        desc: 'Calculate Annual Recurring Revenue (ARR), Rule of 40 score, and estimated SaaS exit valuation.'
+      },
+      {
+        id: 'dropship',
+        cat: 'Money & Business',
+        icon: '📦',
+        badge: 'Import & FBA',
+        title: 'E-Commerce Landed Cost & Tariff Calculator',
+        desc: 'Calculate true unit cost after freight, customs duties, and Amazon FBA or Shopify fees.'
       }
     ];
 
@@ -2868,7 +3063,7 @@
       if (grid.children.length === 0) {
         var empty = document.createElement('div');
         empty.className = 'col-span-full clean-card p-8 text-center space-y-3';
-        empty.innerHTML = '<div class="text-2xl">&#128269;</div><div class="font-display font-bold text-lg text-charcoal">No matching calculators found</div><p class="text-xs text-stone-500">Try searching a broader keyword (e.g., Loan, Margin, Tax, Salary, Word) or reset your filter below.</p><button type="button" onclick="document.getElementById(\'tool-search-input\').value=\'\'; setCategoryFilter(\'all\');" class="btn-coral px-5 py-2.5 text-xs">Show All 28 Calculators</button>';
+        empty.innerHTML = '<div class="text-2xl">&#128269;</div><div class="font-display font-bold text-lg text-charcoal">No matching calculators found</div><p class="text-xs text-stone-500">Try searching a broader keyword (e.g., Loan, Margin, Tax, Salary, Word) or reset your filter below.</p><button type="button" onclick="document.getElementById(\'tool-search-input\').value=\'\'; setCategoryFilter(\'all\');" class="btn-coral px-5 py-2.5 text-xs">Show All 32 Calculators</button>';
         grid.appendChild(empty);
       }
     }
@@ -3353,7 +3548,7 @@
           '<p class="text-xs text-stone-500">Last Updated: November 4, 2026</p>' +
           '<p>At <strong>WorkFlowora</strong> (accessible from <code>https://www.workflowora.com</code>), protecting the privacy of our visitors is one of our highest priorities. This Privacy Policy document details the types of information collected and how we safeguard your data.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">1. Client-Side Calculator Data Processing</h2>' +
-          '<p>All 28 interactive tools on WorkFlowora—including our Loan EMI Calculator, Compound Interest Calculator, SaaS LTV:CAC Calculator, DTI Mortgage Calculator, Credit Card Payoff Calculator, Salary 50/30/20 Planner, Invoice Generator, Word Counter, and Password Generator—execute 100% locally inside your web browser using JavaScript. We do not collect, transmit, or store the financial figures, personal dates, or text documents you enter into these utilities.</p>' +
+          '<p>All 32 interactive tools on WorkFlowora—including our Loan EMI Calculator, Compound Interest Calculator, SaaS LTV:CAC Calculator, DTI Mortgage Calculator, Credit Card Payoff Calculator, Salary 50/30/20 Planner, Invoice Generator, Word Counter, and Password Generator—execute 100% locally inside your web browser using JavaScript. We do not collect, transmit, or store the financial figures, personal dates, or text documents you enter into these utilities.</p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">2. Google DoubleClick DART Cookie &amp; AdSense</h2>' +
           '<p>Google is a third-party vendor on our website. It uses cookies, known as DART cookies, to serve advertisements to our site visitors based upon their visit to <code>www.workflowora.com</code> and other sites on the internet. Visitors may choose to decline the use of DART cookies by visiting the Google Ad and Content Network Privacy Policy at: <code>https://policies.google.com/technologies/ads</code></p>' +
           '<h2 class="font-display font-bold text-lg text-charcoal mt-5 mb-1">3. Log Files &amp; Analytics</h2>' +
@@ -3383,6 +3578,14 @@
     }
 
     window.addEventListener('keydown', function(e) {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') {
+        e.preventDefault();
+        openCommandPalette();
+        return;
+      }
+      if (e.key === 'Escape') {
+        closeCommandPalette();
+      }
       if (e.key === '/' && document.activeElement && ['INPUT', 'TEXTAREA', 'SELECT'].indexOf(document.activeElement.tagName) === -1) {
         e.preventDefault();
         showMainView('home');
@@ -4318,12 +4521,312 @@
       document.getElementById('utm-wa-out').textContent = 'https://wa.me/' + waPhone + '?text=' + encodeURIComponent('Hi, I visited ' + base + ' and have a question:');
     }
 
+    
+    function openCommandPalette() {
+      var m = document.getElementById('cmd-palette-modal');
+      if (!m) return;
+      m.classList.remove('hidden');
+      renderCommandPaletteList();
+      var inp = document.getElementById('cmd-palette-input');
+      if (inp) { inp.value = ''; inp.focus(); }
+    }
+
+    function closeCommandPalette() {
+      var m = document.getElementById('cmd-palette-modal');
+      if (m) m.classList.add('hidden');
+    }
+
+    function renderCommandPaletteList() {
+      var resBox = document.getElementById('cmd-palette-results');
+      var inp = document.getElementById('cmd-palette-input');
+      if (!resBox) return;
+      var q = inp ? (inp.value || '').toLowerCase().trim() : '';
+      resBox.innerHTML = '';
+
+      for (var i = 0; i < TOOLS_DIRECTORY.length; i++) {
+        var t = TOOLS_DIRECTORY[i];
+        if (q && t.title.toLowerCase().indexOf(q) === -1 && t.desc.toLowerCase().indexOf(q) === -1 && t.cat.toLowerCase().indexOf(q) === -1) continue;
+        (function(tool) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'w-full text-left p-2.5 rounded-xl hover:bg-orange-50 flex items-center justify-between gap-2 transition border border-transparent hover:border-orange-200';
+          b.innerHTML = '<div class="flex items-center gap-2.5"><span>' + tool.icon + '</span><div><div class="font-bold text-charcoal">' + tool.title + '</div><div class="text-[11px] text-stone-500">' + tool.desc + '</div></div></div><span class="px-2 py-0.5 rounded bg-stone-100 text-stone-600 font-bold text-[10px] shrink-0">Tool &rarr;</span>';
+          b.onclick = function() { closeCommandPalette(); openToolWorkspace(tool.id); };
+          resBox.appendChild(b);
+        })(t);
+      }
+
+      for (var j = 0; j < GUIDES_LIST.length; j++) {
+        var g = GUIDES_LIST[j];
+        if (q && g.title.toLowerCase().indexOf(q) === -1 && g.summary.toLowerCase().indexOf(q) === -1) continue;
+        (function(guide) {
+          var a = document.createElement('a');
+          a.href = '/' + guide.slug;
+          a.className = 'w-full text-left p-2.5 rounded-xl hover:bg-orange-50 flex items-center justify-between gap-2 transition border border-transparent hover:border-orange-200 block';
+          a.innerHTML = '<div class="flex items-center gap-2.5"><span>&#128214;</span><div><div class="font-bold text-charcoal">' + guide.title + '</div><div class="text-[11px] text-stone-500">' + guide.category + ' &bull; 11 min read</div></div></div><span class="px-2 py-0.5 rounded bg-orange-100 text-terracottaDark font-bold text-[10px] shrink-0">Guide &rarr;</span>';
+          resBox.appendChild(a);
+        })(g);
+      }
+    }
+
+    function calcFIRERetirement() {
+      var exp = Math.max(1000, parseFloat(document.getElementById('fire-exp').value) || 48000);
+      var curr = Math.max(0, parseFloat(document.getElementById('fire-curr').value) || 85000);
+      var mo = Math.max(0, parseFloat(document.getElementById('fire-mo').value) || 1500);
+      var yrs = Math.max(1, parseFloat(document.getElementById('fire-yrs').value) || 15);
+      var target = exp * 25;
+      var r = 0.08 / 12;
+      var n = yrs * 12;
+      var proj = curr * Math.pow(1 + r, n) + mo * ((Math.pow(1 + r, n) - 1) / r);
+      var safeMo = (proj * 0.04) / 12;
+      var pct = Math.min(999, (proj / target) * 100);
+
+      document.getElementById('fire-target-out').textContent = CURR + Math.round(target).toLocaleString() + ' Target';
+      document.getElementById('fire-proj-out').textContent = CURR + Math.round(proj).toLocaleString();
+      document.getElementById('fire-safe-out').textContent = CURR + Math.round(safeMo).toLocaleString() + ' / mo';
+      document.getElementById('fire-pct-out').textContent = pct.toFixed(1) + '% Projected';
+      var b = document.getElementById('fire-status-badge');
+      if (proj >= target) {
+        b.textContent = 'FIRE Target Reached (100%+)!';
+        b.className = 'px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold';
+      } else {
+        b.textContent = pct.toFixed(0) + '% of FIRE Goal at 8% Return';
+        b.className = 'px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold';
+      }
+    }
+
+    function calcRefinance() {
+      var bal = Math.max(1000, parseFloat(document.getElementById('rf-bal').value) || 280000);
+      var oldR = (Math.max(0.5, parseFloat(document.getElementById('rf-old').value) || 7.4) / 12) / 100;
+      var newR = (Math.max(0.5, parseFloat(document.getElementById('rf-new').value) || 5.9) / 12) / 100;
+      var cost = Math.max(0, parseFloat(document.getElementById('rf-cost').value) || 4200);
+      var n = 25 * 12;
+
+      var emiOld = (bal * oldR * Math.pow(1 + oldR, n)) / (Math.pow(1 + oldR, n) - 1);
+      var emiNew = (bal * newR * Math.pow(1 + newR, n)) / (Math.pow(1 + newR, n) - 1);
+      var moSave = Math.max(0, emiOld - emiNew);
+      var beMos = moSave > 0 ? (cost / moSave) : 999;
+      var lifeSave = Math.max(0, (moSave * n) - cost);
+
+      document.getElementById('rf-save-mo-out').textContent = 'Save ' + CURR + moSave.toFixed(2) + ' / month';
+      document.getElementById('rf-be-out').textContent = (moSave > 0 ? beMos.toFixed(1) + ' Months' : 'No Savings');
+      document.getElementById('rf-new-emi-out').textContent = CURR + emiNew.toFixed(2) + '/mo';
+      document.getElementById('rf-net-life-out').textContent = CURR + Math.round(lifeSave).toLocaleString() + ' Saved';
+    }
+
+    function calcSaaSMetrics() {
+      var mrr = Math.max(100, parseFloat(document.getElementById('sm-mrr').value) || 45000);
+      var growth = parseFloat(document.getElementById('sm-growth').value) || 32;
+      var ebitda = parseFloat(document.getElementById('sm-ebitda').value) || 18;
+      var arr = mrr * 12;
+      var r40 = growth + ebitda;
+      var multLow = r40 >= 40 ? 6.0 : (r40 >= 25 ? 4.0 : 2.5);
+      var multHigh = multLow + 2.0;
+      var valLow = (arr * multLow) / 1000000;
+      var valHigh = (arr * multHigh) / 1000000;
+
+      document.getElementById('sm-val-out').textContent = CURR + valLow.toFixed(2) + 'M – ' + CURR + valHigh.toFixed(2) + 'M';
+      document.getElementById('sm-arr-out').textContent = CURR + Math.round(arr).toLocaleString() + ' / yr';
+      document.getElementById('sm-r40-out').textContent = r40.toFixed(1) + '% Score';
+      document.getElementById('sm-mult-out').textContent = multLow.toFixed(1) + 'x – ' + multHigh.toFixed(1) + 'x ARR';
+      var b = document.getElementById('sm-r40-badge');
+      if (r40 >= 40) {
+        b.textContent = 'Rule of 40: ' + r40.toFixed(0) + '% (Elite!)';
+        b.className = 'px-3 py-1 rounded-full bg-emerald-600 text-white text-xs font-bold';
+      } else {
+        b.textContent = 'Rule of 40: ' + r40.toFixed(0) + '% (Target 40%+)';
+        b.className = 'px-3 py-1 rounded-full bg-amber-600 text-white text-xs font-bold';
+      }
+    }
+
+    function calcLandedCost() {
+      var unit = Math.max(0, parseFloat(document.getElementById('ld-unit').value) || 12.5);
+      var qty = Math.max(1, parseFloat(document.getElementById('ld-qty').value) || 500);
+      var ship = Math.max(0, parseFloat(document.getElementById('ld-ship').value) || 1200);
+      var dutyPct = Math.max(0, parseFloat(document.getElementById('ld-duty').value) || 10) / 100;
+      var sell = Math.max(1, parseFloat(document.getElementById('ld-sell').value) || 49);
+      var fee = Math.max(0, parseFloat(document.getElementById('ld-fee').value) || 8.5);
+
+      var shipPerUnit = ship / qty;
+      var dutyPerUnit = unit * dutyPct;
+      var landed = unit + shipPerUnit + dutyPerUnit;
+      var netUnit = sell - landed - fee;
+      var margin = (netUnit / sell) * 100;
+      var batchProfit = netUnit * qty;
+
+      document.getElementById('ld-batch-out').textContent = (batchProfit >= 0 ? '+' : '-') + CURR + Math.abs(Math.round(batchProfit)).toLocaleString() + ' Batch Profit';
+      document.getElementById('ld-landed-out').textContent = CURR + landed.toFixed(2) + ' / unit';
+      document.getElementById('ld-net-out').textContent = (netUnit >= 0 ? '+' : '-') + CURR + Math.abs(netUnit).toFixed(2) + ' / unit';
+      document.getElementById('ld-margin-out').textContent = margin.toFixed(1) + '% Margin';
+    }
+
+    
+    var I18N_DICT = {
+      en: {
+        h1: 'What do you want to <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calculate or solve</span> today?',
+        sub: 'Choose any of our <strong>32 free browser utilities</strong> below—from <strong>Loan EMI, Compound Interest, LTV:CAC &amp; FIRE Retirement</strong> to <strong>Paystub PDF, Freelance Contracts, and AI Prompt Builders</strong>.',
+        ph: 'Search all 32 tools (e.g., Loan, Compound Interest, LTV:CAC, Paystub, Contract, Tax)...'
+      },
+      es: {
+        h1: '¿Qué quieres <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calcular o resolver</span> hoy?',
+        sub: 'Elige cualquiera de nuestras <strong>32 calculadoras gratuitas</strong>—desde <strong>Préstamos EMI, Interés Compuesto, LTV:CAC y ROAS</strong> hasta <strong>Facturas PDF, Contratos y Utilidades IA</strong>.',
+        ph: 'Buscar en las 32 herramientas (ej. Loan, Compound, ROAS, Invoice, Tax)...'
+      },
+      de: {
+        h1: 'Was möchten Sie heute <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">berechnen oder lösen</span>?',
+        sub: 'Nutzen Sie <strong>32 kostenlose Online-Rechner</strong>—von <strong>Kreditrechner, Zinseszins, LTV:CAC &amp; Break-Even ROAS</strong> bis hin zu <strong>Rechnungsgenerator, Wörter pro Minute &amp; KI-Prompts</strong>.',
+        ph: 'Alle 32 Tools durchsuchen (z.B. Loan, Compound, ROAS, Word Counter)...'
+      },
+      fr: {
+        h1: 'Que voulez-vous <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calculer ou résoudre</span> aujourd\'hui ?',
+        sub: 'Découvrez nos <strong>32 outils gratuits</strong>—<strong>Calculatrice de Prêt, Intérêts Composés, LTV:CAC, ROAS, Factures PDF, Contrats Freelance et IA</strong>.',
+        ph: 'Rechercher parmi les 32 outils (ex. Loan, Compound, ROAS, Invoice)...'
+      },
+      pt: {
+        h1: 'O que você quer <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">calcular ou resolver</span> hoje?',
+        sub: 'Escolha entre <strong>32 calculadoras gratuitas</strong>—de <strong>Empréstimos, Juros Compostos, LTV:CAC e ROAS</strong> até <strong>Faturas PDF, Contratos e Ferramentas de IA</strong>.',
+        ph: 'Pesquisar nas 32 ferramentas (ex. Loan, Compound, ROAS, Invoice)...'
+      },
+      ar: {
+        h1: 'ماذا تريد أن <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">تحسب أو تحل</span> اليوم؟',
+        sub: 'اختر من بين <strong>32 أداة وحاسبة مجانية</strong>—من <strong>حاسبة القروض والفائدة المركبة والعائد الإعلاني ROAS</strong> إلى <strong>منشئ الفواتير والعقود وأدوات الذكاء الاصطناعي</strong>.',
+        ph: 'ابحث في 32 أداة مجانية (مثل Loan, Compound, ROAS, Invoice)...'
+      },
+      hi: {
+        h1: 'आज आप क्या <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">कैलकुलेट या हल</span> करना चाहते हैं?',
+        sub: 'हमारे <strong>32 मुफ़्त ऑनलाइन कैलकुलेटर और टूल्स</strong> चुनें—<strong>लोन EMI, कंपाउंड इंटरेस्ट, LTV:CAC, ROAS, इनवॉइस PDF और फ्रीलांस कॉन्ट्रैक्ट जनरेटर</strong>।',
+        ph: 'सभी 32 टूल्स में खोजें (जैसे Loan, Compound, ROAS, Salary, Invoice)...'
+      },
+      bn: {
+        h1: 'আজ আপনি কী <span class="text-terracotta underline decoration-orange-300 decoration-4 underline-offset-4">হিসাব বা সমাধান</span> করতে চান?',
+        sub: 'আমাদের <strong>৩২টি ফ্রি অনলাইন ক্যালকুলেটর ও বিজনেস টুল</strong> ব্যবহার করুন—<strong>লোন ইএমআই, কম্পাউন্ড ইন্টারেস্ট, LTV:CAC, ROAS, ফ্রি পে-স্লিপ ও ইনভয়েস PDF জেনারেটর</strong>।',
+        ph: '৩২টি টুলের যেকোনোটি খুঁজুন (যেমন Loan, Compound, ROAS, Salary, Invoice)...'
+      }
+    };
+
+    function setGlobalLanguage(lang) {
+      var d = I18N_DICT[lang] || I18N_DICT.en;
+      var h1 = document.getElementById('hero-main-heading');
+      var sub = document.getElementById('hero-sub-text');
+      var ph = document.getElementById('tool-search-input');
+      if (h1) h1.innerHTML = d.h1;
+      if (sub) sub.innerHTML = d.sub;
+      if (ph) ph.placeholder = d.ph;
+      try { localStorage.setItem('wf_lang', lang); } catch (e) {}
+      showCleanToast('Language updated to ' + lang.toUpperCase());
+    }
+
+    function downloadViralResultImageCard(mode) {
+      var canvas = document.createElement('canvas');
+      canvas.width = 1200;
+      canvas.height = 630;
+      var ctx = canvas.getContext('2d');
+
+      // Rich Dark Obsidian Background with Warm Terracotta Accent Bar
+      ctx.fillStyle = '#141413';
+      ctx.fillRect(0, 0, 1200, 630);
+      ctx.fillStyle = '#EA580C';
+      ctx.fillRect(0, 0, 1200, 14);
+
+      // Card Inner Frame
+      ctx.strokeStyle = '#332F2B';
+      ctx.lineWidth = 3;
+      ctx.strokeRect(48, 48, 1104, 534);
+
+      // Brand Header
+      ctx.fillStyle = '#EA580C';
+      ctx.fillRect(88, 84, 52, 52);
+      ctx.fillStyle = '#FFFFFF';
+      ctx.font = 'bold 30px sans-serif';
+      ctx.fillText('W', 102, 121);
+
+      ctx.fillStyle = '#FAF9F5';
+      ctx.font = 'bold 32px sans-serif';
+      ctx.fillText('WorkFlowora PRO', 158, 114);
+      ctx.fillStyle = '#A8A29E';
+      ctx.font = '20px sans-serif';
+      ctx.fillText('32 Free Financial & Business Calculators • www.workflowora.com', 158, 142);
+
+      if (mode === 'scorecard') {
+        var scoreTxt = document.getElementById('sc-score-out').textContent || '88 / 100';
+        var gradeTxt = document.getElementById('sc-grade-badge').textContent || 'Grade: A+';
+        var advTxt = document.getElementById('sc-advice-out').textContent || '';
+
+        ctx.fillStyle = '#FDBA74';
+        ctx.font = 'bold 22px sans-serif';
+        ctx.fillText('OFFICIAL 60-SECOND FINANCIAL HEALTH SCORECARD', 88, 225);
+
+        ctx.fillStyle = '#FDE047';
+        ctx.font = 'bold 92px sans-serif';
+        ctx.fillText(scoreTxt, 88, 330);
+
+        ctx.fillStyle = '#4ADE80';
+        ctx.font = 'bold 34px sans-serif';
+        ctx.fillText(gradeTxt, 520, 315);
+
+        ctx.fillStyle = '#E7E5E4';
+        ctx.font = '24px sans-serif';
+        ctx.fillText(advTxt.slice(0, 88), 88, 415);
+        if (advTxt.length > 88) ctx.fillText(advTxt.slice(88, 176), 88, 450);
+      } else {
+        var data = collectActiveToolData();
+        var mainOut = data.outputs.length > 0 ? data.outputs[0].value : 'Verified Calculation';
+
+        ctx.fillStyle = '#FDBA74';
+        ctx.font = 'bold 22px sans-serif';
+        ctx.fillText('VERIFIED FINANCIAL & BUSINESS CALCULATION REPORT', 88, 220);
+
+        ctx.fillStyle = '#FFFFFF';
+        ctx.font = 'bold 40px sans-serif';
+        ctx.fillText(data.title.slice(0, 52), 88, 275);
+
+        ctx.fillStyle = '#4ADE80';
+        ctx.font = 'bold 76px sans-serif';
+        ctx.fillText(mainOut.slice(0, 28), 88, 375);
+
+        // List up to 3 inputs
+        ctx.fillStyle = '#D6D3D1';
+        ctx.font = '22px sans-serif';
+        var inLine = [];
+        for (var i = 0; i < Math.min(4, data.inputs.length); i++) {
+          inLine.push(data.inputs[i].label.split('(')[0].trim() + ': ' + data.inputs[i].value);
+        }
+        ctx.fillText(inLine.join('   •   ').slice(0, 95), 88, 445);
+      }
+
+      // Footer Callout
+      ctx.fillStyle = '#262320';
+      ctx.fillRect(50, 505, 1100, 75);
+      ctx.fillStyle = '#FDE047';
+      ctx.font = 'bold 22px sans-serif';
+      ctx.fillText('Run your own numbers 100% free at:  https://www.workflowora.com', 88, 550);
+
+      var link = document.createElement('a');
+      link.download = 'WorkFlowora_Share_Card.png';
+      link.href = canvas.toDataURL('image/png');
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      showCleanToast('Shareable HD Image Card (PNG) downloaded! Post it on LinkedIn, X, Reddit, or WhatsApp.');
+    }
+
     window.addEventListener('DOMContentLoaded', function() {
       try {
         if (localStorage.getItem('wf_dark_mode') === '1') {
           document.documentElement.classList.add('dark-mode');
           var db = document.getElementById('dark-mode-btn');
           if (db) db.innerHTML = '&#9728;&#65039; Light';
+        }
+        var savedLang = localStorage.getItem('wf_lang');
+        if (savedLang && savedLang !== 'en') {
+          var lSel = document.getElementById('global-lang-select');
+          if (lSel) lSel.value = savedLang;
+          setGlobalLanguage(savedLang);
+        }
+        var qParam = new URLSearchParams(window.location.search).get('q');
+        if (qParam) {
+          var sInp = document.getElementById('tool-search-input');
+          if (sInp) { sInp.value = qParam; renderToolCards(); }
         }
         var savedCurr = localStorage.getItem('wf_currency');
         if (savedCurr && savedCurr !== '$') setTimeout(function() { setGlobalCurrency(savedCurr); }, 180);
@@ -4372,6 +4875,10 @@
         calcContractDoc();
         calcABTest();
         calcUTMLink();
+        calcFIRERetirement();
+        calcRefinance();
+        calcSaaSMetrics();
+        calcLandedCost();
       }, 120);
       try {
         if (!localStorage.getItem('wf_cookie_consent')) {
