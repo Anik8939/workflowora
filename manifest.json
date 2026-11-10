@@ -1,14 +1,14 @@
 {
-  "name": "WorkFlowora \u2014 20 Free Online Calculators & Smart Work Tools",
+  "name": "WorkFlowora \u2814 28 Free Online Calculators & Smart Work Tools",
   "short_name": "WorkFlowora",
-  "description": "20+ Free Online Financial Calculators, Business Utilities, Live Work Timer, and 30 In-Depth Guides.",
+  "description": "28+ Free Online Financial Calculators, Business Utilities, Live Work Timer, and 32 In-Depth Guides.",
   "start_url": "/?source=pwa",
   "display": "standalone",
   "background_color": "#FAF9F5",
   "theme_color": "#EA580C",
   "icons": [
     {
-      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23EA580C'/%3E%3Cpath d='M14 20L23 44L32 25L41 44L50 20' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='14' r='3.5' fill='%23FDE047'/%3E%3C/svg%3E",
+      "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2800/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23EA580C'/%3E%3Cpath d='M14 28L23 44L32 25L41 44L50 28' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='14' r='3.5' fill='%23FDE047'/%3E%3C/svg%3E",
       "sizes": "192x192 512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
