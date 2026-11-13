@@ -2,12 +2,29 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found (404) | WorkFlowora</title>
-  <meta name="robots" content="noindex, follow" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23EA580C'/%3E%3Cpath d='M14 20L23 44L32 25L41 44L50 20' stroke='white' stroke-width='6' stroke-linecap='round' stroke-linejoin='round' fill='none'/%3E%3Ccircle cx='32' cy='14' r='3.5' fill='%23FDE047'/%3E%3C/svg%3E" />
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <link rel="manifest" href="/manifest.json" />
+  <meta name="robots" content="noindex, nofollow" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF9F5',
+            charcoal: '#1C1917',
+            terracotta: '#EA580C',
+            terracottaDark: '#C2410C',
+            sage: '#166534'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
+        }
+      }
+    };
+  </script>
   <script>
     try {
       if (localStorage.getItem('wf_dark_mode') === '1') {
@@ -15,35 +32,155 @@
       }
     } catch (e) {}
   </script>
+  <style>
+    body { background-color: #FAF9F5; color: #1C1917; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .clean-card { background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 1.25rem; box-shadow: 0 4px 20px -4px rgba(28,25,23,0.05); transition: all 0.2s ease; }
+    .btn-coral { background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%); color: #FFFFFF; border-radius: 0.875rem; font-weight: 700; transition: all 0.2s ease; }
+    .btn-coral:hover { filter: brightness(1.06); transform: translateY(-1px); }
+    .cat-pill-active { background: #1C1917; color: #FFFFFF; }
+    .cat-pill-inactive { background: #FFFFFF; color: #44403C; border: 1px solid #D6D3D1; }
+    html.dark-mode body { background-color: #141413 !important; color: #F5F5F4 !important; }
+    html.dark-mode header, html.dark-mode footer { background-color: #1C1917 !important; border-color: #292524 !important; }
+    html.dark-mode .clean-card, html.dark-mode .bg-white { background-color: #1C1917 !important; border-color: #292524 !important; color: #F5F5F4 !important; }
+    html.dark-mode .bg-stone-50, html.dark-mode .bg-stone-100 { background-color: #262320 !important; border-color: #332F2B !important; color: #E7E5E4 !important; }
+    html.dark-mode .text-charcoal, html.dark-mode .text-stone-800, html.dark-mode .text-stone-700 { color: #F5F5F4 !important; }
+    html.dark-mode .text-stone-600, html.dark-mode .text-stone-500 { color: #A8A29E !important; }
+    html.dark-mode input, html.dark-mode select, html.dark-mode textarea { background-color: #262320 !important; color: #F5F5F4 !important; border-color: #44403C !important; }
+    @media print { .no-print, header, footer { display: none !important; } body { background: #fff !important; } }
+  </style>
 </head>
-<body class="bg-[#FAF9F5] text-[#141413] font-sans min-h-screen flex flex-col justify-between">
-  <header class="bg-white border-b border-stone-200 py-4 px-6">
-    <div class="max-w-5xl mx-auto flex items-center justify-between">
-      <a href="/" class="font-extrabold text-xl text-[#141413]">WorkFlowora</a>
-      <nav class="flex items-center gap-4 text-xs sm:text-sm font-semibold text-stone-700">
-        <a href="/" class="hover:text-orange-600">All 32 Calculators</a>
-        <a href="/about-us.html" class="hover:text-orange-600">About Us</a>
-        <a href="/contact-us.html" class="hover:text-orange-600">Contact Us</a>
+<body class="min-h-screen flex flex-col">
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
+    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-2">
+      <a href="/" class="flex items-center gap-2.5 text-left focus:outline-none group shrink-0 whitespace-nowrap no-underline">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition shrink-0">
+          <svg class="w-5 h-5 sm:w-6 sm:h-6" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 20L22 46L32 25L42 46L52 20" stroke="white" stroke-width="6.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="32" cy="13" r="4" fill="#FDE047"/>
+          </svg>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-charcoal">WorkFlowora</span>
+            <span class="px-1.5 py-0.5 rounded-full bg-orange-100 text-terracottaDark font-bold text-[10px] uppercase tracking-wider">PRO</span>
+          </div>
+          <span id="sub-brand-tag" class="hidden 2xl:block text-[11px] text-stone-500">Free Online Calculators &amp; Smart Work Tools</span>
+        </div>
+      </a>
+      <nav aria-label="Page Navigation" class="hidden lg:flex items-center gap-1 shrink-0 whitespace-nowrap">
+        <a id="sub-nav-tools" href="/" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">All Tools (32)</a>
+        <a id="sub-nav-guides" href="/#popular-guides-section" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">Guides (32)</a>
+        <a id="sub-nav-global" href="/#global-hub-comparator-section" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">Global Tax</a>
+        <a id="sub-nav-request" href="/#feature-request-section" class="px-2.5 py-1.5 rounded-xl text-xs font-bold text-terracotta hover:bg-orange-50 transition whitespace-nowrap shrink-0">&#128161; Request Tool</a>
+        <a id="sub-nav-about" href="/about-us.html" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">About</a>
+        <a id="sub-nav-contact" href="/contact-us.html" class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0">Contact</a>
       </nav>
+      <div class="flex items-center gap-1.5 shrink-0 whitespace-nowrap">
+        <label for="global-lang-select" class="sr-only">Select Language</label>
+        <select id="global-lang-select" onchange="setSubpageLanguage(this.value)" aria-label="Language Selector" class="px-2 py-1.5 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer whitespace-nowrap shrink-0">
+          <option value="en" selected>&#127482;&#127480; EN</option>
+          <option value="de">&#127465;&#127466; DE</option>
+          <option value="fr">&#127467;&#127479; FR</option>
+          <option value="es">&#127466;&#127480; ES</option>
+          <option value="ja">&#127471;&#127477; JA</option>
+          <option value="pt">&#127463;&#127479; PT</option>
+        </select>
+        <button type="button" onclick="toggleDarkMode()" id="dark-mode-btn" aria-label="Toggle Dark Mode" class="px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition whitespace-nowrap shrink-0">&#127769; Dark</button>
+        <a id="sub-nav-cta" href="/" class="hidden sm:inline-flex btn-coral px-3 py-1.5 text-xs font-bold whitespace-nowrap shrink-0 no-underline">All 32 Tools &#8594;</a>
+      </div>
     </div>
   </header>
-  <main class="max-w-3xl mx-auto px-6 py-16 text-center space-y-6">
-    <span class="px-3 py-1 rounded-full bg-orange-100 text-orange-800 text-xs font-bold uppercase">404 — Page Not Found</span>
-    <h1 class="font-extrabold text-3xl sm:text-4xl text-[#141413]">We Couldn't Find That Page</h1>
-    <p class="text-stone-600 text-sm sm:text-base max-w-xl mx-auto">The link you followed may have moved or no longer exists. Use the direct links below to access our 32 free calculators and 32 financial &amp; productivity guides:</p>
-    <div class="flex flex-wrap justify-center gap-3 pt-2">
-      <a href="/" class="px-5 py-3 rounded-xl bg-[#EA580C] text-white font-bold text-sm">Explore All 16 Free Calculators &rarr;</a>
-      <a href="/loan-emi-calculation-guide.html" class="px-5 py-3 rounded-xl bg-white border border-stone-300 font-bold text-sm">Loan &amp; EMI Guide</a>
-      <a href="/customer-acquisition-cost-cac-ltv-guide.html" class="px-5 py-3 rounded-xl bg-white border border-stone-300 font-bold text-sm">SaaS LTV:CAC Guide</a>
+  <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-16 text-center space-y-6">
+    <div class="clean-card p-10 space-y-5">
+      <div class="text-5xl font-display font-extrabold text-terracotta">404</div>
+      <h1 class="font-display font-extrabold text-2xl sm:text-3xl text-charcoal">Page Not Found</h1>
+      <p class="text-sm sm:text-base text-stone-600 max-w-xl mx-auto">The page you requested may have moved. Choose any of our 32 free calculators or 32 financial and business guides below.</p>
+      <div class="pt-2 flex flex-wrap justify-center gap-3">
+        <a href="/" class="btn-coral px-6 py-3 text-sm no-underline">Explore All 32 Free Calculators &rarr;</a>
+        <a href="/#popular-guides-section" class="px-6 py-3 rounded-xl bg-stone-100 text-charcoal font-bold text-sm no-underline">Browse 32 How-To Guides</a>
+      </div>
     </div>
   </main>
-  <footer class="bg-white border-t border-stone-200 py-8 text-center text-xs text-stone-500">
-    &copy; 2026 <strong>WorkFlowora</strong> (<a href="https://www.workflowora.com/" class="underline">www.workflowora.com</a>) &bull;
-    <a href="/about-us.html" class="underline">About Us</a> &bull;
-    <a href="/contact-us.html" class="underline">Contact Us</a> &bull;
-    <a href="/privacy-policy.html" class="underline">Privacy Policy</a> &bull;
-    <a href="/terms-and-conditions.html" class="underline">Terms</a> &bull;
-    <a href="/disclaimer.html" class="underline">Disclaimer</a>
+  <footer class="bg-white border-t border-stone-200 mt-16 text-stone-600 text-xs sm:text-sm">
+    <div class="max-w-[1600px] w-full mx-auto px-4 sm:px-8 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+      <div>
+        <div class="flex items-center gap-2.5 mb-3">
+          <div class="w-8 h-8 rounded-lg bg-terracotta text-white font-display font-extrabold text-base flex items-center justify-center">W</div>
+          <span class="font-display font-extrabold text-lg text-charcoal">WorkFlowora.com</span>
+        </div>
+        <p class="text-xs text-stone-500 leading-relaxed">
+          32 free browser-based financial, business, SaaS, and productivity calculators paired with 32 in-depth mathematical guides. 100% client-side privacy.
+        </p>
+      </div>
+      <div>
+        <div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Popular Calculators</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/?tool=loan" class="hover:text-terracotta">Loan &amp; Mortgage EMI Calculator</a></li>
+          <li><a href="/?tool=compound" class="hover:text-terracotta">Compound Interest Calculator</a></li>
+          <li><a href="/?tool=cacltv" class="hover:text-terracotta">SaaS LTV:CAC &amp; Payback Calculator</a></li>
+          <li><a href="/?tool=margin" class="hover:text-terracotta">Profit Margin &amp; Break-Even ROAS</a></li>
+          <li><a href="/?tool=salary" class="hover:text-terracotta">Salary to Hourly &amp; 50/30/20 Planner</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Top Pillar Guides</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/loan-emi-calculation-guide.html" class="hover:text-terracotta">Loan EMI &amp; Amortization Guide</a></li>
+          <li><a href="/credit-card-minimum-payment-interest-trap-guide.html" class="hover:text-terracotta">Credit Card Minimum Payment Trap</a></li>
+          <li><a href="/customer-acquisition-cost-cac-ltv-guide.html" class="hover:text-terracotta">SaaS LTV:CAC 3:1 Golden Ratio</a></li>
+          <li><a href="/reading-speed-wpm-speaking-time-guide.html" class="hover:text-terracotta">Reading Speed &amp; Speech WPM Chart</a></li>
+          <li><a href="/us-self-employment-1099-quarterly-tax-guide-2026.html" class="hover:text-terracotta">US 1099 Self-Employment Tax Guide</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Company &amp; Legal</div>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/about-us.html" class="hover:text-terracotta">About WorkFlowora</a></li>
+          <li><a href="/contact-us.html" class="hover:text-terracotta">Contact &amp; Support</a></li>
+          <li><a href="/privacy-policy.html" class="hover:text-terracotta">Privacy Policy &amp; Cookies</a></li>
+          <li><a href="/terms-and-conditions.html" class="hover:text-terracotta">Terms &amp; Conditions</a></li>
+          <li><a href="/disclaimer.html" class="hover:text-terracotta">Financial &amp; Legal Disclaimer</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-stone-200 py-6 text-center text-xs text-stone-500">
+      &copy; 2026 WorkFlowora (www.workflowora.com). All rights reserved. Built for fast, accurate browser-side calculation.
+    </div>
   </footer>
+  <script>
+    function syncDarkBtn() {
+      var btn = document.getElementById('dark-mode-btn');
+      if (!btn) return;
+      var isDark = document.documentElement.classList.contains('dark-mode');
+      btn.innerHTML = isDark ? '&#9728;&#65039; Light' : '&#127769; Dark';
+    }
+    function toggleDarkMode() {
+      var isDark = document.documentElement.classList.toggle('dark-mode');
+      try { localStorage.setItem('wf_dark_mode', isDark ? '1' : '0'); } catch (e) {}
+      syncDarkBtn();
+    }
+    var SUB_UI_I18N = {
+      en: { tag: 'Free Online Calculators & Smart Work Tools', tools: 'All Tools (32)', guides: 'Guides (32)', global: 'Global Tax', req: '💡 Request Tool', about: 'About', contact: 'Contact', cta: 'All 32 Tools \u2192' },
+      de: { tag: 'Kostenlose Online-Rechner & Smarte Business-Tools', tools: 'Tools (32)', guides: 'Guides (32)', global: 'Steuern', req: '💡 Tool wünschen', about: 'Über uns', contact: 'Kontakt', cta: 'Alle 32 Tools \u2192' },
+      fr: { tag: 'Calculateurs en Ligne Gratuits & Outils Pro', tools: 'Outils (32)', guides: 'Guides (32)', global: 'Fiscalité', req: '💡 Suggérer', about: 'À Propos', contact: 'Contact', cta: 'Les 32 Outils \u2192' },
+      es: { tag: 'Calculadoras Online Gratis y Herramientas', tools: 'Herramientas (32)', guides: 'Guías (32)', global: 'Impuestos', req: '💡 Sugerir', about: 'Nosotros', contact: 'Contacto', cta: '32 Herramientas \u2192' },
+      ja: { tag: '無料の金融・ビジネス計算ツール＆実践ガイド', tools: '全ツール (32)', guides: 'ガイド (32)', global: '世界税制', req: '💡 リクエスト', about: '運営情報', contact: 'お問い合わせ', cta: '全32ツール \u2192' },
+      pt: { tag: 'Calculadoras Online Gratuitas e Ferramentas', tools: 'Ferramentas (32)', guides: 'Guias (32)', global: 'Impostos', req: '💡 Sugerir', about: 'Sobre', contact: 'Contato', cta: '32 Ferramentas \u2192' }
+    };
+    function setSubpageLanguage(lang) {
+      if (!SUB_UI_I18N[lang]) lang = 'en';
+      var u = SUB_UI_I18N[lang];
+      var sel = document.getElementById('global-lang-select');
+      if (sel && sel.value !== lang) sel.value = lang;
+      var ids = { 'sub-brand-tag': u.tag, 'sub-nav-tools': u.tools, 'sub-nav-guides': u.guides, 'sub-nav-global': u.global, 'sub-nav-request': u.req, 'sub-nav-about': u.about, 'sub-nav-contact': u.contact, 'sub-nav-cta': u.cta };
+      for (var k in ids) { var el = document.getElementById(k); if (el) el.textContent = ids[k]; }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      syncDarkBtn();
+      var sel = document.getElementById('global-lang-select');
+      if (sel) sel.value = 'en';
+      setSubpageLanguage('en');
+    });
+  </script>
 </body>
 </html>

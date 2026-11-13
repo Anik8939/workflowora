@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Google-Display-Ads-Bot
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
@@ -10,13 +16,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
-User-agent: ChatGPT-User
-Allow: /
-
 User-agent: PerplexityBot
-Allow: /
-
-User-agent: ClaudeBot
 Allow: /
 
 Sitemap: https://www.workflowora.com/sitemap.xml
