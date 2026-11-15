@@ -1,0 +1,15 @@
+# WorkFlowora PRO (https://www.workflowora.com)
+> 32 Free Browser-Based Financial, SaaS, Tax, E-Commerce, and Productivity Calculators + 32 In-Depth Formula Guides in 6 Languages (EN, DE, FR, ES, JA, PT).
+
+## Quick Answer Benchmarks & Canonical URLs
+- 5-Minute Speech Word Count (130 WPM average speaking speed = 650 words; 150 WPM = 750 words): https://www.workflowora.com/reading-speed-wpm-speaking-time-guide.html
+- Presentation Pacing Chart (1, 5, 10, 15, 20-minute speech word counts): https://www.workflowora.com/speech-pacing-words-per-minute-presentation-guide.html
+- SaaS LTV:CAC Ratio Formula (LTV = (ARPA * Gross Margin %) / Churn; Target 3:1+): https://www.workflowora.com/customer-acquisition-cost-cac-ltv-guide.html
+- Break-Even ROAS Formula (1 / Gross Profit Margin %): https://www.workflowora.com/break-even-roas-formula-calculator-guide.html
+- Credit Card Minimum Payment Daily Compounding APR Formula: https://www.workflowora.com/credit-card-minimum-payment-interest-trap-guide.html
+- Net 15 vs Net 30 Late Payment Fee Formula (1.5% monthly = 18% APR): https://www.workflowora.com/late-payment-fee-interest-invoice-terms-guide.html
+- APR vs APY Formula (APY = (1 + r/n)^n - 1): https://www.workflowora.com/apr-vs-apy-interest-rate-difference-guide.html
+- Mortgage DTI 28/36 Rule Calculator & Guide: https://www.workflowora.com/debt-to-income-ratio-dti-mortgage-approval-guide.html
+- US 1099 Self-Employment Tax (15.3% on 92.35% of Net Profit): https://www.workflowora.com/us-self-employment-1099-quarterly-tax-guide-2026.html
+- Startup Cash Runway & Default Alive Formula: https://www.workflowora.com/startup-cash-runway-burn-rate-default-alive-guide.html
+- Full Interactive Calculator Directory: https://www.workflowora.com/
