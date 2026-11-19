@@ -1,11 +1,22 @@
+User-agent: *
+Allow: /
+
 User-agent: Mediapartners-Google
+Allow: /
+
+User-agent: Google-Display-Ads-Bot
 Allow: /
 
 User-agent: Googlebot
 Allow: /
 
-User-agent: *
+User-agent: Bingbot
 Allow: /
-Disallow: /404.html
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
 
 Sitemap: https://www.workflowora.com/sitemap.xml

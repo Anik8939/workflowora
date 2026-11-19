@@ -1,52 +1,81 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+
+<html lang="en">
 <head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-TSRSH3VS');</script>
-  <!-- End Google Tag Manager -->
-  <meta name="google-adsense-account" content="ca-pub-8731058976498303">
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731058976498303" crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Customer Acquisition Cost (CAC) and LTV:CAC Ratio: SaaS Unit Economics Explained — WorkFlowora</title>
-  <meta name="description" content="Learn how to compute gross-margin-adjusted LTV, fully loaded CAC, and CAC payback months so your subscription business scales without burning cash.">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.workflowora.com/customer-acquisition-cost-cac-ltv-guide.html">
-  <meta property="og:type" content="article">
-  <meta property="og:site_name" content="WorkFlowora">
-  <meta property="og:title" content="Customer Acquisition Cost (CAC) and LTV:CAC Ratio: SaaS Unit Economics Explained — WorkFlowora">
-  <meta property="og:description" content="Learn how to compute gross-margin-adjusted LTV, fully loaded CAC, and CAC payback months so your subscription business scales without burning cash.">
-  <meta property="og:url" content="https://www.workflowora.com/customer-acquisition-cost-cac-ltv-guide.html">
-  <meta property="og:image" content="https://www.workflowora.com/guide-2.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Customer Acquisition Cost (CAC) and LTV:CAC Ratio: SaaS Unit Economics Explained — WorkFlowora">
-  <meta name="twitter:description" content="Learn how to compute gross-margin-adjusted LTV, fully loaded CAC, and CAC payback months so your subscription business scales without burning cash.">
-  <meta name="twitter:image" content="https://www.workflowora.com/guide-2.jpg">
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <script>
-    (function(){
-      try {
-        var saved = localStorage.getItem('wf_theme');
-        if (saved === 'dark' || (!saved && window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          document.documentElement.setAttribute('data-theme', 'dark');
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TSRSH3VS');</script>
+<!-- End Google Tag Manager -->
+<meta content="ca-pub-8731058976498303" name="google-adsense-account"/>
+<script async="" crossorigin="anonymous" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8731058976498303"></script>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Crect width='64' height='64' rx='16' fill='%23EA580C'/%3E%3Cpath d='M12 22L22 46L32 26L42 46L52 22' stroke='white' stroke-width='6.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Ccircle cx='32' cy='14' r='4.5' fill='%23FDE047'/%3E%3C/svg%3E" rel="icon" type="image/svg+xml"/>
+<link href="/favicon.svg" rel="icon" type="image/svg+xml"/>
+<link href="/favicon-192.png" rel="icon" sizes="192x192" type="image/png"/>
+<link href="/favicon.ico" rel="shortcut icon"/>
+<link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180"/>
+<title>Customer Acquisition Cost (CAC) and LTV:CAC Ratio: SaaS Unit Economics Explained — WorkFlowora</title>
+<meta content="Learn how to compute gross-margin-adjusted LTV, fully loaded CAC, and CAC payback months so your subscription business scales without burning cash." name="description"/>
+<link href="https://www.workflowora.com/customer-acquisition-cost-cac-ltv-guide.html" rel="canonical"/>
+<meta content="Customer Acquisition Cost (CAC) &amp; Lifetime Value (LTV): The 3:1 Golden Ratio Explained | WorkFlowora" property="og:title"/>
+<meta content="Master the 3:1 LTV-to-CAC ratio that investors and profitable founders use to scale paid marketing sustainably." property="og:description"/>
+<meta content="https://www.workflowora.com/customer-acquisition-cost-cac-ltv-guide.html" property="og:url"/>
+<meta content="https://www.workflowora.com/guide-12.jpg" property="og:image"/>
+<meta content="article" property="og:type"/>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cream: '#FAF9F5',
+            charcoal: '#1C1917',
+            terracotta: '#EA580C',
+            terracottaDark: '#C2410C',
+            sage: '#166534'
+          },
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['Outfit', 'Plus Jakarta Sans', 'system-ui', 'sans-serif']
+          }
         }
-      } catch(e) {}
-    })();
+      }
+    };
   </script>
-  <link rel="stylesheet" href="/assets/css/style.css">
-  <script type="application/ld+json">
-{
+<script>
+    try {
+      if (localStorage.getItem('wf_dark_mode') === '1') {
+        document.documentElement.classList.add('dark-mode');
+      }
+    } catch (e) {}
+  </script>
+<style>
+    body { background-color: #FAF9F5; color: #1C1917; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+    .clean-card { background: #FFFFFF; border: 1px solid #E7E5E4; border-radius: 1.25rem; box-shadow: 0 4px 20px -4px rgba(28,25,23,0.05); transition: all 0.2s ease; }
+    .btn-coral { background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%); color: #FFFFFF; border-radius: 0.875rem; font-weight: 700; transition: all 0.2s ease; }
+    .btn-coral:hover { filter: brightness(1.06); transform: translateY(-1px); }
+    .cat-pill-active { background: #1C1917; color: #FFFFFF; }
+    .cat-pill-inactive { background: #FFFFFF; color: #44403C; border: 1px solid #D6D3D1; }
+    html.dark-mode body { background-color: #141413 !important; color: #F5F5F4 !important; }
+    html.dark-mode header, html.dark-mode footer { background-color: #1C1917 !important; border-color: #292524 !important; }
+    html.dark-mode .clean-card, html.dark-mode .bg-white { background-color: #1C1917 !important; border-color: #292524 !important; color: #F5F5F4 !important; }
+    html.dark-mode .bg-stone-50, html.dark-mode .bg-stone-100 { background-color: #262320 !important; border-color: #332F2B !important; color: #E7E5E4 !important; }
+    html.dark-mode .text-charcoal, html.dark-mode .text-stone-800, html.dark-mode .text-stone-700 { color: #F5F5F4 !important; }
+    html.dark-mode .text-stone-600, html.dark-mode .text-stone-500 { color: #A8A29E !important; }
+    html.dark-mode input, html.dark-mode select, html.dark-mode textarea { background-color: #262320 !important; color: #F5F5F4 !important; border-color: #44403C !important; }
+    @media print { .no-print, header, footer { display: none !important; } body { background: #fff !important; } }
+  </style>
+<script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "Article",
   "headline": "Customer Acquisition Cost (CAC) and LTV:CAC Ratio: SaaS Unit Economics Explained",
   "description": "Learn how to compute gross-margin-adjusted LTV, fully loaded CAC, and CAC payback months so your subscription business scales without burning cash.",
-  "image": "https://www.workflowora.com/guide-2.jpg",
+  "image": "https://www.workflowora.com/guide-12.jpg",
   "datePublished": "2026-11-19",
   "dateModified": "2026-11-19",
   "author": {
@@ -59,10 +88,7 @@
     "url": "https://www.workflowora.com/"
   },
   "mainEntityOfPage": "https://www.workflowora.com/customer-acquisition-cost-cac-ltv-guide.html"
-}
-  </script>
-  <script type="application/ld+json">
-{
+}</script><script type="application/ld+json">{
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
@@ -99,209 +125,245 @@
       }
     }
   ]
-}
+}</script></head>
+<body class="min-h-screen flex flex-col">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe height="0" src="https://www.googletagmanager.com/ns.html?id=GTM-TSRSH3VS" style="display:none;visibility:hidden" width="0"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+<header class="sticky top-0 z-40 bg-white/95 backdrop-blur border-b border-stone-200">
+<div class="max-w-[1600px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-2">
+<a class="flex items-center gap-2.5 text-left focus:outline-none group shrink-0 whitespace-nowrap no-underline" href="/">
+<div class="w-9 h-9 sm:w-10 sm:h-10 rounded-2xl bg-gradient-to-br from-terracotta to-terracottaDark flex items-center justify-center shadow-md shadow-orange-500/20 group-hover:scale-105 transition shrink-0">
+<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewbox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+<path d="M12 20L22 46L32 25L42 46L52 20" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="6.5"></path>
+<circle cx="32" cy="13" fill="#FDE047" r="4"></circle>
+</svg>
+</div>
+<div>
+<div class="flex items-center gap-1.5">
+<span class="font-display font-extrabold text-lg sm:text-xl tracking-tight text-charcoal">WorkFlowora</span>
+<span class="px-1.5 py-0.5 rounded-full bg-orange-100 text-terracottaDark font-bold text-[10px] uppercase tracking-wider">PRO</span>
+</div>
+<span class="hidden 2xl:block text-[11px] text-stone-500" id="sub-brand-tag">Free Online Calculators &amp; Smart Work Tools</span>
+</div>
+</a>
+<nav aria-label="Page Navigation" class="hidden lg:flex items-center gap-1 shrink-0 whitespace-nowrap">
+<a class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0" href="/" id="sub-nav-tools">All Tools (32)</a>
+<a class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0" href="/#popular-guides-section" id="sub-nav-guides">Guides (32)</a>
+<a class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0" href="/#global-hub-comparator-section" id="sub-nav-global">Global Tax</a>
+<a class="px-2.5 py-1.5 rounded-xl text-xs font-bold text-terracotta hover:bg-orange-50 transition whitespace-nowrap shrink-0" href="/#feature-request-section" id="sub-nav-request">💡 Request Tool</a>
+<a class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0" href="/about-us.html" id="sub-nav-about">About</a>
+<a class="px-2.5 py-1.5 rounded-xl text-xs font-semibold text-stone-800 hover:bg-stone-100 transition whitespace-nowrap shrink-0" href="/contact-us.html" id="sub-nav-contact">Contact</a>
+</nav>
+<div class="flex items-center gap-1.5 shrink-0 whitespace-nowrap">
+<label class="sr-only" for="global-lang-select">Select Language</label>
+<select aria-label="Language Selector" class="px-2 py-1.5 rounded-xl bg-stone-100 border border-stone-300 text-xs font-bold text-charcoal cursor-pointer whitespace-nowrap shrink-0" id="global-lang-select" onchange="setSubpageLanguage(this.value)">
+<option selected="" value="en">🇺🇸 EN</option>
+<option value="de">🇩🇪 DE</option>
+<option value="fr">🇫🇷 FR</option>
+<option value="es">🇪🇸 ES</option>
+<option value="ja">🇯🇵 JA</option>
+<option value="pt">🇧🇷 PT</option>
+</select>
+<button aria-label="Toggle Dark Mode" class="px-2.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal transition whitespace-nowrap shrink-0" id="dark-mode-btn" onclick="toggleDarkMode()" type="button">🌙 Dark</button>
+<a class="hidden sm:inline-flex btn-coral px-3 py-1.5 text-xs font-bold whitespace-nowrap shrink-0 no-underline" href="/" id="sub-nav-cta">All 32 Tools →</a>
+</div>
+</div>
+</header>
+<main class="flex-grow max-w-5xl w-full mx-auto px-4 sm:px-8 py-8 sm:py-12 space-y-8">
+<nav aria-label="Breadcrumb" class="text-xs text-stone-500 flex flex-wrap items-center gap-2">
+<a class="hover:text-terracotta font-semibold" href="/">Home</a>
+<span>/</span>
+<a class="hover:text-terracotta font-semibold" href="/#popular-guides-section">Business &amp; Freelancing</a>
+<span>/</span>
+<span class="text-charcoal font-bold">Customer Acquisition Cost (CAC) &amp; Lifetime Value (LTV): The 3:1 Golden Ratio Explained</span>
+</nav>
+<article class="clean-card p-6 sm:p-10 bg-white space-y-6">
+<div class="flex flex-wrap items-center justify-between gap-2 text-xs font-bold uppercase tracking-wider text-terracotta">
+<span>SaaS &amp; Growth</span>
+<span class="text-stone-500">10 min read • Updated Nov 19, 2026</span>
+</div>
+<h1 class="font-display font-extrabold text-2xl sm:text-4xl text-charcoal leading-tight">Customer Acquisition Cost (CAC) and LTV:CAC Ratio: SaaS Unit Economics Explained</h1>
+<div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-100 border border-stone-200">
+<img alt="Customer Acquisition Cost (CAC) and LTV:CAC Ratio: SaaS Unit Economics Explained" class="w-full h-full object-cover" height="896" src="/guide-12.jpg" width="1200"/>
+</div>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">Unit Economics Decide Whether Growth Builds Value or Burns Cash</h2>
+<p class="text-sm sm:text-base text-stone-700 leading-relaxed">Subscription businesses have a deceptive cash-flow profile: you pay sales commissions, ad clicks, and onboarding salaries upfront in Month 0, then collect revenue drip by drip over the next 18 to 48 months. Without disciplined <strong>Customer Acquisition Cost (CAC)</strong> and <strong>Lifetime Value (LTV)</strong> tracking, a SaaS company can double top-line ARR while quietly accelerating toward insolvency.</p>
+<p class="text-sm sm:text-base text-stone-700 leading-relaxed">The mistake most early-stage founders make is calculating LTV from raw top-line revenue rather than <em>gross profit</em>, and calculating CAC from ad spend alone while ignoring sales salaries, CRM software, and agency retainers. Both shortcuts inflate your LTV:CAC ratio and mask broken acquisition channels.</p>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">Fully Loaded CAC and Gross-Margin LTV Formulas</h2>
+<div class="p-4 sm:p-5 rounded-2xl bg-orange-50 border-l-4 border-orange-600 font-mono text-xs sm:text-sm text-charcoal overflow-x-auto leading-relaxed">Fully Loaded CAC = (Total Sales &amp; Marketing Spend + S&amp;M Salaries + Tools) ÷ New Paid Customers<br/>Gross-Margin LTV = (Monthly ARPU × Gross Margin %) ÷ Monthly Logo Churn Rate<br/>CAC Payback Period (Months) = CAC ÷ (Monthly ARPU × Gross Margin %)</div>
+<p class="text-sm sm:text-base text-stone-700 leading-relaxed">Multiplying Monthly ARPU by your <strong>Gross Margin %</strong> (typically 75% to 85% for pure software after hosting, payment processing, and customer support costs) ensures you only credit actual contribution dollars toward recovering acquisition spend.</p>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">Worked Example: Comparing Two SaaS Growth Plans</h2>
+<p class="text-sm sm:text-base text-stone-700 leading-relaxed">Consider a B2B workflow SaaS charging <strong>$120/month ARPU</strong> with an <strong>80% gross margin</strong> ($96 monthly gross profit per customer). Marketing and sales spent $48,000 last quarter (including salaries and paid search) and closed 80 new logos, giving a fully loaded <strong>CAC of $600</strong>.</p>
+<ul class="list-disc pl-6 space-y-2 text-sm sm:text-base text-stone-700">
+<li><strong>Scenario A (5.0% monthly churn):</strong> Average customer lifespan is 1 ÷ 0.05 = 20 months. Gross-margin LTV = $96 × 20 = <strong>$1,920</strong>. LTV:CAC = $1,920 ÷ $600 = <strong>3.20 : 1</strong>. CAC Payback = $600 ÷ $96 = <strong>6.25 months</strong>.</li>
+<li><strong>Scenario B (2.5% monthly churn after onboarding fix):</strong> Lifespan doubles to 40 months. Gross-margin LTV jumps to $96 × 40 = <strong>$3,840</strong>. LTV:CAC surges to <strong>6.40 : 1</strong> without spending an extra dollar on ads.</li>
+</ul>
+<p class="text-sm sm:text-base text-stone-700 leading-relaxed">Notice that cutting churn in half doubled enterprise value per customer, while CAC payback stayed at 6.25 months. Payback measures <em>cash efficiency</em>; LTV:CAC measures <em>long-term return on invested capital</em>. You need both.</p>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">SaaS Unit Economics Benchmark Matrix</h2>
+<div class="overflow-x-auto rounded-2xl border border-stone-200">
+<table class="w-full text-left border-collapse text-xs sm:text-sm">
+<thead>
+<tr>
+<th class="px-4 py-3 bg-stone-100 font-bold text-charcoal border-b border-stone-200">Segment</th>
+<th class="px-4 py-3 bg-stone-100 font-bold text-charcoal border-b border-stone-200">Healthy LTV:CAC</th>
+<th class="px-4 py-3 bg-stone-100 font-bold text-charcoal border-b border-stone-200">Target CAC Payback</th>
+<th class="px-4 py-3 bg-stone-100 font-bold text-charcoal border-b border-stone-200">Typical Monthly Churn</th>
+<th class="px-4 py-3 bg-stone-100 font-bold text-charcoal border-b border-stone-200">Operational Signal</th>
+</tr>
+</thead>
+<tbody>
+<tr><td class="px-4 py-3 border-b border-stone-200 text-stone-700">Self-Serve / Prosumer</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">3:1 – 4:1</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">&lt; 6 months</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">3.5% – 6.0%</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">Must rely on PLG, SEO, or low-touch funnels</td></tr>
+<tr><td class="px-4 py-3 border-b border-stone-200 text-stone-700">SMB B2B SaaS</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">3:1 – 5:1</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">6 – 12 months</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">1.5% – 3.0%</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">Balanced inbound + inside sales team</td></tr>
+<tr><td class="px-4 py-3 border-b border-stone-200 text-stone-700">Mid-Market SaaS</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">4:1 – 6:1</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">12 – 18 months</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">0.8% – 1.5%</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">Annual contracts improve upfront cash flow</td></tr>
+<tr><td class="px-4 py-3 border-b border-stone-200 text-stone-700">Enterprise SaaS</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">5:1+</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">15 – 24 months</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">&lt; 0.6%</td><td class="px-4 py-3 border-b border-stone-200 text-stone-700">Net Dollar Retention (&gt;110%) drives expansion</td></tr>
+</tbody>
+</table>
+</div>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">Three Traps That Distort LTV:CAC Dashboards</h2>
+<ol class="list-decimal pl-6 space-y-2 text-sm sm:text-base text-stone-700">
+<li><strong>Blending Organic and Paid CAC:</strong> Blended CAC hides whether paid ads are actually profitable. Always track <em>Paid CAC</em> separately from organic/referral sign-ups before scaling ad budgets.</li>
+<li><strong>Ignoring Time-Lag in B2B Sales:</strong> If your sales cycle is 60 days, dividing March S&amp;M spend by March closed deals mismatches costs and revenue. Pair January S&amp;M spend with March closed logos.</li>
+<li><strong>Treating 10:1 LTV:CAC as Perfection:</strong> An ultra-high ratio above 7:1 or 8:1 often signals under-investment in marketing—you are leaving market share on the table for faster competitors.</li>
+</ol>
+<div class="p-6 rounded-2xl bg-orange-50 border border-orange-200 flex flex-wrap items-center justify-between gap-4 mt-6">
+<div>
+<h3 class="font-display font-extrabold text-lg text-charcoal">Run Your Own Numbers Live</h3>
+<p class="text-xs sm:text-sm text-stone-600 mt-1">Open the interactive calculator on WorkFlowora to test your exact figures privately in your browser.</p>
+</div>
+<a class="btn-coral px-5 py-3 text-sm shadow-sm inline-flex items-center gap-2 no-underline" href="/?tool=cacltv">Launch Live Calculator →</a>
+</div>
+<section class="space-y-3 pt-4 border-t border-stone-200">
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal">Frequently Asked Questions</h2>
+<div class="space-y-3"><details class="p-4 rounded-2xl bg-stone-50 border border-stone-200 group">
+<summary class="font-display font-bold text-sm sm:text-base text-charcoal cursor-pointer">Should free-tier users be included in the CAC denominator?</summary>
+<p class="text-xs sm:text-sm text-stone-600 leading-relaxed mt-2.5">No. Only divide sales and marketing costs by newly converted paying customers. Including free sign-ups artificially crushes CAC and makes unprofitable channels look cheap.</p>
+</details>
+<details class="p-4 rounded-2xl bg-stone-50 border border-stone-200 group">
+<summary class="font-display font-bold text-sm sm:text-base text-charcoal cursor-pointer">What if our company has negative net churn (expansion exceeds cancellations)?</summary>
+<p class="text-xs sm:text-sm text-stone-600 leading-relaxed mt-2.5">The simple 1 / churn formula breaks when net churn is zero or negative. In that case, cap your modeled customer lifetime at 5 to 7 years (60–84 months) or apply a 10%–15% annual discount rate to future gross profits.</p>
+</details>
+<details class="p-4 rounded-2xl bg-stone-50 border border-stone-200 group">
+<summary class="font-display font-bold text-sm sm:text-base text-charcoal cursor-pointer">Why is CAC Payback Period so critical for bootstrapped startups?</summary>
+<p class="text-xs sm:text-sm text-stone-600 leading-relaxed mt-2.5">Even a 5:1 LTV:CAC business can run out of cash if payback takes 22 months and customers pay monthly. Bootstrapped teams should target payback under 6–9 months or incentivize annual prepayments.</p>
+</details>
+<details class="p-4 rounded-2xl bg-stone-50 border border-stone-200 group">
+<summary class="font-display font-bold text-sm sm:text-base text-charcoal cursor-pointer">Does Gross Margin include engineering R&amp;D?</summary>
+<p class="text-xs sm:text-sm text-stone-600 leading-relaxed mt-2.5">No. Standard SaaS Cost of Goods Sold (COGS) includes cloud hosting, third-party APIs, payment processing fees, customer support, and DevOps required to keep the live product running—not new feature R&amp;D.</p>
+</details></div>
+</section>
+<section class="space-y-3 pt-4 border-t border-stone-200">
+<h2 class="font-display font-extrabold text-lg sm:text-xl text-charcoal">Continue Reading</h2>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><a class="p-4 rounded-2xl bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 transition block no-underline" href="/50-30-20-budget-rule-monthly-salary-guide.html">
+<span class="text-[11px] font-bold uppercase tracking-wider text-terracotta">Personal Finance</span>
+<div class="font-display font-bold text-sm text-charcoal mt-1">The 50/30/20 Budget Rule on a Monthly Salary: Adapting Ratios for Real Living Costs</div>
+</a>
+<a class="p-4 rounded-2xl bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 transition block no-underline" href="/reading-speed-wpm-speaking-time-guide.html">
+<span class="text-[11px] font-bold uppercase tracking-wider text-terracotta">Productivity &amp; Writing</span>
+<div class="font-display font-bold text-sm text-charcoal mt-1">Reading Speed vs. Speaking Time (WPM): How Word Count Translates to Minutes</div>
+</a>
+<a class="p-4 rounded-2xl bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 transition block no-underline" href="/break-even-roas-formula-calculator-guide.html">
+<span class="text-[11px] font-bold uppercase tracking-wider text-terracotta">E-Commerce &amp; Ads</span>
+<div class="font-display font-bold text-sm text-charcoal mt-1">Break-Even ROAS Formula: Pricing Paid Ads Around Contribution Margin</div>
+</a></div>
+</section>
+</article>
+</main>
+<script>
+    function calcGuideWidget() {
+      var p = parseFloat(document.getElementById('g-in-1').value) || 0;
+      var rAnn = parseFloat(document.getElementById('g-in-2').value) || 0;
+      var yrs = parseFloat(document.getElementById('g-in-3').value) || 1;
+      var r = (rAnn / 100) / 12;
+      var n = Math.max(1, Math.round(yrs * 12));
+      var emi = r > 0 ? (p * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1) : (p / n);
+      var tot = emi * n;
+      var intr = tot - p;
+      document.getElementById('g-out-1').textContent = '$' + emi.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('g-out-2').textContent = '$' + intr.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      document.getElementById('g-out-3').textContent = '$' + tot.toLocaleString(undefined, {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    }
   </script>
-</head>
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TSRSH3VS" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a href="/" class="brand-logo" aria-label="WorkFlowora Home">
-        <span class="brand-mark" aria-hidden="true">W</span>
-        <span class="brand-text">WorkFlowora</span>
-      </a>
-
-      <nav class="main-nav" aria-label="Primary navigation">
-        <a href="/#calculators" class="nav-link" data-i18n="nav_calculators">Calculators</a>
-        <a href="/#tax-comparator" class="nav-link" data-i18n="nav_tax">Tax Comparator</a>
-        <a href="/#guides" class="nav-link active" data-i18n="nav_guides">Guides</a>
-        <a href="/#feature-requests" class="nav-link" data-i18n="nav_requests">Request Tool</a>
-        <a href="/about-us.html" class="nav-link" data-i18n="nav_about">About</a>
-      </nav>
-
-      <div class="header-controls">
-        <label class="sr-only" for="wf-currency-select">Currency</label>
-        <select id="wf-currency-select" class="ctrl-select" aria-label="Select currency" title="Currency">
-          <option value="USD">USD $</option>
-          <option value="EUR">EUR &euro;</option>
-          <option value="GBP">GBP &pound;</option>
-          <option value="JPY">JPY &yen;</option>
-          <option value="BRL">BRL R$</option>
-          <option value="CAD">CAD C$</option>
-          <option value="AUD">AUD A$</option>
-          <option value="CHF">CHF Fr</option>
-        </select>
-
-        <label class="sr-only" for="wf-lang-select">Language</label>
-        <select id="wf-lang-select" class="ctrl-select" aria-label="Select language" title="Language">
-          <option value="en">EN</option>
-          <option value="de">DE</option>
-          <option value="fr">FR</option>
-          <option value="es">ES</option>
-          <option value="ja">JA</option>
-          <option value="pt">PT</option>
-        </select>
-
-        <button type="button" id="wf-theme-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle Dark Mode">
-          <span class="theme-icon-sun" aria-hidden="true">&#9728;</span>
-          <span class="theme-icon-moon" aria-hidden="true">&#9790;</span>
-        </button>
-
-        <button type="button" id="wf-mobile-menu-btn" class="icon-btn mobile-only" aria-label="Open menu" aria-expanded="false" aria-controls="wf-mobile-drawer">
-          &#9776;
-        </button>
-      </div>
+<footer class="bg-white border-t border-stone-200 mt-16 text-stone-600 text-xs sm:text-sm">
+<div class="max-w-[1600px] w-full mx-auto px-4 sm:px-8 lg:px-12 py-12 grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<div class="flex items-center gap-2.5 mb-3">
+<div class="w-8 h-8 rounded-lg bg-terracotta text-white font-display font-extrabold text-base flex items-center justify-center">W</div>
+<span class="font-display font-extrabold text-lg text-charcoal">WorkFlowora.com</span>
+</div>
+<p class="text-xs text-stone-500 leading-relaxed">
+          32 free browser-based financial, business, SaaS, and productivity calculators paired with 32 in-depth mathematical guides. 100% client-side privacy.
+        </p>
+</div>
+<div>
+<div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Popular Calculators</div>
+<ul class="space-y-2 text-xs">
+<li><a class="hover:text-terracotta" href="/?tool=loan">Loan &amp; Mortgage EMI Calculator</a></li>
+<li><a class="hover:text-terracotta" href="/?tool=compound">Compound Interest Calculator</a></li>
+<li><a class="hover:text-terracotta" href="/?tool=cacltv">SaaS LTV:CAC &amp; Payback Calculator</a></li>
+<li><a class="hover:text-terracotta" href="/?tool=margin">Profit Margin &amp; Break-Even ROAS</a></li>
+<li><a class="hover:text-terracotta" href="/?tool=salary">Salary to Hourly &amp; 50/30/20 Planner</a></li>
+</ul>
+</div>
+<div>
+<div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Top Pillar Guides</div>
+<ul class="space-y-2 text-xs">
+<li><a class="hover:text-terracotta" href="/loan-emi-calculation-guide.html">Loan EMI &amp; Amortization Guide</a></li>
+<li><a class="hover:text-terracotta" href="/credit-card-minimum-payment-interest-trap-guide.html">Credit Card Minimum Payment Trap</a></li>
+<li><a class="hover:text-terracotta" href="/customer-acquisition-cost-cac-ltv-guide.html">SaaS LTV:CAC 3:1 Golden Ratio</a></li>
+<li><a class="hover:text-terracotta" href="/reading-speed-wpm-speaking-time-guide.html">Reading Speed &amp; Speech WPM Chart</a></li>
+<li><a class="hover:text-terracotta" href="/us-self-employment-1099-quarterly-tax-guide-2026.html">US 1099 Self-Employment Tax Guide</a></li>
+</ul>
+</div>
+<div>
+<div class="font-bold text-charcoal uppercase text-xs tracking-wider mb-3">Company &amp; Legal</div>
+<ul class="space-y-2 text-xs">
+<li><a class="hover:text-terracotta" href="/about-us.html">About WorkFlowora</a></li>
+<li><a class="hover:text-terracotta" href="/contact-us.html">Contact &amp; Support</a></li>
+<li><a class="hover:text-terracotta" href="/privacy-policy.html">Privacy Policy &amp; Cookies</a></li>
+<li><a class="hover:text-terracotta" href="/terms-and-conditions.html">Terms &amp; Conditions</a></li>
+<li><a class="hover:text-terracotta" href="/disclaimer.html">Financial &amp; Legal Disclaimer</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-stone-200 py-6 text-center text-xs text-stone-500">
+      © 2026 WorkFlowora (www.workflowora.com). All rights reserved. Built for fast, accurate browser-side calculation.
     </div>
-
-    <div id="wf-mobile-drawer" class="mobile-drawer" hidden>
-      <a href="/#calculators" data-i18n="nav_calculators">Calculators</a>
-      <a href="/#tax-comparator" data-i18n="nav_tax">Tax Comparator</a>
-      <a href="/#guides" data-i18n="nav_guides">Guides</a>
-      <a href="/#feature-requests" data-i18n="nav_requests">Request Tool</a>
-      <a href="/about-us.html" data-i18n="nav_about">About</a>
-      <a href="/contact-us.html" data-i18n="nav_contact">Contact</a>
-    </div>
-  </header>
-  <main class="article-wrap">
-    <article class="article-container">
-      <nav class="breadcrumb" aria-label="Breadcrumb">
-        <a href="/">Home</a> <span>/</span> <a href="/#guides">Guides</a> <span>/</span> <span>SaaS & Growth</span>
-      </nav>
-      <header class="article-header">
-        <h1>Customer Acquisition Cost (CAC) and LTV:CAC Ratio: SaaS Unit Economics Explained</h1>
-        <div class="article-byline">
-          <span>Category: <strong>SaaS & Growth</strong></span>
-          <span>10 min read</span>
-          <span>Updated: November 19, 2026</span>
-        </div>
-      </header>
-      <img src="/guide-2.jpg" alt="SaaS CAC & LTV:CAC Unit Economics Guide" class="article-hero-img" width="1200" height="896">
-      <div class="article-content">
-        <h2>Unit Economics Decide Whether Growth Builds Value or Burns Cash</h2>
-        <p>Subscription businesses have a deceptive cash-flow profile: you pay sales commissions, ad clicks, and onboarding salaries upfront in Month 0, then collect revenue drip by drip over the next 18 to 48 months. Without disciplined <strong>Customer Acquisition Cost (CAC)</strong> and <strong>Lifetime Value (LTV)</strong> tracking, a SaaS company can double top-line ARR while quietly accelerating toward insolvency.</p>
-        <p>The mistake most early-stage founders make is calculating LTV from raw top-line revenue rather than <em>gross profit</em>, and calculating CAC from ad spend alone while ignoring sales salaries, CRM software, and agency retainers. Both shortcuts inflate your LTV:CAC ratio and mask broken acquisition channels.</p>
-
-        <h2>Fully Loaded CAC and Gross-Margin LTV Formulas</h2>
-        <div class="formula-box">Fully Loaded CAC = (Total Sales &amp; Marketing Spend + S&amp;M Salaries + Tools) &divide; New Paid Customers<br>Gross-Margin LTV = (Monthly ARPU &times; Gross Margin %) &divide; Monthly Logo Churn Rate<br>CAC Payback Period (Months) = CAC &divide; (Monthly ARPU &times; Gross Margin %)</div>
-        <p>Multiplying Monthly ARPU by your <strong>Gross Margin %</strong> (typically 75% to 85% for pure software after hosting, payment processing, and customer support costs) ensures you only credit actual contribution dollars toward recovering acquisition spend.</p>
-
-        <h2>Worked Example: Comparing Two SaaS Growth Plans</h2>
-        <p>Consider a B2B workflow SaaS charging <strong>$120/month ARPU</strong> with an <strong>80% gross margin</strong> ($96 monthly gross profit per customer). Marketing and sales spent $48,000 last quarter (including salaries and paid search) and closed 80 new logos, giving a fully loaded <strong>CAC of $600</strong>.</p>
-        <ul>
-          <li><strong>Scenario A (5.0% monthly churn):</strong> Average customer lifespan is 1 &divide; 0.05 = 20 months. Gross-margin LTV = $96 &times; 20 = <strong>$1,920</strong>. LTV:CAC = $1,920 &divide; $600 = <strong>3.20 : 1</strong>. CAC Payback = $600 &divide; $96 = <strong>6.25 months</strong>.</li>
-          <li><strong>Scenario B (2.5% monthly churn after onboarding fix):</strong> Lifespan doubles to 40 months. Gross-margin LTV jumps to $96 &times; 40 = <strong>$3,840</strong>. LTV:CAC surges to <strong>6.40 : 1</strong> without spending an extra dollar on ads.</li>
-        </ul>
-        <p>Notice that cutting churn in half doubled enterprise value per customer, while CAC payback stayed at 6.25 months. Payback measures <em>cash efficiency</em>; LTV:CAC measures <em>long-term return on invested capital</em>. You need both.</p>
-
-        <h2>SaaS Unit Economics Benchmark Matrix</h2>
-        <div class="data-table-wrap">
-          <table class="data-table">
-            <thead>
-              <tr>
-                <th>Segment</th>
-                <th class="num">Healthy LTV:CAC</th>
-                <th class="num">Target CAC Payback</th>
-                <th class="num">Typical Monthly Churn</th>
-                <th>Operational Signal</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Self-Serve / Prosumer</td><td class="num">3:1 – 4:1</td><td class="num">&lt; 6 months</td><td class="num">3.5% – 6.0%</td><td>Must rely on PLG, SEO, or low-touch funnels</td></tr>
-              <tr><td>SMB B2B SaaS</td><td class="num">3:1 – 5:1</td><td class="num">6 – 12 months</td><td class="num">1.5% – 3.0%</td><td>Balanced inbound + inside sales team</td></tr>
-              <tr><td>Mid-Market SaaS</td><td class="num">4:1 – 6:1</td><td class="num">12 – 18 months</td><td class="num">0.8% – 1.5%</td><td>Annual contracts improve upfront cash flow</td></tr>
-              <tr><td>Enterprise SaaS</td><td class="num">5:1+</td><td class="num">15 – 24 months</td><td class="num">&lt; 0.6%</td><td>Net Dollar Retention (&gt;110%) drives expansion</td></tr>
-            </tbody>
-          </table>
-        </div>
-
-        <h2>Three Traps That Distort LTV:CAC Dashboards</h2>
-        <ol>
-          <li><strong>Blending Organic and Paid CAC:</strong> Blended CAC hides whether paid ads are actually profitable. Always track <em>Paid CAC</em> separately from organic/referral sign-ups before scaling ad budgets.</li>
-          <li><strong>Ignoring Time-Lag in B2B Sales:</strong> If your sales cycle is 60 days, dividing March S&amp;M spend by March closed deals mismatches costs and revenue. Pair January S&amp;M spend with March closed logos.</li>
-          <li><strong>Treating 10:1 LTV:CAC as Perfection:</strong> An ultra-high ratio above 7:1 or 8:1 often signals under-investment in marketing—you are leaving market share on the table for faster competitors.</li>
-        </ol>
-
-        <div class="cta-banner">
-          <div>
-            <h3>Run Your Own Numbers Live</h3>
-            <p>Test custom scenarios directly in your browser with the SaaS LTV:CAC Calculator.</p>
-          </div>
-          <a href="/#calc-saas-ltv-cac" class="btn btn-primary">Open SaaS LTV:CAC Calculator &rarr;</a>
-        </div>
-
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-list">
-          <details class="faq-item"><summary>Should free-tier users be included in the CAC denominator?</summary><p>No. Only divide sales and marketing costs by newly converted paying customers. Including free sign-ups artificially crushes CAC and makes unprofitable channels look cheap.</p></details>
-          <details class="faq-item"><summary>What if our company has negative net churn (expansion exceeds cancellations)?</summary><p>The simple 1 / churn formula breaks when net churn is zero or negative. In that case, cap your modeled customer lifetime at 5 to 7 years (60–84 months) or apply a 10%–15% annual discount rate to future gross profits.</p></details>
-          <details class="faq-item"><summary>Why is CAC Payback Period so critical for bootstrapped startups?</summary><p>Even a 5:1 LTV:CAC business can run out of cash if payback takes 22 months and customers pay monthly. Bootstrapped teams should target payback under 6–9 months or incentivize annual prepayments.</p></details>
-          <details class="faq-item"><summary>Does Gross Margin include engineering R&D?</summary><p>No. Standard SaaS Cost of Goods Sold (COGS) includes cloud hosting, third-party APIs, payment processing fees, customer support, and DevOps required to keep the live product running—not new feature R&D.</p></details>
-        </div>
-
-        <section class="related-guides">
-          <h3>Continue Reading</h3>
-          <div class="related-links">
-            <a href="/startup-cash-runway-burn-rate-default-alive-guide.html">Startup Runway & Default Alive Guide &rarr;</a>
-            <a href="/break-even-roas-formula-calculator-guide.html">Break-Even ROAS & Ad Margin Guide &rarr;</a>
-            <a href="/apr-vs-apy-interest-rate-difference-guide.html">APR vs. APY Interest Rate Guide &rarr;</a>
-          </div>
-        </section>
-      </div>
-    </article>
-  </main>
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-brand">
-        <a href="/" class="brand-logo">
-          <span class="brand-mark" aria-hidden="true">W</span>
-          <span class="brand-text">WorkFlowora</span>
-        </a>
-        <p class="footer-tagline" data-i18n="footer_tagline">Independent financial, SaaS, freelancing, and productivity calculators built for transparent client-side math and practical decision making.</p>
-        <p class="footer-contact">Contact: <a href="mailto:contact@workflowora.com">contact@workflowora.com</a></p>
-      </div>
-
-      <div class="footer-col">
-        <h3 data-i18n="footer_tools_heading">Popular Calculators</h3>
-        <ul>
-          <li><a href="/#calc-loan-emi">Loan EMI Calculator</a></li>
-          <li><a href="/#calc-compound-interest">Compound Interest Calculator</a></li>
-          <li><a href="/#calc-profit-roas">Break-Even ROAS Calculator</a></li>
-          <li><a href="/#calc-us-1099-tax">US 1099 Self-Employment Tax</a></li>
-          <li><a href="/#calc-saas-ltv-cac">SaaS LTV:CAC Calculator</a></li>
-          <li><a href="/#calc-fire-retirement">FIRE Retirement Calculator</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3 data-i18n="footer_guides_heading">Featured Guides</h3>
-        <ul>
-          <li><a href="/loan-emi-calculation-guide.html">Loan EMI Calculation Guide</a></li>
-          <li><a href="/us-self-employment-1099-quarterly-tax-guide-2026.html">US 1099 Quarterly Tax (2026)</a></li>
-          <li><a href="/break-even-roas-formula-calculator-guide.html">Break-Even ROAS Formula</a></li>
-          <li><a href="/startup-cash-runway-burn-rate-default-alive-guide.html">Startup Runway &amp; Default Alive</a></li>
-          <li><a href="/debt-to-income-ratio-dti-mortgage-approval-guide.html">DTI 28/36 Mortgage Guide</a></li>
-          <li><a href="/50-30-20-budget-rule-monthly-salary-guide.html">50/30/20 Salary Budget Rule</a></li>
-        </ul>
-      </div>
-
-      <div class="footer-col">
-        <h3 data-i18n="footer_legal_heading">Company &amp; Legal</h3>
-        <ul>
-          <li><a href="/about-us.html" data-i18n="nav_about">About Us</a></li>
-          <li><a href="/contact-us.html" data-i18n="nav_contact">Contact Us</a></li>
-          <li><a href="/privacy-policy.html" data-i18n="legal_privacy">Privacy Policy</a></li>
-          <li><a href="/terms-and-conditions.html" data-i18n="legal_terms">Terms &amp; Conditions</a></li>
-          <li><a href="/disclaimer.html" data-i18n="legal_disclaimer">Financial Disclaimer</a></li>
-          <li><a href="/sitemap.xml">XML Sitemap</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="container footer-bottom">
-      <p>&copy; 2026 WorkFlowora (www.workflowora.com). <span data-i18n="footer_rights">All calculations run privately in your browser for educational and planning purposes.</span></p>
-    </div>
-  </footer>
-  <script src="/assets/js/i18n.js" defer></script>
+</footer>
+<script>
+    function syncDarkBtn() {
+      var btn = document.getElementById('dark-mode-btn');
+      if (!btn) return;
+      var isDark = document.documentElement.classList.contains('dark-mode');
+      btn.innerHTML = isDark ? '&#9728;&#65039; Light' : '&#127769; Dark';
+    }
+    function toggleDarkMode() {
+      var isDark = document.documentElement.classList.toggle('dark-mode');
+      try { localStorage.setItem('wf_dark_mode', isDark ? '1' : '0'); } catch (e) {}
+      syncDarkBtn();
+    }
+    var SUB_UI_I18N = {
+      en: { tag: 'Free Online Calculators & Smart Work Tools', tools: 'All Tools (32)', guides: 'Guides (32)', global: 'Global Tax', req: '💡 Request Tool', about: 'About', contact: 'Contact', cta: 'All 32 Tools \u2192' },
+      de: { tag: 'Kostenlose Online-Rechner & Smarte Business-Tools', tools: 'Tools (32)', guides: 'Guides (32)', global: 'Steuern', req: '💡 Tool wünschen', about: 'Über uns', contact: 'Kontakt', cta: 'Alle 32 Tools \u2192' },
+      fr: { tag: 'Calculateurs en Ligne Gratuits & Outils Pro', tools: 'Outils (32)', guides: 'Guides (32)', global: 'Fiscalité', req: '💡 Suggérer', about: 'À Propos', contact: 'Contact', cta: 'Les 32 Outils \u2192' },
+      es: { tag: 'Calculadoras Online Gratis y Herramientas', tools: 'Herramientas (32)', guides: 'Guías (32)', global: 'Impuestos', req: '💡 Sugerir', about: 'Nosotros', contact: 'Contacto', cta: '32 Herramientas \u2192' },
+      ja: { tag: '無料の金融・ビジネス計算ツール＆実践ガイド', tools: '全ツール (32)', guides: 'ガイド (32)', global: '世界税制', req: '💡 リクエスト', about: '運営情報', contact: 'お問い合わせ', cta: '全32ツール \u2192' },
+      pt: { tag: 'Calculadoras Online Gratuitas e Ferramentas', tools: 'Ferramentas (32)', guides: 'Guias (32)', global: 'Impostos', req: '💡 Sugerir', about: 'Sobre', contact: 'Contato', cta: '32 Ferramentas \u2192' }
+    };
+    function setSubpageLanguage(lang) {
+      if (!SUB_UI_I18N[lang]) lang = 'en';
+      var u = SUB_UI_I18N[lang];
+      var sel = document.getElementById('global-lang-select');
+      if (sel && sel.value !== lang) sel.value = lang;
+      var ids = { 'sub-brand-tag': u.tag, 'sub-nav-tools': u.tools, 'sub-nav-guides': u.guides, 'sub-nav-global': u.global, 'sub-nav-request': u.req, 'sub-nav-about': u.about, 'sub-nav-contact': u.contact, 'sub-nav-cta': u.cta };
+      for (var k in ids) { var el = document.getElementById(k); if (el) el.textContent = ids[k]; }
+    }
+    document.addEventListener('DOMContentLoaded', function() {
+      syncDarkBtn();
+      var sel = document.getElementById('global-lang-select');
+      if (sel) sel.value = 'en';
+      setSubpageLanguage('en');
+    });
+  </script>
 </body>
 </html>
