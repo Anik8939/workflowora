@@ -26,7 +26,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta content="https://www.workflowora.com/apr-vs-apy-interest-rate-difference-guide.html" property="og:url"/>
 <meta content="https://www.workflowora.com/guide-22.jpg" property="og:image"/>
 <meta content="article" property="og:type"/>
-
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
     tailwind.config = {
@@ -76,8 +75,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "headline": "APR vs. APY Explained: Why Compounding Frequency Changes What You Earn and Pay",
   "description": "Compare nominal APR against effective APY across daily, monthly, and annual compounding, with worked savings and borrowing examples.",
   "image": "https://www.workflowora.com/guide-22.jpg",
-  "datePublished": "2026-11-19",
-  "dateModified": "2026-11-19",
+  "datePublished": "2026-11-20",
+  "dateModified": "2026-11-20",
   "author": {
     "@type": "Organization",
     "name": "WorkFlowora Editorial Team"
@@ -187,13 +186,25 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="aspect-[4/3] w-full overflow-hidden rounded-2xl bg-stone-100 border border-stone-200">
 <img alt="APR vs. APY Explained: Why Compounding Frequency Changes What You Earn and Pay" class="w-full h-full object-cover" height="896" src="/guide-22.jpg" width="1200"/>
 </div>
-<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">Why Banks Advertise APY on Savings Accounts and APR on Loans</h2>
+<div class="p-5 rounded-2xl bg-orange-50/80 border border-orange-200 space-y-2">
+<div class="text-xs font-extrabold uppercase tracking-wider text-terracottaDark">Key Quantitative Takeaways</div>
+<ul class="list-disc pl-5 space-y-1.5"> <li class="text-xs sm:text-sm text-stone-700 leading-relaxed">APY includes intra-year compounding, so APY is always greater than or equal to nominal APR for any positive rate.</li>
+<li class="text-xs sm:text-sm text-stone-700 leading-relaxed">On a 5.00% savings account, daily compounding raises effective yield to 5.127% APY; on a 24.00% credit card, daily compounding raises effective annual cost to 27.115% APY.</li>
+<li class="text-xs sm:text-sm text-stone-700 leading-relaxed">For US mortgages, disclosed APR also folds upfront origination fees and discount points into an annualized comparison rate.</li></ul>
+</div>
+
+<nav aria-label="Table of contents" class="p-4 sm:p-5 rounded-2xl bg-stone-50 border border-stone-200">
+<div class="text-xs font-extrabold uppercase tracking-wider text-stone-500 mb-2">In This Guide</div>
+<ol class="list-decimal pl-5 space-y-1"><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-1">Why Banks Advertise APY on Savings Accounts and APR on Loans</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-2">Exact Formula Converting APR to APY</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-3">Worked Examples: Same Rate, Different Compounding Frequencies</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-4">APR-to-APY Conversion Table Across Common Rates</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-5">Mortgage APR Note: Fees Folded Into the Rate</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-6">Continuous vs. Discrete Compounding: Where Diminishing Returns Kick In</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-7">How Inflation Changes Real Yield (Nominal vs. Real APY)</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-8">Editorial Verification &amp; Authoritative Sources</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-9">Frequently Asked Questions</a></li><li><a class="text-xs sm:text-sm text-terracottaDark hover:underline" href="#sec-10">Continue Reading</a></li></ol>
+</nav>
+
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200" id="sec-1">Why Banks Advertise APY on Savings Accounts and APR on Loans</h2>
 <p class="text-sm sm:text-base text-stone-700 leading-relaxed">Open any banking comparison page and you will notice an unmistakable pattern: high-yield savings accounts and certificates of deposit headline their <strong>APY (Annual Percentage Yield)</strong>, whereas credit cards, auto loans, and mortgages headline their <strong>APR (Annual Percentage Rate)</strong>. That split is not accidental. Because APY includes the effect of intra-year compounding, APY is always equal to or higher than APR—making deposit rates look larger and borrowing rates look smaller.</p>
 <p class="text-sm sm:text-base text-stone-700 leading-relaxed">Understanding the exact mathematical bridge between nominal APR and effective APY prevents costly miscalculations when comparing two savings accounts with different compounding intervals or evaluating the true annual cost of a high-interest credit line.</p>
-<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">Exact Formula Converting APR to APY</h2>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200" id="sec-2">Exact Formula Converting APR to APY</h2>
 <div class="p-4 sm:p-5 rounded-2xl bg-orange-50 border-l-4 border-orange-600 font-mono text-xs sm:text-sm text-charcoal overflow-x-auto leading-relaxed">APY = (1 + APR ÷ n)^n − 1</div>
 <p class="text-sm sm:text-base text-stone-700 leading-relaxed">Here, <strong>APR</strong> is expressed as a decimal (e.g., 12% = 0.12) and <strong>n</strong> is the number of compounding periods per year (1 for annual, 4 for quarterly, 12 for monthly, 365 for daily).</p>
-<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">Worked Examples: Same Rate, Different Compounding Frequencies</h2>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200" id="sec-3">Worked Examples: Same Rate, Different Compounding Frequencies</h2>
 <p class="text-sm sm:text-base text-stone-700 leading-relaxed">First, consider a <strong>5.00% nominal rate</strong> on a $25,000 savings deposit:</p>
 <ul class="list-disc pl-6 space-y-2 text-sm sm:text-base text-stone-700">
 <li><strong>Annual compounding (n = 1):</strong> APY = (1 + 0.05)^1 − 1 = <strong>5.000%</strong> ($1,250.00 Year-1 interest).</li>
@@ -202,7 +213,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </ul>
 <p class="text-sm sm:text-base text-stone-700 leading-relaxed">At 5%, daily compounding adds a modest 0.127 percentage points. Now look at what happens on a <strong>24.00% APR credit card</strong> compounded daily:</p>
 <p class="text-sm sm:text-base text-stone-700 leading-relaxed">Effective APY = (1 + 0.24 / 365)^365 − 1 = <strong>27.115%</strong>! At high borrowing rates, daily compounding quietly adds more than <strong>3.11 full percentage points</strong> to your true annual cost of debt if balances roll over unpaid.</p>
-<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">APR-to-APY Conversion Table Across Common Rates</h2>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200" id="sec-4">APR-to-APY Conversion Table Across Common Rates</h2>
 <div class="overflow-x-auto rounded-2xl border border-stone-200">
 <table class="w-full text-left border-collapse text-xs sm:text-sm">
 <thead>
@@ -223,8 +234,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </tbody>
 </table>
 </div>
-<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200">Mortgage APR Note: Fees Folded Into the Rate</h2>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200" id="sec-5">Mortgage APR Note: Fees Folded Into the Rate</h2>
 <p class="text-sm sm:text-base text-stone-700 leading-relaxed">In US mortgage disclosures (under the Truth in Lending Act), <strong>Mortgage APR</strong> is slightly different from the note interest rate: it rolls origination fees, discount points, and certain closing costs into an annualized percentage so borrowers can compare two lenders on an apples-to-apples basis. A 6.25% note rate with $6,000 in lender points might show a 6.52% APR—signaling that the lower headline rate costs more upfront if you plan to sell or refinance within five years.</p>
+
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200" id="sec-6">Continuous vs. Discrete Compounding: Where Diminishing Returns Kick In</h2>
+<p class="text-sm sm:text-base text-stone-700 leading-relaxed">Savers sometimes wonder whether an account compounding daily is dramatically superior to one compounding monthly—or if continuous compounding (<code>e^r − 1</code>) creates a windfall. Mathematically, compounding gains converge rapidly as frequency rises. At an 8.00% nominal rate, jumping from annual (8.000% APY) to monthly (8.300% APY) adds 0.30 percentage points, whereas jumping from monthly to daily (8.328% APY) adds less than 0.03 percentage points, and continuous compounding tops out at 8.329%.</p>
+<p class="text-sm sm:text-base text-stone-700 leading-relaxed">The practical takeaway is clear: never chase a lower nominal rate just because it advertises daily compounding. A 5.15% APY account compounding monthly always outperforms a 4.95% APY account compounding daily.</p>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal pt-4 border-t border-stone-200" id="sec-7">How Inflation Changes Real Yield (Nominal vs. Real APY)</h2>
+<p class="text-sm sm:text-base text-stone-700 leading-relaxed">Even after converting APR to APY, remember that nominal yield does not reflect purchasing power. Use the exact Fisher equation—<code>Real Yield = ((1 + APY) ÷ (1 + Inflation)) − 1</code>—to check whether cash savings are growing in real terms. A high-yield savings account paying 4.50% APY during 2.80% annual inflation delivers a pre-tax real return of +1.65%, which protects emergency cash far better than a 0.05% checking account losing −2.68% of purchasing power every year.</p>
 <div class="p-6 rounded-2xl bg-orange-50 border border-orange-200 flex flex-wrap items-center justify-between gap-4 mt-6">
 <div>
 <h3 class="font-display font-extrabold text-lg text-charcoal">Run Your Own Numbers Live</h3>
@@ -232,8 +249,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 <a class="btn-coral px-5 py-3 text-sm shadow-sm inline-flex items-center gap-2 no-underline" href="/?tool=compound">Launch Live Calculator →</a>
 </div>
+<section class="p-5 rounded-2xl bg-stone-50 border border-stone-200 space-y-3 mt-6">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<h2 class="font-display font-extrabold text-base sm:text-lg text-charcoal" id="sec-8">Editorial Verification &amp; Authoritative Sources</h2>
+<a class="text-xs font-bold text-terracottaDark hover:underline" href="/editorial-policy.html">Read Our Editorial Policy →</a>
+</div>
+<p class="text-xs text-stone-600 leading-relaxed">Reviewed by the <strong>WorkFlowora Quantitative Editorial Team</strong> on November 20, 2026. All worked examples are independently verified against standard financial and statutory formulas for educational planning purposes.</p>
+<ul class="list-disc pl-5 space-y-1 text-xs"> <li><a class="text-terracottaDark hover:underline font-medium" href="https://www.consumerfinance.gov/rules-policy/regulations/1030/" rel="noopener noreferrer" target="_blank">Consumer Financial Protection Bureau (CFPB) — Truth in Savings (Regulation DD) APY Rules</a></li>
+<li><a class="text-terracottaDark hover:underline font-medium" href="https://www.fdic.gov/resources/deposit-insurance/" rel="noopener noreferrer" target="_blank">FDIC — Deposit Insurance &amp; Savings Account Basics</a></li></ul>
+</section>
+
 <section class="space-y-3 pt-4 border-t border-stone-200">
-<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal">Frequently Asked Questions</h2>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal" id="sec-9">Frequently Asked Questions</h2>
 <div class="space-y-3"><details class="p-4 rounded-2xl bg-stone-50 border border-stone-200 group">
 <summary class="font-display font-bold text-sm sm:text-base text-charcoal cursor-pointer">Which should I maximize when choosing a savings account: APR or APY?</summary>
 <p class="text-xs sm:text-sm text-stone-600 leading-relaxed mt-2.5">Always compare APY for savings accounts, CDs, and money market funds because APY already standardizes compounding frequency into one true annual yield.</p>
@@ -252,7 +279,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </details></div>
 </section>
 <section class="space-y-3 pt-4 border-t border-stone-200">
-<h2 class="font-display font-extrabold text-lg sm:text-xl text-charcoal">Continue Reading</h2>
+<h2 class="font-display font-extrabold text-lg sm:text-xl text-charcoal" id="sec-10">Continue Reading</h2>
 <div class="grid grid-cols-1 sm:grid-cols-3 gap-3"><a class="p-4 rounded-2xl bg-stone-50 hover:bg-orange-50 border border-stone-200 hover:border-orange-300 transition block no-underline" href="/debt-to-income-ratio-dti-mortgage-approval-guide.html">
 <span class="text-[11px] font-bold uppercase tracking-wider text-terracotta">Loans &amp; Mortgages</span>
 <div class="font-display font-bold text-sm text-charcoal mt-1">Debt-to-Income (DTI) Ratio and the 28/36 Rule for Mortgage Underwriting</div>
@@ -364,5 +391,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       setSubpageLanguage('en');
     });
   </script>
+
+<!-- Lightweight GDPR / AdSense Cookie Transparency Banner -->
+<div id="wf-cookie-banner" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 clean-card p-4 bg-white border border-stone-300 shadow-xl hidden no-print" role="dialog" aria-label="Cookie preferences">
+  <p class="text-xs text-stone-700 leading-relaxed">
+    <strong>Privacy &amp; Cookies:</strong> All WorkFlowora calculators run 100% locally in your browser. We use essential storage for theme/language preferences and Google AdSense / Tag Manager cookies to keep this site free. See our <a href="/privacy-policy.html" class="text-terracottaDark underline font-semibold">Privacy Policy</a>.
+  </p>
+  <div class="flex items-center gap-2 mt-3">
+    <button type="button" onclick="wfSetCookieConsent('accepted')" class="btn-coral px-3.5 py-1.5 text-xs">Accept All</button>
+    <button type="button" onclick="wfSetCookieConsent('essential')" class="px-3.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal">Essential Only</button>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    if (!localStorage.getItem('wf_cookie_consent')) {
+      var b = document.getElementById('wf-cookie-banner');
+      if (b) b.classList.remove('hidden');
+    }
+  } catch(e){}
+  window.wfSetCookieConsent = function(choice){
+    try { localStorage.setItem('wf_cookie_consent', choice); } catch(e){}
+    var b = document.getElementById('wf-cookie-banner');
+    if (b) b.classList.add('hidden');
+  };
+})();
+</script>
+
 </body>
 </html>

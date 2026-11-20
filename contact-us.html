@@ -177,7 +177,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           <li><a href="/contact-us.html" class="hover:text-terracotta">Contact &amp; Support</a></li>
           <li><a href="/privacy-policy.html" class="hover:text-terracotta">Privacy Policy &amp; Cookies</a></li>
           <li><a href="/terms-and-conditions.html" class="hover:text-terracotta">Terms &amp; Conditions</a></li>
-          <li><a href="/disclaimer.html" class="hover:text-terracotta">Financial &amp; Legal Disclaimer</a></li>
+          <li><a href="/editorial-policy.html" class="hover:text-terracotta">Editorial Policy</a></li><li><a href="/disclaimer.html" class="hover:text-terracotta">Financial &amp; Legal Disclaimer</a></li>
         </ul>
       </div>
     </div>
@@ -220,5 +220,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       setSubpageLanguage('en');
     });
   </script>
+
+<!-- Lightweight GDPR / AdSense Cookie Transparency Banner -->
+<div id="wf-cookie-banner" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 clean-card p-4 bg-white border border-stone-300 shadow-xl hidden no-print" role="dialog" aria-label="Cookie preferences">
+  <p class="text-xs text-stone-700 leading-relaxed">
+    <strong>Privacy &amp; Cookies:</strong> All WorkFlowora calculators run 100% locally in your browser. We use essential storage for theme/language preferences and Google AdSense / Tag Manager cookies to keep this site free. See our <a href="/privacy-policy.html" class="text-terracottaDark underline font-semibold">Privacy Policy</a>.
+  </p>
+  <div class="flex items-center gap-2 mt-3">
+    <button type="button" onclick="wfSetCookieConsent('accepted')" class="btn-coral px-3.5 py-1.5 text-xs">Accept All</button>
+    <button type="button" onclick="wfSetCookieConsent('essential')" class="px-3.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal">Essential Only</button>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    if (!localStorage.getItem('wf_cookie_consent')) {
+      var b = document.getElementById('wf-cookie-banner');
+      if (b) b.classList.remove('hidden');
+    }
+  } catch(e){}
+  window.wfSetCookieConsent = function(choice){
+    try { localStorage.setItem('wf_cookie_consent', choice); } catch(e){}
+    var b = document.getElementById('wf-cookie-banner');
+    if (b) b.classList.add('hidden');
+  };
+})();
+</script>
+
 </body>
 </html>

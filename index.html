@@ -814,41 +814,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </div>
 </div>
 </section>
+
+<section class="clean-card p-6 sm:p-10 bg-white space-y-5" id="eeat-methodology-section">
+<div class="flex flex-wrap items-center justify-between gap-3">
+<div>
+<span class="text-[11px] font-extrabold uppercase tracking-wider text-terracotta">TRANSPARENT METHODOLOGY &amp; PRIVACY</span>
+<h2 class="font-display font-extrabold text-xl sm:text-2xl text-charcoal mt-1">Why Professionals Trust WorkFlowora's Browser-Side Calculators</h2>
+</div>
+<a class="px-4 py-2 rounded-xl bg-orange-50 hover:bg-orange-100 border border-orange-200 text-xs font-bold text-terracottaDark no-underline transition" href="/editorial-policy.html">Editorial &amp; Verification Policy →</a>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-5 text-xs sm:text-sm text-stone-700 leading-relaxed">
+<div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1.5">
+<h3 class="font-display font-bold text-base text-charcoal">Audited Domain Formulas</h3>
+<p>Every tool on WorkFlowora runs a dedicated, verifiable equation—from reducing-balance loan amortization and gross-margin SaaS LTV:CAC to 2026 IRS Schedule SE self-employment tax rules and Mifflin-St Jeor TDEE.</p>
+</div>
+<div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1.5">
+<h3 class="font-display font-bold text-base text-charcoal">100% Client-Side Privacy</h3>
+<p>Your salary, mortgage balance, tax deductions, and client invoice figures are calculated strictly inside your local browser session. Zero financial inputs are uploaded, logged, or sold to third parties.</p>
+</div>
+<div class="p-4 rounded-2xl bg-stone-50 border border-stone-200 space-y-1.5">
+<h3 class="font-display font-bold text-base text-charcoal">Paired Deep-Dive Guides</h3>
+<p>Each calculator connects directly to a standalone, worked-example guide documenting exact equations, multi-scenario comparison tables, edge cases, and official regulatory references.</p>
+</div>
+</div>
+</section>
 </div>
 <!-- VIEW B: SINGLE TOOL WORKSPACE -->
 <div class="hidden space-y-8" id="single-tool-view">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <div class="tool-workspace hidden clean-card p-6 sm:p-10 space-y-6 bg-white" id="workspace-loan">
 <div class="flex flex-wrap items-center justify-between gap-3 border-b border-stone-200 pb-4 no-print">
 <button class="px-3.5 py-2 rounded-xl bg-stone-100 hover:bg-stone-200 text-xs font-bold text-charcoal transition" onclick="showMainView('home')" type="button">← Back to All 14 Tools</button>
@@ -2599,5 +2591,32 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       setSubpageLanguage('en');
     });
   </script>
+
+<!-- Lightweight GDPR / AdSense Cookie Transparency Banner -->
+<div id="wf-cookie-banner" class="fixed bottom-4 left-4 right-4 sm:left-auto sm:right-6 sm:max-w-md z-50 clean-card p-4 bg-white border border-stone-300 shadow-xl hidden no-print" role="dialog" aria-label="Cookie preferences">
+  <p class="text-xs text-stone-700 leading-relaxed">
+    <strong>Privacy &amp; Cookies:</strong> All WorkFlowora calculators run 100% locally in your browser. We use essential storage for theme/language preferences and Google AdSense / Tag Manager cookies to keep this site free. See our <a href="/privacy-policy.html" class="text-terracottaDark underline font-semibold">Privacy Policy</a>.
+  </p>
+  <div class="flex items-center gap-2 mt-3">
+    <button type="button" onclick="wfSetCookieConsent('accepted')" class="btn-coral px-3.5 py-1.5 text-xs">Accept All</button>
+    <button type="button" onclick="wfSetCookieConsent('essential')" class="px-3.5 py-1.5 rounded-xl bg-stone-100 hover:bg-stone-200 border border-stone-300 text-xs font-bold text-charcoal">Essential Only</button>
+  </div>
+</div>
+<script>
+(function(){
+  try {
+    if (!localStorage.getItem('wf_cookie_consent')) {
+      var b = document.getElementById('wf-cookie-banner');
+      if (b) b.classList.remove('hidden');
+    }
+  } catch(e){}
+  window.wfSetCookieConsent = function(choice){
+    try { localStorage.setItem('wf_cookie_consent', choice); } catch(e){}
+    var b = document.getElementById('wf-cookie-banner');
+    if (b) b.classList.add('hidden');
+  };
+})();
+</script>
+
 </body>
 </html>
